@@ -94,22 +94,22 @@ const SUBCAT_ICONS = {
 };
 
 // ── UTILS ─────────────────────────────────────────────────────────────────────
-function fmt(n, d=3) {
+function fmt(n) {
   if (n == null) return '—';
-  return 'OMR ' + Number(n).toLocaleString('en-GB', {minimumFractionDigits:d, maximumFractionDigits:d});
+  return 'OMR ' + Math.round(Number(n)).toLocaleString('en-GB');
 }
 function fmtN(n) {   // fmt without prefix
   if (n == null) return '—';
   const abs = Math.abs(n);
-  if (abs >= 1000000) return (n/1000000).toFixed(2) + 'M';
-  if (abs >= 1000)    return (n/1000).toFixed(1) + 'K';
-  return n.toLocaleString('en-GB', {minimumFractionDigits:0, maximumFractionDigits:0});
+  if (abs >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (abs >= 1000)    return Math.round(n/1000) + 'K';
+  return Math.round(n).toLocaleString('en-GB');
 }
 function fmtShort(n) {
   if (n == null || n === 0) return 'OMR 0';
   const abs = Math.abs(n);
-  if (abs >= 1000000) return 'OMR ' + (n/1000000).toFixed(2) + 'M';
-  if (abs >= 1000)    return 'OMR ' + (n/1000).toFixed(0) + 'K';
+  if (abs >= 1000000) return 'OMR ' + (n/1000000).toFixed(1) + 'M';
+  if (abs >= 1000)    return 'OMR ' + Math.round(n/1000) + 'K';
   return 'OMR ' + Math.round(n).toLocaleString('en-GB');
 }
 function pct(part, total) {
