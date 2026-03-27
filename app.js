@@ -14,7 +14,9 @@ function isAuthenticated() {
   try {
     const raw = localStorage.getItem(AUTH_KEY);
     if (!raw) return false;
-    const { ts } = JSON.parse(raw);
+    const { ts, hash } = JSON.parse(raw);
+    // Invalidate if hash doesn't match current password or token expired
+    if (hash !== PWD_HASH) { localStorage.removeItem(AUTH_KEY); return false; }
     return (Date.now() - ts) < AUTH_TTL;
   } catch { return false; }
 }
@@ -27,7 +29,7 @@ async function unlock() {
   errEl.textContent = '';
   const hash = await sha256(pwd);
   if (hash === PWD_HASH) {
-    localStorage.setItem(AUTH_KEY, JSON.stringify({ ts: Date.now() }));
+    localStorage.setItem(AUTH_KEY, JSON.stringify({ ts: Date.now(), hash: PWD_HASH }));
     document.getElementById('lock-screen').classList.add('hidden');
     initApp();
   } else {
