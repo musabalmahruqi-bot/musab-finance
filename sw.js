@@ -1,4 +1,4 @@
-const CACHE = 'musab-finance-v6';  // v6 — bullet point explanations
+const CACHE = 'musab-finance-v7';  // v7 — reconciled bullets
 const ASSETS = ['./index.html', './app.js', './data.js',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js'];
 
