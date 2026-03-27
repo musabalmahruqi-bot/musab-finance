@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 27 Mar 2026 20:37
+// Generated: 27 Mar 2026 20:46
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "27 Mar 2026",
@@ -52,24 +52,24 @@ window.FINANCE_DATA = {
       "Dec"
     ],
     "budget": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      -12056,
+      10280,
+      5439,
+      8457.0,
+      8458.0,
+      8458.0,
+      10791.0,
+      10791.0,
+      10791.0,
+      10791.0,
+      10791.0,
+      10791.0
     ],
     "actual": [
-      0,
-      0,
-      0,
-      0,
+      -14698.0,
+      113.0,
+      7035.0,
+      1215,
       0,
       0,
       0,
@@ -108,23 +108,23 @@ window.FINANCE_DATA = {
       0
     ],
     "expense_budget": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      -24852,
+      -6500,
+      -6500,
+      -8807.0,
+      -8806.0,
+      -8806.0,
+      -6473.0,
+      -6473.0,
+      -6473.0,
+      -6473.0,
+      -6473.0,
+      -6473.0
     ],
     "expense_actual": [
-      0,
-      0,
-      0,
+      -27478.0,
+      -15826.0,
+      -3925.0,
       0,
       0,
       0,
@@ -139,15 +139,15 @@ window.FINANCE_DATA = {
       295984.0,
       269029.0,
       276065.0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      277280.0,
+      277280.0,
+      277280.0,
+      277280.0,
+      277280.0,
+      277280.0,
+      277280.0,
+      277280.0,
+      277280.0
     ],
     "monthly_breakdown": [
       {
@@ -190,10 +190,6 @@ window.FINANCE_DATA = {
           "Charity": {
             "budget": 0.0,
             "actual": -2000.0
-          },
-          "CC Balance \u0394": {
-            "budget": -24852.0,
-            "actual": -27477.56
           }
         }
       },
@@ -229,10 +225,6 @@ window.FINANCE_DATA = {
           "Charity": {
             "budget": 0.0,
             "actual": -4336.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6500.0,
-            "actual": -15825.96
           }
         }
       },
@@ -268,10 +260,6 @@ window.FINANCE_DATA = {
           "Charity": {
             "budget": 0.0,
             "actual": -3070.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6500.0,
-            "actual": -3924.77
           }
         }
       },
@@ -310,10 +298,6 @@ window.FINANCE_DATA = {
           },
           "Personal Travel": {
             "budget": -930.91,
-            "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -8807.44,
             "actual": 0.0
           }
         }
@@ -354,10 +338,6 @@ window.FINANCE_DATA = {
           "Personal Travel": {
             "budget": -930.91,
             "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -8806.44,
-            "actual": 0.0
           }
         }
       },
@@ -397,10 +377,6 @@ window.FINANCE_DATA = {
           "Personal Travel": {
             "budget": -930.91,
             "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -8806.44,
-            "actual": 0.0
           }
         }
       },
@@ -435,10 +411,6 @@ window.FINANCE_DATA = {
           },
           "Personal Travel": {
             "budget": -930.91,
-            "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -475,10 +447,6 @@ window.FINANCE_DATA = {
           "Personal Travel": {
             "budget": -930.91,
             "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6473.44,
-            "actual": 0.0
           }
         }
       },
@@ -513,10 +481,6 @@ window.FINANCE_DATA = {
           },
           "Personal Travel": {
             "budget": -930.91,
-            "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -553,10 +517,6 @@ window.FINANCE_DATA = {
           "Personal Travel": {
             "budget": -930.91,
             "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6473.44,
-            "actual": 0.0
           }
         }
       },
@@ -592,10 +552,6 @@ window.FINANCE_DATA = {
           "Personal Travel": {
             "budget": -930.91,
             "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6473.44,
-            "actual": 0.0
           }
         }
       },
@@ -630,10 +586,6 @@ window.FINANCE_DATA = {
           },
           "Personal Travel": {
             "budget": -930.91,
-            "actual": 0.0
-          },
-          "CC Balance \u0394": {
-            "budget": -6473.44,
             "actual": 0.0
           }
         }
