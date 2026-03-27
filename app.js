@@ -5,9 +5,22 @@ const PWD_HASH = '3c7573458a12e7b6eb4966aa505d0c0c3fb9f9f5808adafe437ab623fdf809
 const AUTH_KEY = 'mf_auth';
 const AUTH_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+function sha256(str) {
+  // Sync SHA-256 — no Web Crypto dependency
+  function rr(v,a){return(v>>>a)|(v<<(32-a));}
+  const P=Math.pow,M=P(2,32);let h=[];const k=[];let pc=0;const ic={};
+  for(let c=2;pc<64;c++){if(!ic[c]){for(let i=0;i<313;i+=c)ic[i]=c;
+    h[pc]=(P(c,.5)*M)|0;k[pc++]=(P(c,1/3)*M)|0;}}
+  let s=str+'\x80';while(s.length%64-56)s+='\x00';
+  const w=[];for(let i=0;i<s.length;i++){if(s.charCodeAt(i)>>8)return'';w[i>>2]|=s.charCodeAt(i)<<((3-i%4)*8);}
+  const bl=str.length*8;w[w.length]=(bl/M)|0;w[w.length]=bl;
+  for(let j=0;j<w.length;){const ww=w.slice(j,j+=16);const oh=h.slice();h=h.slice(0,8);
+    for(let i=0;i<64;i++){const w15=ww[i-15],w2=ww[i-2],a=h[0],e=h[4];
+      const t1=h[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&h[5])^(~e&h[6]))+k[i]+(ww[i]=(i<16)?ww[i]:(ww[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+ww[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0);
+      const t2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&h[1])^(a&h[2])^(h[1]&h[2]));
+      h=[(t1+t2)|0,...h];h[4]=(h[4]+t1)|0;h.length=8;}
+    h=h.map((v,i)=>(v+oh[i])|0);}
+  return h.map(v=>[3,2,1,0].map(j=>((v>>(j*8))&255).toString(16).padStart(2,'0')).join('')).join('');
 }
 
 function isAuthenticated() {
@@ -21,13 +34,13 @@ function isAuthenticated() {
   } catch { return false; }
 }
 
-async function unlock() {
+function unlock() {
   const input = document.getElementById('lock-input');
   const errEl = document.getElementById('lock-error');
   const pwd = input.value;
   if (!pwd) { errEl.textContent = 'Please enter your password.'; return; }
   errEl.textContent = '';
-  const hash = await sha256(pwd);
+  const hash = sha256(pwd);
   if (hash === PWD_HASH) {
     localStorage.setItem(AUTH_KEY, JSON.stringify({ ts: Date.now(), hash: PWD_HASH }));
     document.getElementById('lock-screen').classList.add('hidden');
