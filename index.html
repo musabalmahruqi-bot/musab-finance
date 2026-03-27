@@ -198,6 +198,21 @@
   .ytd-row:last-child { border-bottom: none; font-weight: 700; }
   .ytd-label { font-size: 14px; color: var(--text); }
   .ytd-val { font-size: 15px; font-weight: 600; }
+  /* ── YTD waterfall KPIs & notes ─────────────────────────────────────────── */
+  .ytd-wf-kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
+  .ytd-kpi { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 8px; text-align: center; }
+  .ytd-kpi-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+  .ytd-kpi-val { font-size: 15px; font-weight: 700; color: var(--text); }
+  .ytd-notes { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
+  .ytd-note-row { display: grid; grid-template-columns: auto auto 1fr; gap: 6px; align-items: baseline; padding: 4px 0; border-top: 1px solid #f3f4f6; font-size: 12px; }
+  .ytd-note-row:first-child { border-top: none; }
+  .ytd-note-item { font-weight: 600; color: var(--text); white-space: nowrap; }
+  .ytd-note-var { font-weight: 700; font-size: 11px; white-space: nowrap; }
+  .ytd-note-text { color: var(--muted); line-height: 1.3; }
+  /* Legend pill row */
+  .wf-legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .wf-leg { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
+  .wf-leg-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -241,8 +256,16 @@
         <div id="month-gauges"></div>
       </div>
       <div class="card">
-        <div class="card-title">Full Year Cashflow — Net Actual vs Budget</div>
-        <div class="chart-wrap"><canvas id="chart-month-trend"></canvas></div>
+        <div class="card-title">YTD Cash Waterfall</div>
+        <div id="ytd-wf-kpis" class="ytd-wf-kpis"></div>
+        <div class="wf-legend">
+          <div class="wf-leg"><div class="wf-leg-dot" style="background:#2B9D92"></div>Income</div>
+          <div class="wf-leg"><div class="wf-leg-dot" style="background:#ef4444"></div>Expenses</div>
+          <div class="wf-leg"><div class="wf-leg-dot" style="background:#8B5CF6"></div>Other</div>
+          <div class="wf-leg"><div class="wf-leg-dot" style="background:#F59E0B"></div>Net</div>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-ytd-waterfall"></canvas></div>
+        <div id="ytd-notes" class="ytd-notes"></div>
       </div>
     </div>
 
