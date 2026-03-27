@@ -195,43 +195,61 @@ function renderMonthContent() {
       </div>
     </div>`;
 
-  // ── Bullet points from line-item breakdown ───────────────────────────────
+  // ── Line-item breakdown table ─────────────────────────────────────────────
   const bd = (D.cashflow.monthly_breakdown || [])[i] || {};
 
-  function makeBullets(items, isExpense) {
-    const THRESHOLD = 100; // min OMR variance to show
-    let html = '';
+  function makeBreakdown(items, isExpense) {
+    const rows = [];
     for (const [label, v] of Object.entries(items)) {
-      const b = isExpense ? Math.abs(v.budget) : v.budget;
-      const a = isExpense ? Math.abs(v.actual) : v.actual;
+      const b = isExpense ? Math.abs(v.budget || 0) : (v.budget || 0);
+      const a = isExpense ? Math.abs(v.actual || 0) : (v.actual || 0);
       if (b === 0 && a === 0) continue;
-      const variance = isExpense ? (a - b) : (a - b); // positive = overspent for exp, over-earned for inc
-      if (Math.abs(variance) < THRESHOLD) continue;
+      rows.push({ label, a, b, variance: a - b });
+    }
+    if (!rows.length) return '';
 
-      let color, text;
-      if (isExpense) {
-        if (b === 0 && a > 0) {
-          color = '#ef4444'; text = `<span>${label}</span> — ${fmtShort(a)} unplanned`;
-        } else if (variance > 0) {
-          color = '#ef4444'; text = `<span>${label}</span> — ${fmtShort(variance)} over budget`;
-        } else {
-          color = '#16a34a'; text = `<span>${label}</span> — ${fmtShort(Math.abs(variance))} under budget`;
-        }
-      } else {
-        if (a === 0 && b > 0) {
-          color = '#ef4444'; text = `<span>${label}</span> — not received (budget ${fmtShort(b)})`;
-        } else if (variance < 0) {
-          color = '#ef4444'; text = `<span>${label}</span> — ${fmtShort(Math.abs(variance))} below budget`;
-        } else {
-          color = '#16a34a'; text = `<span>${label}</span> — ${fmtShort(variance)} above budget`;
-        }
-      }
-      html += `<div class="g-bullet">
-        <div class="g-bullet-dot" style="background:${color}"></div>
-        <div class="g-bullet-text">${text}</div>
+    const totalA   = rows.reduce((s, r) => s + r.a, 0);
+    const totalB   = rows.reduce((s, r) => s + r.b, 0);
+    const totalVar = totalA - totalB;
+
+    function vs(v) {
+      if (Math.abs(Math.round(v)) === 0) return '─';
+      return (v > 0 ? '+' : '') + fmtN(v);
+    }
+    function vc(v, good) {
+      if (Math.abs(Math.round(v)) === 0) return 'var(--muted)';
+      return good ? '#166534' : '#991b1b';
+    }
+
+    let html = `<div class="g-breakdown">
+      <div class="bk-hdr">
+        <span class="bk-label"></span>
+        <span class="bk-col">Act.</span>
+        <span class="bk-col bk-bud">Bud.</span>
+        <span class="bk-col">Var</span>
+      </div>`;
+
+    for (const row of rows) {
+      const good  = isExpense ? (row.variance <= 0) : (row.variance >= 0);
+      const isCCNet = row.label === 'CC Balance Δ';
+      const displayLabel = isCCNet ? 'CC Net Movement' : row.label;
+      html += `<div class="bk-row${isCCNet ? ' bk-muted-row' : ''}">
+        <span class="bk-label">${displayLabel}</span>
+        <span class="bk-col">${row.a > 0 ? fmtN(row.a) : '─'}</span>
+        <span class="bk-col bk-bud">${row.b > 0 ? fmtN(row.b) : '─'}</span>
+        <span class="bk-col" style="color:${vc(row.variance, good)}">${vs(row.variance)}</span>
       </div>`;
     }
-    return html ? `<div class="g-bullets">${html}</div>` : '';
+
+    const totalGood = isExpense ? (totalVar <= 0) : (totalVar >= 0);
+    html += `<div class="bk-row bk-total">
+      <span class="bk-label">Total</span>
+      <span class="bk-col">${fmtN(totalA)}</span>
+      <span class="bk-col bk-bud">${fmtN(totalB)}</span>
+      <span class="bk-col" style="color:${vc(totalVar, totalGood)}">${vs(totalVar)}</span>
+    </div></div>`;
+
+    return html;
   }
 
   // ── Gauge helper ─────────────────────────────────────────────────────────
@@ -282,8 +300,8 @@ function renderMonthContent() {
   }
 
   document.getElementById('month-gauges').innerHTML =
-    makeGauge({ name: 'Income',   actual: incAct, budget: incBud, color: '#2B9D92', overIsGood: true,  bullets: makeBullets(bd.income   || {}, false) }) +
-    makeGauge({ name: 'Expenses', actual: expAct, budget: expBud, color: '#ef4444', overIsGood: false, bullets: makeBullets(bd.expenses || {}, true)  }) +
+    makeGauge({ name: 'Income',   actual: incAct, budget: incBud, color: '#2B9D92', overIsGood: true,  bullets: makeBreakdown(bd.income   || {}, false) }) +
+    makeGauge({ name: 'Expenses', actual: expAct, budget: expBud, color: '#ef4444', overIsGood: false, bullets: makeBreakdown(bd.expenses || {}, true)  }) +
     `<div class="gauge-item" style="padding-bottom:4px">
       <div class="g-header">
         <span class="g-name">Net Cash Flow</span>
