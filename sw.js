@@ -1,4 +1,4 @@
-const CACHE = 'musab-finance-v8';  // v8 — breakdown table (act/bud/var per line)
+const CACHE = 'musab-finance-v9';  // v9 — YTD waterfall + 2dp K format
 const ASSETS = ['./index.html', './app.js', './data.js',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js'];
 
