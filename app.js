@@ -160,6 +160,57 @@ function initOverview() {
   html += '<div class="nw-row" style="font-weight:700;border-top:2px solid #083D4C;margin-top:4px"><span>Net Worth</span><span class="nw-amount" style="color:#083D4C;font-size:16px">' + fmtShort(nw.net_worth) + '</span></div>';
   bk.innerHTML = html;
 
+  // YTD Waterfall
+  const inc = nw.ytd_income;
+  const exp = nw.ytd_expenses;
+  const reTotal = (inc['RE Rahba Hill']||0) + (inc['RE Other Oman']||0) + (inc['UAE RE']||0) + (inc['UK RE']||0);
+  const wfItems = [
+    { label: 'RE',       val:  reTotal,                   type: 'inc' },
+    { label: 'WeMeet',   val:  inc['WeMeet']||0,          type: 'inc' },
+    { label: 'Salary',   val:  inc['Salary']||0,          type: 'inc' },
+    { label: 'Household',val: -(exp['Household']||0),     type: 'exp' },
+    { label: 'Education',val: -(exp['Education']||0),     type: 'exp' },
+    { label: 'Travel',   val: -(exp['Travel']||0),        type: 'exp' },
+    { label: 'Personal', val: -(exp['Personal & Other']||0), type: 'exp' },
+    { label: 'Charity',  val: -(exp['Charity']||0),       type: 'exp' },
+  ];
+  let running = 0;
+  const wfData = [], wfColors = [];
+  wfItems.forEach(item => {
+    const start = running;
+    running += item.val;
+    wfData.push([Math.min(start, running), Math.max(start, running)]);
+    wfColors.push(item.type === 'inc' ? '#2B9D92CC' : '#ef4444CC');
+  });
+  // Final net bar from 0
+  const netVal = nw.ytd_pnl || 0;
+  wfData.push([Math.min(0, netVal), Math.max(0, netVal)]);
+  wfColors.push(netVal >= 0 ? '#083D4CCC' : '#F59E0BCC');
+  const wfLabels = [...wfItems.map(i => i.label), 'Net P&L'];
+
+  new Chart(document.getElementById('chart-waterfall'), {
+    type: 'bar',
+    data: {
+      labels: wfLabels,
+      datasets: [{ data: wfData, backgroundColor: wfColors, borderRadius: 4, borderSkipped: false }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => {
+          const [lo, hi] = ctx.raw;
+          const v = hi - lo;
+          return (v >= 0 ? '+' : '') + fmtShort(v);
+        }}}
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 35 } },
+        y: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 }, callback: v => fmtShort(v) } }
+      }
+    }
+  });
+
   // Cashflow chart
   const cf = D.cashflow;
   const actuals = cf.actual.slice(0, 3);
