@@ -1,6 +1,7 @@
-const CACHE = 'musab-finance-v9';  // v9 — YTD waterfall + 2dp K format
+const CACHE = 'musab-finance-v10';  // v10 — variance bridge waterfall with data labels
 const ASSETS = ['./index.html', './app.js', './data.js',
-  'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js'];
+  'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
+  'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js'];
 
 self.addEventListener('install', e => {
   self.skipWaiting();
