@@ -11,6 +11,46 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>Musab Finance</title>
 <style>
+  /* PASSWORD GATE */
+  #lock-screen {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--primary);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 40px 32px;
+    padding-top: calc(40px + env(safe-area-inset-top));
+  }
+  #lock-screen.hidden { display: none; }
+  .lock-logo { font-size: 52px; margin-bottom: 16px; }
+  .lock-title { color: white; font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+  .lock-sub { color: rgba(255,255,255,0.55); font-size: 14px; margin-bottom: 40px; }
+  .lock-input-wrap { position: relative; width: 100%; max-width: 300px; }
+  .lock-input {
+    width: 100%; padding: 15px 48px 15px 18px;
+    background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 14px; font-size: 18px; color: white; outline: none;
+    letter-spacing: 0.08em;
+  }
+  .lock-input::placeholder { color: rgba(255,255,255,0.35); letter-spacing: 0; }
+  .lock-input:focus { border-color: #2B9D92; background: rgba(255,255,255,0.15); }
+  .lock-eye {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: rgba(255,255,255,0.5);
+    font-size: 18px; cursor: pointer; padding: 4px;
+  }
+  .lock-btn {
+    margin-top: 16px; width: 100%; max-width: 300px;
+    background: #2B9D92; border: none; border-radius: 14px;
+    color: white; font-size: 16px; font-weight: 700;
+    padding: 15px; cursor: pointer; letter-spacing: 0.03em;
+  }
+  .lock-btn:active { background: #028090; }
+  .lock-error {
+    color: #fca5a5; font-size: 13px; margin-top: 12px;
+    min-height: 20px; text-align: center;
+  }
+  .lock-hint { color: rgba(255,255,255,0.3); font-size: 11px; margin-top: 24px; text-align: center; }
+
   :root {
     --primary: #083D4C;
     --secondary: #028090;
@@ -152,6 +192,22 @@
 </style>
 </head>
 <body>
+<!-- PASSWORD GATE -->
+<div id="lock-screen">
+  <div class="lock-logo">🔒</div>
+  <div class="lock-title">Musab Finance</div>
+  <div class="lock-sub">Enter your password to continue</div>
+  <div class="lock-input-wrap">
+    <input class="lock-input" id="lock-input" type="password"
+      placeholder="Password" autocomplete="current-password"
+      onkeydown="if(event.key==='Enter')unlock()">
+    <button class="lock-eye" id="lock-eye" onclick="toggleEye()" tabindex="-1">👁</button>
+  </div>
+  <button class="lock-btn" onclick="unlock()">Unlock</button>
+  <div class="lock-error" id="lock-error"></div>
+  <div class="lock-hint">Session stays unlocked for 24 hours</div>
+</div>
+
 <div id="app">
   <div class="header">
     <div class="header-top">

@@ -1,5 +1,61 @@
 /* ── MUSAB FINANCE PWA ──────────────────────────────────────────────────────── */
 
+// ── PASSWORD GATE ─────────────────────────────────────────────────────────────
+const PWD_HASH = '3c7573458a12e7b6eb4966aa505d0c0c3fb9f9f5808adafe437ab623fdf80969';
+const AUTH_KEY = 'mf_auth';
+const AUTH_TTL = 24 * 60 * 60 * 1000; // 24 hours
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+function isAuthenticated() {
+  try {
+    const raw = localStorage.getItem(AUTH_KEY);
+    if (!raw) return false;
+    const { ts } = JSON.parse(raw);
+    return (Date.now() - ts) < AUTH_TTL;
+  } catch { return false; }
+}
+
+async function unlock() {
+  const input = document.getElementById('lock-input');
+  const errEl = document.getElementById('lock-error');
+  const pwd = input.value;
+  if (!pwd) { errEl.textContent = 'Please enter your password.'; return; }
+  errEl.textContent = '';
+  const hash = await sha256(pwd);
+  if (hash === PWD_HASH) {
+    localStorage.setItem(AUTH_KEY, JSON.stringify({ ts: Date.now() }));
+    document.getElementById('lock-screen').classList.add('hidden');
+    initApp();
+  } else {
+    errEl.textContent = 'Incorrect password. Please try again.';
+    input.value = '';
+    input.focus();
+    input.style.borderColor = '#f87171';
+    setTimeout(() => { input.style.borderColor = ''; }, 1500);
+  }
+}
+
+function toggleEye() {
+  const inp = document.getElementById('lock-input');
+  const eye = document.getElementById('lock-eye');
+  if (inp.type === 'password') { inp.type = 'text'; eye.textContent = '🙈'; }
+  else { inp.type = 'password'; eye.textContent = '👁'; }
+}
+
+// Check on load — skip lock screen if still within 24h session
+if (isAuthenticated()) {
+  document.getElementById('lock-screen').classList.add('hidden');
+  // initApp called after data.js + scripts fully load
+  window.addEventListener('DOMContentLoaded', () => initApp(), { once: true });
+} else {
+  document.getElementById('lock-input').focus();
+}
+
+
 const D = window.FINANCE_DATA;
 const COLORS = ['#083D4C','#028090','#2B9D92','#17564F','#5B9BD5','#8B5CF6','#F59E0B'];
 const CAT_COLORS = {
@@ -285,10 +341,15 @@ function renderSearch() {
 }
 
 // ── INIT ─────────────────────────────────────────────────────────────────────
+function initApp() {
+  initOverview();
+  initCC();
+  initSearch();
+}
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 
-initOverview();
-initCC();
-initSearch();
+// Only auto-init if lock screen already hidden (authenticated session)
+if (isAuthenticated()) initApp();
