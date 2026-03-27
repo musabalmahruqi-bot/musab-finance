@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 27 Mar 2026 20:08
+// Generated: 27 Mar 2026 20:37
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "27 Mar 2026",
@@ -15,23 +15,24 @@ window.FINANCE_DATA = {
       "Nashwa Fund": 150736
     },
     "total_assets": 3154355.4268421056,
+    "total_liabilities_nw": 0,
     "net_worth": 3003619.4268421056,
     "ytd_income": {
       "RE Rahba Hill": 11226,
       "RE Other Oman": 1868,
       "UAE RE": 0,
-      "UK RE": 2400,
+      "UK RE": 1185,
       "WeMeet": 1400,
       "Salary": 24000,
-      "Total": 40894
+      "Total": 39679
     },
     "ytd_expenses": {
       "Household": 7500,
       "Education": 13352,
       "Travel": 8408.58,
-      "Personal & Other": 10291.28157894739,
+      "Personal & Other": 9076.28157894739,
       "Charity": 9406,
-      "Total": 48957.86157894739
+      "Total": 47742.86157894739
     },
     "ytd_pnl": -8063.8615789473915
   },
@@ -51,23 +52,23 @@ window.FINANCE_DATA = {
       "Dec"
     ],
     "budget": [
-      -12056,
-      10280,
-      5439,
-      8592.0,
-      8593.0,
-      8593.0,
-      10926.0,
-      10926.0,
-      10926.0,
-      10926.0,
-      10926.0,
-      10926.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "actual": [
-      -14698.0,
-      113.0,
-      7035.0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -95,8 +96,8 @@ window.FINANCE_DATA = {
     "income_actual": [
       12780,
       15939,
-      12175,
-      0,
+      10960,
+      1215,
       0,
       0,
       0,
@@ -107,23 +108,23 @@ window.FINANCE_DATA = {
       0
     ],
     "expense_budget": [
-      -24852,
-      -6500,
-      -6500,
-      -8672.0,
-      -8671.0,
-      -8671.0,
-      -6338.0,
-      -6338.0,
-      -6338.0,
-      -6338.0,
-      -6338.0,
-      -6338.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "expense_actual": [
-      -27478.0,
-      -15826.0,
-      -5140.0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -138,15 +139,15 @@ window.FINANCE_DATA = {
       295984.0,
       269029.0,
       276065.0,
-      276065.0,
-      276065.0,
-      276065.0,
-      276065.0,
-      276065.0,
-      276065.0,
-      276065.0,
-      276065.0,
-      276065.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "monthly_breakdown": [
       {
@@ -191,8 +192,8 @@ window.FINANCE_DATA = {
             "actual": -2000.0
           },
           "CC Balance \u0394": {
-            "budget": 0.0,
-            "actual": 942.64
+            "budget": -24852.0,
+            "actual": -27477.56
           }
         }
       },
@@ -230,8 +231,8 @@ window.FINANCE_DATA = {
             "actual": -4336.0
           },
           "CC Balance \u0394": {
-            "budget": 0.0,
-            "actual": -3026.96
+            "budget": -6500.0,
+            "actual": -15825.96
           }
         }
       },
@@ -240,7 +241,7 @@ window.FINANCE_DATA = {
         "income": {
           "RE Cashflow": {
             "budget": 3239.0,
-            "actual": 4175.0
+            "actual": 2960.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -258,7 +259,7 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": -1807.64
+            "actual": -592.64
           },
           "Personal Travel": {
             "budget": -1000.0,
@@ -269,8 +270,8 @@ window.FINANCE_DATA = {
             "actual": -3070.0
           },
           "CC Balance \u0394": {
-            "budget": 0.0,
-            "actual": 2598.89
+            "budget": -6500.0,
+            "actual": -3924.77
           }
         }
       },
@@ -279,7 +280,7 @@ window.FINANCE_DATA = {
         "income": {
           "RE Cashflow": {
             "budget": 8486.49,
-            "actual": 0.0
+            "actual": 1215.0
           },
           "WeMeet": {
             "budget": 777.78,
@@ -304,11 +305,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -8807.44,
             "actual": 0.0
           }
         }
@@ -343,11 +348,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -8806.44,
             "actual": 0.0
           }
         }
@@ -382,11 +391,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -8806.44,
             "actual": 0.0
           }
         }
@@ -417,11 +430,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -452,11 +469,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -487,11 +508,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -522,11 +547,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -557,11 +586,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -592,11 +625,15 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1811.41,
+            "budget": -1946.41,
             "actual": 0.0
           },
           "Personal Travel": {
             "budget": -930.91,
+            "actual": 0.0
+          },
+          "CC Balance \u0394": {
+            "budget": -6473.44,
             "actual": 0.0
           }
         }
@@ -2072,6 +2109,97 @@ window.FINANCE_DATA = {
         "omr": 4.74,
         "dr_cr": "DR",
         "month": "Mar 2026"
+      }
+    ]
+  },
+  "ytd_waterfall": {
+    "title": "YTD Jan \u2014 Mar 2026",
+    "start_balance": {
+      "budget": 288302.0,
+      "actual": 288302.0
+    },
+    "end_balance": {
+      "budget": 274468.48,
+      "actual": 276064.71,
+      "note": "Asset sales offset higher spending"
+    },
+    "items": [
+      {
+        "label": "RE Cashflow",
+        "type": "income",
+        "budget": 15415.0,
+        "actual": 14279.0,
+        "note": "Almouj delays reduced Q1 RE income"
+      },
+      {
+        "label": "WeMeet",
+        "type": "income",
+        "budget": 2100.0,
+        "actual": 1400.0,
+        "note": "Mar payment pending"
+      },
+      {
+        "label": "Salary",
+        "type": "income",
+        "budget": 24000.0,
+        "actual": 24000.0,
+        "note": "On track"
+      },
+      {
+        "label": "Household",
+        "type": "expense",
+        "budget": -7500.0,
+        "actual": -7500.0,
+        "note": "Fixed OMR 2,500/mo"
+      },
+      {
+        "label": "Kids Education",
+        "type": "expense",
+        "budget": -13352.0,
+        "actual": -13352.0,
+        "note": "Jan one-off; 0 until Aug 2026"
+      },
+      {
+        "label": "Personal",
+        "type": "expense",
+        "budget": -9000.0,
+        "actual": -9076.28,
+        "note": "Residual plug from bank recon"
+      },
+      {
+        "label": "Personal Travel",
+        "type": "expense",
+        "budget": -3000.0,
+        "actual": -3621.77,
+        "note": "Higher Jan/Feb CC travel spend"
+      },
+      {
+        "label": "Family Travel",
+        "type": "expense",
+        "budget": -5000.0,
+        "actual": -4786.81,
+        "note": "Jan trip + small Feb charge"
+      },
+      {
+        "label": "Charity",
+        "type": "expense",
+        "budget": 0.0,
+        "actual": -9406.0,
+        "note": ""
+      },
+      {
+        "label": "Sale of Assets",
+        "type": "other",
+        "budget": 0.0,
+        "actual": 17599.0,
+        "note": "Tilal + other asset sales"
+      },
+      {
+        "label": "Investments",
+        "type": "other",
+        "budget": -22667.0,
+        "actual": -22287.0,
+        "note": "Malik Bahla"
       }
     ]
   },
