@@ -259,12 +259,11 @@
         <div class="card-title">YTD Cash Waterfall</div>
         <div id="ytd-wf-kpis" class="ytd-wf-kpis"></div>
         <div class="wf-legend">
-          <div class="wf-leg"><div class="wf-leg-dot" style="background:#2B9D92"></div>Income</div>
-          <div class="wf-leg"><div class="wf-leg-dot" style="background:#ef4444"></div>Expenses</div>
-          <div class="wf-leg"><div class="wf-leg-dot" style="background:#8B5CF6"></div>Other</div>
-          <div class="wf-leg"><div class="wf-leg-dot" style="background:#F59E0B"></div>Net</div>
+          <div class="wf-leg"><div class="wf-leg-dot" style="background:#083D4C"></div>Budget / Actual</div>
+          <div class="wf-leg"><div class="wf-leg-dot" style="background:#2B9D92"></div>Favourable</div>
+          <div class="wf-leg"><div class="wf-leg-dot" style="background:#ef4444"></div>Unfavourable</div>
         </div>
-        <div class="chart-wrap"><canvas id="chart-ytd-waterfall"></canvas></div>
+        <div class="chart-wrap-tall" style="height:230px"><canvas id="chart-ytd-waterfall"></canvas></div>
         <div id="ytd-notes" class="ytd-notes"></div>
       </div>
     </div>
@@ -360,6 +359,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>
