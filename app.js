@@ -98,11 +98,11 @@ function fmt(n) {
   if (n == null) return '—';
   return 'OMR ' + Math.round(Number(n)).toLocaleString('en-GB');
 }
-function fmtN(n) {   // fmt without prefix
+function fmtN(n) {   // fmt without prefix, 2dp for K values
   if (n == null) return '—';
   const abs = Math.abs(n);
   if (abs >= 1000000) return (n/1000000).toFixed(1) + 'M';
-  if (abs >= 1000)    return Math.round(n/1000) + 'K';
+  if (abs >= 1000)    return (n/1000).toFixed(2) + 'K';
   return Math.round(n).toLocaleString('en-GB');
 }
 function fmtShort(n) {
@@ -141,7 +141,7 @@ let monthTrendChart = null;
 function initMonth() {
   renderMonthPills();
   renderMonthContent();
-  renderMonthTrendChart();
+  renderYTDWaterfall();
 }
 
 function renderMonthPills() {
@@ -321,42 +321,89 @@ function renderMonthContent() {
     </div>`;
 }
 
-function renderMonthTrendChart() {
-  const cf = D.cashflow;
+function renderYTDWaterfall() {
+  const yw = D.ytd_waterfall;
+  if (!yw) return;
+
+  const SHORT = {
+    'RE Cashflow':'RE', 'WeMeet':'WeMeet', 'Salary':'Salary',
+    'Household':'House.', 'Kids Education':'Edu', 'Personal':'Personal',
+    'Personal Travel':'P.Travel', 'Family Travel':'F.Travel',
+    'Charity':'Charity', 'Sale of Assets':'Assets', 'Investments':'Invest.'
+  };
+  const TYPE_COLORS = { income:'#2B9D92CC', expense:'#ef4444CC', other:'#8B5CF6CC' };
+
+  // Build floating-bar waterfall (bridge style, starting from 0)
+  let running = 0;
+  const wfData = [], wfColors = [], wfLabels = [];
+  for (const item of yw.items) {
+    const a = item.actual;
+    wfData.push([Math.min(running, running + a), Math.max(running, running + a)]);
+    wfColors.push(TYPE_COLORS[item.type] || '#9ca3afCC');
+    wfLabels.push(SHORT[item.label] || item.label);
+    running += a;
+  }
+  // Net change bar
+  wfData.push([Math.min(0, running), Math.max(0, running)]);
+  wfColors.push(running >= 0 ? '#083D4CCC' : '#F59E0BCC');
+  wfLabels.push('Net');
+
+  // KPI row
+  const startBal = yw.start_balance.actual;
+  const endBal   = yw.end_balance.actual;
+  const netChange = endBal - startBal;
+  document.getElementById('ytd-wf-kpis').innerHTML = `
+    <div class="ytd-kpi"><div class="ytd-kpi-label">Opening</div>
+      <div class="ytd-kpi-val">${fmtShort(startBal)}</div></div>
+    <div class="ytd-kpi"><div class="ytd-kpi-label">Net Change</div>
+      <div class="ytd-kpi-val" style="color:${netChange>=0?'#166534':'#991b1b'}">${netChange>=0?'+':''}${fmtShort(netChange)}</div></div>
+    <div class="ytd-kpi"><div class="ytd-kpi-label">Closing</div>
+      <div class="ytd-kpi-val">${fmtShort(endBal)}</div></div>`;
+
+  // Chart
   if (monthTrendChart) { monthTrendChart.destroy(); monthTrendChart = null; }
-  monthTrendChart = new Chart(document.getElementById('chart-month-trend'), {
+  monthTrendChart = new Chart(document.getElementById('chart-ytd-waterfall'), {
     type: 'bar',
     data: {
-      labels: cf.months,
-      datasets: [
-        {
-          label: 'Actual Net',
-          data: cf.actual.map((v, i) => (cf.income_actual[i] !== 0 || cf.expense_actual[i] !== 0) ? v : null),
-          backgroundColor: cf.actual.map(v => v >= 0 ? '#2B9D92CC' : '#ef4444CC'),
-          borderRadius: 5, order: 1
-        },
-        {
-          label: 'Budget Net',
-          data: cf.budget,
-          backgroundColor: 'rgba(8,61,76,0.10)',
-          borderColor: '#083D4C',
-          borderWidth: 1.5,
-          borderRadius: 5, order: 2
-        }
-      ]
+      labels: wfLabels,
+      datasets: [{ data: wfData, backgroundColor: wfColors, borderRadius: 4, borderSkipped: false }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
-        legend: { display: true, position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
-        tooltip: { callbacks: { label: ctx => (ctx.raw != null ? fmtShort(ctx.raw) : '—') } }
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => {
+          const idx = ctx.dataIndex;
+          const item = yw.items[idx];
+          const [lo, hi] = ctx.raw;
+          const v = hi - lo;
+          return (item ? (item.actual < 0 ? '' : '+') : (running >= 0 ? '+' : '')) + fmtShort(v);
+        }}}
       },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 40 } },
         y: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 }, callback: v => fmtShort(v) } }
       }
     }
   });
+
+  // Explanation notes
+  const noted = yw.items.filter(it => it.note && it.note.trim() && it.note !== 'None');
+  if (noted.length) {
+    let html = '';
+    for (const item of noted) {
+      const v = item.actual - item.budget;
+      const good = item.type === 'expense' ? (Math.abs(item.actual) <= Math.abs(item.budget)) : (item.actual >= item.budget);
+      const vc = Math.abs(Math.round(v)) < 1 ? 'var(--muted)' : (good ? '#166534' : '#991b1b');
+      const vs = Math.abs(Math.round(v)) < 1 ? '─' : ((v > 0 ? '+' : '') + fmtN(v));
+      html += `<div class="ytd-note-row">
+        <span class="ytd-note-item">${item.label}</span>
+        <span class="ytd-note-var" style="color:${vc}">${vs}</span>
+        <span class="ytd-note-text">${item.note}</span>
+      </div>`;
+    }
+    document.getElementById('ytd-notes').innerHTML = html;
+  }
 }
 
 
