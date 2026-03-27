@@ -195,31 +195,65 @@ function renderMonthContent() {
       </div>
     </div>`;
 
+  // ── Bullet points from line-item breakdown ───────────────────────────────
+  const bd = (D.cashflow.monthly_breakdown || [])[i] || {};
+
+  function makeBullets(items, isExpense) {
+    const THRESHOLD = 100; // min OMR variance to show
+    let html = '';
+    for (const [label, v] of Object.entries(items)) {
+      const b = isExpense ? Math.abs(v.budget) : v.budget;
+      const a = isExpense ? Math.abs(v.actual) : v.actual;
+      if (b === 0 && a === 0) continue;
+      const variance = isExpense ? (a - b) : (a - b); // positive = overspent for exp, over-earned for inc
+      if (Math.abs(variance) < THRESHOLD) continue;
+
+      let color, text;
+      if (isExpense) {
+        if (b === 0 && a > 0) {
+          color = '#ef4444'; text = `<span>${label}</span> — ${fmtShort(a)} unplanned`;
+        } else if (variance > 0) {
+          color = '#ef4444'; text = `<span>${label}</span> — ${fmtShort(variance)} over budget`;
+        } else {
+          color = '#16a34a'; text = `<span>${label}</span> — ${fmtShort(Math.abs(variance))} under budget`;
+        }
+      } else {
+        if (a === 0 && b > 0) {
+          color = '#ef4444'; text = `<span>${label}</span> — not received (budget ${fmtShort(b)})`;
+        } else if (variance < 0) {
+          color = '#ef4444'; text = `<span>${label}</span> — ${fmtShort(Math.abs(variance))} below budget`;
+        } else {
+          color = '#16a34a'; text = `<span>${label}</span> — ${fmtShort(variance)} above budget`;
+        }
+      }
+      html += `<div class="g-bullet">
+        <div class="g-bullet-dot" style="background:${color}"></div>
+        <div class="g-bullet-text">${text}</div>
+      </div>`;
+    }
+    return html ? `<div class="g-bullets">${html}</div>` : '';
+  }
+
   // ── Gauge helper ─────────────────────────────────────────────────────────
-  function makeGauge({ name, actual, budget, color, overIsGood }) {
+  function makeGauge({ name, actual, budget, color, overIsGood, bullets }) {
     const rawPct  = budget > 0 ? Math.round(actual / budget * 100) : 0;
     const fillPct = Math.min(rawPct, 100);
     const variance = actual - budget;
 
-    // Is the result good?
     const good = overIsGood ? (actual >= budget) : (actual <= budget);
     const badgeBg  = good ? '#dcfce7' : '#fee2e2';
     const badgeFg  = good ? '#166534' : '#991b1b';
     const varColor = good ? '#166534' : '#991b1b';
 
-    // Badge label
     let badgeText;
     if (!overIsGood) {
-      // Expenses — lower % is better
       badgeText = rawPct + '% used' + (good ? ' ✓' : ' ✗');
     } else {
       badgeText = rawPct + '%' + (good ? ' ✓' : ' ✗');
     }
 
-    // Variance text
     let varText;
     if (!overIsGood) {
-      // Expenses
       varText = variance <= 0
         ? fmtShort(Math.abs(variance)) + ' saved'
         : '+' + fmtShort(variance) + ' over budget';
@@ -243,12 +277,13 @@ function renderMonthContent() {
             <div class="g-variance" style="color:${varColor}">${varText}</div>
           </div>
         </div>
+        ${bullets || ''}
       </div>`;
   }
 
   document.getElementById('month-gauges').innerHTML =
-    makeGauge({ name: 'Income',   actual: incAct, budget: incBud, color: '#2B9D92', overIsGood: true  }) +
-    makeGauge({ name: 'Expenses', actual: expAct, budget: expBud, color: '#ef4444', overIsGood: false }) +
+    makeGauge({ name: 'Income',   actual: incAct, budget: incBud, color: '#2B9D92', overIsGood: true,  bullets: makeBullets(bd.income   || {}, false) }) +
+    makeGauge({ name: 'Expenses', actual: expAct, budget: expBud, color: '#ef4444', overIsGood: false, bullets: makeBullets(bd.expenses || {}, true)  }) +
     `<div class="gauge-item" style="padding-bottom:4px">
       <div class="g-header">
         <span class="g-name">Net Cash Flow</span>

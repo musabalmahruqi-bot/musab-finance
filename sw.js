@@ -1,4 +1,4 @@
-const CACHE = 'musab-finance-v5';  // v5 — no decimals
+const CACHE = 'musab-finance-v6';  // v6 — bullet point explanations
 const ASSETS = ['./index.html', './app.js', './data.js',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js'];
 

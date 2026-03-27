@@ -149,6 +149,1043 @@ window.FINANCE_DATA = {
       276065.0,
       276065.0
     ]
+,
+  "monthly_breakdown": [
+  {
+    "month": "Jan",
+    "income": {
+      "RE Cashflow": {
+        "budget": 4096.0,
+        "actual": 4080.0
+      },
+      "WeMeet": {
+        "budget": 700.0,
+        "actual": 700.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 8000.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": -2500.0
+      },
+      "Kids Education": {
+        "budget": -13352.0,
+        "actual": -13352.0
+      },
+      "Family Travel": {
+        "budget": -5000.0,
+        "actual": -4786.81
+      },
+      "Personal & Charity": {
+        "budget": -3000.0,
+        "actual": -4308.82
+      },
+      "Personal Travel": {
+        "budget": -1000.0,
+        "actual": -1472.58
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": -2000.0
+      }
+    }
+  },
+  {
+    "month": "Feb",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8080.0,
+        "actual": 7239.0
+      },
+      "WeMeet": {
+        "budget": 700.0,
+        "actual": 700.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 8000.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": -2500.0
+      },
+      "Kids Education": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -3000.0,
+        "actual": -4174.83
+      },
+      "Personal Travel": {
+        "budget": -1000.0,
+        "actual": -1788.17
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": -4336.0
+      }
+    }
+  },
+  {
+    "month": "Mar",
+    "income": {
+      "RE Cashflow": {
+        "budget": 3239.0,
+        "actual": 4175.0
+      },
+      "WeMeet": {
+        "budget": 700.0,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 8000.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": -2500.0
+      },
+      "Kids Education": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -3000.0,
+        "actual": -1807.64
+      },
+      "Personal Travel": {
+        "budget": -1000.0,
+        "actual": -361.02
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": -3070.0
+      }
+    }
+  },
+  {
+    "month": "Apr",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": -2334.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "May",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": -2333.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "Jun",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": -2333.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "Jul",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "Aug",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "Sep",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "Oct",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "Nov",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  },
+  {
+    "month": "Dec",
+    "income": {
+      "RE Cashflow": {
+        "budget": 8486.49,
+        "actual": 0.0
+      },
+      "WeMeet": {
+        "budget": 777.78,
+        "actual": 0.0
+      },
+      "Salary": {
+        "budget": 8000.0,
+        "actual": 0.0
+      }
+    },
+    "expenses": {
+      "Household": {
+        "budget": -2500.0,
+        "actual": 0.0
+      },
+      "Kids Education": {
+        "budget": -1096.11,
+        "actual": 0.0
+      },
+      "Family Travel": {
+        "budget": 0.0,
+        "actual": 0.0
+      },
+      "Personal & Charity": {
+        "budget": -1811.41,
+        "actual": 0.0
+      },
+      "Personal Travel": {
+        "budget": -930.91,
+        "actual": 0.0
+      },
+      "Charity": {
+        "budget": 0.0,
+        "actual": 0.0
+      }
+    }
+  }
+],
+    "monthly_breakdown": [
+    {
+        "month": "Jan",
+        "income": {
+            "RE Cashflow": {
+                "budget": 4096.0,
+                "actual": 4080.0
+            },
+            "WeMeet": {
+                "budget": 700.0,
+                "actual": 700.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 8000.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": -2500.0
+            },
+            "Kids Education": {
+                "budget": -13352.0,
+                "actual": -13352.0
+            },
+            "Family Travel": {
+                "budget": -5000.0,
+                "actual": -4786.81
+            },
+            "Personal & Charity": {
+                "budget": -3000.0,
+                "actual": -4308.82
+            },
+            "Personal Travel": {
+                "budget": -1000.0,
+                "actual": -1472.58
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": -2000.0
+            }
+        }
+    },
+    {
+        "month": "Feb",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8080.0,
+                "actual": 7239.0
+            },
+            "WeMeet": {
+                "budget": 700.0,
+                "actual": 700.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 8000.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": -2500.0
+            },
+            "Kids Education": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -3000.0,
+                "actual": -4174.83
+            },
+            "Personal Travel": {
+                "budget": -1000.0,
+                "actual": -1788.17
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": -4336.0
+            }
+        }
+    },
+    {
+        "month": "Mar",
+        "income": {
+            "RE Cashflow": {
+                "budget": 3239.0,
+                "actual": 4175.0
+            },
+            "WeMeet": {
+                "budget": 700.0,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 8000.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": -2500.0
+            },
+            "Kids Education": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -3000.0,
+                "actual": -1807.64
+            },
+            "Personal Travel": {
+                "budget": -1000.0,
+                "actual": -361.02
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": -3070.0
+            }
+        }
+    },
+    {
+        "month": "Apr",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": -2334.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "May",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": -2333.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "Jun",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": -2333.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "Jul",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "Aug",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "Sep",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "Oct",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "Nov",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    },
+    {
+        "month": "Dec",
+        "income": {
+            "RE Cashflow": {
+                "budget": 8486.49,
+                "actual": 0.0
+            },
+            "WeMeet": {
+                "budget": 777.78,
+                "actual": 0.0
+            },
+            "Salary": {
+                "budget": 8000.0,
+                "actual": 0.0
+            }
+        },
+        "expenses": {
+            "Household": {
+                "budget": -2500.0,
+                "actual": 0.0
+            },
+            "Kids Education": {
+                "budget": -1096.11,
+                "actual": 0.0
+            },
+            "Family Travel": {
+                "budget": 0.0,
+                "actual": 0.0
+            },
+            "Personal & Charity": {
+                "budget": -1811.41,
+                "actual": 0.0
+            },
+            "Personal Travel": {
+                "budget": -930.91,
+                "actual": 0.0
+            },
+            "Charity": {
+                "budget": 0.0,
+                "actual": 0.0
+            }
+        }
+    }
+]
   },
   "cc": {
     "current_balance": 1207.93,
