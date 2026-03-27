@@ -1,0 +1,294 @@
+/* ── MUSAB FINANCE PWA ──────────────────────────────────────────────────────── */
+
+const D = window.FINANCE_DATA;
+const COLORS = ['#083D4C','#028090','#2B9D92','#17564F','#5B9BD5','#8B5CF6','#F59E0B'];
+const CAT_COLORS = {
+  'Personal Expenses': '#028090',
+  'Personal Travel':   '#2B9D92',
+  'Family Travel':     '#8B5CF6',
+  'Payment':           '#10b981',
+};
+const SUBCAT_COLORS = {
+  'Dining & Food':           '#F59E0B',
+  'Travel & Transport':      '#06B6D4',
+  'Shopping & Retail':       '#A855F7',
+  'Subscriptions & Digital': '#10B981',
+  'Accommodation':           '#F97316',
+  'Other / Fees':            '#9CA3AF',
+  'Payment':                 '#10b981',
+};
+const SUBCAT_ICONS = {
+  'Dining & Food':           '🍽',
+  'Travel & Transport':      '✈️',
+  'Shopping & Retail':       '🛍',
+  'Subscriptions & Digital': '📱',
+  'Accommodation':           '🏨',
+  'Other / Fees':            '📋',
+  'Payment':                 '💰',
+};
+
+// ── UTILS ────────────────────────────────────────────────────────────────────
+function fmt(n, d=3) {
+  if (n == null) return '—';
+  return 'OMR ' + Number(n).toLocaleString('en-GB', {minimumFractionDigits:d, maximumFractionDigits:d});
+}
+function fmtShort(n) {
+  if (!n) return '—';
+  const abs = Math.abs(n);
+  if (abs >= 1000000) return 'OMR ' + (n/1000000).toFixed(2) + 'M';
+  if (abs >= 1000)    return 'OMR ' + (n/1000).toFixed(0) + 'K';
+  return 'OMR ' + n.toFixed(0);
+}
+function pct(part, total) {
+  if (!total) return '0%';
+  return Math.round(Math.abs(part/total)*100) + '%';
+}
+
+// ── NAVIGATION ───────────────────────────────────────────────────────────────
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  document.getElementById('content').scrollTop = 0;
+}
+
+// ── HEADER DATE ──────────────────────────────────────────────────────────────
+document.getElementById('hdr-date').textContent =
+  new Date().toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
+
+// ── OVERVIEW TAB ─────────────────────────────────────────────────────────────
+function initOverview() {
+  const nw = D.net_worth;
+
+  document.getElementById('kpi-nw').textContent = fmtShort(nw.net_worth);
+  document.getElementById('kpi-nw-date').textContent = 'as at ' + nw.as_at;
+  document.getElementById('kpi-assets').textContent = fmtShort(nw.total_assets);
+  document.getElementById('kpi-cc').textContent = fmt(D.cc.current_balance);
+  document.getElementById('kpi-ytd-inc').textContent = fmtShort(nw.ytd_income.Total);
+  document.getElementById('kpi-ytd-exp').textContent = fmtShort(Math.abs(nw.ytd_expenses.Total));
+
+  const pnl = nw.ytd_pnl;
+  const pnlEl = document.getElementById('kpi-ytd-pnl');
+  pnlEl.textContent = (pnl >= 0 ? '▲ ' : '▼ ') + fmtShort(Math.abs(pnl)) + ' P&L';
+  pnlEl.style.color = pnl >= 0 ? '#166534' : '#991b1b';
+
+  // Net Worth breakdown
+  const bk = document.getElementById('nw-breakdown');
+  let html = '<div class="nw-section-head">Assets</div>';
+  for (const [k,v] of Object.entries(nw.assets)) {
+    if (v) html += `<div class="nw-row"><span class="nw-label">${k}</span><span class="nw-amount">${fmtShort(v)}</span></div>`;
+  }
+  html += '<div class="nw-row" style="font-weight:700"><span>Total Assets</span><span class="nw-amount">' + fmtShort(nw.total_assets) + '</span></div>';
+  if (Object.keys(nw.liabilities).length) {
+    html += '<div class="nw-section-head" style="margin-top:8px">Liabilities</div>';
+    for (const [k,v] of Object.entries(nw.liabilities)) {
+      if (v) html += `<div class="nw-row"><span class="nw-label">${k}</span><span class="nw-amount" style="color:#991b1b">${fmtShort(v)}</span></div>`;
+    }
+  }
+  html += '<div class="nw-row" style="font-weight:700;border-top:2px solid #083D4C;margin-top:4px"><span>Net Worth</span><span class="nw-amount" style="color:#083D4C;font-size:16px">' + fmtShort(nw.net_worth) + '</span></div>';
+  bk.innerHTML = html;
+
+  // Cashflow chart
+  const cf = D.cashflow;
+  const actuals = cf.actual.slice(0, 3);
+  const budgets = cf.budget.slice(0, 12);
+  const labels = cf.months;
+
+  new Chart(document.getElementById('chart-cashflow'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Actual', data: cf.actual.map((v,i) => i < 3 ? v : null),
+          backgroundColor: cf.actual.map(v => v >= 0 ? '#2B9D92CC' : '#ef4444CC'), borderRadius: 5 },
+        { label: 'Budget', data: budgets,
+          backgroundColor: 'rgba(8,61,76,0.12)', borderColor: '#083D4C', borderWidth: 1.5,
+          borderRadius: 5, type: 'bar' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: true, position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
+        tooltip: { callbacks: { label: ctx => fmtShort(ctx.raw) } } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        y: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 }, callback: v => fmtShort(v) } }
+      }
+    }
+  });
+
+  // Cashflow table (Jan-Mar actuals + Apr-Jun budget)
+  const tbl = document.getElementById('cf-table');
+  const showMonths = cf.months.slice(0, 6);
+  let thtml = '<thead><tr><th>Month</th>';
+  showMonths.forEach((m,i) => {
+    thtml += `<th style="color:${i<3?'#083D4C':'#9ca3af'}">${m}</th>`;
+  });
+  thtml += '</tr></thead><tbody>';
+  const rows = [
+    { label:'Income',   vals: cf.income_actual.slice(0,3).concat(cf.income_budget.slice(3,6)), isActual:[1,1,1,0,0,0] },
+    { label:'Expenses', vals: cf.expense_actual.slice(0,3).concat(cf.expense_budget.slice(3,6)), isActual:[1,1,1,0,0,0] },
+    { label:'Net',      vals: cf.actual.slice(0,3).concat(cf.budget.slice(3,6)), isActual:[1,1,1,0,0,0], bold:true },
+  ];
+  rows.forEach(row => {
+    thtml += `<tr><td${row.bold?' style="font-weight:700"':''}>${row.label}</td>`;
+    row.vals.forEach((v,i) => {
+      const cls = v > 0 ? 'positive' : v < 0 ? 'negative' : '';
+      const style = row.isActual[i] ? '' : ' style="color:#9ca3af"';
+      thtml += `<td class="${cls}"${style}>${fmtShort(v)}</td>`;
+    });
+    thtml += '</tr>';
+  });
+  thtml += '</tbody>';
+  tbl.innerHTML = thtml;
+}
+
+// ── CREDIT CARD TAB ───────────────────────────────────────────────────────────
+let activeMonth = 'All';
+function initCC() {
+  const cc = D.cc;
+  document.getElementById('cc-balance').textContent = fmt(cc.current_balance);
+
+  // Monthly closing balance chart
+  new Chart(document.getElementById('chart-cc-monthly'), {
+    type: 'bar',
+    data: {
+      labels: cc.monthly_summary.map(m => m.month),
+      datasets: [{
+        label: 'Closing Balance',
+        data: cc.monthly_summary.map(m => m.closing),
+        backgroundColor: '#028090CC',
+        borderRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => fmt(ctx.raw) } } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        y: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 }, callback: v => fmtShort(v) } }
+      }
+    }
+  });
+
+  // Category donut
+  const cats = cc.category_breakdown.filter(c => c.name !== 'Payment');
+  const total = cats.reduce((s,c) => s + c.total, 0);
+  new Chart(document.getElementById('chart-cc-donut'), {
+    type: 'doughnut',
+    data: {
+      labels: cats.map(c => c.name),
+      datasets: [{ data: cats.map(c => c.total), backgroundColor: cats.map(c => CAT_COLORS[c.name] || '#ccc'),
+        borderWidth: 2, borderColor: '#fff', hoverOffset: 4 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '65%',
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => fmt(ctx.raw) } } }
+    }
+  });
+
+  const catList = document.getElementById('cc-cat-list');
+  let chtml = '';
+  const allCats = cc.category_breakdown;
+  const grandTotal = allCats.reduce((s,c) => s + (c.name !== 'Payment' ? c.total : 0), 0);
+  allCats.forEach(c => {
+    const color = CAT_COLORS[c.name] || '#9ca3af';
+    const p = c.name !== 'Payment' ? pct(c.total, grandTotal) : '—';
+    chtml += `<div class="cat-row">
+      <div class="cat-dot" style="background:${color}"></div>
+      <div class="cat-name" style="font-size:13px">${c.name}</div>
+      <div style="text-align:right"><div class="cat-amount" style="font-size:13px">${fmtShort(c.total)}</div><div class="cat-pct">${p}</div></div>
+    </div>`;
+  });
+  catList.innerHTML = chtml;
+
+  // Month pills
+  const months = ['All', ...cc.monthly_summary.map(m => m.month)];
+  const pillsEl = document.getElementById('month-pills');
+  pillsEl.innerHTML = months.map(m =>
+    `<div class="month-pill${m===activeMonth?' active':''}" onclick="setMonth('${m}')">${m}</div>`
+  ).join('');
+
+  renderTxnList();
+}
+
+function setMonth(m) {
+  activeMonth = m;
+  document.querySelectorAll('.month-pill').forEach(p => {
+    p.classList.toggle('active', p.textContent === m);
+  });
+  renderTxnList();
+}
+
+function renderTxnList() {
+  const txns = D.cc.transactions.filter(t =>
+    activeMonth === 'All' || t.month === activeMonth
+  );
+  document.getElementById('txn-list').innerHTML = renderTxnItems(txns.slice(0, 50));
+}
+
+function renderTxnItems(txns) {
+  if (!txns.length) return '<div class="empty">No transactions found</div>';
+  return txns.map(t => {
+    const icon = SUBCAT_ICONS[t.subcat] || '💳';
+    const color = SUBCAT_COLORS[t.subcat] || '#e5e7eb';
+    const isDR = t.dr_cr === 'DR';
+    const amtSign = isDR ? '-' : '+';
+    return `<div class="txn-item">
+      <div class="txn-icon" style="background:${color}22">${icon}</div>
+      <div class="txn-body">
+        <div class="txn-desc">${t.desc}</div>
+        <div class="txn-meta">${t.subcat} · ${t.month}</div>
+      </div>
+      <div class="txn-right">
+        <div class="txn-amount ${isDR?'dr':'cr'}">${amtSign}${fmt(t.omr)}</div>
+        <div class="txn-date">${t.date}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── SEARCH TAB ────────────────────────────────────────────────────────────────
+let activeFilter = 'All';
+const FILTERS = ['All', 'Personal Expenses', 'Personal Travel', 'Family Travel', 'Payment'];
+
+function initSearch() {
+  const chips = document.getElementById('filter-chips');
+  chips.innerHTML = FILTERS.map(f =>
+    `<div class="chip${f===activeFilter?' active':''}" onclick="setFilter('${f}')">${f}</div>`
+  ).join('');
+  renderSearch();
+}
+
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.textContent === f));
+  renderSearch();
+}
+
+function renderSearch() {
+  const query = (document.getElementById('search-input').value || '').toLowerCase().trim();
+  let txns = D.cc.transactions;
+  if (activeFilter !== 'All') txns = txns.filter(t => t.cat === activeFilter);
+  if (query) txns = txns.filter(t =>
+    t.desc.toLowerCase().includes(query) ||
+    t.subcat.toLowerCase().includes(query) ||
+    t.date.includes(query) ||
+    t.month.toLowerCase().includes(query)
+  );
+  const countEl = document.getElementById('search-count');
+  countEl.textContent = txns.length + ' transaction' + (txns.length !== 1 ? 's' : '') +
+    (query ? ` matching "${query}"` : '');
+  document.getElementById('search-results').innerHTML = renderTxnItems(txns.slice(0, 100));
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+initOverview();
+initCC();
+initSearch();
