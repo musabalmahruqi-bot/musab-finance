@@ -1,4 +1,4 @@
-const CACHE = 'musab-finance-v3';
+const CACHE = 'musab-finance-v4';  // v4 — redesigned tabs
 const ASSETS = ['./index.html', './app.js', './data.js',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js'];
 
@@ -20,6 +20,7 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     fetch(e.request)
       .then(resp => {
+        // Update cache with fresh copy
         const clone = resp.clone();
         caches.open(CACHE).then(c => c.put(e.request, clone));
         return resp;

@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>Musab Finance</title>
 <style>
-  /* PASSWORD GATE */
+  /* ── PASSWORD GATE ─────────────────────────────────────────────────────── */
   #lock-screen {
     position: fixed; inset: 0; z-index: 9999;
     background: var(--primary);
@@ -45,12 +45,10 @@
     padding: 15px; cursor: pointer; letter-spacing: 0.03em;
   }
   .lock-btn:active { background: #028090; }
-  .lock-error {
-    color: #fca5a5; font-size: 13px; margin-top: 12px;
-    min-height: 20px; text-align: center;
-  }
+  .lock-error { color: #fca5a5; font-size: 13px; margin-top: 12px; min-height: 20px; text-align: center; }
   .lock-hint { color: rgba(255,255,255,0.3); font-size: 11px; margin-top: 24px; text-align: center; }
 
+  /* ── TOKENS ─────────────────────────────────────────────────────────────── */
   :root {
     --primary: #083D4C;
     --secondary: #028090;
@@ -60,37 +58,31 @@
     --text: #1a1a1a;
     --muted: #6b7280;
     --border: #e5e7eb;
-    --dr: #fee2e2;
-    --cr: #dcfce7;
-    --dr-text: #991b1b;
-    --cr-text: #166534;
+    --dr: #fee2e2; --cr: #dcfce7;
+    --dr-text: #991b1b; --cr-text: #166534;
     --safe-top: env(safe-area-inset-top, 0px);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body { height: 100%; width: 100%; overflow: hidden; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: var(--primary); color: var(--text); }
+  html, body { height: 100%; width: 100%; overflow: hidden; font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; background: var(--primary); color: var(--text); }
 
-  /* LAYOUT */
-  #app { display: flex; flex-direction: column; height: 100%; width: 100%; overflow: hidden; background: var(--light); position: relative; }
-
-  /* HEADER */
+  /* ── LAYOUT ──────────────────────────────────────────────────────────────── */
+  #app { display: flex; flex-direction: column; height: 100%; width: 100%; overflow: hidden; background: var(--light); }
   .header { background: var(--primary); color: white; padding: 12px 20px 14px; padding-top: calc(12px + var(--safe-top)); }
   .header-top { display: flex; justify-content: space-between; align-items: center; }
   .header-title { font-size: 11px; opacity: 0.7; letter-spacing: 0.08em; text-transform: uppercase; }
   .header-name { font-size: 20px; font-weight: 700; margin-top: 2px; }
   .header-date { font-size: 11px; opacity: 0.6; margin-top: 2px; }
   .refresh-btn { background: rgba(255,255,255,0.15); border: none; color: white; width: 34px; height: 34px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-
-  /* CONTENT */
   .content { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 0 0 80px; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; }
   .tab-pane { display: none; padding: 16px; overflow-x: hidden; }
   .tab-pane.active { display: block; }
 
-  /* CARDS */
+  /* ── CARDS ───────────────────────────────────────────────────────────────── */
   .card { background: white; border-radius: 14px; padding: 16px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-  .card-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 10px; }
+  .card-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
 
-  /* KPI CARDS */
+  /* ── KPI GRID ────────────────────────────────────────────────────────────── */
   .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
   .kpi-card { background: white; border-radius: 14px; padding: 14px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
   .kpi-card.full { grid-column: 1/-1; }
@@ -98,35 +90,48 @@
   .kpi-value { font-size: 22px; font-weight: 700; color: var(--primary); margin-top: 2px; line-height: 1.1; }
   .kpi-value.lg { font-size: 28px; }
   .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
-  .kpi-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; margin-top: 4px; }
-  .badge-green { background: #dcfce7; color: #166534; }
-  .badge-red { background: #fee2e2; color: #991b1b; }
-  .badge-blue { background: #dbeafe; color: #1e40af; }
-  .kpi-bar-wrap { background: var(--light); border-radius: 4px; height: 4px; margin-top: 8px; overflow: hidden; }
-  .kpi-bar { background: var(--accent); height: 100%; border-radius: 4px; }
 
-  /* NET WORTH BREAKDOWN */
-  .nw-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  /* ── MONTH HERO ──────────────────────────────────────────────────────────── */
+  .month-hero {
+    background: linear-gradient(135deg, #083D4C 0%, #028090 100%);
+    color: white; border-radius: 16px; padding: 20px;
+    margin-bottom: 14px;
+  }
+  .mh-meta { font-size: 10px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .mh-name { font-size: 22px; font-weight: 800; margin-bottom: 18px; }
+  .mh-cols { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .mh-col-label { font-size: 10px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 3px; }
+  .mh-net-val { font-size: 26px; font-weight: 800; line-height: 1; }
+  .mh-net-vs { font-size: 12px; opacity: 0.65; margin-top: 4px; }
+  .mh-var-val { font-size: 22px; font-weight: 800; line-height: 1; text-align: right; }
+  .mh-var-sub { font-size: 11px; opacity: 0.65; margin-top: 4px; text-align: right; }
+
+  /* ── GAUGES ──────────────────────────────────────────────────────────────── */
+  .gauge-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .gauge-item:last-child { border-bottom: none; padding-bottom: 4px; }
+  .g-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; }
+  .g-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+  .g-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+  .g-track { background: #e5e7eb; border-radius: 6px; height: 9px; overflow: hidden; margin-bottom: 9px; }
+  .g-fill { height: 100%; border-radius: 6px; transition: width 0.7s cubic-bezier(.4,0,.2,1); }
+  .g-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+  .g-actual { font-size: 17px; font-weight: 700; color: var(--primary); }
+  .g-right { text-align: right; }
+  .g-budget { font-size: 12px; color: var(--muted); }
+  .g-variance { font-size: 12px; font-weight: 600; margin-top: 1px; }
+
+  /* ── NET WORTH BREAKDOWN ─────────────────────────────────────────────────── */
+  .nw-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
   .nw-row:last-child { border-bottom: none; }
   .nw-label { color: var(--text); }
   .nw-amount { font-weight: 600; color: var(--primary); }
   .nw-section-head { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); padding: 8px 0 4px; }
 
-  /* CHART CONTAINER */
+  /* ── CHARTS ──────────────────────────────────────────────────────────────── */
   .chart-wrap { position: relative; height: 180px; }
   .chart-wrap-tall { position: relative; height: 220px; }
 
-  /* CASHFLOW TABLE */
-  .cf-table { width: 100%; font-size: 13px; border-collapse: collapse; }
-  .cf-table th { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); padding: 6px 8px; text-align: right; border-bottom: 1px solid var(--border); }
-  .cf-table th:first-child { text-align: left; }
-  .cf-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: right; }
-  .cf-table td:first-child { text-align: left; font-weight: 500; }
-  .cf-table tr:last-child td { border-bottom: none; }
-  .positive { color: #166534; }
-  .negative { color: #991b1b; }
-
-  /* CC SPEND */
+  /* ── CC SPEND ────────────────────────────────────────────────────────────── */
   .cat-row { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); gap: 10px; }
   .cat-row:last-child { border-bottom: none; }
   .cat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
@@ -134,12 +139,12 @@
   .cat-amount { font-size: 14px; font-weight: 600; color: var(--primary); }
   .cat-pct { font-size: 11px; color: var(--muted); min-width: 38px; text-align: right; }
 
-  /* MONTH SELECTOR */
+  /* ── MONTH PILLS ─────────────────────────────────────────────────────────── */
   .month-pills { display: flex; gap: 8px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
   .month-pill { flex-shrink: 0; background: white; border: 1.5px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; color: var(--muted); }
   .month-pill.active { background: var(--primary); border-color: var(--primary); color: white; }
 
-  /* TRANSACTIONS */
+  /* ── TRANSACTIONS ────────────────────────────────────────────────────────── */
   .txn-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
   .txn-item:last-child { border-bottom: none; }
   .txn-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
@@ -152,7 +157,7 @@
   .txn-amount.cr { color: var(--cr-text); }
   .txn-date { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
-  /* SEARCH */
+  /* ── SEARCH ──────────────────────────────────────────────────────────────── */
   .search-wrap { position: sticky; top: 0; background: var(--light); padding: 12px 16px 8px; z-index: 10; margin: -16px -16px 0; }
   .search-input { width: 100%; background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 10px 14px 10px 38px; font-size: 15px; outline: none; color: var(--text); }
   .search-input:focus { border-color: var(--accent); }
@@ -163,36 +168,31 @@
   .chip.active { background: var(--secondary); border-color: var(--secondary); color: white; }
   .search-count { font-size: 12px; color: var(--muted); padding: 8px 0 4px; }
 
-  /* TRAVEL */
-  .trip-card { background: white; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-  .trip-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-  .trip-name { font-size: 15px; font-weight: 700; color: var(--primary); }
-  .trip-dest { font-size: 12px; color: var(--muted); margin-top: 1px; }
-  .trip-status { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
-  .trip-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-  .trip-stat { background: var(--light); border-radius: 8px; padding: 8px 10px; }
-  .trip-stat-label { font-size: 10px; color: var(--muted); font-weight: 500; }
-  .trip-stat-value { font-size: 15px; font-weight: 700; color: var(--primary); margin-top: 1px; }
-  .trip-prog-wrap { margin-top: 10px; }
-  .trip-prog-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
-  .trip-prog-bar { background: var(--light); border-radius: 4px; height: 5px; overflow: hidden; }
-  .trip-prog-fill { height: 100%; border-radius: 4px; transition: width 0.4s; }
-
-  /* BOTTOM NAV */
-  .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; background: white; border-top: 1px solid var(--border); display: flex; padding-bottom: var(--safe-bottom); z-index: 100; }
-  .nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px 4px; cursor: pointer; border: none; background: none; color: var(--muted); font-size: 10px; font-weight: 500; gap: 3px; }
+  /* ── BOTTOM NAV ──────────────────────────────────────────────────────────── */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: white; border-top: 1px solid var(--border);
+    display: flex; padding-bottom: var(--safe-bottom); z-index: 100;
+  }
+  .nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 7px 2px; cursor: pointer; border: none; background: none; color: var(--muted); font-size: 9px; font-weight: 500; gap: 2px; }
   .nav-btn.active { color: var(--primary); }
-  .nav-icon { font-size: 22px; }
+  .nav-icon { font-size: 20px; }
 
-  /* SECTION DIVIDER */
-  .section-head { font-size: 13px; font-weight: 700; color: var(--primary); margin: 4px 0 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-
-  /* EMPTY STATE */
+  /* ── MISC ────────────────────────────────────────────────────────────────── */
+  .positive { color: #166534; }
+  .negative { color: #991b1b; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
   .empty { text-align: center; padding: 40px 20px; color: var(--muted); font-size: 14px; }
+  .ytd-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); }
+  .ytd-row:last-child { border-bottom: none; font-weight: 700; }
+  .ytd-label { font-size: 14px; color: var(--text); }
+  .ytd-val { font-size: 15px; font-weight: 600; }
 </style>
 </head>
 <body>
-<!-- PASSWORD GATE -->
+
+<!-- ── PASSWORD GATE ──────────────────────────────────────────────────────── -->
 <div id="lock-screen">
   <div class="lock-logo">🔒</div>
   <div class="lock-title">Musab Finance</div>
@@ -221,8 +221,23 @@
   </div>
 
   <div class="content" id="content">
-    <!-- TAB: OVERVIEW -->
-    <div class="tab-pane active" id="tab-overview">
+
+    <!-- ── TAB: MONTH (OPENING) ──────────────────────────────────────────── -->
+    <div class="tab-pane active" id="tab-month">
+      <div class="month-pills" id="cf-month-pills"></div>
+      <div class="month-hero" id="month-hero"></div>
+      <div class="card">
+        <div class="card-title">Actual vs Budget</div>
+        <div id="month-gauges"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Full Year Cashflow — Net Actual vs Budget</div>
+        <div class="chart-wrap"><canvas id="chart-month-trend"></canvas></div>
+      </div>
+    </div>
+
+    <!-- ── TAB: NET WORTH ────────────────────────────────────────────────── -->
+    <div class="tab-pane" id="tab-networth">
       <div class="kpi-grid">
         <div class="kpi-card full">
           <div class="kpi-label">Net Worth</div>
@@ -234,48 +249,25 @@
           <div class="kpi-value" id="kpi-assets">—</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-label">CC Balance</div>
-          <div class="kpi-value" id="kpi-cc">—</div>
-          <div class="kpi-sub">Mar 2026</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">YTD Income</div>
-          <div class="kpi-value" id="kpi-ytd-inc">—</div>
-          <div class="kpi-sub">Jan – Mar 2026</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">YTD Expenses</div>
-          <div class="kpi-value" id="kpi-ytd-exp">—</div>
-          <div class="kpi-sub" id="kpi-ytd-pnl">—</div>
+          <div class="kpi-label">Nashwa Fund</div>
+          <div class="kpi-value" id="kpi-liab" style="color:#991b1b">—</div>
         </div>
       </div>
-
-      <!-- Net Worth Breakdown -->
       <div class="card">
-        <div class="card-title">Net Worth Breakdown</div>
+        <div class="card-title">Asset Breakdown</div>
         <div id="nw-breakdown"></div>
       </div>
-
-      <!-- YTD Waterfall -->
       <div class="card">
-        <div class="card-title">YTD Income &amp; Expenses — Jan–Mar 2026</div>
+        <div class="card-title">YTD P&amp;L Summary</div>
+        <div id="ytd-summary"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">YTD Income &amp; Expenses — Waterfall</div>
         <div class="chart-wrap-tall"><canvas id="chart-waterfall"></canvas></div>
-      </div>
-
-      <!-- Cashflow Chart -->
-      <div class="card">
-        <div class="card-title">Monthly Cashflow 2026 — Net</div>
-        <div class="chart-wrap"><canvas id="chart-cashflow"></canvas></div>
-      </div>
-
-      <!-- Cashflow Table -->
-      <div class="card">
-        <div class="card-title">Budget vs Actual</div>
-        <table class="cf-table" id="cf-table"></table>
       </div>
     </div>
 
-    <!-- TAB: CREDIT CARD -->
+    <!-- ── TAB: CREDIT CARD ──────────────────────────────────────────────── -->
     <div class="tab-pane" id="tab-cc">
       <div class="kpi-grid">
         <div class="kpi-card full">
@@ -284,14 +276,10 @@
           <div class="kpi-sub">Mar 2026 · statement open</div>
         </div>
       </div>
-
-      <!-- Monthly balances -->
       <div class="card">
         <div class="card-title">Monthly Closing Balance</div>
         <div class="chart-wrap"><canvas id="chart-cc-monthly"></canvas></div>
       </div>
-
-      <!-- Category Donut -->
       <div class="card">
         <div class="card-title">Spend by Category — All Months</div>
         <div style="display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center">
@@ -299,8 +287,6 @@
           <div id="cc-cat-list"></div>
         </div>
       </div>
-
-      <!-- Month selector + recent transactions -->
       <div class="card">
         <div class="card-title">Transactions</div>
         <div class="month-pills" id="month-pills"></div>
@@ -308,23 +294,28 @@
       </div>
     </div>
 
-    <!-- TAB: SEARCH -->
+    <!-- ── TAB: SEARCH ───────────────────────────────────────────────────── -->
     <div class="tab-pane" id="tab-search">
       <div class="search-wrap">
         <div class="search-inner">
           <span class="search-icon">🔍</span>
-          <input class="search-input" id="search-input" type="search" placeholder="Search transactions…" oninput="renderSearch()">
+          <input class="search-input" id="search-input" type="search"
+            placeholder="Search transactions…" oninput="renderSearch()">
         </div>
       </div>
       <div class="filter-chips" id="filter-chips"></div>
       <div class="search-count" id="search-count"></div>
       <div id="search-results"></div>
     </div>
-  </div>
+
+  </div><!-- /content -->
 
   <nav class="bottom-nav">
-    <button class="nav-btn active" onclick="showTab('overview',this)">
-      <span class="nav-icon">📊</span>Overview
+    <button class="nav-btn active" onclick="showTab('month',this)">
+      <span class="nav-icon">📅</span>Month
+    </button>
+    <button class="nav-btn" onclick="showTab('networth',this)">
+      <span class="nav-icon">🏦</span>Worth
     </button>
     <button class="nav-btn" onclick="showTab('cc',this)">
       <span class="nav-icon">💳</span>Card
