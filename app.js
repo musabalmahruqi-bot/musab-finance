@@ -325,80 +325,120 @@ function renderYTDWaterfall() {
   const yw = D.ytd_waterfall;
   if (!yw) return;
 
+  // Income + expense items only (exclude 'other': sale of assets, investments)
+  const cfItems = yw.items.filter(it => it.type !== 'other');
+
+  // Budget and actual net cashflow (sum of all cf items)
+  const budgetNet = cfItems.reduce((s, it) => s + it.budget, 0);
+  const actualNet = cfItems.reduce((s, it) => s + it.actual, 0);
+  const totalVar  = actualNet - budgetNet;
+
+  // Variance items — show all with non-zero variance, each contributes to the bridge
+  const varItems = cfItems.filter(it => Math.abs(Math.round(it.actual - it.budget)) > 0);
+
   const SHORT = {
-    'RE Cashflow':'RE', 'WeMeet':'WeMeet', 'Salary':'Salary',
-    'Household':'House.', 'Kids Education':'Edu', 'Personal':'Personal',
-    'Personal Travel':'P.Travel', 'Family Travel':'F.Travel',
-    'Charity':'Charity', 'Sale of Assets':'Assets', 'Investments':'Invest.'
+    'RE Cashflow':'RE Cashflow','WeMeet':'WeMeet','Salary':'Salary',
+    'Household':'Household','Kids Education':'Kids Edu','Personal':'Personal',
+    'Personal Travel':'Pers. Travel','Family Travel':'Fam. Travel','Charity':'Charity'
   };
-  const TYPE_COLORS = { income:'#2B9D92CC', expense:'#ef4444CC', other:'#8B5CF6CC' };
 
-  // Build floating-bar waterfall (bridge style, starting from 0)
-  let running = 0;
-  const wfData = [], wfColors = [], wfLabels = [];
-  for (const item of yw.items) {
-    const a = item.actual;
-    wfData.push([Math.min(running, running + a), Math.max(running, running + a)]);
-    wfColors.push(TYPE_COLORS[item.type] || '#9ca3afCC');
+  // ── Build bridge waterfall ─────────────────────────────────────────────────
+  const wfLabels = [], wfData = [], wfColors = [], labelVals = [];
+
+  // Bar 0: Budget Net Cashflow
+  wfLabels.push('Budget');
+  wfData.push([Math.min(0, budgetNet), Math.max(0, budgetNet)]);
+  wfColors.push('#083D4CCC');
+  labelVals.push(budgetNet);
+
+  // Variance bars
+  let running = budgetNet;
+  for (const item of varItems) {
+    const v = item.actual - item.budget;
     wfLabels.push(SHORT[item.label] || item.label);
-    running += a;
+    wfData.push([Math.min(running, running + v), Math.max(running, running + v)]);
+    // cash-flow direction: positive variance = more cash = favourable
+    wfColors.push(v >= 0 ? '#2B9D92CC' : '#ef4444CC');
+    labelVals.push(v);
+    running += v;
   }
-  // Net change bar
-  wfData.push([Math.min(0, running), Math.max(0, running)]);
-  wfColors.push(running >= 0 ? '#083D4CCC' : '#F59E0BCC');
-  wfLabels.push('Net');
 
-  // KPI row
-  const startBal = yw.start_balance.actual;
-  const endBal   = yw.end_balance.actual;
-  const netChange = endBal - startBal;
+  // Final bar: Actual Net Cashflow
+  wfLabels.push('Actual');
+  wfData.push([Math.min(0, actualNet), Math.max(0, actualNet)]);
+  wfColors.push(actualNet >= 0 ? '#083D4CCC' : '#F59E0BCC');
+  labelVals.push(actualNet);
+
+  // ── KPI row ───────────────────────────────────────────────────────────────
   document.getElementById('ytd-wf-kpis').innerHTML = `
-    <div class="ytd-kpi"><div class="ytd-kpi-label">Opening</div>
-      <div class="ytd-kpi-val">${fmtShort(startBal)}</div></div>
-    <div class="ytd-kpi"><div class="ytd-kpi-label">Net Change</div>
-      <div class="ytd-kpi-val" style="color:${netChange>=0?'#166534':'#991b1b'}">${netChange>=0?'+':''}${fmtShort(netChange)}</div></div>
-    <div class="ytd-kpi"><div class="ytd-kpi-label">Closing</div>
-      <div class="ytd-kpi-val">${fmtShort(endBal)}</div></div>`;
+    <div class="ytd-kpi"><div class="ytd-kpi-label">Budget Net</div>
+      <div class="ytd-kpi-val" style="color:${budgetNet>=0?'#166534':'#991b1b'}">${budgetNet>=0?'+':''}${fmtShort(budgetNet)}</div></div>
+    <div class="ytd-kpi"><div class="ytd-kpi-label">Variance</div>
+      <div class="ytd-kpi-val" style="color:${totalVar>=0?'#166534':'#991b1b'}">${totalVar>=0?'+':''}${fmtShort(totalVar)}</div></div>
+    <div class="ytd-kpi"><div class="ytd-kpi-label">Actual Net</div>
+      <div class="ytd-kpi-val" style="color:${actualNet>=0?'#166534':'#991b1b'}">${actualNet>=0?'+':''}${fmtShort(actualNet)}</div></div>`;
 
-  // Chart
+  // ── Chart ─────────────────────────────────────────────────────────────────
   if (monthTrendChart) { monthTrendChart.destroy(); monthTrendChart = null; }
   monthTrendChart = new Chart(document.getElementById('chart-ytd-waterfall'), {
     type: 'bar',
+    plugins: [typeof ChartDataLabels !== 'undefined' ? ChartDataLabels : {}],
     data: {
       labels: wfLabels,
       datasets: [{ data: wfData, backgroundColor: wfColors, borderRadius: 4, borderSkipped: false }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
+      layout: { padding: { top: 22, bottom: 4 } },
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => {
-          const idx = ctx.dataIndex;
-          const item = yw.items[idx];
-          const [lo, hi] = ctx.raw;
-          const v = hi - lo;
-          return (item ? (item.actual < 0 ? '' : '+') : (running >= 0 ? '+' : '')) + fmtShort(v);
-        }}}
+        datalabels: {
+          display: true,
+          color: ctx => {
+            const v = labelVals[ctx.dataIndex];
+            if (ctx.dataIndex === 0 || ctx.dataIndex === wfLabels.length - 1) return '#083D4C';
+            return v >= 0 ? '#166534' : '#991b1b';
+          },
+          font: { size: 10, weight: '700' },
+          formatter: (val, ctx) => {
+            const v = labelVals[ctx.dataIndex];
+            const isEndBar = ctx.dataIndex === 0 || ctx.dataIndex === wfLabels.length - 1;
+            return (isEndBar ? (v >= 0 ? '+' : '') : (v >= 0 ? '+' : '')) + fmtN(v);
+          },
+          // For positive-value bars: label above (anchor=end); for negative: label below (anchor=start)
+          anchor: (ctx) => labelVals[ctx.dataIndex] >= 0 ? 'end' : 'start',
+          align:  (ctx) => labelVals[ctx.dataIndex] >= 0 ? 'top'  : 'bottom',
+          clamp: true,
+          offset: 2
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const v = labelVals[ctx.dataIndex];
+              const isEndBar = ctx.dataIndex === 0 || ctx.dataIndex === wfLabels.length - 1;
+              return isEndBar ? 'Net: ' + fmtShort(v) : 'Variance: ' + (v >= 0 ? '+' : '') + fmtShort(v);
+            }
+          }
+        }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 40 } },
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 35 } },
         y: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 }, callback: v => fmtShort(v) } }
       }
     }
   });
 
-  // Explanation notes
-  const noted = yw.items.filter(it => it.note && it.note.trim() && it.note !== 'None');
+  // ── Explanation notes ─────────────────────────────────────────────────────
+  const noted = varItems.filter(it => it.note && it.note.trim() && it.note !== 'None');
   if (noted.length) {
     let html = '';
     for (const item of noted) {
       const v = item.actual - item.budget;
-      const good = item.type === 'expense' ? (Math.abs(item.actual) <= Math.abs(item.budget)) : (item.actual >= item.budget);
-      const vc = Math.abs(Math.round(v)) < 1 ? 'var(--muted)' : (good ? '#166534' : '#991b1b');
-      const vs = Math.abs(Math.round(v)) < 1 ? '─' : ((v > 0 ? '+' : '') + fmtN(v));
+      const isGood = v >= 0; // positive variance = more cash = good
+      const vc = isGood ? '#166534' : '#991b1b';
       html += `<div class="ytd-note-row">
         <span class="ytd-note-item">${item.label}</span>
-        <span class="ytd-note-var" style="color:${vc}">${vs}</span>
+        <span class="ytd-note-var" style="color:${vc}">${(v >= 0 ? '+' : '') + fmtN(v)}</span>
         <span class="ytd-note-text">${item.note}</span>
       </div>`;
     }
