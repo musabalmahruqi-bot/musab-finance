@@ -455,11 +455,11 @@ function initNetWorth() {
   const nw = D.net_worth;
 
   // KPIs
-  document.getElementById('kpi-nw').textContent    = fmtShort(nw.net_worth);
+  document.getElementById('kpi-nw').textContent      = fmtShort(nw.net_worth);
   document.getElementById('kpi-nw-date').textContent = 'as at ' + nw.as_at;
-  document.getElementById('kpi-assets').textContent = fmtShort(nw.total_assets);
-  const liabVal = Object.values(nw.liabilities).reduce((s,v) => s + (v||0), 0);
-  document.getElementById('kpi-liab').textContent   = fmtShort(liabVal);
+  document.getElementById('kpi-assets').textContent  = fmtShort(nw.total_assets);
+  const nashwaFund = nw.liabilities['Nashwa Fund'] || 0;
+  document.getElementById('kpi-liab').textContent    = fmtShort(nashwaFund);
 
   // Asset breakdown
   let html = '<div class="nw-section-head">Assets</div>';
@@ -488,84 +488,50 @@ function initNetWorth() {
   </div>`;
   document.getElementById('nw-breakdown').innerHTML = html;
 
-  // YTD Summary
-  const incTotal = nw.ytd_income.Total || 0;
-  const expTotal = Math.abs(nw.ytd_expenses.Total || 0);
-  const pnl      = nw.ytd_pnl || 0;
-  const pnlGood  = pnl >= 0;
-  let ytdHtml = `
-    <div class="ytd-row">
-      <span class="ytd-label">Total Income (YTD)</span>
-      <span class="ytd-val positive">${fmtShort(incTotal)}</span>
-    </div>
-    <div class="ytd-row">
-      <span class="ytd-label">Total Expenses (YTD)</span>
-      <span class="ytd-val negative">${fmtShort(expTotal)}</span>
-    </div>`;
-  // Income line items
-  for (const [k, v] of Object.entries(nw.ytd_income)) {
-    if (k === 'Total' || !v) continue;
-    ytdHtml += `<div class="ytd-row" style="padding-left:12px">
-      <span class="ytd-label" style="font-size:13px;color:var(--muted)">${k}</span>
-      <span class="ytd-val" style="font-size:13px;color:#166534">${fmtShort(v)}</span>
-    </div>`;
-  }
-  ytdHtml += `<div class="ytd-row">
-    <span class="ytd-label">Net P&amp;L (YTD)</span>
-    <span class="ytd-val" style="color:${pnlGood?'#166534':'#991b1b'}">${pnl >= 0 ? '+' : ''}${fmtShort(pnl)}</span>
-  </div>`;
-  document.getElementById('ytd-summary').innerHTML = ytdHtml;
+  // YTD Income vs Budget gauges
+  const ivb = nw.ytd_income_vs_budget || [];
+  if (ivb.length) {
+    const totalBud = ivb.reduce((s, x) => s + x.budget, 0);
+    const totalAct = ivb.reduce((s, x) => s + x.actual, 0);
+    const totalVar = totalAct - totalBud;
+    const totalGood = totalAct >= totalBud;
 
-  // YTD Waterfall
-  const inc = nw.ytd_income;
-  const exp = nw.ytd_expenses;
-  const reTotal = (inc['RE Rahba Hill']||0) + (inc['RE Other Oman']||0) + (inc['UAE RE']||0) + (inc['UK RE']||0);
-  const wfItems = [
-    { label: 'RE',        val:  reTotal,                      type: 'inc' },
-    { label: 'WeMeet',    val:  inc['WeMeet']||0,             type: 'inc' },
-    { label: 'Salary',    val:  inc['Salary']||0,             type: 'inc' },
-    { label: 'Household', val: -(exp['Household']||0),        type: 'exp' },
-    { label: 'Education', val: -(exp['Education']||0),        type: 'exp' },
-    { label: 'Travel',    val: -(exp['Travel']||0),           type: 'exp' },
-    { label: 'Personal',  val: -(exp['Personal & Other']||0), type: 'exp' },
-    { label: 'Charity',   val: -(exp['Charity']||0),          type: 'exp' },
-  ].filter(x => x.val !== 0);
-
-  let running = 0;
-  const wfData = [], wfColors = [];
-  wfItems.forEach(item => {
-    const start = running;
-    running += item.val;
-    wfData.push([Math.min(start, running), Math.max(start, running)]);
-    wfColors.push(item.type === 'inc' ? '#2B9D92CC' : '#ef4444CC');
-  });
-  const netVal = nw.ytd_pnl || 0;
-  wfData.push([Math.min(0, netVal), Math.max(0, netVal)]);
-  wfColors.push(netVal >= 0 ? '#083D4CCC' : '#F59E0BCC');
-  const wfLabels = [...wfItems.map(i => i.label), 'Net P&L'];
-
-  new Chart(document.getElementById('chart-waterfall'), {
-    type: 'bar',
-    data: {
-      labels: wfLabels,
-      datasets: [{ data: wfData, backgroundColor: wfColors, borderRadius: 4, borderSkipped: false }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: ctx => {
-          const [lo, hi] = ctx.raw;
-          const v = hi - lo;
-          return (v >= 0 ? '+' : '') + fmtShort(v);
-        }}}
-      },
-      scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 35 } },
-        y: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 }, callback: v => fmtShort(v) } }
-      }
+    let ghtml = '';
+    for (const src of ivb) {
+      const rawPct  = src.budget > 0 ? Math.round(src.actual / src.budget * 100) : 0;
+      const fillPct = Math.min(rawPct, 100);
+      const varVal  = src.actual - src.budget;
+      const good    = varVal >= 0;
+      const badgeBg = good ? '#dcfce7' : '#fee2e2';
+      const badgeFg = good ? '#166534' : '#991b1b';
+      const varColor = good ? '#166534' : '#991b1b';
+      const barColor = src.type === 're' ? '#083D4C' : '#2B9D92';
+      ghtml += `
+        <div class="inc-gauge-item">
+          <div class="g-header">
+            <span class="g-name">${src.label}</span>
+            <span class="g-badge" style="background:${badgeBg};color:${badgeFg}">${rawPct}%${good ? ' ✓' : ' ✗'}</span>
+          </div>
+          <div class="g-track">
+            <div class="g-fill" style="width:${fillPct}%;background:${rawPct > 100 ? '#ef4444' : barColor}"></div>
+          </div>
+          <div class="g-footer">
+            <span class="g-actual">${fmt(src.actual)}</span>
+            <div class="g-right">
+              <div class="g-budget">Budget: ${fmt(src.budget)}</div>
+              <div class="g-variance" style="color:${varColor}">${(varVal >= 0 ? '+' : '') + fmtShort(varVal)}</div>
+            </div>
+          </div>
+        </div>`;
     }
-  });
+    // Total row
+    const tvColor = totalGood ? '#166534' : '#991b1b';
+    ghtml += `<div class="inc-gauge-total">
+      <span>Total YTD Income</span>
+      <span>${fmt(totalAct)} <span style="color:${tvColor};font-size:12px">(${totalGood ? '+' : ''}${fmtShort(totalVar)} vs budget)</span></span>
+    </div>`;
+    document.getElementById('ytd-income-gauges').innerHTML = ghtml;
+  }
 }
 
 
