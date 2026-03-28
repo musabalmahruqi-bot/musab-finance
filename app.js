@@ -458,8 +458,7 @@ function initNetWorth() {
   document.getElementById('kpi-nw').textContent      = fmtShort(nw.net_worth);
   document.getElementById('kpi-nw-date').textContent = 'as at ' + nw.as_at;
   document.getElementById('kpi-assets').textContent  = fmtShort(nw.total_assets);
-  const nashwaFund = nw.liabilities['Nashwa Fund'] || 0;
-  document.getElementById('kpi-liab').textContent    = fmtShort(nashwaFund);
+
 
   // Asset donut chart — expand Real Estate into Oman/Dubai/Manchester
   const ASSET_COLORS = {
