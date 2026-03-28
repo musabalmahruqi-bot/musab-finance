@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 28 Mar 2026 07:55
+// Generated: 28 Mar 2026 08:07
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "28 Mar 2026",
@@ -7,15 +7,15 @@ window.FINANCE_DATA = {
       "Cash in Bank": 276064.7134210526,
       "WeMeet (20%)": 45017,
       "XOM (8.4%)": 189106,
-      "Real Estate": 2476339,
+      "Real Estate": 2570000.0,
       "Shares & Bonds": 0,
       "Receivable": 42500
     },
     "liabilities": {
       "Nashwa Fund": 150736
     },
-    "total_assets": 3029026.713421053,
-    "net_worth": 2878290.713421053,
+    "total_assets": 3122687.71,
+    "net_worth": 2971951.71,
     "ytd_income": {
       "RE Rahba Hill": 11226,
       "RE Other Oman": 1868,
@@ -34,9 +34,10 @@ window.FINANCE_DATA = {
       "Total": 47742.86157894739
     },
     "re_breakdown": {
-      "RE Oman": 1992346.0,
-      "RE Dubai": 301300.0,
-      "RE Manchester": 182693.0
+      "RE Oman": 990000.0,
+      "RE Dubai": 455000.0,
+      "RE Manchester": 125000.0,
+      "Private Homes": 1000000
     },
     "ytd_pnl": -8063.8615789473915,
     "ytd_income_vs_budget": [
