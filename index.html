@@ -222,6 +222,19 @@
   /* ── YTD Income vs Budget gauges ────────────────────────────────────────── */
   .inc-gauge-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
   .inc-gauge-item:last-of-type { border-bottom: none; }
+  /* ── RE app link button ─────────────────────────────────────────────────── */
+  .re-app-link {
+    display: flex; align-items: center; gap: 14px;
+    background: white; border-radius: 14px; padding: 16px;
+    margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    text-decoration: none; color: var(--text);
+    border: 1.5px solid var(--border);
+  }
+  .re-app-link:active { background: var(--light); }
+  .re-app-link > span:first-child { font-size: 28px; }
+  .re-app-link-title { font-size: 15px; font-weight: 700; color: var(--primary); }
+  .re-app-link-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
   .inc-gauge-total {
     display: flex; justify-content: space-between; align-items: center;
     padding: 10px 0 2px; border-top: 2px solid var(--border); margin-top: 4px;
@@ -309,6 +322,14 @@
         <div class="card-title">YTD Income vs Budget</div>
         <div id="ytd-income-gauges"></div>
       </div>
+      <a href="https://musabalmahruqi-bot.github.io/musab-portfolio/" target="_blank" class="re-app-link">
+        <span>🏠</span>
+        <div>
+          <div class="re-app-link-title">RE Portfolio App</div>
+          <div class="re-app-link-sub">Full property detail, yields & occupancy</div>
+        </div>
+        <span style="color:var(--muted);font-size:18px">›</span>
+      </a>
     </div>
 
     <!-- ── TAB: CREDIT CARD ──────────────────────────────────────────────── -->
