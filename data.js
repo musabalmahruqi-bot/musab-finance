@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 28 Mar 2026 07:44
+// Generated: 28 Mar 2026 07:55
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "28 Mar 2026",
@@ -32,6 +32,11 @@ window.FINANCE_DATA = {
       "Personal & Other": 9076.28157894739,
       "Charity": 9406,
       "Total": 47742.86157894739
+    },
+    "re_breakdown": {
+      "RE Oman": 1992346.0,
+      "RE Dubai": 301300.0,
+      "RE Manchester": 182693.0
     },
     "ytd_pnl": -8063.8615789473915,
     "ytd_income_vs_budget": [
