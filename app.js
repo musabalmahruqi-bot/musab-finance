@@ -469,8 +469,9 @@ function initNetWorth() {
     'RE Oman':        '#083D4C',
     'RE Dubai':       '#F59E0B',
     'RE Manchester':  '#EF4444',
+    'Private Homes':  '#10B981',
     'Shares & Bonds': '#6366F1',
-    'Receivable':     '#10B981',
+    'Receivable':     '#06B6D4',
   };
   const assetEntries = [];
   for (const [k, v] of Object.entries(nw.assets)) {
