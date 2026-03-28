@@ -461,21 +461,31 @@ function initNetWorth() {
   const nashwaFund = nw.liabilities['Nashwa Fund'] || 0;
   document.getElementById('kpi-liab').textContent    = fmtShort(nashwaFund);
 
-  // Asset donut chart
-  const ASSET_COLORS = [
-    '#083D4C', // deep teal (Cash)
-    '#E85D04', // orange (WeMeet)
-    '#7B2D8B', // purple (XOM)
-    '#2B9D92', // mid teal (Real Estate)
-    '#F59E0B', // amber (Shares & Bonds)
-    '#10B981', // green (Receivable)
-    '#EF4444', // red
-    '#6366F1', // indigo
-  ];
-  const assetEntries = Object.entries(nw.assets).filter(([,v]) => v > 0);
+  // Asset donut chart — expand Real Estate into Oman/Dubai/Manchester
+  const ASSET_COLORS = {
+    'Cash in Bank':   '#028090',
+    'WeMeet (20%)':   '#E85D04',
+    'XOM (8.4%)':     '#7B2D8B',
+    'RE Oman':        '#083D4C',
+    'RE Dubai':       '#F59E0B',
+    'RE Manchester':  '#EF4444',
+    'Shares & Bonds': '#6366F1',
+    'Receivable':     '#10B981',
+  };
+  const assetEntries = [];
+  for (const [k, v] of Object.entries(nw.assets)) {
+    if (!v || v === 0) continue;
+    if (k === 'Real Estate' && nw.re_breakdown) {
+      for (const [rk, rv] of Object.entries(nw.re_breakdown)) {
+        if (rv > 0) assetEntries.push([rk, rv]);
+      }
+    } else {
+      assetEntries.push([k, v]);
+    }
+  }
   const assetLabels = assetEntries.map(([k]) => k);
   const assetVals   = assetEntries.map(([,v]) => v);
-  const assetColors = ASSET_COLORS.slice(0, assetEntries.length);
+  const assetColors = assetEntries.map(([k]) => ASSET_COLORS[k] || '#9CA3AF');
 
   new Chart(document.getElementById('chart-assets'), {
     type: 'doughnut',
