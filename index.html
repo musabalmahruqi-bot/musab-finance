@@ -137,8 +137,9 @@
   .nw-amount { font-weight: 600; color: var(--primary); }
   .nw-section-head { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); padding: 8px 0 4px; }
   /* Asset donut legend */
-  .nw-leg-row { display: flex; align-items: center; gap: 6px; padding: 3px 0; font-size: 12px; }
-  .nw-leg-dot { width: 9px; height: 9px; border-radius: 3px; flex-shrink: 0; }
+  .nw-leg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; }
+  .nw-leg-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; font-size: 12px; border-bottom: 1px solid #f3f4f6; }
+  .nw-leg-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
   .nw-leg-label { flex: 1; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .nw-leg-val { font-weight: 600; color: var(--primary); white-space: nowrap; }
 
@@ -300,10 +301,8 @@
       </div>
       <div class="card">
         <div class="card-title">Asset Breakdown</div>
-        <div style="display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:center">
-          <div style="position:relative;height:160px"><canvas id="chart-assets"></canvas></div>
-          <div id="nw-asset-legend"></div>
-        </div>
+        <div style="position:relative;height:260px"><canvas id="chart-assets"></canvas></div>
+        <div id="nw-asset-legend" style="margin-top:12px"></div>
         <div id="nw-liab-section"></div>
       </div>
       <div class="card">
