@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 28 Mar 2026 07:03
+// Generated: 28 Mar 2026 07:11
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "28 Mar 2026",
@@ -15,7 +15,6 @@ window.FINANCE_DATA = {
       "Nashwa Fund": 150736
     },
     "total_assets": 3154355.4268421056,
-    "total_liabilities_nw": 0,
     "net_worth": 3003619.4268421056,
     "ytd_income": {
       "RE Rahba Hill": 11226,
