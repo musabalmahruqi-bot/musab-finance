@@ -1,8 +1,8 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 27 Mar 2026 20:46
+// Generated: 28 Mar 2026 07:03
 window.FINANCE_DATA = {
   "net_worth": {
-    "as_at": "27 Mar 2026",
+    "as_at": "28 Mar 2026",
     "assets": {
       "Cash in Bank": 276064.7134210526,
       "WeMeet (20%)": 45017,
@@ -34,7 +34,33 @@ window.FINANCE_DATA = {
       "Charity": 9406,
       "Total": 47742.86157894739
     },
-    "ytd_pnl": -8063.8615789473915
+    "ytd_pnl": -8063.8615789473915,
+    "ytd_income_vs_budget": [
+      {
+        "label": "Rahba Hills",
+        "budget": 11990.0,
+        "actual": 11226.0,
+        "type": "re"
+      },
+      {
+        "label": "Other RE",
+        "budget": 3425.0,
+        "actual": 3053.0,
+        "type": "re"
+      },
+      {
+        "label": "WeMeet",
+        "budget": 2100.0,
+        "actual": 1400.0,
+        "type": "other"
+      },
+      {
+        "label": "Salary",
+        "budget": 24000.0,
+        "actual": 24000.0,
+        "type": "other"
+      }
+    ]
   },
   "cashflow": {
     "months": [
