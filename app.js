@@ -485,18 +485,17 @@ function initNetWorth() {
       datasets: [{ data: assetVals, backgroundColor: assetColors, borderWidth: 2, borderColor: '#fff', hoverOffset: 4 }]
     },
     options: {
-      responsive: true, maintainAspectRatio: false, cutout: '55%',
-      layout: { padding: 18 },
+      responsive: true, maintainAspectRatio: false, cutout: '50%',
+      layout: { padding: 24 },
       plugins: {
         legend: { display: false },
         tooltip: { callbacks: { label: ctx => fmt(ctx.raw) + '  (' + pct(ctx.raw, nw.total_assets) + ')' } },
         datalabels: {
-          display: ctx => ctx.dataset.data[ctx.dataIndex] / nw.total_assets >= 0.04,
+          display: ctx => ctx.dataset.data[ctx.dataIndex] / nw.total_assets >= 0.03,
           color: '#fff',
-          font: { size: 10, weight: '700' },
-          textShadow: true,
-          textStrokeColor: 'rgba(0,0,0,0.4)',
-          textStrokeWidth: 2,
+          font: { size: 11, weight: '700' },
+          textStrokeColor: 'rgba(0,0,0,0.5)',
+          textStrokeWidth: 3,
           formatter: (val) => {
             const p = Math.round(val / nw.total_assets * 100);
             return p + '%\n' + fmtShort(val);
@@ -508,8 +507,8 @@ function initNetWorth() {
     }
   });
 
-  // Asset legend
-  let legHtml = '';
+  // Legend below chart — two-column grid
+  let legHtml = '<div class="nw-leg-grid">';
   assetEntries.forEach(([k, v], idx) => {
     legHtml += `<div class="nw-leg-row">
       <div class="nw-leg-dot" style="background:${assetColors[idx]}"></div>
@@ -517,11 +516,7 @@ function initNetWorth() {
       <div class="nw-leg-val">${fmtShort(v)}</div>
     </div>`;
   });
-  legHtml += `<div class="nw-leg-row" style="border-top:1.5px solid var(--border);margin-top:4px;padding-top:6px;font-weight:700">
-    <div class="nw-leg-dot" style="background:transparent"></div>
-    <div class="nw-leg-label">Total</div>
-    <div class="nw-leg-val">${fmtShort(nw.total_assets)}</div>
-  </div>`;
+  legHtml += '</div>';
   document.getElementById('nw-asset-legend').innerHTML = legHtml;
 
   // Liabilities + Net Worth below chart
