@@ -1,20 +1,18 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 28 Mar 2026 23:16
+// Generated: 28 Mar 2026 23:20
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "28 Mar 2026",
     "assets": {
-      "Cash in Bank": 276064.7134210526,
+      "Cash in Bank": 125328.71342105263,
       "WeMeet (20%)": 45017,
       "XOM (8.4%)": 189106,
       "Real Estate": 2570000.0,
       "Shares & Bonds": 0,
       "Receivable": 42500
     },
-    "liabilities": {
-      "Nashwa Fund": 150736
-    },
-    "total_assets": 3122687.71,
+    "liabilities": {},
+    "total_assets": 2971951.71,
     "net_worth": 2971951.71,
     "ytd_income": {
       "RE Rahba Hill": 11226,
@@ -29,9 +27,9 @@ window.FINANCE_DATA = {
       "Household": 7500,
       "Education": 13352,
       "Travel": 8408.58,
-      "Personal & Other": 9076.28157894739,
+      "Personal & Other": 4543.281578947375,
       "Charity": 9406,
-      "Total": 47742.86157894739
+      "Total": 43209.86157894738
     },
     "re_breakdown": {
       "RE Oman": 990000.0,
@@ -39,7 +37,7 @@ window.FINANCE_DATA = {
       "RE Manchester": 125000.0,
       "Private Homes": 1000000
     },
-    "ytd_pnl": -8063.8615789473915,
+    "ytd_pnl": -3530.861578947377,
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
@@ -86,20 +84,20 @@ window.FINANCE_DATA = {
       -12056,
       10280,
       5439,
-      8457.0,
-      8458.0,
-      8458.0,
-      10791.0,
-      10791.0,
-      10791.0,
-      10791.0,
-      10791.0,
-      10791.0
+      7953.0,
+      7954.0,
+      7954.0,
+      10287.0,
+      10287.0,
+      10287.0,
+      10287.0,
+      10287.0,
+      10287.0
     ],
     "actual": [
       -14698.0,
       113.0,
-      7035.0,
+      11568.0,
       1215,
       0,
       0,
@@ -142,20 +140,20 @@ window.FINANCE_DATA = {
       -24852,
       -6500,
       -6500,
-      -8807.0,
-      -8806.0,
-      -8806.0,
-      -6473.0,
-      -6473.0,
-      -6473.0,
-      -6473.0,
-      -6473.0,
-      -6473.0
+      -9311.0,
+      -9310.0,
+      -9310.0,
+      -6977.0,
+      -6977.0,
+      -6977.0,
+      -6977.0,
+      -6977.0,
+      -6977.0
     ],
     "expense_actual": [
       -27478.0,
       -15826.0,
-      -3925.0,
+      608.0,
       0,
       0,
       0,
@@ -167,18 +165,18 @@ window.FINANCE_DATA = {
       0
     ],
     "end_balance": [
-      295984.0,
-      269029.0,
-      276065.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0
+      140715.0,
+      113760.0,
+      125329.0,
+      126544.0,
+      126544.0,
+      126544.0,
+      126544.0,
+      126544.0,
+      126544.0,
+      126544.0,
+      126544.0,
+      126544.0
     ],
     "monthly_breakdown": [
       {
@@ -282,7 +280,7 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": -592.64
+            "actual": 3940.37
           },
           "Personal Travel": {
             "budget": -1000.0,
@@ -324,7 +322,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -363,7 +361,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -402,7 +400,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -437,7 +435,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -472,7 +470,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -507,7 +505,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -542,7 +540,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -577,7 +575,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -612,7 +610,7 @@ window.FINANCE_DATA = {
             "actual": 0.0
           },
           "Personal & Charity": {
-            "budget": -1946.41,
+            "budget": -2450.08,
             "actual": 0.0
           },
           "Personal Travel": {
@@ -2098,12 +2096,12 @@ window.FINANCE_DATA = {
   "ytd_waterfall": {
     "title": "YTD Jan \u2014 Mar 2026",
     "start_balance": {
-      "budget": 288302.0,
-      "actual": 288302.0
+      "budget": 133033.0,
+      "actual": 133033.0
     },
     "end_balance": {
-      "budget": 274468.48,
-      "actual": 276064.71,
+      "budget": 119199.48,
+      "actual": 125328.71,
       "note": "Asset sales offset higher spending"
     },
     "items": [
@@ -2146,7 +2144,7 @@ window.FINANCE_DATA = {
         "label": "Personal",
         "type": "expense",
         "budget": -9000.0,
-        "actual": -9076.28,
+        "actual": -4543.28,
         "note": "Residual plug from bank recon"
       },
       {
