@@ -1,4 +1,4 @@
-const CACHE = 'musab-finance-v15';  // v15 — Donut: % only on slice, value only in legend
+const CACHE = 'musab-finance-v16';  // v16 — RE breakdown: Oman / Dubai / Manchester in pie
 const ASSETS = ['./index.html', './app.js', './data.js',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
   'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js'];
