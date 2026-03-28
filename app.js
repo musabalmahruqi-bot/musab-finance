@@ -498,7 +498,7 @@ function initNetWorth() {
           textStrokeWidth: 3,
           formatter: (val) => {
             const p = Math.round(val / nw.total_assets * 100);
-            return p + '%\n' + fmtShort(val);
+            return p + '%';
           },
           anchor: 'center',
           align: 'center',
@@ -510,6 +510,7 @@ function initNetWorth() {
   // Legend below chart — two-column grid
   let legHtml = '<div class="nw-leg-grid">';
   assetEntries.forEach(([k, v], idx) => {
+    const p = Math.round(v / nw.total_assets * 100);
     legHtml += `<div class="nw-leg-row">
       <div class="nw-leg-dot" style="background:${assetColors[idx]}"></div>
       <div class="nw-leg-label">${k}</div>
