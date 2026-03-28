@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 28 Mar 2026 22:13
+// Generated: 28 Mar 2026 22:45
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "28 Mar 2026",
