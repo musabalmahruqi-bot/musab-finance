@@ -463,8 +463,14 @@ function initNetWorth() {
 
   // Asset donut chart
   const ASSET_COLORS = [
-    '#083D4C','#028090','#2B9D92','#4BB8B0','#6DCFC8',
-    '#8DE2DC','#F59E0B','#10B981'
+    '#083D4C', // deep teal (Cash)
+    '#E85D04', // orange (WeMeet)
+    '#7B2D8B', // purple (XOM)
+    '#2B9D92', // mid teal (Real Estate)
+    '#F59E0B', // amber (Shares & Bonds)
+    '#10B981', // green (Receivable)
+    '#EF4444', // red
+    '#6366F1', // indigo
   ];
   const assetEntries = Object.entries(nw.assets).filter(([,v]) => v > 0);
   const assetLabels = assetEntries.map(([k]) => k);
@@ -473,15 +479,31 @@ function initNetWorth() {
 
   new Chart(document.getElementById('chart-assets'), {
     type: 'doughnut',
+    plugins: [typeof ChartDataLabels !== 'undefined' ? ChartDataLabels : {}],
     data: {
       labels: assetLabels,
       datasets: [{ data: assetVals, backgroundColor: assetColors, borderWidth: 2, borderColor: '#fff', hoverOffset: 4 }]
     },
     options: {
-      responsive: true, maintainAspectRatio: false, cutout: '62%',
+      responsive: true, maintainAspectRatio: false, cutout: '55%',
+      layout: { padding: 18 },
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => fmt(ctx.raw) + '  (' + pct(ctx.raw, nw.total_assets) + ')' } }
+        tooltip: { callbacks: { label: ctx => fmt(ctx.raw) + '  (' + pct(ctx.raw, nw.total_assets) + ')' } },
+        datalabels: {
+          display: ctx => ctx.dataset.data[ctx.dataIndex] / nw.total_assets >= 0.04,
+          color: '#fff',
+          font: { size: 10, weight: '700' },
+          textShadow: true,
+          textStrokeColor: 'rgba(0,0,0,0.4)',
+          textStrokeWidth: 2,
+          formatter: (val) => {
+            const p = Math.round(val / nw.total_assets * 100);
+            return p + '%\n' + fmtShort(val);
+          },
+          anchor: 'center',
+          align: 'center',
+        }
       }
     }
   });
