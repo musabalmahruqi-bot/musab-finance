@@ -213,6 +213,14 @@
   .wf-legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
   .wf-leg { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
   .wf-leg-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  /* ── YTD Income vs Budget gauges ────────────────────────────────────────── */
+  .inc-gauge-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .inc-gauge-item:last-of-type { border-bottom: none; }
+  .inc-gauge-total {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0 2px; border-top: 2px solid var(--border); margin-top: 4px;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
 </style>
 </head>
 <body>
@@ -290,12 +298,8 @@
         <div id="nw-breakdown"></div>
       </div>
       <div class="card">
-        <div class="card-title">YTD P&amp;L Summary</div>
-        <div id="ytd-summary"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">YTD Income &amp; Expenses — Waterfall</div>
-        <div class="chart-wrap-tall"><canvas id="chart-waterfall"></canvas></div>
+        <div class="card-title">YTD Income vs Budget</div>
+        <div id="ytd-income-gauges"></div>
       </div>
     </div>
 
