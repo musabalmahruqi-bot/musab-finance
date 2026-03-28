@@ -1,68 +1,66 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 28 Mar 2026 21:13
+// Generated: 28 Mar 2026 22:03
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "28 Mar 2026",
     "assets": {
-      "Cash in Bank": 276064.7134210526,
-      "WeMeet (20%)": 45017,
-      "XOM (8.4%)": 189106,
-      "Real Estate": 2570000.0,
+      "Cash in Bank": 0,
+      "WeMeet (20%)": 0,
+      "XOM (8.4%)": 0,
+      "Real Estate": 1000000.0,
       "Shares & Bonds": 0,
       "Receivable": 42500
     },
-    "liabilities": {
-      "Nashwa Fund": 150736
-    },
-    "total_assets": 3122687.71,
-    "net_worth": 2971951.71,
+    "liabilities": {},
+    "total_assets": 1042500.0,
+    "net_worth": 1042500.0,
     "ytd_income": {
-      "RE Rahba Hill": 11226,
-      "RE Other Oman": 1868,
+      "RE Rahba Hill": 0,
+      "RE Other Oman": 0,
       "UAE RE": 0,
-      "UK RE": 1185,
-      "WeMeet": 1400,
-      "Salary": 24000,
-      "Total": 39679
+      "UK RE": 0,
+      "WeMeet": 0,
+      "Salary": 0,
+      "Total": 0
     },
     "ytd_expenses": {
-      "Household": 7500,
-      "Education": 13352,
-      "Travel": 8408.58,
-      "Personal & Other": 9076.28157894739,
-      "Charity": 9406,
-      "Total": 47742.86157894739
+      "Household": 0,
+      "Education": 0,
+      "Travel": 0,
+      "Personal & Other": 0,
+      "Charity": 0,
+      "Total": 0
     },
     "re_breakdown": {
-      "RE Oman": 990000.0,
-      "RE Dubai": 455000.0,
-      "RE Manchester": 125000.0,
+      "RE Oman": 0.0,
+      "RE Dubai": 0.0,
+      "RE Manchester": 0.0,
       "Private Homes": 1000000
     },
-    "ytd_pnl": -8063.8615789473915,
+    "ytd_pnl": 0,
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
-        "budget": 11990.0,
-        "actual": 11226.0,
+        "budget": 0,
+        "actual": 0,
         "type": "re"
       },
       {
         "label": "Other RE",
-        "budget": 3425.0,
-        "actual": 3053.0,
+        "budget": 0,
+        "actual": 0,
         "type": "re"
       },
       {
         "label": "WeMeet",
-        "budget": 2100.0,
-        "actual": 1400.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "type": "other"
       },
       {
         "label": "Salary",
-        "budget": 24000.0,
-        "actual": 24000.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "type": "other"
       }
     ]
@@ -83,24 +81,24 @@ window.FINANCE_DATA = {
       "Dec"
     ],
     "budget": [
-      -12056,
-      10280,
-      5439,
-      8457.0,
-      8458.0,
-      8458.0,
-      10791.0,
-      10791.0,
-      10791.0,
-      10791.0,
-      10791.0,
-      10791.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "actual": [
-      -14698.0,
-      113.0,
-      7035.0,
-      1215,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -111,24 +109,24 @@ window.FINANCE_DATA = {
       0
     ],
     "income_budget": [
-      12796,
-      16780,
-      11939,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "income_actual": [
-      12780,
-      15939,
-      10960,
-      1215,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -139,23 +137,23 @@ window.FINANCE_DATA = {
       0
     ],
     "expense_budget": [
-      -24852,
-      -6500,
-      -6500,
-      -8807.0,
-      -8806.0,
-      -8806.0,
-      -6473.0,
-      -6473.0,
-      -6473.0,
-      -6473.0,
-      -6473.0,
-      -6473.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "expense_actual": [
-      -27478.0,
-      -15826.0,
-      -3925.0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -167,26 +165,26 @@ window.FINANCE_DATA = {
       0
     ],
     "end_balance": [
-      295984.0,
-      269029.0,
-      276065.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0,
-      277280.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "monthly_breakdown": [
       {
         "month": "Jan",
         "income": {
           "RE Cashflow": {
-            "budget": 4096.0,
-            "actual": 4080.0
+            "budget": 0.0,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -208,15 +206,15 @@ window.FINANCE_DATA = {
           },
           "Family Travel": {
             "budget": -5000.0,
-            "actual": -4786.81
+            "actual": 0.0
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": -4308.82
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": -1472.58
+            "actual": 0.0
           },
           "Charity": {
             "budget": 0.0,
@@ -228,8 +226,8 @@ window.FINANCE_DATA = {
         "month": "Feb",
         "income": {
           "RE Cashflow": {
-            "budget": 8080.0,
-            "actual": 7239.0
+            "budget": 0.0,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -247,11 +245,11 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": -4174.83
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": -1788.17
+            "actual": 0.0
           },
           "Charity": {
             "budget": 0.0,
@@ -263,8 +261,8 @@ window.FINANCE_DATA = {
         "month": "Mar",
         "income": {
           "RE Cashflow": {
-            "budget": 3239.0,
-            "actual": 2960.0
+            "budget": 0.0,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -282,11 +280,11 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": -592.64
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": -361.02
+            "actual": 0.0
           },
           "Charity": {
             "budget": 0.0,
@@ -298,37 +296,21 @@ window.FINANCE_DATA = {
         "month": "Apr",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 1215.0
+            "budget": 0.0,
+            "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
         "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
           "Family Travel": {
             "budget": -2334.0,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
             "actual": 0.0
           }
         }
@@ -337,37 +319,21 @@ window.FINANCE_DATA = {
         "month": "May",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
         "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
           "Family Travel": {
             "budget": -2333.0,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
             "actual": 0.0
           }
         }
@@ -376,37 +342,21 @@ window.FINANCE_DATA = {
         "month": "Jun",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
         "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
           "Family Travel": {
             "budget": -2333.0,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
             "actual": 0.0
           }
         }
@@ -415,211 +365,109 @@ window.FINANCE_DATA = {
         "month": "Jul",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
-        "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
-            "actual": 0.0
-          }
-        }
+        "expenses": {}
       },
       {
         "month": "Aug",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
-        "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
-            "actual": 0.0
-          }
-        }
+        "expenses": {}
       },
       {
         "month": "Sep",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
-        "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
-            "actual": 0.0
-          }
-        }
+        "expenses": {}
       },
       {
         "month": "Oct",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
-        "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
-            "actual": 0.0
-          }
-        }
+        "expenses": {}
       },
       {
         "month": "Nov",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
-        "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
-            "actual": 0.0
-          }
-        }
+        "expenses": {}
       },
       {
         "month": "Dec",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
+            "budget": 0.0,
             "actual": 0.0
           },
           "WeMeet": {
-            "budget": 777.78,
+            "budget": 0.0,
             "actual": 0.0
           },
           "Salary": {
-            "budget": 8000.0,
+            "budget": 0.0,
             "actual": 0.0
           }
         },
-        "expenses": {
-          "Household": {
-            "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
-          },
-          "Personal & Charity": {
-            "budget": -1946.41,
-            "actual": 0.0
-          },
-          "Personal Travel": {
-            "budget": -930.91,
-            "actual": 0.0
-          }
-        }
+        "expenses": {}
       }
     ]
   },
@@ -630,28 +478,28 @@ window.FINANCE_DATA = {
         "month": "Dec 2025",
         "opening": 1988.575,
         "purchases": 1045.93,
-        "payments": 1988.575,
+        "payments": 0,
         "closing": 1045.93
       },
       {
         "month": "Jan 2026",
         "opening": 1045.93,
         "purchases": 4072.89,
-        "payments": 1045.93,
+        "payments": 0,
         "closing": 4072.89
       },
       {
         "month": "Feb 2026",
         "opening": 4072.89,
         "purchases": 2047.66,
-        "payments": 4072.89,
+        "payments": 0,
         "closing": 2047.66
       },
       {
         "month": "Mar 2026 *",
         "opening": 2047.66,
         "purchases": 1207.93,
-        "payments": 2047.66,
+        "payments": 0,
         "closing": 1207.93
       }
     ],
@@ -659,42 +507,42 @@ window.FINANCE_DATA = {
       {
         "name": "Personal Expenses",
         "values": [
-          115.58,
-          163.5,
-          195.65,
-          503.31
+          0,
+          0,
+          0,
+          0
         ],
-        "total": 978.04
+        "total": 0
       },
       {
         "name": "Personal Travel",
         "values": [
-          930.35,
-          1472.58,
-          1852.01,
-          704.62
+          0,
+          0,
+          0,
+          0
         ],
-        "total": 4959.56
+        "total": 0
       },
       {
         "name": "Family Travel",
         "values": [
           0,
-          2436.81,
+          0,
           0,
           0
         ],
-        "total": 2436.81
+        "total": 0
       },
       {
         "name": "Payment",
         "values": [
-          1988.58,
-          1045.93,
-          3981.8,
-          1704.06
+          0,
+          0,
+          0,
+          0
         ],
-        "total": 8720.36
+        "total": 0
       }
     ],
     "transactions": [
@@ -2096,92 +1944,92 @@ window.FINANCE_DATA = {
     ]
   },
   "ytd_waterfall": {
-    "title": "YTD Jan \u2014 Mar 2026",
+    "title": "YTD",
     "start_balance": {
-      "budget": 288302.0,
-      "actual": 288302.0
+      "budget": 0.0,
+      "actual": 0.0
     },
     "end_balance": {
-      "budget": 274468.48,
-      "actual": 276064.71,
-      "note": "Asset sales offset higher spending"
+      "budget": 0.0,
+      "actual": 0.0,
+      "note": ""
     },
     "items": [
       {
         "label": "RE Cashflow",
         "type": "income",
-        "budget": 15415.0,
-        "actual": 14279.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Almouj delays reduced Q1 RE income"
       },
       {
         "label": "WeMeet",
         "type": "income",
-        "budget": 2100.0,
-        "actual": 1400.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Mar payment pending"
       },
       {
         "label": "Salary",
         "type": "income",
-        "budget": 24000.0,
-        "actual": 24000.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "On track"
       },
       {
         "label": "Household",
         "type": "expense",
-        "budget": -7500.0,
-        "actual": -7500.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Fixed OMR 2,500/mo"
       },
       {
         "label": "Kids Education",
         "type": "expense",
-        "budget": -13352.0,
-        "actual": -13352.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Jan one-off; 0 until Aug 2026"
       },
       {
         "label": "Personal",
         "type": "expense",
-        "budget": -9000.0,
-        "actual": -9076.28,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Residual plug from bank recon"
       },
       {
         "label": "Personal Travel",
         "type": "expense",
-        "budget": -3000.0,
-        "actual": -3621.77,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Higher Jan/Feb CC travel spend"
       },
       {
         "label": "Family Travel",
         "type": "expense",
-        "budget": -5000.0,
-        "actual": -4786.81,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Jan trip + small Feb charge"
       },
       {
         "label": "Charity",
         "type": "expense",
         "budget": 0.0,
-        "actual": -9406.0,
+        "actual": 0.0,
         "note": ""
       },
       {
         "label": "Sale of Assets",
         "type": "other",
         "budget": 0.0,
-        "actual": 17599.0,
+        "actual": 0.0,
         "note": "Tilal + other asset sales"
       },
       {
         "label": "Investments",
         "type": "other",
-        "budget": -22667.0,
-        "actual": -22287.0,
+        "budget": 0.0,
+        "actual": 0.0,
         "note": "Malik Bahla"
       }
     ]
@@ -2234,12 +2082,6 @@ window.FINANCE_DATA = {
         "name": "Dec 25",
         "budget": 0,
         "actual": 0,
-        "type": "personal"
-      },
-      {
-        "name": "297.11",
-        "budget": 0.0,
-        "actual": 0.0,
         "type": "personal"
       }
     ]
