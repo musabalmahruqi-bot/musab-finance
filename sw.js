@@ -1,4 +1,4 @@
-const CACHE = 'musab-finance-v16';  // v16 — RE breakdown: Oman / Dubai / Manchester in pie
+const CACHE = 'musab-finance-v17';  // v17 — RE at market value, Private Homes as separate slice
 const ASSETS = ['./index.html', './app.js', './data.js',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
   'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js'];
