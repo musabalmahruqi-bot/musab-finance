@@ -461,32 +461,63 @@ function initNetWorth() {
   const nashwaFund = nw.liabilities['Nashwa Fund'] || 0;
   document.getElementById('kpi-liab').textContent    = fmtShort(nashwaFund);
 
-  // Asset breakdown
-  let html = '<div class="nw-section-head">Assets</div>';
-  for (const [k, v] of Object.entries(nw.assets)) {
-    if (v) html += `<div class="nw-row">
-      <span class="nw-label">${k}</span>
-      <span class="nw-amount">${fmtShort(v)}</span>
+  // Asset donut chart
+  const ASSET_COLORS = [
+    '#083D4C','#028090','#2B9D92','#4BB8B0','#6DCFC8',
+    '#8DE2DC','#F59E0B','#10B981'
+  ];
+  const assetEntries = Object.entries(nw.assets).filter(([,v]) => v > 0);
+  const assetLabels = assetEntries.map(([k]) => k);
+  const assetVals   = assetEntries.map(([,v]) => v);
+  const assetColors = ASSET_COLORS.slice(0, assetEntries.length);
+
+  new Chart(document.getElementById('chart-assets'), {
+    type: 'doughnut',
+    data: {
+      labels: assetLabels,
+      datasets: [{ data: assetVals, backgroundColor: assetColors, borderWidth: 2, borderColor: '#fff', hoverOffset: 4 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '62%',
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => fmt(ctx.raw) + '  (' + pct(ctx.raw, nw.total_assets) + ')' } }
+      }
+    }
+  });
+
+  // Asset legend
+  let legHtml = '';
+  assetEntries.forEach(([k, v], idx) => {
+    legHtml += `<div class="nw-leg-row">
+      <div class="nw-leg-dot" style="background:${assetColors[idx]}"></div>
+      <div class="nw-leg-label">${k}</div>
+      <div class="nw-leg-val">${fmtShort(v)}</div>
     </div>`;
-  }
-  html += `<div class="nw-row" style="font-weight:700">
-    <span>Total Assets</span>
-    <span class="nw-amount">${fmtShort(nw.total_assets)}</span>
+  });
+  legHtml += `<div class="nw-leg-row" style="border-top:1.5px solid var(--border);margin-top:4px;padding-top:6px;font-weight:700">
+    <div class="nw-leg-dot" style="background:transparent"></div>
+    <div class="nw-leg-label">Total</div>
+    <div class="nw-leg-val">${fmtShort(nw.total_assets)}</div>
   </div>`;
+  document.getElementById('nw-asset-legend').innerHTML = legHtml;
+
+  // Liabilities + Net Worth below chart
+  let liabHtml = '';
   if (Object.keys(nw.liabilities).length) {
-    html += '<div class="nw-section-head" style="margin-top:8px">Liabilities</div>';
+    liabHtml += '<div class="nw-section-head" style="margin-top:12px">Liabilities</div>';
     for (const [k, v] of Object.entries(nw.liabilities)) {
-      if (v) html += `<div class="nw-row">
+      if (v) liabHtml += `<div class="nw-row">
         <span class="nw-label">${k}</span>
         <span class="nw-amount" style="color:#991b1b">${fmtShort(v)}</span>
       </div>`;
     }
   }
-  html += `<div class="nw-row" style="font-weight:700;border-top:2px solid #083D4C;margin-top:4px">
+  liabHtml += `<div class="nw-row" style="font-weight:700;border-top:2px solid #083D4C;margin-top:4px">
     <span>Net Worth</span>
     <span class="nw-amount" style="color:#083D4C;font-size:16px">${fmtShort(nw.net_worth)}</span>
   </div>`;
-  document.getElementById('nw-breakdown').innerHTML = html;
+  document.getElementById('nw-liab-section').innerHTML = liabHtml;
 
   // YTD Income vs Budget gauges
   const ivb = nw.ytd_income_vs_budget || [];
