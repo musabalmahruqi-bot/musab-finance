@@ -1,4 +1,4 @@
-const CACHE = 'musab-finance-v18';  // v18 — RE Portfolio app link on Worth tab
+const CACHE = 'musab-finance-v19';  // v19 — Remove Nashwa Fund KPI
 const ASSETS = ['./index.html', './app.js', './data.js',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
   'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js'];
