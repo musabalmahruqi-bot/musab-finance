@@ -1,66 +1,132 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 30 Mar 2026 22:32
+// Generated: 04 Apr 2026 22:04
 window.FINANCE_DATA = {
   "net_worth": {
-    "as_at": "30 Mar 2026",
+    "as_at": "04 Apr 2026",
     "assets": {
-      "Cash in Bank": 167095.97701710524,
-      "WeMeet (20%)": 45017,
-      "XOM (8.4%)": 189106,
-      "Real Estate": 2570000.0,
+      "Cash in Bank": 0,
+      "WeMeet (20%)": 0,
+      "XOM (8.4%)": 0,
+      "Real Estate": 1690000.0,
       "Shares & Bonds": 0,
-      "Receivable": 0
+      "Receivable": 0.0
     },
     "liabilities": {},
-    "total_assets": 2971218.98,
-    "net_worth": 2971218.98,
+    "total_assets": 1690000.0,
+    "net_worth": 1690000.0,
     "ytd_income": {
-      "RE Rahba Hill": 11226,
-      "RE Other Oman": 1868,
+      "RE Rahba Hill": 0,
+      "RE Other Oman": 0,
       "UAE RE": 0,
-      "UK RE": 1185,
-      "WeMeet": 1400,
-      "Salary": 24000,
-      "Total": 39679
+      "UK RE": 0,
+      "WeMeet": 0,
+      "Salary": 0,
+      "Total": 0
     },
     "ytd_expenses": {
-      "Household": 7500,
-      "Education": 13352,
-      "Travel": 10919.869999999999,
-      "Personal & Other": 7183.1529828947605,
-      "Charity": 9026,
-      "Total": 47981.02298289476
+      "Household": 0,
+      "Education": 0,
+      "Travel": 0,
+      "Personal & Other": 0,
+      "Charity": 0,
+      "Total": 0
     },
+    "ytd_pnl": 0,
+    "bank_accounts": [
+      {
+        "bank": "Bank Muscat",
+        "type": "Saving",
+        "currency": "OMR",
+        "account": "XX25",
+        "balance": 0
+      },
+      {
+        "bank": "Bank Muscat",
+        "type": "Saving",
+        "currency": "USD",
+        "account": "XX0136",
+        "balance": 0
+      },
+      {
+        "bank": "Bank Muscat",
+        "type": "Saving",
+        "currency": "OMR",
+        "account": "XX41",
+        "balance": 0
+      },
+      {
+        "bank": "Bank Muscat",
+        "type": "Saving",
+        "currency": "Euro",
+        "account": "XX76",
+        "balance": 0
+      },
+      {
+        "bank": "Bank Muscat",
+        "type": "Saving",
+        "currency": "GBP",
+        "account": "XX84",
+        "balance": 0
+      },
+      {
+        "bank": "Bank Muscat",
+        "type": "Saving",
+        "currency": "AED",
+        "account": "XX0144",
+        "balance": 0
+      },
+      {
+        "bank": "Bank Muscat",
+        "type": "Current",
+        "currency": "OMR",
+        "account": "XX0128",
+        "balance": 0
+      },
+      {
+        "bank": "Bank Muscat",
+        "type": "Kids Edu",
+        "currency": "OMR",
+        "account": "XX17",
+        "balance": 0
+      },
+      {
+        "bank": "Emirates NBD",
+        "type": "Saving",
+        "currency": "AED",
+        "account": "",
+        "balance": 0
+      }
+    ],
+    "total_cash": 0,
     "re_breakdown": {
-      "RE Oman": 990000.0,
+      "RE Oman": 110000.0,
       "RE Dubai": 455000.0,
       "RE Manchester": 125000.0,
       "Private Homes": 1000000
     },
-    "ytd_pnl": -8302.022982894763,
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
-        "budget": 11990.0,
-        "actual": 11226.0,
+        "budget": 0,
+        "actual": 0,
         "type": "re"
       },
       {
         "label": "Other RE",
-        "budget": 3425.0,
-        "actual": 3053.0,
+        "budget": 2280.0,
+        "actual": 2280.0,
         "type": "re"
       },
       {
         "label": "WeMeet",
-        "budget": 2100.0,
-        "actual": 1400.0,
+        "budget": 0,
+        "actual": 0,
         "type": "other"
       },
       {
         "label": "Salary",
-        "budget": 24000.0,
-        "actual": 24000.0,
+        "budget": 0,
+        "actual": 0,
         "type": "other"
       }
     ]
@@ -81,24 +147,20 @@ window.FINANCE_DATA = {
       "Dec"
     ],
     "budget": [
-      -12056,
-      10280,
-      5439,
-      8955.0,
-      8956.0,
-      8956.0,
-      11289.0,
-      11289.0,
-      11289.0,
-      11289.0,
-      11289.0,
-      11289.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "actual": [
-      -17724.0,
-      5165.0,
-      4257.0,
-      1215,
       0,
       0,
       0,
@@ -106,27 +168,31 @@ window.FINANCE_DATA = {
       0,
       0,
       0,
-      -4244.0
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "income_budget": [
-      12796,
-      16780,
-      11939,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0,
-      17264.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "income_actual": [
-      12780,
-      15939,
-      10960,
-      1215,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -137,23 +203,20 @@ window.FINANCE_DATA = {
       0
     ],
     "expense_budget": [
-      -24852,
-      -6500,
-      -6500,
-      -8309.0,
-      -8308.0,
-      -8308.0,
-      -5975.0,
-      -5975.0,
-      -5975.0,
-      -5975.0,
-      -5975.0,
-      -5975.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "expense_actual": [
-      -30504.0,
-      -10774.0,
-      -6703.0,
       0,
       0,
       0,
@@ -162,29 +225,32 @@ window.FINANCE_DATA = {
       0,
       0,
       0,
-      -4244.0
+      0,
+      0,
+      0,
+      0
     ],
     "end_balance": [
-      142221.0,
-      120318.0,
-      167096.0,
-      168311.0,
-      168311.0,
-      168311.0,
-      168311.0,
-      168311.0,
-      168311.0,
-      168311.0,
-      168311.0,
-      164067.0
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "monthly_breakdown": [
       {
         "month": "Jan",
         "income": {
           "RE Cashflow": {
-            "budget": 4096.0,
-            "actual": 4080.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -206,7 +272,7 @@ window.FINANCE_DATA = {
           },
           "Family Travel": {
             "budget": -5000.0,
-            "actual": -4786.81
+            "actual": 0
           },
           "Personal & Charity": {
             "budget": -3000.0,
@@ -214,7 +280,7 @@ window.FINANCE_DATA = {
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": -3066.18
+            "actual": 0
           },
           "Charity": {
             "budget": 0.0,
@@ -226,8 +292,8 @@ window.FINANCE_DATA = {
         "month": "Feb",
         "income": {
           "RE Cashflow": {
-            "budget": 8080.0,
-            "actual": 7239.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -245,11 +311,11 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": -2149.47
+            "actual": 0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": -1788.17
+            "actual": 0
           },
           "Charity": {
             "budget": 0.0,
@@ -261,12 +327,12 @@ window.FINANCE_DATA = {
         "month": "Mar",
         "income": {
           "RE Cashflow": {
-            "budget": 3239.0,
-            "actual": 2960.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
             "budget": 700.0,
-            "actual": 0.0
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
@@ -280,15 +346,11 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": -234.68
+            "actual": 0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": -1278.71
-          },
-          "Charity": {
-            "budget": 0.0,
-            "actual": -2690.0
+            "actual": 0
           }
         }
       },
@@ -296,38 +358,34 @@ window.FINANCE_DATA = {
         "month": "Apr",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 1215.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "actual": -2500.0
           },
           "Family Travel": {
             "budget": -2334.0,
-            "actual": 0.0
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -335,38 +393,34 @@ window.FINANCE_DATA = {
         "month": "May",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "actual": 0
           },
           "Family Travel": {
             "budget": -2333.0,
-            "actual": 0.0
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -374,38 +428,34 @@ window.FINANCE_DATA = {
         "month": "Jun",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "actual": 0
           },
           "Family Travel": {
             "budget": -2333.0,
-            "actual": 0.0
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -413,34 +463,34 @@ window.FINANCE_DATA = {
         "month": "Jul",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
+            "actual": 0
           },
           "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "budget": -4932.5,
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -448,34 +498,30 @@ window.FINANCE_DATA = {
         "month": "Aug",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -483,34 +529,30 @@ window.FINANCE_DATA = {
         "month": "Sep",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -518,34 +560,34 @@ window.FINANCE_DATA = {
         "month": "Oct",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
+            "actual": 0
           },
           "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "budget": -4932.5,
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -553,34 +595,30 @@ window.FINANCE_DATA = {
         "month": "Nov",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": 0.0
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       },
@@ -588,1286 +626,331 @@ window.FINANCE_DATA = {
         "month": "Dec",
         "income": {
           "RE Cashflow": {
-            "budget": 8486.49,
-            "actual": 0.0
+            "budget": 0,
+            "actual": 0
           },
           "WeMeet": {
-            "budget": 777.78,
-            "actual": 0.0
+            "budget": 700.0,
+            "actual": 0
           },
           "Salary": {
             "budget": 8000.0,
-            "actual": 0.0
+            "actual": 0
           }
         },
         "expenses": {
           "Household": {
             "budget": -2500.0,
-            "actual": 0.0
-          },
-          "Kids Education": {
-            "budget": -1096.11,
-            "actual": 0.0
+            "actual": 0
           },
           "Personal & Charity": {
-            "budget": -2198.98,
-            "actual": 0.0
+            "budget": -3000.0,
+            "actual": 0
           },
           "Personal Travel": {
-            "budget": -180.33,
-            "actual": -4244.01
+            "budget": -1000.0,
+            "actual": 0
           }
         }
       }
-    ]
+    ],
+    "liquidity": {}
   },
   "cc": {
-    "current_balance": 1704.06,
+    "current_balance": 46113.0,
     "monthly_summary": [
       {
         "month": "Dec 2025",
-        "opening": 1989,
-        "purchases": 1045.93,
+        "opening": 1989.0,
+        "purchases": 0,
+        "refunds": 0,
         "payments": 0,
-        "closing": 1988.575
+        "closing": 0,
+        "net_spend": 0
       },
       {
-        "month": "Jan 2026",
-        "opening": 1046.355,
-        "purchases": 4072.89,
+        "month": "Category",
+        "opening": 0,
+        "purchases": 0,
+        "refunds": 0,
         "payments": 0,
-        "closing": 1045.93
-      },
-      {
-        "month": "Feb 2026",
-        "opening": 4073.315,
-        "purchases": 2047.66,
-        "payments": 91.09,
-        "closing": 3981.8
-      },
-      {
-        "month": "Mar 2026",
-        "opening": 2048.085,
-        "purchases": 2125.62,
-        "payments": 343.6,
-        "closing": 1704.06
+        "closing": 46113.0,
+        "net_spend": 0
       }
     ],
     "category_breakdown": [
       {
+        "name": "Category",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          46113.0
+        ],
+        "total": 0
+      },
+      {
         "name": "Personal Expenses",
         "values": [
-          115.58,
-          163.5,
-          195.65,
-          503.31
+          0,
+          0,
+          0,
+          0,
+          0
         ],
-        "total": 978.04
+        "total": 0
       },
       {
         "name": "Personal Travel",
         "values": [
-          930.35,
-          1472.58,
-          1788.17,
-          1278.71
+          0,
+          0,
+          0,
+          0,
+          0
         ],
-        "total": 5469.81
+        "total": 0
       },
       {
         "name": "Family Travel",
         "values": [
           0,
-          2436.81,
+          0,
+          0,
           0,
           0
         ],
-        "total": 2436.81
+        "total": 0
+      },
+      {
+        "name": "Household",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0
+      },
+      {
+        "name": "Manchester CitySuites (Julie Twist) (Julie Twist)",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0
       },
       {
         "name": "Payment",
         "values": [
-          1988.58,
-          1045.93,
-          3981.8,
-          1704.06
+          0,
+          0,
+          0,
+          0,
+          0
         ],
-        "total": 8720.36
+        "total": 0
+      },
+      {
+        "name": "Refunds (net in categories)",
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0
       }
     ],
     "transactions": [
       {
-        "date": "01/01/2026",
-        "desc": "0 200000000179937",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "34",
-        "month": "DR"
-      },
-      {
-        "date": "01/01/2026",
-        "desc": "0 200000000179937",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "8.9",
-        "month": "DR"
-      },
-      {
-        "date": "01/01/2026",
-        "desc": "QATAR AIR 0002132034913, DOHA, OM",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "343.6",
-        "month": "DR"
-      },
-      {
-        "date": "28/12/2025",
-        "desc": "AMERICAN AIR0012300840850, FORT WORTH, US",
-        "subcat": "Travel & Transport",
+        "date": "Date",
+        "desc": "Description",
+        "subcat": "Sub-Category",
         "cat": "",
         "omr": 0,
-        "dr_cr": "289.64",
-        "month": "DR"
+        "dr_cr": "OMR Amount",
+        "month": "DR/CR"
       },
       {
-        "date": "28/12/2025",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-04-04 00:00:00",
+        "desc": "GOSIMPLETAX",
+        "subcat": "Tax Filing (UK)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "3.95",
+        "dr_cr": "",
         "month": "DR"
       },
       {
-        "date": "24/12/2025",
-        "desc": "Payment on cardholder account",
-        "subcat": "Payment",
+        "date": "2026-04-04 00:00:00",
+        "desc": "MICROLESS GENERAL TRAD",
+        "subcat": "Shopping & Retail",
         "cat": "",
-        "omr": 0.0,
-        "dr_cr": "1988.575",
+        "omr": 0,
+        "dr_cr": "",
+        "month": "DR"
+      },
+      {
+        "date": "2026-04-04 00:00:00",
+        "desc": "Hotel Borneta QQUNHZMF-1 (Reversal)",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "",
         "month": "CR"
       },
       {
-        "date": "18/12/2025",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-04-03 00:00:00",
+        "desc": "GOSIMPLETAX",
+        "subcat": "Tax Filing (UK)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "5.13",
+        "dr_cr": "63.613",
         "month": "DR"
       },
       {
-        "date": "15/12/2025",
-        "desc": "Spotify P3D6F75966, Stockholm, SE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-04-02 00:00:00",
+        "desc": "OTAXI AIRPORT  K",
+        "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "2.16",
+        "dr_cr": "",
         "month": "DR"
       },
       {
-        "date": "10/12/2025",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-04-01 00:00:00",
+        "desc": "TT NET ANONIM STI",
+        "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "7.89",
+        "dr_cr": "",
         "month": "DR"
       },
       {
-        "date": "09/12/2025",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-04-01 00:00:00",
+        "desc": "MOOD UP GIDA A.S",
+        "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "4.72",
+        "dr_cr": "",
         "month": "DR"
       },
       {
-        "date": "08/12/2025",
-        "desc": "amazon.co.uk, 353-12477661, GB",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5",
-        "month": "DR"
-      },
-      {
-        "date": "07/12/2025",
-        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, US",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.91",
-        "month": "DR"
-      },
-      {
-        "date": "07/12/2025",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.18",
-        "month": "DR"
-      },
-      {
-        "date": "04/12/2025",
-        "desc": "TATTE COFFE, BAKU, AZ",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "20.52",
-        "month": "DR"
-      },
-      {
-        "date": "04/12/2025",
-        "desc": "YENI BAKI OTELI, BAKU, AZ",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "34.92",
-        "month": "DR"
-      },
-      {
-        "date": "04/12/2025",
-        "desc": "SMALLPDF, ZURICH, CH",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.74",
-        "month": "DR"
-      },
-      {
-        "date": "02/12/2025",
-        "desc": "ELEKTRON HOKUMETIN, BAKI, AZ",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "15.79",
-        "month": "DR"
-      },
-      {
-        "date": "02/12/2025",
-        "desc": "TASTE OF OMAN, AL ATHAIBA, OM",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "32",
-        "month": "DR"
-      },
-      {
-        "date": "02/12/2025",
-        "desc": "YENI BAKI OTELI, BAKU, AZ",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "225.88",
-        "month": "DR"
-      },
-      {
-        "date": "28/01/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "3.95",
-        "month": "DR"
-      },
-      {
-        "date": "27/01/2026",
-        "desc": "AMERICAN AIR0123107954340, FORT WORTH, OM",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "106",
-        "month": "DR"
-      },
-      {
-        "date": "29/01/2026",
-        "desc": "SHARAF DG LLC, BAUSHER, OMN",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "25.36",
-        "month": "DR"
-      },
-      {
-        "date": "29/01/2026",
-        "desc": "SHARAF DG LLC, BAUSHER, OMN",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "89.9",
-        "month": "DR"
-      },
-      {
-        "date": "24/01/2026",
-        "desc": "Partners on Booking BV, Amsterdam, NL",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "153.74",
-        "month": "DR"
-      },
-      {
-        "date": "24/01/2026",
-        "desc": "BKG*HOTEL AT BOOKING.C, (888)850-3958, NL",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "306.98",
-        "month": "DR"
-      },
-      {
-        "date": "24/01/2026",
-        "desc": "BKG*HOTEL AT BOOKING.C, (888)850-3958, NL",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "80.36",
-        "month": "DR"
-      },
-      {
-        "date": "24/01/2026",
-        "desc": "BKG*HOTEL AT BOOKING.C, (888)850-3958, IE",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "271.11",
-        "month": "DR"
-      },
-      {
-        "date": "24/01/2026",
-        "desc": "Payment on cardholder account",
-        "subcat": "Payment",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "1045.93",
-        "month": "CR"
-      },
-      {
-        "date": "18/01/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "12.63",
-        "month": "DR"
-      },
-      {
-        "date": "17/01/2026",
-        "desc": "TAP AIRLINE 0470017370041, LISBOA, PORTUGAL",
+        "date": "2026-03-31 00:00:00",
+        "desc": "TURKISH AIRLINES",
         "subcat": "Travel & Transport",
         "cat": "",
         "omr": 0,
-        "dr_cr": "437.84",
+        "dr_cr": "44",
         "month": "DR"
       },
       {
-        "date": "16/01/2026",
-        "desc": "AIRBNB * HMMM2NWBTW, 415-800-5959, GB",
-        "subcat": "Accommodation",
+        "date": "2026-03-31 00:00:00",
+        "desc": "UBR* PENDING.UBER.COM",
+        "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "1454.9",
+        "dr_cr": "8.465",
         "month": "DR"
       },
       {
-        "date": "16/01/2026",
-        "desc": "AIRBNB * HME44WC9MP, 415-800-5959, GB",
-        "subcat": "Accommodation",
+        "date": "2026-03-31 00:00:00",
+        "desc": "FARMACIA ROSER ARQUE GARR",
+        "subcat": "Health & Medical",
         "cat": "",
         "omr": 0,
-        "dr_cr": "544.07",
+        "dr_cr": "2.894",
         "month": "DR"
       },
       {
-        "date": "15/01/2026",
-        "desc": "Spotify P3E6801015, Stockholm, SE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-03-31 00:00:00",
+        "desc": "FARMACIA SILVIA TURRO VAL",
+        "subcat": "Health & Medical",
         "cat": "",
         "omr": 0,
-        "dr_cr": "2.16",
+        "dr_cr": "2.894",
         "month": "DR"
       },
       {
-        "date": "10/01/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-03-31 00:00:00",
+        "desc": "FARMACIA ELENA BELLMUNT",
+        "subcat": "Health & Medical",
         "cat": "",
         "omr": 0,
-        "dr_cr": "7.89",
+        "dr_cr": "1.447",
         "month": "DR"
       },
       {
-        "date": "09/01/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-03-31 00:00:00",
+        "desc": "FARMACIA MIREIA GARRETA",
+        "subcat": "Health & Medical",
         "cat": "",
         "omr": 0,
-        "dr_cr": "4.72",
+        "dr_cr": "1.447",
         "month": "DR"
       },
       {
-        "date": "08/01/2026",
-        "desc": "amazon.co.uk, 353-12477661, GB",
-        "subcat": "Subscriptions & Digital",
+        "date": "2026-03-31 00:00:00",
+        "desc": "ALCAMPO ASSAONADORS",
+        "subcat": "Groceries",
         "cat": "",
         "omr": 0,
-        "dr_cr": "5.06",
+        "dr_cr": "1.507",
         "month": "DR"
       },
       {
-        "date": "07/01/2026",
-        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, US",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.91",
-        "month": "DR"
-      },
-      {
-        "date": "07/01/2026",
-        "desc": "THE PALACE DOWNTOWN DUBAI, Dubai, AE",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "88.41",
-        "month": "DR"
-      },
-      {
-        "date": "06/01/2026",
-        "desc": "LOONA CUISINE REST, DUBAI, AE",
+        "date": "2026-03-31 00:00:00",
+        "desc": "BILLY BRUNCH & PARK",
         "subcat": "Dining & Food",
         "cat": "",
         "omr": 0,
-        "dr_cr": "64.5",
+        "dr_cr": "7.236",
         "month": "DR"
       },
       {
-        "date": "06/01/2026",
-        "desc": "BOHO REST AND CAFE LLC, DUBAI, AE",
-        "subcat": "Dining & Food",
+        "date": "2026-03-31 00:00:00",
+        "desc": "BARcA STORE PDG",
+        "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "24.08",
+        "dr_cr": "100.148",
         "month": "DR"
       },
       {
-        "date": "07/01/2026",
-        "desc": "SHELL OMAN - GHAWABI SS, GHAWABI, OM",
-        "subcat": "Travel & Transport",
+        "date": "2026-03-31 00:00:00",
+        "desc": "ES 032 PASEO DE GRACIA",
+        "subcat": "Uncategorized (Review)",
         "cat": "",
-        "omr": 0.0,
-        "dr_cr": "17.8",
-        "month": "DR"
-      },
-      {
-        "date": "07/01/2026",
-        "desc": "ARTENIRS TRADING LLC, Dubai, AE",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "10.64",
-        "month": "DR"
-      },
-      {
-        "date": "07/01/2026",
-        "desc": "SOUK MADINAT JUMERIAH, DUBAI, AE",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "26.76",
-        "month": "DR"
-      },
-      {
-        "date": "07/01/2026",
-        "desc": "TOMMY BAHAMA, DUBAI, AE",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "93.19",
-        "month": "DR"
-      },
-      {
-        "date": "07/01/2026",
-        "desc": "SOUQ MADINAT JUMEIRAH, DUBAI, AE",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "6.45",
-        "month": "DR"
-      },
-      {
-        "date": "07/01/2026",
-        "desc": "MADINAT JUMEIRAH LLC, DUBAI, AE",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "81.51",
-        "month": "DR"
-      },
-      {
-        "date": "07/01/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.18",
-        "month": "DR"
-      },
-      {
-        "date": "06/01/2026",
-        "desc": "ZAHR EL LAYMOUN ALASLY, DUBAI, AE",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "29.03",
-        "month": "DR"
-      },
-      {
-        "date": "05/01/2026",
-        "desc": "THE PALACE DOWNTOWN DUBAI, DUBAI, AE",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "74.92",
-        "month": "DR"
-      },
-      {
-        "date": "04/01/2026",
-        "desc": "SMALLPDF, ZURICH, CH",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.74",
-        "month": "DR"
-      },
-      {
-        "date": "03/01/2026",
-        "desc": "QATAR AIR 0002132067547, DOHA, OM",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "37.1",
-        "month": "DR"
-      },
-      {
-        "date": "28/02/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "3.95",
-        "month": "DR"
-      },
-      {
-        "date": "23/02/2026",
-        "desc": "473007",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "38",
-        "month": "DR"
-      },
-      {
-        "date": "24/02/2026",
-        "desc": "Payment on cardholder account",
-        "subcat": "Payment",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "3981.8",
-        "month": "CR"
-      },
-      {
-        "date": "20/02/2026",
-        "desc": "Refund Globalblue.com, Stockholm, SE",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "27.25",
-        "month": "CR"
-      },
-      {
-        "date": "19/02/2026",
-        "desc": "Spotify P3F84A12EC, Stockholm, SE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "2.16",
-        "month": "DR"
-      },
-      {
-        "date": "18/02/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "12.62",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "473007",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "100",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "MIGECA SPA, 20123, IT",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "28.27",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "LOCAUTO RENT 6 MOTO, TRENTO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "63.84",
-        "month": "CR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "DUFRITAL S.P.A., FERNO, IT",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "48.29",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "THE STREET MILANO DUOMO, MILANO, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "10.78",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "SERVIZIO TAXI, MILANO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "8.67",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "FNM*TRENORD TVM 2013-, MILANO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "14.06",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "BAR MADONNINA SRL, MILANO, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.46",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "A5A SRL, MILANO, IT",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "3.28",
-        "month": "DR"
-      },
-      {
-        "date": "17/02/2026",
-        "desc": "COVA MONTENAPOLEONE SRL, MILANO, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "7.5",
-        "month": "DR"
-      },
-      {
-        "date": "16/02/2026",
-        "desc": "WWW.DAZN.COM, Amsterdam, NL",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "9.38",
-        "month": "DR"
-      },
-      {
-        "date": "16/02/2026",
-        "desc": "VENCHI Milano Mengoni, Milano, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.35",
-        "month": "DR"
-      },
-      {
-        "date": "16/02/2026",
-        "desc": "CENTRALE M2, MILANO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "2.06",
-        "month": "DR"
-      },
-      {
-        "date": "16/02/2026",
-        "desc": "AL CANTINONE VIA AGNELLO, MILANO, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "26.74",
-        "month": "DR"
-      },
-      {
-        "date": "16/02/2026",
-        "desc": "ACCADEMIA SRL, VERONA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "8.45",
-        "month": "DR"
-      },
-      {
-        "date": "16/02/2026",
-        "desc": "AUTOGRILL 7177, VERONA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "6.65",
-        "month": "DR"
-      },
-      {
-        "date": "16/02/2026",
-        "desc": "FALCONERI, VERONA, IT",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "186.69",
-        "month": "DR"
-      },
-      {
-        "date": "15/02/2026",
-        "desc": "TRATTORIA ALLA GRIGLIA, VERONA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "57.23",
-        "month": "DR"
-      },
-      {
-        "date": "15/02/2026",
-        "desc": "RISTORANTE OMNIBUS, VENEZIA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "60.04",
-        "month": "DR"
-      },
-      {
-        "date": "15/02/2026",
-        "desc": "I TRE MERCANTI SRL, VENEZIA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.59",
-        "month": "DR"
-      },
-      {
-        "date": "15/02/2026",
-        "desc": "VICENZA SELF SERVICE NEW, VICENZA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "17.82",
-        "month": "DR"
-      },
-      {
-        "date": "15/02/2026",
-        "desc": "TRENITALIA - LEFRECCE, ROMA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "32.84",
-        "month": "DR"
-      },
-      {
-        "date": "15/02/2026",
-        "desc": "VERONA P.N. SELF SERVICE, VERONA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "19.79",
-        "month": "DR"
-      },
-      {
-        "date": "14/02/2026",
-        "desc": "ROMEO VERONA, VERONA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "26.97",
-        "month": "DR"
-      },
-      {
-        "date": "15/02/2026",
-        "desc": "FALCONERI, VERONA, IT",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "77.87",
-        "month": "DR"
-      },
-      {
-        "date": "14/02/2026",
-        "desc": "HOTEL TYROL, VILLNOESS, IT",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "96.64",
-        "month": "DR"
-      },
-      {
-        "date": "14/02/2026",
-        "desc": "PIZZERIA DU DE COPE S.R.L, VERONA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "16.66",
-        "month": "DR"
-      },
-      {
-        "date": "14/02/2026",
-        "desc": "VERONA NORD, VERONA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "6.05",
-        "month": "DR"
-      },
-      {
-        "date": "14/02/2026",
-        "desc": "STAZIONE DISTRIBUTORI SEL, VERONA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "11.74",
-        "month": "DR"
-      },
-      {
-        "date": "14/02/2026",
-        "desc": "HERMES 2003ADS Paganel, LAVIS, IT",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.96",
-        "month": "DR"
-      },
-      {
-        "date": "13/02/2026",
-        "desc": "PARCHEGGIO PESCOSTA, CORVARA IN BA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "2.26",
-        "month": "DR"
-      },
-      {
-        "date": "13/02/2026",
-        "desc": "OPTIK WILLY SAS, CORVARA IN BA, IT",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "194.77",
-        "month": "DR"
-      },
-      {
-        "date": "13/02/2026",
-        "desc": "IMBISS SNC, CORVARA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.83",
-        "month": "DR"
-      },
-      {
-        "date": "13/02/2026",
-        "desc": "TREFFPUNKT ZANS, VILLNOESS, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.54",
-        "month": "DR"
-      },
-      {
-        "date": "13/02/2026",
-        "desc": "OIL ITALIA SRL, CASTELROTTO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "42.87",
-        "month": "DR"
-      },
-      {
-        "date": "13/02/2026",
-        "desc": "LUECH DE COSTA, CORVARA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.63",
-        "month": "DR"
-      },
-      {
-        "date": "12/02/2026",
-        "desc": "HOTEL JAEGERHOF SAS PI, Corvara, IT",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "43.78",
-        "month": "DR"
-      },
-      {
-        "date": "12/02/2026",
-        "desc": "RIFUGIO COL PRADAT, CORVARA IN BA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "10.82",
-        "month": "DR"
-      },
-      {
-        "date": "12/02/2026",
-        "desc": "FRARA SRL, CORVARA IN BA, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "7.06",
-        "month": "DR"
-      },
-      {
-        "date": "12/02/2026",
-        "desc": "CABINOVIA COL PRADAT, CORVARA IN BA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "8.01",
-        "month": "DR"
-      },
-      {
-        "date": "12/02/2026",
-        "desc": "SOUVENIERS PASSO GARDENA, SELVA DI VAL, IT",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "11.77",
-        "month": "DR"
-      },
-      {
-        "date": "12/02/2026",
-        "desc": "SPORT BADIA, CORVARA IN BA, IT",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "14.07",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "Crowne Plaza Milan Malpen, Case Nuove, IT",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "13.65",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "HOTEL JAEGERHOF SAS PI, Corvara, IT",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "51.78",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "BSPDV MILANO EST -, PESCHIERA, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.85",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "ROVERETO SUD, MARCO DI ROVE, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.41",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "BOLZANO NORD, CARDANO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "3.11",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "ASPIT DIREZ. USCITA -, MILANO NORD, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "0.89",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "LOCAUTO RENT 6 MOTO, TRENTO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "331.79",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "NAWAB MARKET, ROVERETO, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.41",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "CA' DEL MARCO DI DAPOR M, ROVERETO, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "13.18",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "AUTOGRILL 0046, RONCADELLE, IT",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "11.63",
-        "month": "DR"
-      },
-      {
-        "date": "11/02/2026",
-        "desc": "ROVERETO 311, ROVERETO, IT",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "0.98",
-        "month": "DR"
-      },
-      {
-        "date": "10/02/2026",
-        "desc": "Crowne Plaza Milan Malpen, Case Nuove, IT",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "6.59",
-        "month": "DR"
-      },
-      {
-        "date": "10/02/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "7.89",
-        "month": "DR"
-      },
-      {
-        "date": "09/02/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.72",
-        "month": "DR"
-      },
-      {
-        "date": "08/02/2026",
-        "desc": "BKG*BOOKING.COM HOTEL, (888)850-3958, IE",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "270.88",
-        "month": "DR"
-      },
-      {
-        "date": "08/02/2026",
-        "desc": "amazon.co.uk, 353-12477661, GB",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.1",
-        "month": "DR"
-      },
-      {
-        "date": "07/02/2026",
-        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, US",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.91",
-        "month": "DR"
-      },
-      {
-        "date": "07/02/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.18",
-        "month": "DR"
-      },
-      {
-        "date": "04/02/2026",
-        "desc": "SMALLPDF, ZURICH, CH",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.74",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "SQ *LA VIE CAFE, Salford, UNITED KINGDOM",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "11.7",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "LOccitane, Manchester, UNITED KINGDOM",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "18.58",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "UBER *TRIP HELP.UBER.COM, London, UNITED KINGDOM",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "14.22",
-        "month": "DR"
-      },
-      {
-        "date": "24/03/2026",
-        "desc": "UBER   * EATS PENDING, LONDON, UNITED KINGDOM",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "9.99",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "UBR* PENDING.UBER.COM, LONDON, UNITED KINGDOM",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "14.32",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "UBER   *TRIP, LONDON, UNITED KINGDOM",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.07",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "TESCO STORES 6140, DEANSGATE, UNITED KINGDOM",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.31",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "SPAR, MANCHESTER, UNITED KINGDOM",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "3.32",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "MARKS&SPENCER PLC, MANCHESTER, UNITED KINGDOM",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "2.69",
-        "month": "DR"
-      },
-      {
-        "date": "25/03/2026",
-        "desc": "MARKS&SPENCER PLC, MANCHESTER, UNITED KINGDOM",
-        "subcat": "Shopping & Retail",
-        "cat": "",
         "omr": 0,
-        "dr_cr": "53.15",
+        "dr_cr": "1345.077",
         "month": "DR"
       },
       {
-        "date": "25/03/2026",
-        "desc": "MARKS&SPENCER PLC, MANCHESTER, UNITED KINGDOM",
-        "subcat": "Shopping & Retail",
+        "date": "2026-03-31 00:00:00",
+        "desc": "TURKISH AIRLINES",
+        "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "5.63",
+        "dr_cr": "44",
         "month": "DR"
       },
       {
-        "date": "25/03/2026",
-        "desc": "pupa restaurant & bar, Manchester, UNITED KINGDOM",
-        "subcat": "Dining & Food",
+        "date": "2026-03-30 00:00:00",
+        "desc": "FAIXAT BODYSCAN",
+        "subcat": "Health & Medical",
         "cat": "",
         "omr": 0,
-        "dr_cr": "74.18",
+        "dr_cr": "48.701",
         "month": "DR"
       },
       {
-        "date": "24/03/2026",
+        "date": "2026-03-30 00:00:00",
         "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
         "subcat": "Subscriptions & Digital",
         "cat": "",
@@ -1876,304 +959,70 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "24/03/2026",
-        "desc": "TT NET ANONIM STI, ISTANBUL, TURKEY",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "9.86",
-        "month": "DR"
-      },
-      {
-        "date": "24/03/2026",
-        "desc": "SBX IST NEW AIRPRT INTE31, ISTANBUL, TURKEY",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.81",
-        "month": "DR"
-      },
-      {
-        "date": "24/03/2026",
-        "desc": "Selecta Vending, Manchester, UNITED KINGDOM",
-        "subcat": "Dining & Food",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.44",
-        "month": "DR"
-      },
-      {
-        "date": "24/03/2026",
-        "desc": "Younan Black Cab, CHEADLE, UNITED KINGDOM",
+        "date": "2026-03-30 00:00:00",
+        "desc": "UBR* PENDING.UBER.COM, AMSTERDAM, NETHERLANDS",
         "subcat": "Travel & Transport",
         "cat": "",
         "omr": 0,
-        "dr_cr": "23.68",
+        "dr_cr": "5.42",
         "month": "DR"
       },
       {
-        "date": "24/03/2026",
-        "desc": "MALDRON HOTEL MANCHESTER, MANCHESTER, UNITED KINGDOM",
-        "subcat": "Accommodation",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "99.17",
-        "month": "DR"
-      },
-      {
-        "date": "24/03/2026",
-        "desc": "Payment on cardholder account",
-        "subcat": "Payment",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "1704.06",
-        "month": "CR"
-      },
-      {
-        "date": "18/03/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "12.62",
-        "month": "DR"
-      },
-      {
-        "date": "16/03/2026",
-        "desc": "WWW.DAZN.COM, Amsterdam, NETHERLANDS",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "9.1",
-        "month": "DR"
-      },
-      {
-        "date": "15/03/2026",
-        "desc": "Spotify P4062B7478, Stockholm, SWEDEN",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "2.16",
-        "month": "DR"
-      },
-      {
-        "date": "14/03/2026",
-        "desc": "QATAR AIR 0002132034913, DOHA (REFUND)",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "343.6",
-        "month": "CR"
-      },
-      {
-        "date": "13/03/2026",
-        "desc": "TURKISH AIRL00000005GIAOO, WWW.TURKISHAI",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "355.5",
-        "month": "DR"
-      },
-      {
-        "date": "11/03/2026",
-        "desc": "CLAUDE.AI SUBSCRIPTION, ANTHROPIC.COM, UNITED STATES",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "32.38",
-        "month": "DR"
-      },
-      {
-        "date": "11/03/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "47.36",
-        "month": "DR"
-      },
-      {
-        "date": "10/03/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "7.89",
-        "month": "DR"
-      },
-      {
-        "date": "09/03/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.72",
-        "month": "DR"
-      },
-      {
-        "date": "08/03/2026",
-        "desc": "OMAN QATAR INSURANCE CO, RUVI",
-        "subcat": "Other / Fees",
-        "cat": "",
-        "omr": 0.0,
-        "dr_cr": "335.47",
-        "month": "DR"
-      },
-      {
-        "date": "08/03/2026",
-        "desc": "amazon.co.uk, 353-12477661, UNITED KINGDOM",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.03",
-        "month": "DR"
-      },
-      {
-        "date": "09/03/2026",
-        "desc": "TIINY.HOST, LONDON, UNITED KINGDOM",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "3.56",
-        "month": "DR"
-      },
-      {
-        "date": "09/03/2026",
-        "desc": "TIINY.HOST, LONDON, UNITED KINGDOM",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "3.56",
-        "month": "DR"
-      },
-      {
-        "date": "07/03/2026",
-        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, UNITED STATES",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "5.91",
-        "month": "DR"
-      },
-      {
-        "date": "08/03/2026",
-        "desc": "CLAUDE.AI SUBSCRIPTION, ANTHROPIC.COM, UNITED STATES",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "7.89",
-        "month": "DR"
-      },
-      {
-        "date": "07/03/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "1.18",
-        "month": "DR"
-      },
-      {
-        "date": "07/03/2026",
-        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "15.79",
-        "month": "DR"
-      },
-      {
-        "date": "04/03/2026",
-        "desc": "SMALLPDF, ZURICH, SWITZERLAND",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "4.74",
-        "month": "DR"
-      },
-      {
-        "date": "27/03/2026",
-        "desc": "WWW.FEDERA* #ID 185637, MANCHESTER, UNITED KINGDOM",
-        "subcat": "Subscriptions & Digital",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "8.02",
-        "month": "DR"
-      },
-      {
-        "date": "26/03/2026",
-        "desc": "RYANAIR 224E624WK, LONDON, UNITED KINGDOM",
+        "date": "2026-03-30 00:00:00",
+        "desc": "UBR* PENDING.UBER.COM, AMSTERDAM, NETHERLANDS",
         "subcat": "Travel & Transport",
         "cat": "",
         "omr": 0,
-        "dr_cr": "189.03",
+        "dr_cr": "7.21",
         "month": "DR"
       },
       {
-        "date": "27/03/2026",
-        "desc": "TESCO STORES 6140, DEANSGATE, UNITED KINGDOM",
+        "date": "2026-03-30 00:00:00",
+        "desc": "FLAX & KALE SALA 1A, BARCELONA, SPAIN",
         "subcat": "Dining & Food",
         "cat": "",
         "omr": 0,
-        "dr_cr": "1.03",
+        "dr_cr": "10.19",
         "month": "DR"
       },
       {
-        "date": "27/03/2026",
-        "desc": "WATERSTONES, MANCHESTER, UNITED KINGDOM",
-        "subcat": "Shopping & Retail",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "12.79",
-        "month": "DR"
-      },
-      {
-        "date": "27/03/2026",
-        "desc": "SAINSBURYS S/MKTS, SALFORD, UNITED KINGDOM",
+        "date": "2026-03-30 00:00:00",
+        "desc": "OLIVERES GRISES SLU, BARCELONA, SPAIN",
         "subcat": "Dining & Food",
         "cat": "",
         "omr": 0,
-        "dr_cr": "0.79",
+        "dr_cr": "47.87",
         "month": "DR"
       },
       {
-        "date": "27/03/2026",
-        "desc": "Dishoom Manchester, Manchester, UNITED KINGDOM",
+        "date": "2026-03-29 00:00:00",
+        "desc": "SQ *HELADOS DE GUATEMALA, Barcelona, SPAIN",
         "subcat": "Dining & Food",
         "cat": "",
         "omr": 0,
-        "dr_cr": "29.83",
+        "dr_cr": "1.87",
         "month": "DR"
       },
       {
-        "date": "26/03/2026",
-        "desc": "TURKISH AIRL00000005HAUY0, WWW.TURKISHAI, UNITED KINGDOM",
-        "subcat": "Travel & Transport",
-        "cat": "",
-        "omr": 0,
-        "dr_cr": "16",
-        "month": "DR"
-      },
-      {
-        "date": "26/03/2026",
-        "desc": "VINCENZO TRATTORIA, M'STER M2 7, UNITED KINGDOM",
+        "date": "2026-03-29 00:00:00",
+        "desc": "BILLY BRUNCH & PARK, BARCELONA, SPAIN",
         "subcat": "Dining & Food",
         "cat": "",
         "omr": 0,
-        "dr_cr": "20.54",
+        "dr_cr": "7.25",
         "month": "DR"
       },
       {
-        "date": "26/03/2026",
-        "desc": "SAINSBURY'S S/MKTS, MANCHESTER, UNITED KINGDOM",
+        "date": "2026-03-29 00:00:00",
+        "desc": "CIUTAT CONDAL, BARCELONA, SPAIN",
         "subcat": "Dining & Food",
         "cat": "",
         "omr": 0,
-        "dr_cr": "13.93",
+        "dr_cr": "14.61",
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "Aire Ancient Baths, Barcelona, SPAIN",
         "subcat": "Dining & Food",
         "cat": "",
@@ -2182,7 +1031,7 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "Avolta MAN T3 WDF MAIN, Manchester, UNITED KINGDOM",
         "subcat": "Shopping & Retail",
         "cat": "",
@@ -2191,7 +1040,7 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "Hotel Borneta QQUNHZMF-1, Barcelona, SPAIN",
         "subcat": "Accommodation",
         "cat": "",
@@ -2200,7 +1049,7 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "UBR* PENDING.UBER.COM, LONDON, UNITED KINGDOM",
         "subcat": "Travel & Transport",
         "cat": "",
@@ -2209,7 +1058,7 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "WH Smith Manche, Manchester, UNITED KINGDOM",
         "subcat": "Shopping & Retail",
         "cat": "",
@@ -2218,7 +1067,7 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "WH Smith Manche, Manchester, UNITED KINGDOM",
         "subcat": "Shopping & Retail",
         "cat": "",
@@ -2227,7 +1076,7 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "WH Smith Manche, Manchester, UNITED KINGDOM",
         "subcat": "Shopping & Retail",
         "cat": "",
@@ -2236,7 +1085,7 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "TAXI LLIC 5861, HOSPITALET DE, SPAIN",
         "subcat": "Travel & Transport",
         "cat": "",
@@ -2245,12 +1094,1506 @@ window.FINANCE_DATA = {
         "month": "DR"
       },
       {
-        "date": "28/03/2026",
+        "date": "2026-03-28 00:00:00",
         "desc": "PRET A MANGER, MANCHESTER, UNITED KINGDOM",
         "subcat": "Dining & Food",
         "cat": "",
         "omr": 0,
         "dr_cr": "7.77",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-28 00:00:00",
+        "desc": "Hotel Borneta QQUNHZMF-1",
+        "subcat": "Uncategorized (Review)",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "92.764",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-28 00:00:00",
+        "desc": "TAXI LLIC 5861",
+        "subcat": "Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "16.789",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-27 00:00:00",
+        "desc": "WWW.FEDERA* #ID 185637, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "8.02",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-27 00:00:00",
+        "desc": "TESCO STORES 6140, DEANSGATE, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.03",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-27 00:00:00",
+        "desc": "WATERSTONES, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "12.79",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-27 00:00:00",
+        "desc": "SAINSBURYS S/MKTS, SALFORD, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "0.79",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-27 00:00:00",
+        "desc": "Dishoom Manchester, Manchester, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "29.83",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-26 00:00:00",
+        "desc": "RYANAIR 224E624WK, LONDON, UNITED KINGDOM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "189.03",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-26 00:00:00",
+        "desc": "TURKISH AIRL00000005HAUY0, WWW.TURKISHAI, UNITED KINGDOM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "16",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-26 00:00:00",
+        "desc": "VINCENZO TRATTORIA, M'STER M2 7, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "20.54",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-26 00:00:00",
+        "desc": "SAINSBURY'S S/MKTS, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "13.93",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "SQ *LA VIE CAFE, Salford, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "11.7",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "LOccitane, Manchester, UNITED KINGDOM",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "18.58",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "UBER *TRIP HELP.UBER.COM, London, UNITED KINGDOM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "14.22",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "UBR* PENDING.UBER.COM, LONDON, UNITED KINGDOM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "14.32",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "UBER   *TRIP, LONDON, UNITED KINGDOM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.07",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "TESCO STORES 6140, DEANSGATE, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.31",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "SPAR, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.32",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "MARKS&SPENCER PLC, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "2.69",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "MARKS&SPENCER PLC, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "53.15",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "MARKS&SPENCER PLC, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.63",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-25 00:00:00",
+        "desc": "pupa restaurant & bar, Manchester, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "74.18",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "UBER   * EATS PENDING, LONDON, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "9.99",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.95",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "TT NET ANONIM STI, ISTANBUL, TURKEY",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "9.86",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "SBX IST NEW AIRPRT INTE31, ISTANBUL, TURKEY",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.81",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "Selecta Vending, Manchester, UNITED KINGDOM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.44",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "Younan Black Cab, CHEADLE, UNITED KINGDOM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "23.68",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "MALDRON HOTEL MANCHESTER, MANCHESTER, UNITED KINGDOM",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "99.17",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-24 00:00:00",
+        "desc": "Payment on cardholder account",
+        "subcat": "Payment",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1704.06",
+        "month": "CR"
+      },
+      {
+        "date": "2026-03-18 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "12.62",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-16 00:00:00",
+        "desc": "WWW.DAZN.COM, Amsterdam, NETHERLANDS",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "9.1",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-15 00:00:00",
+        "desc": "Spotify P4062B7478, Stockholm, SWEDEN",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "2.16",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-14 00:00:00",
+        "desc": "QATAR AIR 0002132034913, DOHA (REFUND)",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "343.6",
+        "month": "CR"
+      },
+      {
+        "date": "2026-03-13 00:00:00",
+        "desc": "TURKISH AIRL00000005GIAOO, WWW.TURKISHAI",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "355.5",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-11 00:00:00",
+        "desc": "CLAUDE.AI SUBSCRIPTION, ANTHROPIC.COM, UNITED STATES",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "32.38",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-11 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "47.36",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-10 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "7.89",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-09 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.72",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-09 00:00:00",
+        "desc": "TIINY.HOST, LONDON, UNITED KINGDOM",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.56",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-09 00:00:00",
+        "desc": "TIINY.HOST, LONDON, UNITED KINGDOM",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.56",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-08 00:00:00",
+        "desc": "OMAN QATAR INSURANCE CO, RUVI",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "335.47",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-08 00:00:00",
+        "desc": "amazon.co.uk, 353-12477661, UNITED KINGDOM",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.03",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-08 00:00:00",
+        "desc": "CLAUDE.AI SUBSCRIPTION, ANTHROPIC.COM, UNITED STATES",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "7.89",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-07 00:00:00",
+        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, UNITED STATES",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.91",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-07 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.18",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-07 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IRELAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "15.79",
+        "month": "DR"
+      },
+      {
+        "date": "2026-03-04 00:00:00",
+        "desc": "SMALLPDF, ZURICH, SWITZERLAND",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.74",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-28 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.95",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-24 00:00:00",
+        "desc": "Payment on cardholder account",
+        "subcat": "Payment",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3981.8",
+        "month": "CR"
+      },
+      {
+        "date": "2026-02-23 00:00:00",
+        "desc": "473007",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "38",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-20 00:00:00",
+        "desc": "Refund Globalblue.com, Stockholm, SE",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "27.25",
+        "month": "CR"
+      },
+      {
+        "date": "2026-02-19 00:00:00",
+        "desc": "Spotify P3F84A12EC, Stockholm, SE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "2.16",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-18 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "12.62",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "473007",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "100",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "MIGECA SPA, 20123, IT",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "28.27",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "LOCAUTO RENT 6 MOTO, TRENTO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "63.84",
+        "month": "CR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "DUFRITAL S.P.A., FERNO, IT",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "48.29",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "THE STREET MILANO DUOMO, MILANO, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "10.78",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "SERVIZIO TAXI, MILANO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "8.67",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "FNM*TRENORD TVM 2013-, MILANO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "14.06",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "BAR MADONNINA SRL, MILANO, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.46",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "A5A SRL, MILANO, IT",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.28",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-17 00:00:00",
+        "desc": "COVA MONTENAPOLEONE SRL, MILANO, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "7.5",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-16 00:00:00",
+        "desc": "WWW.DAZN.COM, Amsterdam, NL",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "9.38",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-16 00:00:00",
+        "desc": "VENCHI Milano Mengoni, Milano, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.35",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-16 00:00:00",
+        "desc": "CENTRALE M2, MILANO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "2.06",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-16 00:00:00",
+        "desc": "AL CANTINONE VIA AGNELLO, MILANO, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "26.74",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-16 00:00:00",
+        "desc": "ACCADEMIA SRL, VERONA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "8.45",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-16 00:00:00",
+        "desc": "AUTOGRILL 7177, VERONA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "6.65",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-16 00:00:00",
+        "desc": "FALCONERI, VERONA, IT",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "186.69",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-15 00:00:00",
+        "desc": "TRATTORIA ALLA GRIGLIA, VERONA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "57.23",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-15 00:00:00",
+        "desc": "RISTORANTE OMNIBUS, VENEZIA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "60.04",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-15 00:00:00",
+        "desc": "I TRE MERCANTI SRL, VENEZIA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.59",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-15 00:00:00",
+        "desc": "VICENZA SELF SERVICE NEW, VICENZA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "17.82",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-15 00:00:00",
+        "desc": "TRENITALIA - LEFRECCE, ROMA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "32.84",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-15 00:00:00",
+        "desc": "VERONA P.N. SELF SERVICE, VERONA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "19.79",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-15 00:00:00",
+        "desc": "FALCONERI, VERONA, IT",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "77.87",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-14 00:00:00",
+        "desc": "ROMEO VERONA, VERONA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "26.97",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-14 00:00:00",
+        "desc": "HOTEL TYROL, VILLNOESS, IT",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "96.64",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-14 00:00:00",
+        "desc": "PIZZERIA DU DE COPE S.R.L, VERONA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "16.66",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-14 00:00:00",
+        "desc": "VERONA NORD, VERONA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "6.05",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-14 00:00:00",
+        "desc": "STAZIONE DISTRIBUTORI SEL, VERONA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "11.74",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-14 00:00:00",
+        "desc": "HERMES 2003ADS Paganel, LAVIS, IT",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.96",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-13 00:00:00",
+        "desc": "PARCHEGGIO PESCOSTA, CORVARA IN BA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "2.26",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-13 00:00:00",
+        "desc": "OPTIK WILLY SAS, CORVARA IN BA, IT",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "194.77",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-13 00:00:00",
+        "desc": "IMBISS SNC, CORVARA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.83",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-13 00:00:00",
+        "desc": "TREFFPUNKT ZANS, VILLNOESS, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.54",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-13 00:00:00",
+        "desc": "OIL ITALIA SRL, CASTELROTTO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "42.87",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-13 00:00:00",
+        "desc": "LUECH DE COSTA, CORVARA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.63",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-12 00:00:00",
+        "desc": "HOTEL JAEGERHOF SAS PI, Corvara, IT",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "43.78",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-12 00:00:00",
+        "desc": "RIFUGIO COL PRADAT, CORVARA IN BA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "10.82",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-12 00:00:00",
+        "desc": "FRARA SRL, CORVARA IN BA, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "7.06",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-12 00:00:00",
+        "desc": "CABINOVIA COL PRADAT, CORVARA IN BA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "8.01",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-12 00:00:00",
+        "desc": "SOUVENIERS PASSO GARDENA, SELVA DI VAL, IT",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "11.77",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-12 00:00:00",
+        "desc": "SPORT BADIA, CORVARA IN BA, IT",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "14.07",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "Crowne Plaza Milan Malpen, Case Nuove, IT",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "13.65",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "HOTEL JAEGERHOF SAS PI, Corvara, IT",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "51.78",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "BSPDV MILANO EST -, PESCHIERA, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.85",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "ROVERETO SUD, MARCO DI ROVE, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.41",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "BOLZANO NORD, CARDANO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.11",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "ASPIT DIREZ. USCITA -, MILANO NORD, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "0.89",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "LOCAUTO RENT 6 MOTO, TRENTO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "331.79",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "NAWAB MARKET, ROVERETO, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.41",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "CA' DEL MARCO DI DAPOR M, ROVERETO, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "13.18",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "AUTOGRILL 0046, RONCADELLE, IT",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "11.63",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-11 00:00:00",
+        "desc": "ROVERETO 311, ROVERETO, IT",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "0.98",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-10 00:00:00",
+        "desc": "Crowne Plaza Milan Malpen, Case Nuove, IT",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "6.59",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-10 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "7.89",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-09 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.72",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-08 00:00:00",
+        "desc": "BKG*BOOKING.COM HOTEL, (888)850-3958, IE",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "270.88",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-08 00:00:00",
+        "desc": "amazon.co.uk, 353-12477661, GB",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.1",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-07 00:00:00",
+        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, US",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.91",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-07 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.18",
+        "month": "DR"
+      },
+      {
+        "date": "2026-02-04 00:00:00",
+        "desc": "SMALLPDF, ZURICH, CH",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.74",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-29 00:00:00",
+        "desc": "SHARAF DG LLC, BAUSHER, OMN",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "25.36",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-29 00:00:00",
+        "desc": "SHARAF DG LLC, BAUSHER, OMN",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "89.9",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-28 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.95",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-27 00:00:00",
+        "desc": "AMERICAN AIR0123107954340, FORT WORTH, OM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "106",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-24 00:00:00",
+        "desc": "Partners on Booking BV, Amsterdam, NL",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "153.74",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-24 00:00:00",
+        "desc": "BKG*HOTEL AT BOOKING.C, (888)850-3958, NL",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "306.98",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-24 00:00:00",
+        "desc": "BKG*HOTEL AT BOOKING.C, (888)850-3958, NL",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "80.36",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-24 00:00:00",
+        "desc": "BKG*HOTEL AT BOOKING.C, (888)850-3958, IE",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "271.11",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-24 00:00:00",
+        "desc": "Payment on cardholder account",
+        "subcat": "Payment",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1045.93",
+        "month": "CR"
+      },
+      {
+        "date": "2026-01-18 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "12.63",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-17 00:00:00",
+        "desc": "TAP AIRLINE 0470017370041, LISBOA, PORTUGAL",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "437.84",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-16 00:00:00",
+        "desc": "AIRBNB * HMMM2NWBTW, 415-800-5959, GB",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1454.9",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-16 00:00:00",
+        "desc": "AIRBNB * HME44WC9MP, 415-800-5959, GB",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "544.07",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-15 00:00:00",
+        "desc": "Spotify P3E6801015, Stockholm, SE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "2.16",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-10 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "7.89",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-09 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.72",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-08 00:00:00",
+        "desc": "amazon.co.uk, 353-12477661, GB",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.06",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, US",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.91",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "THE PALACE DOWNTOWN DUBAI, Dubai, AE",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "88.41",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "SHELL OMAN - GHAWABI SS, GHAWABI, OM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "17.8",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "ARTENIRS TRADING LLC, Dubai, AE",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "10.64",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "SOUK MADINAT JUMERIAH, DUBAI, AE",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "26.76",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "TOMMY BAHAMA, DUBAI, AE",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "93.19",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "SOUQ MADINAT JUMEIRAH, DUBAI, AE",
+        "subcat": "Shopping & Retail",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "6.45",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "MADINAT JUMEIRAH LLC, DUBAI, AE",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "81.51",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-07 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.18",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-06 00:00:00",
+        "desc": "LOONA CUISINE REST, DUBAI, AE",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "64.5",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-06 00:00:00",
+        "desc": "BOHO REST AND CAFE LLC, DUBAI, AE",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "24.08",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-06 00:00:00",
+        "desc": "ZAHR EL LAYMOUN ALASLY, DUBAI, AE",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "29.03",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-05 00:00:00",
+        "desc": "THE PALACE DOWNTOWN DUBAI, DUBAI, AE",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "74.92",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-04 00:00:00",
+        "desc": "SMALLPDF, ZURICH, CH",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.74",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-03 00:00:00",
+        "desc": "QATAR AIR 0002132067547, DOHA, OM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "37.1",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-01 00:00:00",
+        "desc": "QATAR AIR 0002132034913, DOHA, OM",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "343.6",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-01 00:00:00",
+        "desc": "0 200000000179937",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "34",
+        "month": "DR"
+      },
+      {
+        "date": "2026-01-01 00:00:00",
+        "desc": "0 200000000179937",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "8.9",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-28 00:00:00",
+        "desc": "AMERICAN AIR0012300840850, FORT WORTH, US",
+        "subcat": "Travel & Transport",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "289.64",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-28 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "3.95",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-24 00:00:00",
+        "desc": "Payment on cardholder account",
+        "subcat": "Payment",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1988.575",
+        "month": "CR"
+      },
+      {
+        "date": "2025-12-18 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.13",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-15 00:00:00",
+        "desc": "Spotify P3D6F75966, Stockholm, SE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "2.16",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-10 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "7.89",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-09 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.72",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-08 00:00:00",
+        "desc": "amazon.co.uk, 353-12477661, GB",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-07 00:00:00",
+        "desc": "KARAOKE-SING-SONGS, QUIZ.THEMUSIC, US",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "5.91",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-07 00:00:00",
+        "desc": "APPLE.COM/BILL, ITUNES.COM, IE",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "1.18",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-04 00:00:00",
+        "desc": "TATTE COFFE, BAKU, AZ",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "20.52",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-04 00:00:00",
+        "desc": "YENI BAKI OTELI, BAKU, AZ",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "34.92",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-04 00:00:00",
+        "desc": "SMALLPDF, ZURICH, CH",
+        "subcat": "Subscriptions & Digital",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "4.74",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-02 00:00:00",
+        "desc": "ELEKTRON HOKUMETIN, BAKI, AZ",
+        "subcat": "Other / Fees",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "15.79",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-02 00:00:00",
+        "desc": "TASTE OF OMAN, AL ATHAIBA, OM",
+        "subcat": "Dining & Food",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "32",
+        "month": "DR"
+      },
+      {
+        "date": "2025-12-02 00:00:00",
+        "desc": "YENI BAKI OTELI, BAKU, AZ",
+        "subcat": "Accommodation",
+        "cat": "",
+        "omr": 0,
+        "dr_cr": "225.88",
         "month": "DR"
       }
     ]
@@ -2262,124 +2605,1848 @@ window.FINANCE_DATA = {
       "actual": 0
     },
     "end_balance": {
-      "budget": 3663.0,
-      "actual": -8302.02,
-      "note": ""
+      "budget": 0,
+      "actual": 0
     },
     "items": [
       {
         "label": "RE Cashflow",
         "type": "income",
-        "budget": 15415.0,
-        "actual": 14279.0,
-        "note": ""
+        "budget": 0,
+        "actual": 0
       },
       {
         "label": "WeMeet",
         "type": "income",
-        "budget": 2100.0,
-        "actual": 1400.0,
-        "note": ""
+        "budget": 0,
+        "actual": 0
       },
       {
         "label": "Salary",
         "type": "income",
-        "budget": 24000.0,
-        "actual": 24000.0,
-        "note": ""
+        "budget": 0,
+        "actual": 0
       },
       {
         "label": "Household",
         "type": "expense",
-        "budget": -7500.0,
-        "actual": -7500.0,
-        "note": ""
+        "budget": 0,
+        "actual": 0
       },
       {
         "label": "Education",
         "type": "expense",
-        "budget": -13352.0,
-        "actual": -13352.0,
-        "note": ""
+        "budget": 0,
+        "actual": 0
       },
       {
         "label": "Personal & Travel",
         "type": "expense",
-        "budget": -8000.0,
-        "actual": -10919.87,
-        "note": ""
+        "budget": 0,
+        "actual": 0
       },
       {
         "label": "Charity & Other",
         "type": "expense",
-        "budget": -9000.0,
-        "actual": -16209.15,
-        "note": ""
+        "budget": 0,
+        "actual": 0
       }
     ]
   },
+  "dashboard_kpis": {
+    "this_month_income": 0,
+    "this_month_expenses": 0,
+    "this_month_net": 0,
+    "re_collection_pct": 0,
+    "cash_balance": 0,
+    "net_worth_display": 0
+  },
   "travel": {
+    "personal_budget": 0,
+    "family_budget": 0,
+    "personal_total_budget": 0,
+    "personal_total_actual": 0,
     "trips": [
       {
-        "name": "Budget: 12,000",
-        "budget": 0,
+        "name": "Dec 2025 - Baku Business",
+        "destination": "Baku, AZ",
+        "from": "02/12/2025",
+        "to": "04/12/2025",
+        "nights": 0,
+        "type": "Personal",
+        "budget": 500.0,
+        "flights": 0,
+        "transport": 0,
+        "hotel": 0,
+        "daily_spend": 0,
         "actual": 0,
-        "type": "personal"
+        "vs_budget": 0
       },
       {
-        "name": "Budget: 12,000",
-        "budget": 0,
+        "name": "Jan 2026 - Dubai",
+        "destination": "Dubai, AE",
+        "from": "05/01/2026",
+        "to": "10/01/2026",
+        "nights": 0,
+        "type": "Personal",
+        "budget": 3000.0,
+        "flights": 0,
+        "transport": 0,
+        "hotel": 0,
+        "daily_spend": 0,
         "actual": 0,
-        "type": "personal"
+        "vs_budget": 0
       },
       {
-        "name": "Destination",
-        "budget": 0,
+        "name": "Feb 2026 - Italy",
+        "destination": "Italy",
+        "from": "08/02/2026",
+        "to": "17/02/2026",
+        "nights": 0,
+        "type": "Personal",
+        "budget": 2000.0,
+        "flights": 0,
+        "transport": 0,
+        "hotel": 0,
+        "daily_spend": 0,
         "actual": 0,
-        "type": "personal"
+        "vs_budget": 0
       },
       {
-        "name": "Baku, AZ",
-        "budget": 0,
+        "name": "March 2026 - Manchester & Barcelona",
+        "destination": "UK / Spain",
+        "from": "24/03/2026",
+        "to": "01/04/2026",
+        "nights": 0,
+        "type": "Personal",
+        "budget": 1034.0,
+        "flights": 0,
+        "transport": 0,
+        "hotel": 0,
+        "daily_spend": 0,
         "actual": 0,
-        "type": "personal"
+        "vs_budget": 0
       },
       {
-        "name": "Dubai, AE",
-        "budget": 0,
+        "name": "May 2026 - Barcelona & New York",
+        "destination": "Spain / USA",
+        "from": "07/05/2026",
+        "to": "19/05/2026",
+        "nights": 0,
+        "type": "Personal",
+        "budget": 400.0,
+        "flights": 0,
+        "transport": 0,
+        "hotel": 0,
+        "daily_spend": 0,
         "actual": 0,
-        "type": "personal"
-      },
+        "vs_budget": 0
+      }
+    ],
+    "family_trips": [
       {
-        "name": "Italy ",
-        "budget": 0,
-        "actual": 0,
-        "type": "personal"
-      },
-      {
-        "name": "UK / Spain",
-        "budget": 0,
-        "actual": 0,
-        "type": "personal"
-      },
-      {
-        "name": "Spain / USA",
-        "budget": 0,
-        "actual": 0,
-        "type": "personal"
-      },
-      {
-        "name": "Destination",
-        "budget": 0,
-        "actual": 0,
-        "type": "personal"
-      },
-      {
-        "name": "\u2014",
-        "budget": 0,
-        "actual": 0,
-        "type": "personal"
+        "name": "Family Summer 2026",
+        "destination": "\u2014",
+        "from": "2026-06-10 00:00:00",
+        "to": "30/06/2026",
+        "type": "Family",
+        "budget": 0.0,
+        "actual": 0
       }
     ]
+  },
+  "re_portfolio": {
+    "properties": [
+      {
+        "name": "Rahba Hill 2 (Saqib)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 600.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-05-31",
+        "deposit": 525.0,
+        "payment_terms": "12 checks",
+        "status": "Active",
+        "tenant_name": "\u0627\u0644\u0639\u0646\u0627\u0635\u0631 \u0627\u0644\u062e\u0645\u0633\u0629 \u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0628\u064a\u0626\u0629 \u0634.\u0645.\u0645",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill 3 (Mohamed Abu Alyazeed)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 600.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-07-15",
+        "deposit": 600.0,
+        "payment_terms": "4 checks",
+        "status": "Active",
+        "tenant_name": "\u0645\u062d\u0645\u062f \u0623\u0628\u0648 \u0627\u0644\u064a\u0632\u064a\u062f \u0639\u0642\u064a\u0644 \u0645\u062d\u0645\u062f",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill 4 (Tony)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 620.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-11-01 00:00:00",
+        "deposit": 650.0,
+        "payment_terms": "Monthly transfer",
+        "status": "Active",
+        "tenant_name": "\u0627\u0646\u062a\u0648\u0646\u064a \u0639\u0644\u0645",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill 6 (Ahmed S. Miftah Hinai)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 600.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-11-14",
+        "deposit": 500.0,
+        "payment_terms": "4 checks",
+        "status": "Active",
+        "tenant_name": "\u0623\u062d\u0645\u062f \u0635\u0627\u0644\u062d \u0645\u0641\u062a\u0627\u062d",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill 7 (Bairoz Karim Khani)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 570.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-09-15",
+        "deposit": 550.0,
+        "payment_terms": "6 checks",
+        "status": "Active",
+        "tenant_name": "\u0628\u0647\u0631\u0648\u0632 \u0643\u0631\u064a\u0645 \u0643\u0627\u0646\u064a",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill 8 (Ahmed Riza)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 570.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-10-01",
+        "deposit": 550.0,
+        "payment_terms": "6 checks",
+        "status": "Active",
+        "tenant_name": "\u0627\u062d\u0645\u062f\u0631\u0632\u0627 \u0645\u062d\u0645\u062f \u0639\u0644\u064a",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill 9 (Sarah)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 550.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-12-15 00:00:00",
+        "deposit": 525.0,
+        "payment_terms": "4 transfers",
+        "status": "Active",
+        "tenant_name": "\u0633\u0627\u0631\u0639 \u0627\u0644\u064a\u0632\u0628\u064a\u062a \u0634\u0627\u0628\u0644\u064a\u0646",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill 10 (Lulua)",
+        "location": "Muscat",
+        "type": "Villa",
+        "purchase_cost": 102364.75,
+        "current_value": 110000.0,
+        "monthly_rent": 550.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-05-31",
+        "deposit": 0.0,
+        "payment_terms": "12 checks",
+        "status": "Active",
+        "tenant_name": "\u062d\u0633\u0627\u0646 \u0627\u0644 \u0627\u0634\u0642\u0631",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Rahba Hill Rooftop",
+        "location": "Muscat",
+        "type": "Rooftop",
+        "purchase_cost": 0.0,
+        "current_value": 0.0,
+        "monthly_rent": 172.5,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "",
+        "deposit": 0.0,
+        "payment_terms": "Annual prepaid",
+        "status": "Active",
+        "tenant_name": "Oman Towers Company LLC",
+        "phone": "72595400",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Tilal Flat",
+        "location": "Muscat",
+        "type": "Apartment",
+        "purchase_cost": 0,
+        "current_value": 0.0,
+        "monthly_rent": 0.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-12-31",
+        "deposit": 0.0,
+        "payment_terms": "12 checks",
+        "status": "SOLD Feb2026",
+        "tenant_name": "N/A \u2014 Sold",
+        "phone": "N/A",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Almouj Luban (Garima Sehra) (Garima Sehra)",
+        "location": "Muscat",
+        "type": "Apartment",
+        "purchase_cost": 100950.0,
+        "current_value": 110000.0,
+        "monthly_rent": 525.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-07-10",
+        "deposit": 525.0,
+        "payment_terms": "",
+        "status": "Active",
+        "tenant_name": "\u062c\u0627\u0631\u064a\u0645\u0627 \u0633\u064a\u0647\u0631\u0627",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Maabila Flat",
+        "location": "Muscat",
+        "type": "Apartment",
+        "purchase_cost": 0.0,
+        "current_value": 0.0,
+        "monthly_rent": 110.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "",
+        "deposit": 0.0,
+        "payment_terms": "No deposit",
+        "status": "Sold 2025",
+        "tenant_name": "N/A \u2014 Sold",
+        "phone": "N/A",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Dubai Residence (Xavi) Flat",
+        "location": "Dubai",
+        "type": "Apartment",
+        "purchase_cost": 152000.0,
+        "current_value": 245000.0,
+        "monthly_rent": 964.91,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-04-08",
+        "deposit": 1315.79,
+        "payment_terms": "3 checks",
+        "status": "Active",
+        "tenant_name": "",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Dubai Reehan (Armando) Flat",
+        "location": "Dubai",
+        "type": "Apartment",
+        "purchase_cost": 168668.0,
+        "current_value": 210000.0,
+        "monthly_rent": 921.05,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "2026-07-18",
+        "deposit": 1263.16,
+        "payment_terms": "1 check",
+        "status": "Active",
+        "tenant_name": "ARMANDO DOS SANTOS RIBEIRO FERREIRA",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Dubai Forte",
+        "location": "Dubai",
+        "type": "Apartment",
+        "purchase_cost": 0.0,
+        "current_value": 0.0,
+        "monthly_rent": 0.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "",
+        "deposit": 0.0,
+        "payment_terms": "",
+        "status": "Sold 2024",
+        "tenant_name": "N/A \u2014 Sold",
+        "phone": "N/A",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      },
+      {
+        "name": "Manchester CitySuites (Julie Twist) (Julie Twist)",
+        "location": "Manchester, UK",
+        "type": "Apartment",
+        "purchase_cost": 176000.0,
+        "current_value": 125000.0,
+        "monthly_rent": 400.0,
+        "annual_rent": 0,
+        "yield_pct": 0,
+        "contract_end": "",
+        "deposit": 0.0,
+        "payment_terms": "",
+        "status": "Active",
+        "tenant_name": "",
+        "phone": "",
+        "capital_gain": 0,
+        "capital_gain_pct": 0
+      }
+    ],
+    "totals": {
+      "total_purchase": 0,
+      "total_current": 0,
+      "unrealized_gain": 0,
+      "total_monthly_rent": 0,
+      "total_annual_rent": 0,
+      "avg_yield": 0
+    }
+  },
+  "forecast": {
+    "years": [
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "income": {
+      "RE Cashflow": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Salary": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "WeMeet / Business": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Investment Income": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Total": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "expenses": {
+      "Household": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Kids Education": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Personal Expenses": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Personal Travel": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Family Travel": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Total": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "net_cashflow": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_cashflow": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cash_balance": {
+      "opening": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "closing": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "net_worth_projection": {
+      "RE Oman": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "RE International": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Private Homes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Financial Investments": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Business Assets": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Cash in Bank": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Debt": [
+        0.0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Total": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "YoY Growth": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "metrics": {
+      "Savings Rate": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Income/Expense Ratio": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "RE Income %": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "portfolio_value": {
+    "years": [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+      "2026"
+    ],
+    "oman_re": {
+      "Subtotal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "international_re": {
+      "Subtotal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "private_homes": {
+      "Subtotal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "financial": {
+      "Subtotal": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "debt": [
+      -138000.0,
+      -38000.0,
+      0.0,
+      0.0,
+      0.0,
+      -634678.0,
+      -734000.0,
+      -650000.0,
+      -593215.0,
+      -1150000.0,
+      -1092000.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_net_worth": [
+      -138000.0,
+      -38000.0,
+      0.0,
+      0.0,
+      0.0,
+      -634678.0,
+      -734000.0,
+      -650000.0,
+      -593215.0,
+      -1150000.0,
+      -1092000.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "investment_timeline": [
+    {
+      "year": "2010",
+      "asset": "Almouj Plot",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 18500.0,
+      "notes": "Land plot in Almouj development",
+      "status": ""
+    },
+    {
+      "year": "2010",
+      "asset": "Tilal Plot",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 12063.0,
+      "notes": "Apartment in Al Khuwair",
+      "status": ""
+    },
+    {
+      "year": "2010",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 68096.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2010",
+      "asset": "Net Worth 2010",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2011",
+      "asset": "Almouj Plot",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 33300.0,
+      "notes": "Final payments",
+      "status": ""
+    },
+    {
+      "year": "2011",
+      "asset": "Tilal Plot",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 12063.0,
+      "notes": "Additional payment",
+      "status": ""
+    },
+    {
+      "year": "2011",
+      "asset": "Maabila Land",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 25000.0,
+      "notes": "Land purchase",
+      "status": ""
+    },
+    {
+      "year": "2011",
+      "asset": "Alkhoudh Land",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 32000.0,
+      "notes": "Land purchase",
+      "status": ""
+    },
+    {
+      "year": "2011",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 101616.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2011",
+      "asset": "Net Worth 2011",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2012",
+      "asset": "Almouj Plot",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 11100.0,
+      "notes": "Additional payment",
+      "status": ""
+    },
+    {
+      "year": "2012",
+      "asset": "Maabila Land",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 3000.0,
+      "notes": "Further construction/payments",
+      "status": ""
+    },
+    {
+      "year": "2012",
+      "asset": "Dubai Residence (Xavi) (Xavi)",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 132632.0,
+      "notes": "Downtown Dubai apartment",
+      "status": ""
+    },
+    {
+      "year": "2012",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 38000.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2012",
+      "asset": "Net Worth 2012",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2013",
+      "asset": "Rahba Hill",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 360500.0,
+      "notes": "Construction payments",
+      "status": ""
+    },
+    {
+      "year": "2013",
+      "asset": "Almouj Plot (Sale)",
+      "category": "Oman RE",
+      "type": "Sale",
+      "amount": -28000.0,
+      "notes": "Plot sale proceeds",
+      "status": ""
+    },
+    {
+      "year": "2013",
+      "asset": "Mawalih Twin Villa (Sale)",
+      "category": "Oman RE",
+      "type": "Sale",
+      "amount": -117000.0,
+      "notes": "Villa sale proceeds",
+      "status": ""
+    },
+    {
+      "year": "2013",
+      "asset": "Net Worth 2013",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2014",
+      "asset": "Rahba Hill",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 10989.0,
+      "notes": "Additional construction costs",
+      "status": ""
+    },
+    {
+      "year": "2014",
+      "asset": "Financial Investments",
+      "category": "Financial Inv.",
+      "type": "Purchase",
+      "amount": 90000.0,
+      "notes": "NBO portfolio allocation",
+      "status": ""
+    },
+    {
+      "year": "2014",
+      "asset": "Net Worth 2014",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2015",
+      "asset": "Rahba Hill",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 297093.0,
+      "notes": "Final finishing costs",
+      "status": ""
+    },
+    {
+      "year": "2015",
+      "asset": "Almouj Plot",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 39600.0,
+      "notes": "Additional costs",
+      "status": ""
+    },
+    {
+      "year": "2015",
+      "asset": "MQ Hill Villa",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 713650.0,
+      "notes": "MQ Hill development",
+      "status": ""
+    },
+    {
+      "year": "2015",
+      "asset": "Forte Apartment",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 60884.0,
+      "notes": "Commercial hotel investment",
+      "status": ""
+    },
+    {
+      "year": "2015",
+      "asset": "Financial Investments",
+      "category": "Financial Inv.",
+      "type": "Purchase",
+      "amount": 8763.0,
+      "notes": "NBO allocation",
+      "status": ""
+    },
+    {
+      "year": "2015",
+      "asset": "Debt (Mortgage)",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": -634678.0,
+      "notes": "Net borrowing",
+      "status": ""
+    },
+    {
+      "year": "2015",
+      "asset": "Net Worth 2015",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2016",
+      "asset": "Rahba Hill",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 152090.0,
+      "notes": "Ongoing costs",
+      "status": ""
+    },
+    {
+      "year": "2016",
+      "asset": "Almouj Plot",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 26450.0,
+      "notes": "Additional costs",
+      "status": ""
+    },
+    {
+      "year": "2016",
+      "asset": "Forte Apartment",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 43229.0,
+      "notes": "Installment payment",
+      "status": ""
+    },
+    {
+      "year": "2016",
+      "asset": "Barcelona Apartment",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 159100.0,
+      "notes": "Apartment purchase",
+      "status": ""
+    },
+    {
+      "year": "2016",
+      "asset": "Financial Investments (Sale)",
+      "category": "Financial Inv.",
+      "type": "Sale",
+      "amount": -85000.0,
+      "notes": "NBO withdrawal",
+      "status": ""
+    },
+    {
+      "year": "2016",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 79693.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2016",
+      "asset": "Net Worth 2016",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Rahba Hill",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 11500.0,
+      "notes": "Installment payment",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "MQ Hill Villa (Sale)",
+      "category": "Oman RE",
+      "type": "Sale",
+      "amount": -535000.0,
+      "notes": "Sale of MQ Hill villas",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "MQ Family House (Sale)",
+      "category": "Private Home",
+      "type": "Sale",
+      "amount": -450000.0,
+      "notes": "Sold old MQ family house",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "MQ Family House (Land)",
+      "category": "Private Home",
+      "type": "Purchase",
+      "amount": 450000.0,
+      "notes": "New MQ land purchase",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Bahla Land (Sale)",
+      "category": "Oman RE",
+      "type": "Sale",
+      "amount": -18350.0,
+      "notes": "Land sale proceeds",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Reehan Villa",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 168668.0,
+      "notes": "Villa purchase",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Manchester CitySuites (Julie Twist) (Julie Twist)",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 182693.0,
+      "notes": "Apartment purchase",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Pegasus",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 136048.0,
+      "notes": "Business investment",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Financial Investments (Sale)",
+      "category": "Financial Inv.",
+      "type": "Sale",
+      "amount": -12000.0,
+      "notes": "NBO withdrawal",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 79136.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2017",
+      "asset": "Net Worth 2017",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2018",
+      "asset": "MQ Hill Villa",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 94327.0,
+      "notes": "Major construction phase",
+      "status": ""
+    },
+    {
+      "year": "2018",
+      "asset": "MQ Family House",
+      "category": "Private Home",
+      "type": "Purchase",
+      "amount": 341727.0,
+      "notes": "Construction payments",
+      "status": ""
+    },
+    {
+      "year": "2018",
+      "asset": "Forte Apartment",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 46911.0,
+      "notes": "Installment payment",
+      "status": ""
+    },
+    {
+      "year": "2018",
+      "asset": "Pegasus",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 6988.0,
+      "notes": "Additional investment",
+      "status": ""
+    },
+    {
+      "year": "2018",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 42000.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2018",
+      "asset": "Net Worth 2018",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2019",
+      "asset": "MQ Hill Villa",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 652049.0,
+      "notes": "Portfolio rebalancing",
+      "status": ""
+    },
+    {
+      "year": "2019",
+      "asset": "MQ Family House",
+      "category": "Private Home",
+      "type": "Purchase",
+      "amount": 239745.0,
+      "notes": "Construction payments",
+      "status": ""
+    },
+    {
+      "year": "2019",
+      "asset": "Bahla Land",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 12500.0,
+      "notes": "Land purchase",
+      "status": ""
+    },
+    {
+      "year": "2019",
+      "asset": "Forte Apartment",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 23415.0,
+      "notes": "Additional payment",
+      "status": ""
+    },
+    {
+      "year": "2019",
+      "asset": "Barcelona Apartment (Sale)",
+      "category": "Int'l RE",
+      "type": "Sale",
+      "amount": -139543.0,
+      "notes": "Apartment sale proceeds",
+      "status": ""
+    },
+    {
+      "year": "2019",
+      "asset": "Debt (Mortgage)",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": -556785.0,
+      "notes": "Net borrowing",
+      "status": ""
+    },
+    {
+      "year": "2019",
+      "asset": "Net Worth 2019",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2020",
+      "asset": "MQ Hill Villa",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 102990.0,
+      "notes": "Ongoing construction",
+      "status": ""
+    },
+    {
+      "year": "2020",
+      "asset": "MQ Family House",
+      "category": "Private Home",
+      "type": "Purchase",
+      "amount": 7500.0,
+      "notes": "Additional costs",
+      "status": ""
+    },
+    {
+      "year": "2020",
+      "asset": "Bahla Land",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 19018.0,
+      "notes": "Additional purchase",
+      "status": ""
+    },
+    {
+      "year": "2020",
+      "asset": "Financial Investments",
+      "category": "Financial Inv.",
+      "type": "Purchase",
+      "amount": 177000.0,
+      "notes": "NBO portfolio",
+      "status": ""
+    },
+    {
+      "year": "2020",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 92300.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2020",
+      "asset": "Net Worth 2020",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2021",
+      "asset": "MQ Hill Villa (Sale)",
+      "category": "Oman RE",
+      "type": "Sale",
+      "amount": -1009250.0,
+      "notes": "Sold MQ Hill villas",
+      "status": ""
+    },
+    {
+      "year": "2021",
+      "asset": "Bahla Land",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 126751.0,
+      "notes": "Bahla family house",
+      "status": ""
+    },
+    {
+      "year": "2021",
+      "asset": "Financial Investments",
+      "category": "Financial Inv.",
+      "type": "Purchase",
+      "amount": 169263.0,
+      "notes": "Portfolio investment",
+      "status": ""
+    },
+    {
+      "year": "2021",
+      "asset": "WeMeet",
+      "category": "Business",
+      "type": "Purchase",
+      "amount": 30017.0,
+      "notes": "WeMeet coworking space investment",
+      "status": ""
+    },
+    {
+      "year": "2021",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 1092000.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2021",
+      "asset": "Net Worth 2021",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2022",
+      "asset": "Financial Investments (Sale)",
+      "category": "Financial Inv.",
+      "type": "Sale",
+      "amount": -31663.0,
+      "notes": "FI withdrawal",
+      "status": ""
+    },
+    {
+      "year": "2022",
+      "asset": "Debt (Mortgage)",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": -4588.0,
+      "notes": "Net borrowing",
+      "status": ""
+    },
+    {
+      "year": "2022",
+      "asset": "Net Worth 2022",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2023",
+      "asset": "Forte Apartment",
+      "category": "Int'l RE",
+      "type": "Purchase",
+      "amount": 70961.0,
+      "notes": "Additional payment",
+      "status": ""
+    },
+    {
+      "year": "2023",
+      "asset": "Financial Investments (Sale)",
+      "category": "Financial Inv.",
+      "type": "Sale",
+      "amount": -105863.0,
+      "notes": "FI withdrawal",
+      "status": ""
+    },
+    {
+      "year": "2023",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 30002.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2023",
+      "asset": "Net Worth 2023",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2024",
+      "asset": "Maabila Land (Sale)",
+      "category": "Oman RE",
+      "type": "Sale",
+      "amount": -16000.0,
+      "notes": "Land sale",
+      "status": ""
+    },
+    {
+      "year": "2024",
+      "asset": "Forte Apartment (Sale)",
+      "category": "Int'l RE",
+      "type": "Sale",
+      "amount": -296512.0,
+      "notes": "Apartment sale",
+      "status": ""
+    },
+    {
+      "year": "2024",
+      "asset": "Financial Investments (Sale)",
+      "category": "Financial Inv.",
+      "type": "Sale",
+      "amount": -21254.0,
+      "notes": "FI withdrawal",
+      "status": ""
+    },
+    {
+      "year": "2024",
+      "asset": "XOM Investment",
+      "category": "Cash",
+      "type": "Purchase",
+      "amount": 289718.0,
+      "notes": "Investment in XOM",
+      "status": ""
+    },
+    {
+      "year": "2024",
+      "asset": "Debt Repayment",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": 2000.0,
+      "notes": "Mortgage repayment",
+      "status": ""
+    },
+    {
+      "year": "2024",
+      "asset": "Net Worth 2024",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2025",
+      "asset": "Bahla Land",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 31000.0,
+      "notes": "Bahla construction",
+      "status": ""
+    },
+    {
+      "year": "2025",
+      "asset": "Financial Investments (Sale)",
+      "category": "Financial Inv.",
+      "type": "Sale",
+      "amount": -61647.0,
+      "notes": "FI withdrawal",
+      "status": ""
+    },
+    {
+      "year": "2025",
+      "asset": "XOM Loan Repaid",
+      "category": "Cash",
+      "type": "Sale",
+      "amount": -61500.0,
+      "notes": "XOM loan paid back",
+      "status": ""
+    },
+    {
+      "year": "2025",
+      "asset": "WeMeet",
+      "category": "Business",
+      "type": "Purchase",
+      "amount": 15000.0,
+      "notes": "Additional WeMeet investment",
+      "status": ""
+    },
+    {
+      "year": "2025",
+      "asset": "Debt (Mortgage)",
+      "category": "Debt",
+      "type": "Debt",
+      "amount": -151352.0,
+      "notes": "Net borrowing",
+      "status": ""
+    },
+    {
+      "year": "2025",
+      "asset": "Net Worth 2025",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2026",
+      "asset": "Tilal Plot (Sale)",
+      "category": "Oman RE",
+      "type": "Sale",
+      "amount": -60000.0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2026",
+      "asset": "Bahla Malik",
+      "category": "Oman RE",
+      "type": "Purchase",
+      "amount": 23000.0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2026",
+      "asset": "WeMeet+ Investment",
+      "category": "Business",
+      "type": "Purchase",
+      "amount": 150000.0,
+      "notes": "",
+      "status": ""
+    },
+    {
+      "year": "2026",
+      "asset": "Net Worth 2026",
+      "category": "",
+      "type": "",
+      "amount": 0,
+      "notes": "",
+      "status": ""
+    }
+  ],
+  "historical": {
+    "years": [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "re_income": [
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0,
+      75502.0
+    ],
+    "net_cashflow": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "investments": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "family_fund": {
+    "children": [
+      {
+        "name": "Inflation Rate",
+        "age_2026": 0,
+        "fund_2026": 0,
+        "distributions": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "five_yr_total": 0,
+        "remaining": 0
+      },
+      {
+        "name": "Installment 1 \u2014 Age 22",
+        "age_2026": 0.2,
+        "fund_2026": 0,
+        "distributions": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "five_yr_total": 0,
+        "remaining": 0
+      },
+      {
+        "name": "Installment 2 \u2014 Age 28",
+        "age_2026": 0.3,
+        "fund_2026": 0,
+        "distributions": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "five_yr_total": 0,
+        "remaining": 0
+      },
+      {
+        "name": "Installment 3 \u2014 Age 35",
+        "age_2026": 0.5,
+        "fund_2026": 0,
+        "distributions": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "five_yr_total": 0,
+        "remaining": 0
+      },
+      {
+        "name": "DISTRIBUTION SCHEDULE",
+        "age_2026": 0,
+        "fund_2026": 0,
+        "distributions": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "five_yr_total": 0,
+        "remaining": 0
+      },
+      {
+        "name": "Sarah",
+        "age_2026": 22.0,
+        "fund_2026": 0,
+        "distributions": [
+          0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "five_yr_total": 0,
+        "remaining": 0
+      },
+      {
+        "name": "Reema",
+        "age_2026": 20.0,
+        "fund_2026": 0,
+        "distributions": [
+          0.0,
+          0.0,
+          0,
+          0.0,
+          0.0
+        ],
+        "five_yr_total": 0,
+        "remaining": 0
+      }
+    ]
+  },
+  "xom": {
+    "shares_pct": 8.4
+  },
+  "wemeet": {
+    "total_capex": 1300000.0,
+    "ownership_pct": 20
+  },
+  "re_budget": {
+    "collection": []
   }
 };
