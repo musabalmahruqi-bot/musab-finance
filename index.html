@@ -6,7 +6,7 @@
     <title>Musab - Personal Finance Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -327,38 +327,7 @@
         }
 
         /* LOADING SPINNER */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 3px solid var(--border);
-            border-top-color: var(--gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        /* loading screen removed for instant login */
 
         /* PAGE CONTENT */
         .page {
@@ -1011,11 +980,6 @@
     </style>
 </head>
 <body>
-    <!-- LOADING SCREEN -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="spinner"></div>
-    </div>
-
     <!-- LOGIN SCREEN -->
     <div class="login-screen" id="loginScreen">
         <div class="login-card">
@@ -1549,8 +1513,6 @@ function initAuth() {
             currentUser = email;
             loginError.textContent = '';
             loginScreen.classList.add('hidden');
-            // Show loading briefly while dashboard renders
-            document.getElementById('loadingScreen').classList.remove('hidden');
             appContainer.style.display = 'flex';
             initApp();
         } else {
@@ -2717,10 +2679,7 @@ function exportCSV() {
 
 // ============ INITIALIZE APP ============
 function initApp() {
-    setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
-        renderDashboard();
-    }, 500);
+    renderDashboard();
 
     initNavigation();
 
@@ -2750,8 +2709,6 @@ function initApp() {
 
 // ============ STARTUP ============
 document.addEventListener('DOMContentLoaded', () => {
-    // Hide loading screen immediately so login is visible
-    document.getElementById('loadingScreen').classList.add('hidden');
     initAuth();
 });
 
