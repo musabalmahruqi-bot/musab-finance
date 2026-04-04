@@ -1,28 +1,28 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 04 Apr 2026 22:25
+// Generated: 04 Apr 2026 22:31
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "04 Apr 2026",
     "assets": {
-      "Real Estate": 1072478.0,
+      "Real Estate": 2642478.0,
       "Financial Investments": 234123.0
     },
     "liabilities": {
       "Outstanding Debt": 0.0
     },
     "re_breakdown": {
-      "RE Oman": 0.0,
-      "RE International": 0.0,
+      "RE Oman": 990000.0,
+      "RE International": 580000.0,
       "Private Homes": 1072478.0
     },
-    "total_assets": 1306601.0,
-    "net_worth": 1306601.0,
+    "total_assets": 2876601.0,
+    "net_worth": 2876601.0,
     "ytd_income": {
-      "RE Rahba Hill": 12840.0,
-      "RE Other Oman": 1439.0,
-      "WeMeet": 2100.0,
+      "RE Rahba Hill": 11226.0,
+      "RE Other": 3053.0,
+      "WeMeet": 1400.0,
       "Salary": 24000.0,
-      "Total": 40379.0
+      "Total": 39679.0
     },
     "ytd_expenses": {
       "Household": 7500.0,
@@ -31,7 +31,7 @@ window.FINANCE_DATA = {
       "Charity": 6336.0,
       "Total": 31987.0
     },
-    "ytd_pnl": 8392.0,
+    "ytd_pnl": 7692.0,
     "bank_accounts": [
       {
         "bank": "Bank Muscat",
@@ -101,26 +101,26 @@ window.FINANCE_DATA = {
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
-        "budget": 14910.0,
-        "actual": 12840.0,
+        "budget": 11990.0,
+        "actual": 11226.0,
         "type": "re"
       },
       {
         "label": "Other RE",
-        "budget": 505.0,
-        "actual": 1439.0,
+        "budget": 3425.0,
+        "actual": 3053.0,
         "type": "re"
       },
       {
         "label": "WeMeet",
         "budget": 2100,
-        "actual": 2100,
+        "actual": 1400.0,
         "type": "other"
       },
       {
         "label": "Salary",
         "budget": 24000,
-        "actual": 24000,
+        "actual": 24000.0,
         "type": "other"
       }
     ]
@@ -2593,67 +2593,67 @@ window.FINANCE_DATA = {
     ]
   },
   "ytd_waterfall": {
-    "title": "YEAR TO DATE",
+    "title": "Year to Date",
     "start_balance": {
       "budget": 0,
       "actual": 0
     },
     "end_balance": {
       "budget": 0,
-      "actual": 0
+      "actual": 7692.0
     },
     "items": [
       {
         "label": "RE Cashflow",
         "type": "income",
-        "budget": 0,
-        "actual": 0
-      },
-      {
-        "label": "WeMeet",
-        "type": "income",
-        "budget": 0,
-        "actual": 0
+        "budget": 15415.0,
+        "actual": 14279.0
       },
       {
         "label": "Salary",
         "type": "income",
-        "budget": 0,
-        "actual": 0
+        "budget": 24000,
+        "actual": 24000.0
+      },
+      {
+        "label": "WeMeet",
+        "type": "income",
+        "budget": 2100,
+        "actual": 1400.0
       },
       {
         "label": "Household",
         "type": "expense",
-        "budget": 0,
-        "actual": 0
+        "budget": 7500.0,
+        "actual": 7500.0
       },
       {
         "label": "Education",
         "type": "expense",
-        "budget": 0,
-        "actual": 0
+        "budget": 13352.0,
+        "actual": 13352.0
       },
       {
         "label": "Personal & Travel",
         "type": "expense",
-        "budget": 0,
+        "budget": 8000.0,
         "actual": 0
       },
       {
         "label": "Charity & Other",
         "type": "expense",
-        "budget": 0,
-        "actual": 0
+        "budget": 9000.0,
+        "actual": 11135.0
       }
     ]
   },
   "dashboard_kpis": {
-    "this_month_income": 0,
-    "this_month_expenses": 0,
-    "this_month_net": 0,
-    "re_collection_pct": 0,
-    "cash_balance": 0,
-    "net_worth_display": 0
+    "this_month_income": 10960.0,
+    "this_month_expenses": 2500.0,
+    "this_month_net": 8460.0,
+    "re_collection_pct": 92.6,
+    "cash_balance": 183500.0,
+    "net_worth_display": 2876601.0
   },
   "travel": {
     "personal_budget": 0,
@@ -2758,8 +2758,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 600.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 7200.0,
+        "yield_pct": 6.55,
         "contract_end": "2026-05-31",
         "deposit": 525.0,
         "payment_terms": "12 checks",
@@ -2776,8 +2776,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 600.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 7200.0,
+        "yield_pct": 6.55,
         "contract_end": "2026-07-15",
         "deposit": 600.0,
         "payment_terms": "4 checks",
@@ -2794,8 +2794,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 620.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 7440.0,
+        "yield_pct": 6.76,
         "contract_end": "2026-11-01 00:00:00",
         "deposit": 650.0,
         "payment_terms": "Monthly transfer",
@@ -2812,8 +2812,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 600.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 7200.0,
+        "yield_pct": 6.55,
         "contract_end": "2026-11-14",
         "deposit": 500.0,
         "payment_terms": "4 checks",
@@ -2830,8 +2830,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 570.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 6840.0,
+        "yield_pct": 6.22,
         "contract_end": "2026-09-15",
         "deposit": 550.0,
         "payment_terms": "6 checks",
@@ -2848,8 +2848,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 570.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 6840.0,
+        "yield_pct": 6.22,
         "contract_end": "2026-10-01",
         "deposit": 550.0,
         "payment_terms": "6 checks",
@@ -2866,8 +2866,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 550.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 6600.0,
+        "yield_pct": 6.0,
         "contract_end": "2026-12-15 00:00:00",
         "deposit": 525.0,
         "payment_terms": "4 transfers",
@@ -2884,8 +2884,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 102364.75,
         "current_value": 110000.0,
         "monthly_rent": 550.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 6600.0,
+        "yield_pct": 6.0,
         "contract_end": "2026-05-31",
         "deposit": 0.0,
         "payment_terms": "12 checks",
@@ -2902,7 +2902,7 @@ window.FINANCE_DATA = {
         "purchase_cost": 0.0,
         "current_value": 0.0,
         "monthly_rent": 172.5,
-        "annual_rent": 0,
+        "annual_rent": 2070.0,
         "yield_pct": 0,
         "contract_end": "",
         "deposit": 0.0,
@@ -2920,7 +2920,7 @@ window.FINANCE_DATA = {
         "purchase_cost": 0,
         "current_value": 0.0,
         "monthly_rent": 0.0,
-        "annual_rent": 0,
+        "annual_rent": 0.0,
         "yield_pct": 0,
         "contract_end": "2026-12-31",
         "deposit": 0.0,
@@ -2938,8 +2938,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 100950.0,
         "current_value": 110000.0,
         "monthly_rent": 525.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 6300.0,
+        "yield_pct": 5.73,
         "contract_end": "2026-07-10",
         "deposit": 525.0,
         "payment_terms": "",
@@ -2956,7 +2956,7 @@ window.FINANCE_DATA = {
         "purchase_cost": 0.0,
         "current_value": 0.0,
         "monthly_rent": 110.0,
-        "annual_rent": 0,
+        "annual_rent": 1320.0,
         "yield_pct": 0,
         "contract_end": "",
         "deposit": 0.0,
@@ -2974,8 +2974,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 152000.0,
         "current_value": 245000.0,
         "monthly_rent": 964.91,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 11578.92,
+        "yield_pct": 4.73,
         "contract_end": "2026-04-08",
         "deposit": 1315.79,
         "payment_terms": "3 checks",
@@ -2992,8 +2992,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 168668.0,
         "current_value": 210000.0,
         "monthly_rent": 921.05,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 11052.6,
+        "yield_pct": 5.26,
         "contract_end": "2026-07-18",
         "deposit": 1263.16,
         "payment_terms": "1 check",
@@ -3010,7 +3010,7 @@ window.FINANCE_DATA = {
         "purchase_cost": 0.0,
         "current_value": 0.0,
         "monthly_rent": 0.0,
-        "annual_rent": 0,
+        "annual_rent": 0.0,
         "yield_pct": 0,
         "contract_end": "",
         "deposit": 0.0,
@@ -3028,8 +3028,8 @@ window.FINANCE_DATA = {
         "purchase_cost": 176000.0,
         "current_value": 125000.0,
         "monthly_rent": 400.0,
-        "annual_rent": 0,
-        "yield_pct": 0.0,
+        "annual_rent": 4800.0,
+        "yield_pct": 3.84,
         "contract_end": "",
         "deposit": 0.0,
         "payment_terms": "",
@@ -3045,8 +3045,8 @@ window.FINANCE_DATA = {
       "total_current": 1570000.0,
       "unrealized_gain": 153464.0,
       "total_monthly_rent": 7753.46,
-      "total_annual_rent": 0,
-      "avg_yield": 0.0
+      "total_annual_rent": 93041.52,
+      "avg_yield": 5.93
     }
   },
   "forecast": {
@@ -3170,18 +3170,18 @@ window.FINANCE_DATA = {
     },
     "net_worth_projection": {
       "RE Oman": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        990000.0,
+        1009800.0,
+        1029996.0,
+        1050595.92,
+        1071607.84
       ],
       "RE International": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        580000.0,
+        591600.0,
+        603432.0,
+        615500.64,
+        627810.65
       ],
       "Private Homes": [
         1072478.0,
@@ -3219,18 +3219,18 @@ window.FINANCE_DATA = {
         0
       ],
       "Total": [
-        1547944.0,
-        1533698.06,
-        1523218.2,
-        1514337.52,
-        1505412.43
+        3117944.0,
+        3135098.06,
+        3156646.2,
+        3180434.08,
+        3204830.92
       ],
       "YoY Growth": [
         0,
-        -0.0092,
-        -0.0068,
-        -0.0058,
-        -0.0059
+        0.0055,
+        0.0069,
+        0.0075,
+        0.0077
       ]
     },
     "metrics": {
@@ -3295,7 +3295,7 @@ window.FINANCE_DATA = {
         1008994.0,
         980994.0,
         980994.0,
-        0.0
+        990000.0
       ]
     },
     "international_re": {
@@ -3316,7 +3316,7 @@ window.FINANCE_DATA = {
         729393.0,
         483993.0,
         483993.0,
-        0.0
+        580000.0
       ]
     },
     "private_homes": {
@@ -3350,7 +3350,7 @@ window.FINANCE_DATA = {
         98763.0,
         8763.0,
         144811.0,
-        58763.0,
+        8763.0,
         8763.0,
         185763.0,
         367953.0,
@@ -3389,7 +3389,7 @@ window.FINANCE_DATA = {
       1439959.0,
       1728752.0,
       1700898.0,
-      2154600.0,
+      2104600.0,
       2335981.0,
       2680932.0,
       3053857.0,
@@ -3397,7 +3397,7 @@ window.FINANCE_DATA = {
       2987293.0,
       2943245.0,
       2866098.0,
-      1306601.0
+      2876601.0
     ]
   },
   "investment_timeline": [
@@ -4498,17 +4498,17 @@ window.FINANCE_DATA = {
     "collection": [
       {
         "property": "Rahba Hills",
-        "ytd_budget": 14910.0,
-        "ytd_actual": 12840.0,
-        "variance": -2070.0,
-        "pct_collected": 86.12
+        "ytd_budget": 11990.0,
+        "ytd_actual": 11226.0,
+        "variance": -764.0,
+        "pct_collected": 93.63
       },
       {
         "property": "Other RE",
-        "ytd_budget": 505.0,
-        "ytd_actual": 1439.0,
-        "variance": 934.0,
-        "pct_collected": 284.95
+        "ytd_budget": 3425.0,
+        "ytd_actual": 3053.0,
+        "variance": -372.0,
+        "pct_collected": 89.14
       }
     ]
   }
