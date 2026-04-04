@@ -1,37 +1,37 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 04 Apr 2026 22:11
+// Generated: 04 Apr 2026 22:23
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "04 Apr 2026",
     "assets": {
-      "Cash in Bank": 0,
-      "WeMeet (20%)": 0,
-      "XOM (8.4%)": 0,
-      "Real Estate": 1690000.0,
-      "Shares & Bonds": 0,
-      "Receivable": 0.0
+      "Real Estate": 1072478.0,
+      "Financial Investments": 234123.0
     },
-    "liabilities": {},
-    "total_assets": 1690000.0,
-    "net_worth": 1690000.0,
+    "liabilities": {
+      "Outstanding Debt": 0.0
+    },
+    "re_breakdown": {
+      "RE Oman": 0.0,
+      "RE International": 0.0,
+      "Private Homes": 1072478.0
+    },
+    "total_assets": 1306601.0,
+    "net_worth": 1306601.0,
     "ytd_income": {
-      "RE Rahba Hill": 0,
-      "RE Other Oman": 0,
-      "UAE RE": 0,
-      "UK RE": 0,
-      "WeMeet": 0,
-      "Salary": 0,
-      "Total": 0
+      "RE Rahba Hill": 12840.0,
+      "RE Other Oman": 1439.0,
+      "WeMeet": 2100.0,
+      "Salary": 24000.0,
+      "Total": 40379.0
     },
     "ytd_expenses": {
-      "Household": 0,
-      "Education": 0,
-      "Travel": 0,
-      "Personal & Other": 0,
-      "Charity": 0,
-      "Total": 0
+      "Household": 7500.0,
+      "Kids Education": 13352.0,
+      "Personal & Charity": 4799.0,
+      "Charity": 6336.0,
+      "Total": 31987.0
     },
-    "ytd_pnl": 0,
+    "ytd_pnl": 8392.0,
     "bank_accounts": [
       {
         "bank": "Bank Muscat",
@@ -98,35 +98,29 @@ window.FINANCE_DATA = {
       }
     ],
     "total_cash": 0,
-    "re_breakdown": {
-      "RE Oman": 110000.0,
-      "RE Dubai": 455000.0,
-      "RE Manchester": 125000.0,
-      "Private Homes": 1000000
-    },
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
-        "budget": 0,
-        "actual": 0,
+        "budget": 14910.0,
+        "actual": 12840.0,
         "type": "re"
       },
       {
         "label": "Other RE",
-        "budget": 2280.0,
-        "actual": 2280.0,
+        "budget": 505.0,
+        "actual": 1439.0,
         "type": "re"
       },
       {
         "label": "WeMeet",
-        "budget": 0,
-        "actual": 0,
+        "budget": 2100,
+        "actual": 2100,
         "type": "other"
       },
       {
         "label": "Salary",
-        "budget": 0,
-        "actual": 0,
+        "budget": 24000,
+        "actual": 24000,
         "type": "other"
       }
     ]
@@ -147,24 +141,24 @@ window.FINANCE_DATA = {
       "Dec"
     ],
     "budget": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      -12056.0,
+      -12387.0,
+      5439.0,
+      23031.0,
+      3437.0,
+      18681.6,
+      7100.3,
+      6305.0,
+      6413.8,
+      1587.3,
+      6362.6,
+      6473.8
     ],
     "actual": [
-      0,
-      0,
-      0,
-      0,
+      12509.0,
+      -17965.0,
+      50981.0,
+      410.0,
       0,
       0,
       0,
@@ -175,24 +169,24 @@ window.FINANCE_DATA = {
       0
     ],
     "income_budget": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      12796.0,
+      16780.0,
+      11939.0,
+      31865.0,
+      12270.0,
+      27514.6,
+      18532.8,
+      12805.0,
+      12913.8,
+      13019.8,
+      12862.6,
+      12973.8
     ],
     "income_actual": [
-      0,
-      0,
-      0,
-      0,
+      12780.0,
+      15939.0,
+      10960.0,
+      2910.0,
       0,
       0,
       0,
@@ -203,24 +197,24 @@ window.FINANCE_DATA = {
       0
     ],
     "expense_budget": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      -24852.0,
+      -6500.0,
+      -6500.0,
+      -8834.0,
+      -8833.0,
+      -8833.0,
+      -11432.5,
+      -6500.0,
+      -6500.0,
+      -11432.5,
+      -6500.0,
+      -6500.0
     ],
     "expense_actual": [
-      0,
-      0,
-      0,
-      0,
+      -22651.0,
+      -6836.0,
+      -2500.0,
+      -2500.0,
       0,
       0,
       0,
@@ -231,26 +225,26 @@ window.FINANCE_DATA = {
       0
     ],
     "end_balance": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      150074.0,
+      132109.0,
+      183090.0,
+      183500.0,
+      183500.0,
+      183500.0,
+      183500.0,
+      183500.0,
+      183500.0,
+      183500.0,
+      183500.0,
+      183500.0
     ],
     "monthly_breakdown": [
       {
         "month": "Jan",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
-            "actual": 0
+            "budget": 4096.0,
+            "actual": 4080.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -292,8 +286,8 @@ window.FINANCE_DATA = {
         "month": "Feb",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
-            "actual": 0
+            "budget": 8080.0,
+            "actual": 7239.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -327,8 +321,8 @@ window.FINANCE_DATA = {
         "month": "Mar",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
-            "actual": 0
+            "budget": 3239.0,
+            "actual": 2960.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -358,8 +352,8 @@ window.FINANCE_DATA = {
         "month": "Apr",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
-            "actual": 0
+            "budget": 23165.0,
+            "actual": 2910.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -393,7 +387,7 @@ window.FINANCE_DATA = {
         "month": "May",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 3570.0,
             "actual": 0
           },
           "WeMeet": {
@@ -428,7 +422,7 @@ window.FINANCE_DATA = {
         "month": "Jun",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 18814.6,
             "actual": 0
           },
           "WeMeet": {
@@ -463,7 +457,7 @@ window.FINANCE_DATA = {
         "month": "Jul",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 9832.8,
             "actual": 0
           },
           "WeMeet": {
@@ -498,7 +492,7 @@ window.FINANCE_DATA = {
         "month": "Aug",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 4105.0,
             "actual": 0
           },
           "WeMeet": {
@@ -529,7 +523,7 @@ window.FINANCE_DATA = {
         "month": "Sep",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 4213.8,
             "actual": 0
           },
           "WeMeet": {
@@ -560,7 +554,7 @@ window.FINANCE_DATA = {
         "month": "Oct",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 4319.8,
             "actual": 0
           },
           "WeMeet": {
@@ -595,7 +589,7 @@ window.FINANCE_DATA = {
         "month": "Nov",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 4162.6,
             "actual": 0
           },
           "WeMeet": {
@@ -626,7 +620,7 @@ window.FINANCE_DATA = {
         "month": "Dec",
         "income": {
           "RE Cashflow": {
-            "budget": 0,
+            "budget": 4273.8,
             "actual": 0
           },
           "WeMeet": {
@@ -2765,15 +2759,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 600.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-05-31",
         "deposit": 525.0,
         "payment_terms": "12 checks",
         "status": "Active",
         "tenant_name": "\u0627\u0644\u0639\u0646\u0627\u0635\u0631 \u0627\u0644\u062e\u0645\u0633\u0629 \u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0628\u064a\u0626\u0629 \u0634.\u0645.\u0645",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill 3 (Mohamed Abu Alyazeed)",
@@ -2783,15 +2777,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 600.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-07-15",
         "deposit": 600.0,
         "payment_terms": "4 checks",
         "status": "Active",
         "tenant_name": "\u0645\u062d\u0645\u062f \u0623\u0628\u0648 \u0627\u0644\u064a\u0632\u064a\u062f \u0639\u0642\u064a\u0644 \u0645\u062d\u0645\u062f",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill 4 (Tony)",
@@ -2801,15 +2795,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 620.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-11-01 00:00:00",
         "deposit": 650.0,
         "payment_terms": "Monthly transfer",
         "status": "Active",
         "tenant_name": "\u0627\u0646\u062a\u0648\u0646\u064a \u0639\u0644\u0645",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill 6 (Ahmed S. Miftah Hinai)",
@@ -2819,15 +2813,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 600.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-11-14",
         "deposit": 500.0,
         "payment_terms": "4 checks",
         "status": "Active",
         "tenant_name": "\u0623\u062d\u0645\u062f \u0635\u0627\u0644\u062d \u0645\u0641\u062a\u0627\u062d",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill 7 (Bairoz Karim Khani)",
@@ -2837,15 +2831,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 570.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-09-15",
         "deposit": 550.0,
         "payment_terms": "6 checks",
         "status": "Active",
         "tenant_name": "\u0628\u0647\u0631\u0648\u0632 \u0643\u0631\u064a\u0645 \u0643\u0627\u0646\u064a",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill 8 (Ahmed Riza)",
@@ -2855,15 +2849,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 570.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-10-01",
         "deposit": 550.0,
         "payment_terms": "6 checks",
         "status": "Active",
         "tenant_name": "\u0627\u062d\u0645\u062f\u0631\u0632\u0627 \u0645\u062d\u0645\u062f \u0639\u0644\u064a",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill 9 (Sarah)",
@@ -2873,15 +2867,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 550.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-12-15 00:00:00",
         "deposit": 525.0,
         "payment_terms": "4 transfers",
         "status": "Active",
         "tenant_name": "\u0633\u0627\u0631\u0639 \u0627\u0644\u064a\u0632\u0628\u064a\u062a \u0634\u0627\u0628\u0644\u064a\u0646",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill 10 (Lulua)",
@@ -2891,15 +2885,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 550.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-05-31",
         "deposit": 0.0,
         "payment_terms": "12 checks",
         "status": "Active",
         "tenant_name": "\u062d\u0633\u0627\u0646 \u0627\u0644 \u0627\u0634\u0642\u0631",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 7635.25,
+        "capital_gain_pct": 7.46
       },
       {
         "name": "Rahba Hill Rooftop",
@@ -2916,7 +2910,7 @@ window.FINANCE_DATA = {
         "status": "Active",
         "tenant_name": "Oman Towers Company LLC",
         "phone": "72595400",
-        "capital_gain": 0,
+        "capital_gain": 0.0,
         "capital_gain_pct": 0
       },
       {
@@ -2934,7 +2928,7 @@ window.FINANCE_DATA = {
         "status": "SOLD Feb2026",
         "tenant_name": "N/A \u2014 Sold",
         "phone": "N/A",
-        "capital_gain": 0,
+        "capital_gain": 0.0,
         "capital_gain_pct": 0
       },
       {
@@ -2945,15 +2939,15 @@ window.FINANCE_DATA = {
         "current_value": 110000.0,
         "monthly_rent": 525.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-07-10",
         "deposit": 525.0,
         "payment_terms": "",
         "status": "Active",
         "tenant_name": "\u062c\u0627\u0631\u064a\u0645\u0627 \u0633\u064a\u0647\u0631\u0627",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 9050.0,
+        "capital_gain_pct": 8.96
       },
       {
         "name": "Maabila Flat",
@@ -2970,7 +2964,7 @@ window.FINANCE_DATA = {
         "status": "Sold 2025",
         "tenant_name": "N/A \u2014 Sold",
         "phone": "N/A",
-        "capital_gain": 0,
+        "capital_gain": 0.0,
         "capital_gain_pct": 0
       },
       {
@@ -2981,15 +2975,15 @@ window.FINANCE_DATA = {
         "current_value": 245000.0,
         "monthly_rent": 964.91,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-04-08",
         "deposit": 1315.79,
         "payment_terms": "3 checks",
         "status": "Active",
         "tenant_name": "",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 93000.0,
+        "capital_gain_pct": 61.18
       },
       {
         "name": "Dubai Reehan (Armando) Flat",
@@ -2999,15 +2993,15 @@ window.FINANCE_DATA = {
         "current_value": 210000.0,
         "monthly_rent": 921.05,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "2026-07-18",
         "deposit": 1263.16,
         "payment_terms": "1 check",
         "status": "Active",
         "tenant_name": "ARMANDO DOS SANTOS RIBEIRO FERREIRA",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": 41332.0,
+        "capital_gain_pct": 24.5
       },
       {
         "name": "Dubai Forte",
@@ -3024,7 +3018,7 @@ window.FINANCE_DATA = {
         "status": "Sold 2024",
         "tenant_name": "N/A \u2014 Sold",
         "phone": "N/A",
-        "capital_gain": 0,
+        "capital_gain": 0.0,
         "capital_gain_pct": 0
       },
       {
@@ -3035,24 +3029,24 @@ window.FINANCE_DATA = {
         "current_value": 125000.0,
         "monthly_rent": 400.0,
         "annual_rent": 0,
-        "yield_pct": 0,
+        "yield_pct": 0.0,
         "contract_end": "",
         "deposit": 0.0,
         "payment_terms": "",
         "status": "Active",
         "tenant_name": "",
         "phone": "",
-        "capital_gain": 0,
-        "capital_gain_pct": 0
+        "capital_gain": -51000.0,
+        "capital_gain_pct": -28.98
       }
     ],
     "totals": {
-      "total_purchase": 0,
-      "total_current": 0,
-      "unrealized_gain": 0,
-      "total_monthly_rent": 0,
+      "total_purchase": 1416536.0,
+      "total_current": 1570000.0,
+      "unrealized_gain": 153464.0,
+      "total_monthly_rent": 7753.46,
       "total_annual_rent": 0,
-      "avg_yield": 0
+      "avg_yield": 0.0
     }
   },
   "forecast": {
@@ -3065,143 +3059,143 @@ window.FINANCE_DATA = {
     ],
     "income": {
       "RE Cashflow": [
-        0,
-        0,
-        0,
-        0,
-        0
+        61660.0,
+        63509.8,
+        65415.09,
+        67377.54,
+        69398.87
       ],
       "Salary": [
-        0,
-        0,
-        0,
-        0,
-        0
+        96000,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
       "WeMeet / Business": [
+        8400,
+        9240.0,
+        10164.0,
+        11180.4,
+        12298.44
+      ],
+      "Investment Income": [
         0,
         0,
         0,
         0,
         0
       ],
-      "Investment Income": [
+      "Total": [
+        166060.0,
+        72749.8,
+        75579.09,
+        78557.94,
+        81697.31
+      ]
+    },
+    "expenses": {
+      "Household": [
+        30000,
+        30900.0,
+        31827.0,
+        32781.81,
+        33765.26
+      ],
+      "Kids Education": [
+        23217.0,
+        20895.3,
+        17761.0,
+        16872.95,
+        17716.6
+      ],
+      "Personal Expenses": [
+        36000,
+        37080.0,
+        38192.4,
+        39338.17,
+        40518.32
+      ],
+      "Personal Travel": [
+        12000,
+        12360.0,
+        12730.8,
+        13112.72,
+        13506.1
+      ],
+      "Family Travel": [
+        7000,
+        7210.0,
+        7426.3,
+        7649.09,
+        7878.56
+      ],
+      "Total": [
+        108217.0,
+        108445.3,
+        107937.5,
+        109754.74,
+        113384.84
+      ]
+    },
+    "net_cashflow": [
+      57843.0,
+      -35695.5,
+      -32358.41,
+      -31196.8,
+      -31687.53
+    ],
+    "free_cashflow": [
+      57843.0,
+      -35695.5,
+      -32358.41,
+      -31196.8,
+      -31687.53
+    ],
+    "cash_balance": {
+      "opening": [
+        183500.0,
+        241343.0,
+        205647.5,
+        173289.09,
+        142092.29
+      ],
+      "closing": [
+        241343.0,
+        205647.5,
+        173289.09,
+        142092.29,
+        110404.76
+      ]
+    },
+    "net_worth_projection": {
+      "RE Oman": [
         0.0,
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "Total": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "expenses": {
-      "Household": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "Kids Education": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "Personal Expenses": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "Personal Travel": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "Family Travel": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "Total": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "net_cashflow": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "free_cashflow": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "cash_balance": {
-      "opening": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "closing": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "net_worth_projection": {
-      "RE Oman": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "RE International": [
-        0,
-        0,
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
       "Private Homes": [
-        0,
-        0,
-        0,
-        0,
-        0
+        1072478.0,
+        1093927.56,
+        1115806.11,
+        1138122.23,
+        1160884.67
       ],
       "Financial Investments": [
-        0,
-        0,
-        0,
-        0,
-        0
+        234123.0,
+        234123.0,
+        234123.0,
+        234123.0,
+        234123.0
       ],
       "Business Assets": [
         0,
@@ -3211,55 +3205,55 @@ window.FINANCE_DATA = {
         0
       ],
       "Cash in Bank": [
-        0,
-        0,
-        0,
-        0,
-        0
+        241343.0,
+        205647.5,
+        173289.09,
+        142092.29,
+        110404.76
       ],
       "Debt": [
-        0.0,
+        0,
         0,
         0,
         0,
         0
       ],
       "Total": [
-        0,
-        0,
-        0,
-        0,
-        0
+        1547944.0,
+        1533698.06,
+        1523218.2,
+        1514337.52,
+        1505412.43
       ],
       "YoY Growth": [
         0,
-        0,
-        0,
-        0,
-        0
+        -0.0092,
+        -0.0068,
+        -0.0058,
+        -0.0059
       ]
     },
     "metrics": {
       "Savings Rate": [
-        0,
-        0,
-        0,
-        0,
-        0
+        0.3483,
+        -0.4907,
+        -0.4281,
+        -0.3971,
+        -0.3879
       ],
       "Income/Expense Ratio": [
-        0,
-        0,
-        0,
-        0,
-        0
+        1.53,
+        0.67,
+        0.7,
+        0.72,
+        0.72
       ],
       "RE Income %": [
-        0,
-        0,
-        0,
-        0,
-        0
+        0.3713,
+        0.873,
+        0.8655,
+        0.8577,
+        0.8495
       ]
     }
   },
@@ -3285,86 +3279,86 @@ window.FINANCE_DATA = {
     ],
     "oman_re": {
       "Subtotal": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        177563.0,
+        279926.0,
+        184026.0,
+        506026.0,
+        517015.0,
+        1567358.0,
+        1743144.0,
+        1187644.0,
+        1281971.0,
+        1934020.0,
+        2037010.0,
+        1008994.0,
+        1008994.0,
+        1008994.0,
+        980994.0,
+        980994.0,
+        0.0
       ]
     },
     "international_re": {
       "Subtotal": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        132632.0,
+        132632.0,
+        132632.0,
+        193516.0,
+        395845.0,
+        747206.0,
+        794117.0,
+        677989.0,
+        658432.0,
+        658432.0,
+        658432.0,
+        729393.0,
+        483993.0,
+        483993.0,
+        0.0
       ]
     },
     "private_homes": {
       "Subtotal": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        215000.0,
+        215000.0,
+        215000.0,
+        215000.0,
+        215000.0,
+        215000.0,
+        315000.0,
+        271237.0,
+        612964.0,
+        865209.0,
+        891727.0,
+        1018478.0,
+        1018478.0,
+        1018478.0,
+        1018478.0,
+        1049478.0,
+        1072478.0
       ]
     },
     "financial": {
       "Subtotal": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        90000.0,
+        98763.0,
+        8763.0,
+        144811.0,
+        58763.0,
+        8763.0,
+        185763.0,
+        367953.0,
+        336291.0,
+        230428.0,
+        459780.0,
+        351633.0,
+        234123.0
       ]
     },
     "debt": [
@@ -3387,23 +3381,23 @@ window.FINANCE_DATA = {
       0.0
     ],
     "total_net_worth": [
-      -138000.0,
-      -38000.0,
-      0.0,
-      0.0,
-      0.0,
-      -634678.0,
-      -734000.0,
-      -650000.0,
-      -593215.0,
-      -1150000.0,
-      -1092000.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0
+      254563.0,
+      456926.0,
+      531658.0,
+      853658.0,
+      954647.0,
+      1439959.0,
+      1728752.0,
+      1700898.0,
+      2154600.0,
+      2335981.0,
+      2680932.0,
+      3053857.0,
+      3022195.0,
+      2987293.0,
+      2943245.0,
+      2866098.0,
+      1306601.0
     ]
   },
   "investment_timeline": [
@@ -4283,58 +4277,112 @@ window.FINANCE_DATA = {
       "2025"
     ],
     "re_income": [
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0,
-      75502.0
+      0.0,
+      8500.0,
+      9000.0,
+      16650.0,
+      9425.0,
+      12000.0,
+      33855.0,
+      89341.0,
+      81007.0,
+      80000.0,
+      104520.0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "salary": [
+      161350.0,
+      203550.0,
+      196125.0,
+      257600.0,
+      433974.0,
+      306968.0,
+      953817.0,
+      175945.0,
+      39286.0,
+      252533.0,
+      461895.0,
+      324147.0,
+      0.0,
+      0.0,
+      40000.0,
+      96000.0
+    ],
+    "total_income": [
+      185900.0,
+      212050.0,
+      205125.0,
+      302250.0,
+      516399.0,
+      318968.0,
+      993563.0,
+      304041.0,
+      120293.0,
+      332533.0,
+      560789.0,
+      368978.0,
+      27503.0,
+      22882.0,
+      54635.0,
+      105800.0
+    ],
+    "total_expenses": [
+      35389.0,
+      47413.0,
+      46100.0,
+      74777.0,
+      135507.0,
+      113636.0,
+      205690.0,
+      122758.0,
+      81007.0,
+      100965.0,
+      133141.0,
+      112041.0,
+      126626.0,
+      146969.0,
+      132200.0,
+      124453.0
     ],
     "net_cashflow": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      150511.0,
+      164637.0,
+      159025.0,
+      227473.0,
+      380892.0,
+      205332.0,
+      787873.0,
+      181283.0,
+      39286.0,
+      231568.0,
+      427648.0,
+      256937.0,
+      -99123.0,
+      -124087.0,
+      -77565.0,
+      -18653.0
     ],
-    "investments": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+    "closing_cash": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ]
   },
   "family_fund": {
@@ -4447,6 +4495,21 @@ window.FINANCE_DATA = {
     "ownership_pct": 20
   },
   "re_budget": {
-    "collection": []
+    "collection": [
+      {
+        "property": "Rahba Hills",
+        "ytd_budget": 14910.0,
+        "ytd_actual": 12840.0,
+        "variance": -2070.0,
+        "pct_collected": 86.12
+      },
+      {
+        "property": "Other RE",
+        "ytd_budget": 505.0,
+        "ytd_actual": 1439.0,
+        "variance": 934.0,
+        "pct_collected": 284.95
+      }
+    ]
   }
 };
