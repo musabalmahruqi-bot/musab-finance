@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 04 Apr 2026 22:31
+// Generated: 04 Apr 2026 22:34
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "04 Apr 2026",
@@ -729,7 +729,7 @@ window.FINANCE_DATA = {
         "total": 0
       },
       {
-        "name": "Manchester CitySuites (Julie Twist) (Julie Twist)",
+        "name": "Manchester CitySuites",
         "values": [
           0,
           0,
@@ -2752,7 +2752,7 @@ window.FINANCE_DATA = {
   "re_portfolio": {
     "properties": [
       {
-        "name": "Rahba Hill 2 (Saqib)",
+        "name": "Rahba Hill Villa 2",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2770,7 +2770,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 7.46
       },
       {
-        "name": "Rahba Hill 3 (Mohamed Abu Alyazeed)",
+        "name": "Rahba Hill Villa 3",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2788,7 +2788,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 7.46
       },
       {
-        "name": "Rahba Hill 4 (Tony)",
+        "name": "Rahba Hill Villa 4",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2806,7 +2806,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 7.46
       },
       {
-        "name": "Rahba Hill 6 (Ahmed S. Miftah Hinai)",
+        "name": "Rahba Hill Villa 6",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2824,7 +2824,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 7.46
       },
       {
-        "name": "Rahba Hill 7 (Bairoz Karim Khani)",
+        "name": "Rahba Hill Villa 7",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2842,7 +2842,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 7.46
       },
       {
-        "name": "Rahba Hill 8 (Ahmed Riza)",
+        "name": "Rahba Hill Villa 8",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2860,7 +2860,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 7.46
       },
       {
-        "name": "Rahba Hill 9 (Sarah)",
+        "name": "Rahba Hill Villa 9",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2878,7 +2878,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 7.46
       },
       {
-        "name": "Rahba Hill 10 (Lulua)",
+        "name": "Rahba Hill Villa 10",
         "location": "Muscat",
         "type": "Villa",
         "purchase_cost": 102364.75,
@@ -2932,7 +2932,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 0
       },
       {
-        "name": "Almouj Luban (Garima Sehra) (Garima Sehra)",
+        "name": "Almouj Luban",
         "location": "Muscat",
         "type": "Apartment",
         "purchase_cost": 100950.0,
@@ -2968,7 +2968,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 0
       },
       {
-        "name": "Dubai Residence (Xavi) Flat",
+        "name": "Dubai Residence Flat",
         "location": "Dubai",
         "type": "Apartment",
         "purchase_cost": 152000.0,
@@ -2986,7 +2986,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 61.18
       },
       {
-        "name": "Dubai Reehan (Armando) Flat",
+        "name": "Dubai Reehan Flat",
         "location": "Dubai",
         "type": "Apartment",
         "purchase_cost": 168668.0,
@@ -3022,7 +3022,7 @@ window.FINANCE_DATA = {
         "capital_gain_pct": 0
       },
       {
-        "name": "Manchester CitySuites (Julie Twist) (Julie Twist)",
+        "name": "Manchester CitySuites",
         "location": "Manchester, UK",
         "type": "Apartment",
         "purchase_cost": 176000.0,
@@ -3511,7 +3511,7 @@ window.FINANCE_DATA = {
     },
     {
       "year": "2012",
-      "asset": "Dubai Residence (Xavi) (Xavi)",
+      "asset": "Dubai Residence",
       "category": "Int'l RE",
       "type": "Purchase",
       "amount": 132632.0,
@@ -3781,7 +3781,7 @@ window.FINANCE_DATA = {
     },
     {
       "year": "2017",
-      "asset": "Manchester CitySuites (Julie Twist) (Julie Twist)",
+      "asset": "Manchester CitySuites",
       "category": "Int'l RE",
       "type": "Purchase",
       "amount": 182693.0,
