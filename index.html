@@ -1,395 +1,2754 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Finance">
-<meta name="theme-color" content="#083D4C">
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>Musab Finance</title>
-<style>
-  /* ── PASSWORD GATE ─────────────────────────────────────────────────────── */
-  #lock-screen {
-    position: fixed; inset: 0; z-index: 9999;
-    background: var(--primary);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 40px 32px;
-    padding-top: calc(40px + env(safe-area-inset-top));
-  }
-  #lock-screen.hidden { display: none; }
-  .lock-logo { font-size: 52px; margin-bottom: 16px; }
-  .lock-title { color: white; font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-  .lock-sub { color: rgba(255,255,255,0.55); font-size: 14px; margin-bottom: 40px; }
-  .lock-input-wrap { position: relative; width: 100%; max-width: 300px; }
-  .lock-input {
-    width: 100%; padding: 15px 48px 15px 18px;
-    background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2);
-    border-radius: 14px; font-size: 18px; color: white; outline: none;
-    letter-spacing: 0.08em;
-  }
-  .lock-input::placeholder { color: rgba(255,255,255,0.35); letter-spacing: 0; }
-  .lock-input:focus { border-color: #2B9D92; background: rgba(255,255,255,0.15); }
-  .lock-eye {
-    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
-    background: none; border: none; color: rgba(255,255,255,0.5);
-    font-size: 18px; cursor: pointer; padding: 4px;
-  }
-  .lock-btn {
-    margin-top: 16px; width: 100%; max-width: 300px;
-    background: #2B9D92; border: none; border-radius: 14px;
-    color: white; font-size: 16px; font-weight: 700;
-    padding: 15px; cursor: pointer; letter-spacing: 0.03em;
-  }
-  .lock-btn:active { background: #028090; }
-  .lock-error { color: #fca5a5; font-size: 13px; margin-top: 12px; min-height: 20px; text-align: center; }
-  .lock-hint { color: rgba(255,255,255,0.3); font-size: 11px; margin-top: 24px; text-align: center; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musab - Personal Finance Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* ── TOKENS ─────────────────────────────────────────────────────────────── */
-  :root {
-    --primary: #083D4C;
-    --secondary: #028090;
-    --accent: #2B9D92;
-    --light: #F2F9F9;
-    --white: #FFFFFF;
-    --text: #1a1a1a;
-    --muted: #6b7280;
-    --border: #e5e7eb;
-    --dr: #fee2e2; --cr: #dcfce7;
-    --dr-text: #991b1b; --cr-text: #166534;
-    --safe-top: env(safe-area-inset-top, 0px);
-    --safe-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body { height: 100%; width: 100%; overflow: hidden; font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; background: var(--primary); color: var(--text); }
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --surface2: #1a1a2e;
+            --surface3: #222236;
+            --border: rgba(255,255,255,0.06);
+            --border2: rgba(255,255,255,0.1);
+            --text: #e8e6e3;
+            --text2: #8b8b9e;
+            --text3: #555566;
+            --gold: #d4a853;
+            --gold2: #e8c46a;
+            --gold-dim: rgba(212,168,83,0.12);
+            --green: #4ade80;
+            --green-dim: rgba(74,222,128,0.12);
+            --red: #f87171;
+            --red-dim: rgba(248,113,113,0.12);
+            --blue: #60a5fa;
+            --amber: #fbbf24;
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
 
-  /* ── LAYOUT ──────────────────────────────────────────────────────────────── */
-  #app { display: flex; flex-direction: column; height: 100%; width: 100%; overflow: hidden; background: var(--light); }
-  .header { background: var(--primary); color: white; padding: 12px 20px 14px; padding-top: calc(12px + var(--safe-top)); }
-  .header-top { display: flex; justify-content: space-between; align-items: center; }
-  .header-title { font-size: 11px; opacity: 0.7; letter-spacing: 0.08em; text-transform: uppercase; }
-  .header-name { font-size: 20px; font-weight: 700; margin-top: 2px; }
-  .header-date { font-size: 11px; opacity: 0.6; margin-top: 2px; }
-  .refresh-btn { background: rgba(255,255,255,0.15); border: none; color: white; width: 34px; height: 34px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-  .content { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 0 0 80px; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; }
-  .tab-pane { display: none; padding: 16px; overflow-x: hidden; }
-  .tab-pane.active { display: block; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow: hidden;
+        }
 
-  /* ── CARDS ───────────────────────────────────────────────────────────────── */
-  .card { background: white; border-radius: 14px; padding: 16px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-  .card-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 12px; }
+        h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; }
 
-  /* ── KPI GRID ────────────────────────────────────────────────────────────── */
-  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
-  .kpi-card { background: white; border-radius: 14px; padding: 14px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-  .kpi-card.full { grid-column: 1/-1; }
-  .kpi-label { font-size: 11px; color: var(--muted); font-weight: 500; }
-  .kpi-value { font-size: 22px; font-weight: 700; color: var(--primary); margin-top: 2px; line-height: 1.1; }
-  .kpi-value.lg { font-size: 28px; }
-  .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+        .app-container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-  /* ── MONTH HERO ──────────────────────────────────────────────────────────── */
-  .month-hero {
-    background: linear-gradient(135deg, #083D4C 0%, #028090 100%);
-    color: white; border-radius: 16px; padding: 20px;
-    margin-bottom: 14px;
-  }
-  .mh-meta { font-size: 10px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-  .mh-name { font-size: 22px; font-weight: 800; margin-bottom: 18px; }
-  .mh-cols { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-  .mh-col-label { font-size: 10px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 3px; }
-  .mh-net-val { font-size: 26px; font-weight: 800; line-height: 1; }
-  .mh-net-vs { font-size: 12px; opacity: 0.65; margin-top: 4px; }
-  .mh-var-val { font-size: 22px; font-weight: 800; line-height: 1; text-align: right; }
-  .mh-var-sub { font-size: 11px; opacity: 0.65; margin-top: 4px; text-align: right; }
+        /* LOGIN SCREEN */
+        .login-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: var(--bg);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
 
-  /* ── GAUGES ──────────────────────────────────────────────────────────────── */
-  .gauge-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
-  .gauge-item:last-child { border-bottom: none; padding-bottom: 4px; }
-  .g-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; }
-  .g-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
-  .g-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
-  .g-track { background: #e5e7eb; border-radius: 6px; height: 9px; overflow: hidden; margin-bottom: 9px; }
-  .g-fill { height: 100%; border-radius: 6px; transition: width 0.7s cubic-bezier(.4,0,.2,1); }
-  .g-footer { display: flex; justify-content: space-between; align-items: flex-end; }
-  .g-actual { font-size: 17px; font-weight: 700; color: var(--primary); }
-  .g-right { text-align: right; }
-  .g-budget { font-size: 12px; color: var(--muted); }
-  .g-variance { font-size: 12px; font-weight: 600; margin-top: 1px; }
-  /* ── Breakdown table ───────────────────────────────────────────────────── */
-  .g-breakdown { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 6px; font-size: 12px; }
-  .bk-hdr { display: grid; grid-template-columns: 1fr 50px 50px 44px; gap: 2px; padding: 0 0 4px; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
-  .bk-row { display: grid; grid-template-columns: 1fr 50px 50px 44px; gap: 2px; padding: 3px 0; border-top: 1px solid #f3f4f6; align-items: center; }
-  .bk-label { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .bk-col { text-align: right; font-variant-numeric: tabular-nums; }
-  .bk-bud { color: var(--muted); }
-  .bk-total { border-top: 1.5px solid var(--border) !important; margin-top: 2px; }
-  .bk-total .bk-label, .bk-total .bk-col { font-weight: 700; color: var(--text); }
-  .bk-muted-row .bk-label { color: var(--muted); font-style: italic; font-size: 11px; }
+        .login-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
 
-  /* ── NET WORTH BREAKDOWN ─────────────────────────────────────────────────── */
-  .nw-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-  .nw-row:last-child { border-bottom: none; }
-  .nw-label { color: var(--text); }
-  .nw-amount { font-weight: 600; color: var(--primary); }
-  .nw-section-head { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); padding: 8px 0 4px; }
-  /* Asset donut legend */
-  .nw-leg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; }
-  .nw-leg-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; font-size: 12px; border-bottom: 1px solid #f3f4f6; }
-  .nw-leg-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
-  .nw-leg-label { flex: 1; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .nw-leg-val { font-weight: 600; color: var(--primary); white-space: nowrap; }
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background: var(--surface);
+            border: 1px solid var(--border2);
+            border-radius: var(--radius);
+            padding: 48px 32px;
+            text-align: center;
+            animation: slideUp 0.4s ease;
+        }
 
-  /* ── CHARTS ──────────────────────────────────────────────────────────────── */
-  .chart-wrap { position: relative; height: 180px; }
-  .chart-wrap-tall { position: relative; height: 220px; }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-  /* ── CC SPEND ────────────────────────────────────────────────────────────── */
-  .cat-row { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); gap: 10px; }
-  .cat-row:last-child { border-bottom: none; }
-  .cat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .cat-name { flex: 1; font-size: 14px; }
-  .cat-amount { font-size: 14px; font-weight: 600; color: var(--primary); }
-  .cat-pct { font-size: 11px; color: var(--muted); min-width: 38px; text-align: right; }
+        .login-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 48px;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: -2px;
+        }
 
-  /* ── MONTH PILLS ─────────────────────────────────────────────────────────── */
-  .month-pills { display: flex; gap: 8px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
-  .month-pill { flex-shrink: 0; background: white; border: 1.5px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; color: var(--muted); }
-  .month-pill.active { background: var(--primary); border-color: var(--primary); color: white; }
+        .login-subtitle {
+            color: var(--text2);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+        }
 
-  /* ── TRANSACTIONS ────────────────────────────────────────────────────────── */
-  .txn-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
-  .txn-item:last-child { border-bottom: none; }
-  .txn-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-  .txn-body { flex: 1; min-width: 0; }
-  .txn-desc { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .txn-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
-  .txn-right { text-align: right; flex-shrink: 0; }
-  .txn-amount { font-size: 14px; font-weight: 700; }
-  .txn-amount.dr { color: var(--dr-text); }
-  .txn-amount.cr { color: var(--cr-text); }
-  .txn-date { font-size: 11px; color: var(--muted); margin-top: 2px; }
+        .login-form input {
+            width: 100%;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+        }
 
-  /* ── SEARCH ──────────────────────────────────────────────────────────────── */
-  .search-wrap { position: sticky; top: 0; background: var(--light); padding: 12px 16px 8px; z-index: 10; margin: -16px -16px 0; }
-  .search-input { width: 100%; background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 10px 14px 10px 38px; font-size: 15px; outline: none; color: var(--text); }
-  .search-input:focus { border-color: var(--accent); }
-  .search-icon { position: absolute; left: 28px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 16px; }
-  .search-inner { position: relative; }
-  .filter-chips { display: flex; gap: 8px; overflow-x: auto; padding: 8px 16px 4px; margin: 0 -16px; -webkit-overflow-scrolling: touch; }
-  .chip { flex-shrink: 0; background: white; border: 1.5px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; }
-  .chip.active { background: var(--secondary); border-color: var(--secondary); color: white; }
-  .search-count { font-size: 12px; color: var(--muted); padding: 8px 0 4px; }
+        .login-form input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--surface3);
+        }
 
-  /* ── BOTTOM NAV ──────────────────────────────────────────────────────────── */
-  .bottom-nav {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: white; border-top: 1px solid var(--border);
-    display: flex; padding-bottom: var(--safe-bottom); z-index: 100;
-  }
-  .nav-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 7px 2px; cursor: pointer; border: none; background: none; color: var(--muted); font-size: 9px; font-weight: 500; gap: 2px; }
-  .nav-btn.active { color: var(--primary); }
-  .nav-icon { font-size: 20px; }
+        .login-form input::placeholder {
+            color: var(--text3);
+        }
 
-  /* ── MISC ────────────────────────────────────────────────────────────────── */
-  .positive { color: #166534; }
-  .negative { color: #991b1b; }
-  .badge-green { background: #dcfce7; color: #166534; }
-  .badge-red { background: #fee2e2; color: #991b1b; }
-  .empty { text-align: center; padding: 40px 20px; color: var(--muted); font-size: 14px; }
-  .ytd-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); }
-  .ytd-row:last-child { border-bottom: none; font-weight: 700; }
-  .ytd-label { font-size: 14px; color: var(--text); }
-  .ytd-val { font-size: 15px; font-weight: 600; }
-  /* ── YTD waterfall KPIs & notes ─────────────────────────────────────────── */
-  .ytd-wf-kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
-  .ytd-kpi { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 8px; text-align: center; }
-  .ytd-kpi-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
-  .ytd-kpi-val { font-size: 15px; font-weight: 700; color: var(--text); }
-  .ytd-notes { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
-  .ytd-note-row { display: grid; grid-template-columns: auto auto 1fr; gap: 6px; align-items: baseline; padding: 4px 0; border-top: 1px solid #f3f4f6; font-size: 12px; }
-  .ytd-note-row:first-child { border-top: none; }
-  .ytd-note-item { font-weight: 600; color: var(--text); white-space: nowrap; }
-  .ytd-note-var { font-weight: 700; font-size: 11px; white-space: nowrap; }
-  .ytd-note-text { color: var(--muted); line-height: 1.3; }
-  /* Legend pill row */
-  .wf-legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
-  .wf-leg { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
-  .wf-leg-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
-  /* ── YTD Income vs Budget gauges ────────────────────────────────────────── */
-  .inc-gauge-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .inc-gauge-item:last-of-type { border-bottom: none; }
-  /* ── RE app link button ─────────────────────────────────────────────────── */
-  .re-app-link {
-    display: flex; align-items: center; gap: 14px;
-    background: white; border-radius: 14px; padding: 16px;
-    margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    text-decoration: none; color: var(--text);
-    border: 1.5px solid var(--border);
-  }
-  .re-app-link:active { background: var(--light); }
-  .re-app-link > span:first-child { font-size: 28px; }
-  .re-app-link-title { font-size: 15px; font-weight: 700; color: var(--primary); }
-  .re-app-link-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+        .login-btn {
+            width: 100%;
+            background: var(--gold);
+            color: var(--bg);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
 
-  .inc-gauge-total {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 0 2px; border-top: 2px solid var(--border); margin-top: 4px;
-    font-size: 14px; font-weight: 700; color: var(--primary);
-  }
-</style>
+        .login-btn:hover {
+            background: var(--gold2);
+            transform: translateY(-2px);
+        }
+
+        .login-error {
+            color: var(--red);
+            font-size: 12px;
+            margin-top: 12px;
+            min-height: 16px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 260px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .sidebar-logo {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 4px;
+            letter-spacing: -1px;
+        }
+
+        .logo-subtitle {
+            font-size: 11px;
+            color: var(--text2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-section {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            color: var(--text2);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            position: relative;
+        }
+
+        .nav-item:hover {
+            color: var(--gold);
+            background: var(--surface2);
+        }
+
+        .nav-item.active {
+            color: var(--gold);
+            background: var(--gold-dim);
+            font-weight: 500;
+        }
+
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold);
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sync-status {
+            font-size: 11px;
+            color: var(--text3);
+            padding: 8px 12px;
+            background: var(--surface2);
+            border-radius: var(--radius-sm);
+            text-align: center;
+        }
+
+        .sync-status.syncing::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .signout-btn {
+            padding: 10px 12px;
+            background: var(--red-dim);
+            color: var(--red);
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .signout-btn:hover {
+            background: var(--red);
+            color: white;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .topbar {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .topbar-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            color: var(--text);
+        }
+
+        .topbar-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .export-btn {
+            padding: 8px 16px;
+            background: var(--gold-dim);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .export-btn:hover {
+            background: var(--gold);
+            color: var(--bg);
+        }
+
+        .content-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        /* LOADING SPINNER */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--border);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* PAGE CONTENT */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* CARDS & LAYOUTS */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--border);
+        }
+
+        .kpi-card.gold::before { background: var(--gold); }
+        .kpi-card.green::before { background: var(--green); }
+        .kpi-card.amber::before { background: var(--amber); }
+        .kpi-card.red::before { background: var(--red); }
+
+        .kpi-label {
+            color: var(--text2);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .kpi-value.green { color: var(--green); }
+        .kpi-value.red { color: var(--red); }
+
+        .kpi-subtitle {
+            font-size: 12px;
+            color: var(--text2);
+            margin-top: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .card-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        /* CHARTS */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .bar-chart-horizontal {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bar-label {
+            min-width: 120px;
+            font-size: 13px;
+            color: var(--text2);
+            text-align: right;
+        }
+
+        .bar-wrapper {
+            flex: 1;
+            background: var(--surface2);
+            border-radius: 4px;
+            height: 24px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--gold);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+
+        .bar-value {
+            font-size: 12px;
+            color: var(--text);
+            margin-left: 8px;
+            min-width: 70px;
+            text-align: right;
+        }
+
+        .monthly-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            gap: 8px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .month-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            gap: 4px;
+        }
+
+        .bar-group {
+            display: flex;
+            gap: 4px;
+            height: 180px;
+            align-items: flex-end;
+        }
+
+        .single-bar {
+            flex: 1;
+            background: var(--gold);
+            border-radius: 2px;
+            position: relative;
+            min-width: 6px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .single-bar:hover {
+            opacity: 1;
+        }
+
+        .single-bar.dim {
+            opacity: 0.4;
+        }
+
+        .single-bar.actual {
+            opacity: 0.9;
+        }
+
+        .month-label {
+            font-size: 11px;
+            color: var(--text2);
+            text-align: center;
+        }
+
+        /* DONUT CHART */
+        .donut-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .donut-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .donut-center-value {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .donut-center-label {
+            font-size: 11px;
+            color: var(--text2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 100%;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .legend-label {
+            flex: 1;
+            color: var(--text2);
+        }
+
+        .legend-value {
+            color: var(--text);
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        /* TABLES */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        thead {
+            background: var(--surface2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            color: var(--text2);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        tbody tr:hover {
+            background: var(--surface2);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .num-right {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-active {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        .status-sold {
+            background: var(--red-dim);
+            color: var(--red);
+        }
+
+        .status-pending {
+            background: rgba(251, 191, 36, 0.12);
+            color: var(--amber);
+        }
+
+        /* PROPERTY CARDS */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .property-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            position: relative;
+        }
+
+        .property-card.sold {
+            opacity: 0.6;
+        }
+
+        .property-status {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+
+        .property-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .property-meta {
+            font-size: 12px;
+            color: var(--text2);
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .property-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .property-stat-label {
+            color: var(--text2);
+        }
+
+        .property-stat-value {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .property-stat-value.gain {
+            color: var(--green);
+        }
+
+        .property-stat-value.negative {
+            color: var(--red);
+        }
+
+        /* TRIP CARDS */
+        .trip-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .trip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .trip-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .trip-meta {
+            font-size: 12px;
+            color: var(--text2);
+            margin-bottom: 12px;
+        }
+
+        .trip-progress {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--surface2);
+            border-radius: 3px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--green);
+            transition: width 0.3s ease, background 0.3s ease;
+        }
+
+        .progress-fill.warning {
+            background: var(--amber);
+        }
+
+        .progress-fill.danger {
+            background: var(--red);
+        }
+
+        .progress-text {
+            font-size: 12px;
+            color: var(--text2);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        /* TRANSACTIONS */
+        .transaction-filter {
+            margin-bottom: 20px;
+        }
+
+        .transaction-filter input {
+            width: 100%;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        .transaction-filter input::placeholder {
+            color: var(--text3);
+        }
+
+        .transaction-filter input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        /* WATERFALL */
+        .waterfall-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 250px;
+            gap: 12px;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .waterfall-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .waterfall-bar {
+            width: 100%;
+            max-width: 40px;
+            border-radius: 4px;
+            position: relative;
+            transition: opacity 0.2s ease;
+        }
+
+        .waterfall-bar:hover {
+            opacity: 0.8;
+        }
+
+        .waterfall-label {
+            font-size: 11px;
+            color: var(--text2);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legend {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                align-items: center;
+                overflow-y: visible;
+            }
+
+            .sidebar-logo {
+                padding: 12px 20px;
+                border-bottom: none;
+                border-right: 1px solid var(--border);
+            }
+
+            .nav-section {
+                display: flex;
+                gap: 0;
+                padding: 0;
+                border-bottom: none;
+                overflow-x: auto;
+                border-right: 1px solid var(--border);
+            }
+
+            .nav-item {
+                padding: 12px 16px;
+                white-space: nowrap;
+                border-bottom: none;
+            }
+
+            .sidebar-footer {
+                margin-top: 0;
+                padding: 12px 20px;
+                border-top: none;
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .sync-status {
+                display: none;
+            }
+
+            .signout-btn {
+                flex: 1;
+            }
+
+            .main-content {
+                height: calc(100vh - 100px);
+            }
+
+            .kpi-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .topbar {
+                padding: 12px 16px;
+            }
+
+            .content-area {
+                padding: 16px;
+            }
+
+            .monthly-bars {
+                height: 150px;
+            }
+
+            .bar-group {
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kpi-row {
+                grid-template-columns: 1fr;
+            }
+
+            .legend {
+                grid-template-columns: 1fr;
+            }
+
+            .bar-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .bar-label {
+                min-width: auto;
+                text-align: left;
+            }
+
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* UTILITY */
+        .text-gold { color: var(--gold); }
+        .text-green { color: var(--green); }
+        .text-red { color: var(--red); }
+        .text-muted { color: var(--text2); }
+
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-
-<!-- ── PASSWORD GATE ──────────────────────────────────────────────────────── -->
-<div id="lock-screen">
-  <div class="lock-logo">🔒</div>
-  <div class="lock-title">Musab Finance</div>
-  <div class="lock-sub">Enter your password to continue</div>
-  <div class="lock-input-wrap">
-    <input class="lock-input" id="lock-input" type="password"
-      placeholder="Password" autocomplete="current-password"
-      onkeydown="if(event.key==='Enter')unlock()">
-    <button class="lock-eye" id="lock-eye" onclick="toggleEye()" tabindex="-1">👁</button>
-  </div>
-  <button class="lock-btn" onclick="unlock()">Unlock</button>
-  <div class="lock-error" id="lock-error"></div>
-  <div class="lock-hint">Session stays unlocked for 24 hours</div>
-</div>
-
-<div id="app">
-  <div class="header">
-    <div class="header-top">
-      <div>
-        <div class="header-title">Personal Finance</div>
-        <div class="header-name">Musab Al Mahruqi</div>
-        <div class="header-date" id="hdr-date"></div>
-      </div>
-      <button class="refresh-btn" onclick="location.reload()" title="Refresh">↻</button>
-    </div>
-  </div>
-
-  <div class="content" id="content">
-
-    <!-- ── TAB: MONTH (OPENING) ──────────────────────────────────────────── -->
-    <div class="tab-pane active" id="tab-month">
-      <div class="month-pills" id="cf-month-pills"></div>
-      <div class="month-hero" id="month-hero"></div>
-      <div class="card">
-        <div class="card-title">Actual vs Budget</div>
-        <div id="month-gauges"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">YTD Cash Waterfall</div>
-        <div id="ytd-wf-kpis" class="ytd-wf-kpis"></div>
-        <div class="wf-legend">
-          <div class="wf-leg"><div class="wf-leg-dot" style="background:#083D4C"></div>Budget / Actual</div>
-          <div class="wf-leg"><div class="wf-leg-dot" style="background:#2B9D92"></div>Favourable</div>
-          <div class="wf-leg"><div class="wf-leg-dot" style="background:#ef4444"></div>Unfavourable</div>
-        </div>
-        <div class="chart-wrap-tall" style="height:230px"><canvas id="chart-ytd-waterfall"></canvas></div>
-        <div id="ytd-notes" class="ytd-notes"></div>
-      </div>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="spinner"></div>
     </div>
 
-    <!-- ── TAB: NET WORTH ────────────────────────────────────────────────── -->
-    <div class="tab-pane" id="tab-networth">
-      <div class="kpi-grid">
-        <div class="kpi-card full">
-          <div class="kpi-label">Net Worth</div>
-          <div class="kpi-value lg" id="kpi-nw">—</div>
-          <div class="kpi-sub" id="kpi-nw-date">as at —</div>
+    <!-- LOGIN SCREEN -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo">Musab</div>
+            <div class="login-subtitle">Personal Finance</div>
+            <form class="login-form" id="loginForm">
+                <input type="email" id="emailInput" placeholder="Email" autocomplete="username" required>
+                <input type="password" id="passwordInput" placeholder="Password" autocomplete="current-password" required>
+                <button type="submit" class="login-btn">Sign In</button>
+                <div class="login-error" id="loginError"></div>
+            </form>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Total Assets</div>
-          <div class="kpi-value" id="kpi-assets">—</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-title">Asset Breakdown</div>
-        <div style="position:relative;height:260px"><canvas id="chart-assets"></canvas></div>
-        <div id="nw-asset-legend" style="margin-top:12px"></div>
-        <div id="nw-liab-section"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">YTD Income vs Budget</div>
-        <div id="ytd-income-gauges"></div>
-      </div>
-      <a href="https://musabalmahruqi-bot.github.io/musab-portfolio/" target="_blank" class="re-app-link">
-        <span>🏠</span>
-        <div>
-          <div class="re-app-link-title">RE Portfolio App</div>
-          <div class="re-app-link-sub">Full property detail, yields & occupancy</div>
-        </div>
-        <span style="color:var(--muted);font-size:18px">›</span>
-      </a>
     </div>
 
-    <!-- ── TAB: CREDIT CARD ──────────────────────────────────────────────── -->
-    <div class="tab-pane" id="tab-cc">
-      <div class="kpi-grid">
-        <div class="kpi-card full">
-          <div class="kpi-label">Current CC Balance</div>
-          <div class="kpi-value lg" id="cc-balance">—</div>
-          <div class="kpi-sub">Mar 2026 · statement open</div>
+    <!-- APP -->
+    <div class="app-container" id="appContainer" style="display: none;">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-brand">Musab</div>
+                <div class="logo-subtitle">Personal Finance</div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-item active" data-page="dashboard">◈ Dashboard</div>
+                <div class="nav-item" data-page="cashflow">◎ Cashflow</div>
+                <div class="nav-item" data-page="net-worth">⬡ Net Worth</div>
+                <div class="nav-item" data-page="properties">⬢ Properties</div>
+                <div class="nav-item" data-page="investments">◆ Investments</div>
+                <div class="nav-item" data-page="travel">✈ Travel</div>
+                <div class="nav-item" data-page="credit-card">▤ Credit Card</div>
+                <div class="nav-item" data-page="forecast">▧ Forecast</div>
+                <div class="nav-item" data-page="history">◷ History</div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="sync-status syncing" id="syncStatus">Synced</div>
+                <button class="signout-btn" id="signoutBtn">Sign Out</button>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-title">Monthly Closing Balance</div>
-        <div class="chart-wrap"><canvas id="chart-cc-monthly"></canvas></div>
-      </div>
-      <div class="card">
-        <div class="card-title">Spend by Category — All Months</div>
-        <div style="display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center">
-          <div style="position:relative;height:140px"><canvas id="chart-cc-donut"></canvas></div>
-          <div id="cc-cat-list"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="topbar">
+                <div class="topbar-title" id="topbarTitle">Dashboard</div>
+                <div class="topbar-actions">
+                    <button class="export-btn" id="exportBtn">📊 Export CSV</button>
+                </div>
+            </div>
+
+            <div class="content-area" id="contentArea">
+                <!-- DASHBOARD PAGE -->
+                <div class="page active" id="dashboard-page">
+                    <div class="kpi-row">
+                        <div class="kpi-card gold">
+                            <div class="kpi-label">Net Worth</div>
+                            <div class="kpi-value" id="nwNetWorth">—</div>
+                            <div class="kpi-subtitle" id="nwAsAt">—</div>
+                        </div>
+                        <div class="kpi-card green">
+                            <div class="kpi-label">YTD Income</div>
+                            <div class="kpi-value green" id="nwYtdIncome">—</div>
+                            <div class="kpi-subtitle" id="nwYtdIncomeDetail">—</div>
+                        </div>
+                        <div class="kpi-card amber">
+                            <div class="kpi-label">YTD Expenses</div>
+                            <div class="kpi-value" id="nwYtdExpenses">—</div>
+                            <div class="kpi-subtitle" id="nwYtdExpensesDetail">—</div>
+                        </div>
+                        <div class="kpi-card" id="nwPnlCard">
+                            <div class="kpi-label">YTD P&L</div>
+                            <div class="kpi-value" id="nwYtdPnl">—</div>
+                            <div class="kpi-subtitle" id="nwYtdPnlDetail">—</div>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-title">Monthly Cashflow</div>
+                            <div class="chart-container">
+                                <div class="monthly-bars" id="monthlyCashflowChart"></div>
+                            </div>
+                            <div style="display: flex; gap: 20px; font-size: 12px;">
+                                <div style="flex: 1;">
+                                    <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
+                                        <div style="width: 12px; height: 12px; background: var(--gold); opacity: 0.4; border-radius: 2px;"></div>
+                                        <span>Budget</span>
+                                    </div>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <div style="width: 12px; height: 12px; background: var(--gold); opacity: 0.9; border-radius: 2px;"></div>
+                                        <span>Actual</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-title">Asset Allocation</div>
+                            <div class="chart-container">
+                                <svg id="assetDonut" style="width: 100%; height: 280px; max-width: 280px; margin: 0 auto;"></svg>
+                                <div class="donut-center" id="donutCenter">
+                                    <div class="donut-center-value" id="donutValue">—</div>
+                                    <div class="donut-center-label">Total</div>
+                                </div>
+                            </div>
+                            <div class="legend" id="assetLegend"></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Income vs Budget</div>
+                        <div class="bar-chart-horizontal" id="incomeVsBudgetChart"></div>
+                    </div>
+
+                    <div class="card" style="margin-top: 24px;">
+                        <div class="card-title">Cash Balance Trend</div>
+                        <div class="chart-container">
+                            <svg id="cashTrendChart" style="width: 100%; height: 200px;"></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CASHFLOW PAGE -->
+                <div class="page" id="cashflow-page">
+                    <div class="kpi-row">
+                        <div class="kpi-card gold">
+                            <div class="kpi-label">Annual Budget</div>
+                            <div class="kpi-value" id="cfAnnualBudget">—</div>
+                        </div>
+                        <div class="kpi-card green">
+                            <div class="kpi-label">YTD Actual</div>
+                            <div class="kpi-value green" id="cfYtdActual">—</div>
+                        </div>
+                        <div class="kpi-card" id="cfVarianceCard">
+                            <div class="kpi-label">Variance</div>
+                            <div class="kpi-value" id="cfVariance">—</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Projected YE</div>
+                            <div class="kpi-value" id="cfProjectedYe">—</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Monthly Breakdown</div>
+                        <div class="table-wrapper">
+                            <table id="monthlyTable">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th class="num-right">Inc Budget</th>
+                                        <th class="num-right">Inc Actual</th>
+                                        <th class="num-right">Exp Budget</th>
+                                        <th class="num-right">Exp Actual</th>
+                                        <th class="num-right">Net Budget</th>
+                                        <th class="num-right">Net Actual</th>
+                                        <th class="num-right">Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">YTD Waterfall</div>
+                        <div class="chart-container">
+                            <div class="waterfall-bars" id="waterfallChart"></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Liquidity Position</div>
+                        <div class="bar-chart-horizontal" id="liquidityChart"></div>
+                    </div>
+                </div>
+
+                <!-- NET WORTH PAGE -->
+                <div class="page" id="net-worth-page">
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Net Worth Summary</div>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 20px;">
+                            <div>
+                                <div class="kpi-label" style="margin-bottom: 8px;">Total Assets</div>
+                                <div class="kpi-value" style="font-size: 24px;" id="nwAssets">—</div>
+                            </div>
+                            <div>
+                                <div class="kpi-label" style="margin-bottom: 8px;">Total Liabilities</div>
+                                <div class="kpi-value" style="font-size: 24px;" id="nwLiabilities">—</div>
+                            </div>
+                            <div>
+                                <div class="kpi-label" style="margin-bottom: 8px;">Net Worth</div>
+                                <div class="kpi-value text-gold" style="font-size: 24px;" id="nwTotal">—</div>
+                            </div>
+                        </div>
+                        <div class="card-title" style="margin: 0 0 16px 0; font-size: 14px;">Assets Breakdown</div>
+                        <div class="bar-chart-horizontal" id="assetsChart"></div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-title">Real Estate Breakdown</div>
+                            <div class="chart-container">
+                                <svg id="reDonut" style="width: 100%; height: 280px; max-width: 280px; margin: 0 auto;"></svg>
+                                <div class="donut-center" id="reDonutCenter">
+                                    <div class="donut-center-value" id="reDonutValue">—</div>
+                                    <div class="donut-center-label">RE Total</div>
+                                </div>
+                            </div>
+                            <div class="legend" id="reLegend"></div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-title">Bank Accounts</div>
+                            <div class="table-wrapper">
+                                <table id="bankAccountsTable">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Bank</th>
+                                            <th>Type</th>
+                                            <th>Currency</th>
+                                            <th>Account</th>
+                                            <th class="num-right">Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-title">YTD Income</div>
+                            <div class="bar-chart-horizontal" id="incomeBreakdownChart"></div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-title">YTD Expenses</div>
+                            <div class="bar-chart-horizontal" id="expensesBreakdownChart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROPERTIES PAGE -->
+                <div class="page" id="properties-page">
+                    <div class="kpi-row">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Total Properties</div>
+                            <div class="kpi-value" id="propCount">—</div>
+                        </div>
+                        <div class="kpi-card gold">
+                            <div class="kpi-label">Total Value</div>
+                            <div class="kpi-value" id="propValue">—</div>
+                        </div>
+                        <div class="kpi-card green">
+                            <div class="kpi-label">Monthly Rent</div>
+                            <div class="kpi-value green" id="propMonthlyRent">—</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Avg Yield</div>
+                            <div class="kpi-value" id="propAvgYield">—</div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Properties</div>
+                        <div class="properties-grid" id="propertiesGrid"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">RE Collection Summary</div>
+                        <div class="table-wrapper">
+                            <table id="collectionTable">
+                                <thead>
+                                    <tr>
+                                        <th>Property</th>
+                                        <th class="num-right">YTD Budget</th>
+                                        <th class="num-right">YTD Actual</th>
+                                        <th class="num-right">Variance</th>
+                                        <th>% Collected</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INVESTMENTS PAGE -->
+                <div class="page" id="investments-page">
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Portfolio Value Timeline (2010-2026)</div>
+                        <div class="chart-container">
+                            <svg id="portfolioChart" style="width: 100%; height: 300px;"></svg>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" id="investmentKpiRow"></div>
+
+                    <div class="card">
+                        <div class="card-title">Investment Timeline</div>
+                        <div class="table-wrapper">
+                            <table id="investmentTimelineTable">
+                                <thead>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th>Asset</th>
+                                        <th>Category</th>
+                                        <th>Type</th>
+                                        <th class="num-right">Amount</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRAVEL PAGE -->
+                <div class="page" id="travel-page">
+                    <div class="kpi-row">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Personal Budget</div>
+                            <div class="kpi-value" id="travelPersonalBudget">—</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Family Budget</div>
+                            <div class="kpi-value" id="travelFamilyBudget">—</div>
+                        </div>
+                        <div class="kpi-card" id="travelTotalCard">
+                            <div class="kpi-label">YTD Actual</div>
+                            <div class="kpi-value" id="travelTotal">—</div>
+                        </div>
+                        <div class="kpi-card" id="travelRemainingCard">
+                            <div class="kpi-label">Remaining</div>
+                            <div class="kpi-value" id="travelRemaining">—</div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Personal Trips</div>
+                        <div id="personalTripsContainer"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Family Trips</div>
+                        <div id="familyTripsContainer"></div>
+                    </div>
+                </div>
+
+                <!-- CREDIT CARD PAGE -->
+                <div class="page" id="credit-card-page">
+                    <div class="kpi-card" style="margin-bottom: 24px;">
+                        <div class="kpi-label">Current Balance</div>
+                        <div class="kpi-value" id="ccBalance">—</div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Monthly Summary</div>
+                        <div class="table-wrapper">
+                            <table id="ccSummaryTable">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th class="num-right">Opening</th>
+                                        <th class="num-right">Purchases</th>
+                                        <th class="num-right">Payments</th>
+                                        <th class="num-right">Closing</th>
+                                        <th class="num-right">Net Spend</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Transactions</div>
+                        <div class="transaction-filter">
+                            <input type="text" id="transactionSearch" placeholder="Search transactions...">
+                        </div>
+                        <div class="table-wrapper">
+                            <table id="transactionsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th class="num-right">Amount (OMR)</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORECAST PAGE -->
+                <div class="page" id="forecast-page">
+                    <div class="kpi-row">
+                        <div class="kpi-card gold">
+                            <div class="kpi-label">2030 Net Worth</div>
+                            <div class="kpi-value" id="fc2030Nw">—</div>
+                        </div>
+                        <div class="kpi-card green">
+                            <div class="kpi-label">Avg Annual Income</div>
+                            <div class="kpi-value green" id="fcAvgIncome">—</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Avg Annual Expenses</div>
+                            <div class="kpi-value" id="fcAvgExpenses">—</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Avg Annual Savings</div>
+                            <div class="kpi-value" id="fcAvgSavings">—</div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Net Worth Projection (2026-2030)</div>
+                        <div class="chart-container">
+                            <svg id="nwProjectionChart" style="width: 100%; height: 300px;"></svg>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Income & Expenses Forecast</div>
+                        <div class="table-wrapper">
+                            <table id="forecastTable">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th class="num-right">2026</th>
+                                        <th class="num-right">2027</th>
+                                        <th class="num-right">2028</th>
+                                        <th class="num-right">2029</th>
+                                        <th class="num-right">2030</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Key Metrics</div>
+                        <div class="table-wrapper">
+                            <table id="metricsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th class="num-right">2026</th>
+                                        <th class="num-right">2027</th>
+                                        <th class="num-right">2028</th>
+                                        <th class="num-right">2029</th>
+                                        <th class="num-right">2030</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HISTORY PAGE -->
+                <div class="page" id="history-page">
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-title">Net Worth Growth (2010-2026)</div>
+                        <div class="chart-container">
+                            <svg id="historyChart" style="width: 100%; height: 300px;"></svg>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Historical Summary</div>
+                        <div class="table-wrapper">
+                            <table id="historicalTable">
+                                <thead>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th class="num-right">Total Income</th>
+                                        <th class="num-right">Total Expenses</th>
+                                        <th class="num-right">Net Cashflow</th>
+                                        <th class="num-right">Closing Cash</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-title">Transactions</div>
-        <div class="month-pills" id="month-pills"></div>
-        <div id="txn-list"></div>
-      </div>
     </div>
 
-    <!-- ── TAB: SEARCH ───────────────────────────────────────────────────── -->
-    <div class="tab-pane" id="tab-search">
-      <div class="search-wrap">
-        <div class="search-inner">
-          <span class="search-icon">🔍</span>
-          <input class="search-input" id="search-input" type="search"
-            placeholder="Search transactions…" oninput="renderSearch()">
-        </div>
-      </div>
-      <div class="filter-chips" id="filter-chips"></div>
-      <div class="search-count" id="search-count"></div>
-      <div id="search-results"></div>
-    </div>
+    <!-- DATA SCRIPT -->
+    <script src="data.js"></script>
 
-  </div><!-- /content -->
+    <script>
+// ============ AUTHENTICATION ============
+const validCredentials = [
+    { email: 'musab@xom.com', password: '2026re' },
+    { email: 'admin', password: 'admin' }
+];
 
-  <nav class="bottom-nav">
-    <button class="nav-btn active" onclick="showTab('month',this)">
-      <span class="nav-icon">📅</span>Month
-    </button>
-    <button class="nav-btn" onclick="showTab('networth',this)">
-      <span class="nav-icon">🏦</span>Worth
-    </button>
-    <button class="nav-btn" onclick="showTab('cc',this)">
-      <span class="nav-icon">💳</span>Card
-    </button>
-    <button class="nav-btn" onclick="showTab('search',this)">
-      <span class="nav-icon">🔍</span>Search
-    </button>
-  </nav>
-</div>
+let currentUser = null;
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
-<script src="data.js"></script>
-<script src="app.js"></script>
+function initAuth() {
+    const loginForm = document.getElementById('loginForm');
+    const emailInput = document.getElementById('emailInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const loginError = document.getElementById('loginError');
+    const loginScreen = document.getElementById('loginScreen');
+    const appContainer = document.getElementById('appContainer');
+
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        const isValid = validCredentials.some(
+            cred => cred.email === email && cred.password === password
+        );
+
+        if (isValid) {
+            currentUser = email;
+            loginError.textContent = '';
+            loginScreen.classList.add('hidden');
+            appContainer.style.display = 'flex';
+            initApp();
+        } else {
+            loginError.textContent = 'Invalid credentials';
+        }
+    });
+
+    const signoutBtn = document.getElementById('signoutBtn');
+    signoutBtn.addEventListener('click', () => {
+        currentUser = null;
+        appContainer.style.display = 'none';
+        loginScreen.classList.remove('hidden');
+        emailInput.value = '';
+        passwordInput.value = '';
+        loginError.textContent = '';
+        emailInput.focus();
+    });
+}
+
+// ============ NAVIGATION ============
+function initNavigation() {
+    const navItems = document.querySelectorAll('.nav-item');
+    const pages = document.querySelectorAll('.page');
+    const topbarTitle = document.getElementById('topbarTitle');
+
+    const pageNames = {
+        'dashboard': 'Dashboard',
+        'cashflow': 'Cashflow',
+        'net-worth': 'Net Worth',
+        'properties': 'Properties',
+        'investments': 'Investments',
+        'travel': 'Travel',
+        'credit-card': 'Credit Card',
+        'forecast': 'Forecast',
+        'history': 'History'
+    };
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const pageName = item.dataset.page;
+
+            navItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            pages.forEach(p => p.classList.remove('active'));
+            document.getElementById(`${pageName}-page`).classList.add('active');
+
+            topbarTitle.textContent = pageNames[pageName] || 'Dashboard';
+        });
+    });
+}
+
+// ============ FORMATTING UTILITIES ============
+const fmt = {
+    currency: (num) => {
+        if (num === null || num === undefined || isNaN(num)) return '—';
+        const abs = Math.abs(num);
+        const formatted = new Intl.NumberFormat('en-US', {
+            maximumFractionDigits: abs < 1000 ? 2 : 0
+        }).format(abs);
+        return `OMR ${formatted}`;
+    },
+    number: (num) => {
+        if (num === null || num === undefined || isNaN(num)) return '—';
+        return new Intl.NumberFormat('en-US', {
+            maximumFractionDigits: 0
+        }).format(num);
+    },
+    percent: (num) => {
+        if (num === null || num === undefined || isNaN(num)) return '—';
+        return (num * 100).toFixed(1) + '%';
+    }
+};
+
+// ============ DATA HELPERS ============
+function sumValues(obj) {
+    if (!obj) return 0;
+    return Object.values(obj).reduce((sum, val) => sum + (typeof val === 'number' ? val : 0), 0);
+}
+
+// ============ DASHBOARD PAGE ============
+function renderDashboard() {
+    const D = window.FINANCE_DATA;
+
+    // KPIs
+    document.getElementById('nwNetWorth').textContent = fmt.currency(D.net_worth.net_worth);
+    document.getElementById('nwAsAt').textContent = `as at ${D.net_worth.as_at}`;
+    document.getElementById('nwYtdIncome').textContent = fmt.currency(D.net_worth.ytd_income.Total);
+    document.getElementById('nwYtdIncomeDetail').textContent = `${Object.keys(D.net_worth.ytd_income).length - 1} sources`;
+    document.getElementById('nwYtdExpenses').textContent = fmt.currency(D.net_worth.ytd_expenses.Total);
+    document.getElementById('nwYtdExpensesDetail').textContent = `${Object.keys(D.net_worth.ytd_expenses).length - 1} categories`;
+
+    const pnlValue = D.net_worth.ytd_pnl;
+    const pnlCard = document.getElementById('nwPnlCard');
+    const pnlElement = document.getElementById('nwYtdPnl');
+    pnlElement.textContent = fmt.currency(pnlValue);
+    pnlElement.className = 'kpi-value ' + (pnlValue >= 0 ? 'green' : 'red');
+    pnlCard.className = 'kpi-card ' + (pnlValue >= 0 ? 'green' : 'red');
+
+    renderMonthlyCashflowChart();
+    renderAssetDonut();
+    renderIncomeVsBudgetChart();
+    renderCashTrendChart();
+}
+
+function renderMonthlyCashflowChart() {
+    const D = window.FINANCE_DATA;
+    const container = document.getElementById('monthlyCashflowChart');
+    container.innerHTML = '';
+
+    const months = D.cashflow.months;
+    const budget = D.cashflow.budget || [];
+    const actual = D.cashflow.actual || [];
+
+    const maxValue = Math.max(
+        ...budget.map(v => Math.abs(v || 0)),
+        ...actual.map(v => Math.abs(v || 0))
+    );
+    const baseHeight = 180;
+
+    months.forEach((month, idx) => {
+        const budgetVal = budget[idx] || 0;
+        const actualVal = actual[idx] || 0;
+
+        const budgetHeight = Math.abs(budgetVal) / maxValue * baseHeight;
+        const actualHeight = Math.abs(actualVal) / maxValue * baseHeight;
+
+        const monthGroup = document.createElement('div');
+        monthGroup.className = 'month-group';
+        monthGroup.innerHTML = `
+            <div class="bar-group">
+                <div class="single-bar dim" style="height: ${budgetHeight}px;" title="Budget: ${fmt.currency(budgetVal)}"></div>
+                <div class="single-bar actual" style="height: ${actualHeight}px;" title="Actual: ${fmt.currency(actualVal)}"></div>
+            </div>
+            <div class="month-label">${month}</div>
+        `;
+        container.appendChild(monthGroup);
+    });
+}
+
+function renderAssetDonut() {
+    const D = window.FINANCE_DATA;
+    const assets = D.net_worth.assets;
+    const reBreakdown = D.net_worth.re_breakdown || {};
+    const totalNw = D.net_worth.net_worth;
+
+    const chartData = {};
+    const reTotal = sumValues(reBreakdown);
+    if (reTotal > 0) chartData['Real Estate'] = reTotal;
+
+    Object.entries(assets).forEach(([key, val]) => {
+        if (key !== 'Real Estate' && typeof val === 'number' && val > 0) {
+            chartData[key] = val;
+        }
+    });
+
+    renderDonut('assetDonut', 'donutValue', 'assetLegend', chartData, totalNw, 'Total Assets');
+}
+
+function renderIncomeVsBudgetChart() {
+    const D = window.FINANCE_DATA;
+    const data = D.net_worth.ytd_income_vs_budget || [];
+    const container = document.getElementById('incomeVsBudgetChart');
+    container.innerHTML = '';
+
+    data.forEach(item => {
+        const maxVal = Math.max(item.budget || 0, item.actual || 0);
+        const actualWidth = maxVal ? (item.actual / maxVal * 100) : 0;
+
+        const barItem = document.createElement('div');
+        barItem.className = 'bar-item';
+        barItem.innerHTML = `
+            <div class="bar-label">${item.label}</div>
+            <div class="bar-wrapper">
+                <div class="bar-fill" style="width: ${actualWidth}%; background: var(--gold);" title="Actual: ${fmt.currency(item.actual)}"></div>
+            </div>
+            <div class="bar-value">${fmt.currency(item.actual)} / ${fmt.currency(item.budget)}</div>
+        `;
+        container.appendChild(barItem);
+    });
+}
+
+function renderCashTrendChart() {
+    const D = window.FINANCE_DATA;
+    const endBalances = D.cashflow.end_balance || [];
+    const months = D.cashflow.months || [];
+
+    const svg = document.getElementById('cashTrendChart');
+    if (!endBalances.length) return;
+
+    const maxBalance = Math.max(...endBalances);
+    const minBalance = Math.min(...endBalances);
+    const range = maxBalance - minBalance || 1;
+
+    const padding = 40;
+    const width = svg.clientWidth || 600;
+    const height = svg.clientHeight || 200;
+
+    const graphWidth = width - padding * 2;
+    const graphHeight = height - padding * 2;
+
+    svg.innerHTML = '';
+
+    const points = endBalances.map((val, idx) => {
+        const x = padding + (idx / (endBalances.length - 1)) * graphWidth;
+        const y = height - padding - ((val - minBalance) / range) * graphHeight;
+        return [x, y];
+    });
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'cashGradient');
+    gradient.setAttribute('x1', '0%');
+    gradient.setAttribute('y1', '0%');
+    gradient.setAttribute('x2', '0%');
+    gradient.setAttribute('y2', '100%');
+    gradient.innerHTML = `
+        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
+        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
+    `;
+    defs.appendChild(gradient);
+    svg.appendChild(defs);
+
+    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
+    const areaPath = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    areaPath.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
+    areaPath.setAttribute('fill', 'url(#cashGradient)');
+    svg.appendChild(areaPath);
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    line.setAttribute('points', pointsStr);
+    line.setAttribute('fill', 'none');
+    line.setAttribute('stroke', 'var(--gold)');
+    line.setAttribute('stroke-width', '2');
+    svg.appendChild(line);
+
+    points.forEach((p) => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', p[0]);
+        circle.setAttribute('cy', p[1]);
+        circle.setAttribute('r', '4');
+        circle.setAttribute('fill', 'var(--gold)');
+        circle.setAttribute('opacity', '0.6');
+        svg.appendChild(circle);
+    });
+
+    const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    xAxis.setAttribute('x1', padding);
+    xAxis.setAttribute('y1', height - padding);
+    xAxis.setAttribute('x2', width - padding);
+    xAxis.setAttribute('y2', height - padding);
+    xAxis.setAttribute('stroke', 'var(--border)');
+    xAxis.setAttribute('stroke-width', '1');
+    svg.appendChild(xAxis);
+
+    months.forEach((month, idx) => {
+        const x = padding + (idx / (months.length - 1)) * graphWidth;
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', x);
+        text.setAttribute('y', height - padding + 20);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('font-size', '11');
+        text.setAttribute('fill', 'var(--text2)');
+        text.textContent = month;
+        svg.appendChild(text);
+    });
+}
+
+// ============ CASHFLOW PAGE ============
+function renderCashflow() {
+    const D = window.FINANCE_DATA;
+
+    const annualBudget = sumValues(D.cashflow.income_budget) + sumValues(D.cashflow.expense_budget);
+    document.getElementById('cfAnnualBudget').textContent = fmt.currency(annualBudget);
+
+    const ytdActual = D.cashflow.actual.reduce((sum, v) => sum + (v || 0), 0);
+    document.getElementById('cfYtdActual').textContent = fmt.currency(ytdActual);
+
+    const variance = ytdActual - (D.cashflow.budget.reduce((sum, v) => sum + (v || 0), 0));
+    const varianceCard = document.getElementById('cfVarianceCard');
+    const varianceElement = document.getElementById('cfVariance');
+    varianceElement.textContent = fmt.currency(variance);
+    varianceElement.className = 'kpi-value ' + (variance >= 0 ? 'green' : 'red');
+    varianceCard.className = 'kpi-card ' + (variance >= 0 ? 'green' : 'red');
+
+    const projectedYe = ytdActual + D.cashflow.actual.slice(Object.keys(D.cashflow.months || []).length).reduce((sum, v) => sum + (v || 0), 0);
+    document.getElementById('cfProjectedYe').textContent = fmt.currency(projectedYe);
+
+    const table = document.querySelector('#monthlyTable tbody');
+    table.innerHTML = '';
+
+    D.cashflow.months.forEach((month, idx) => {
+        const incBudget = D.cashflow.income_budget[idx] || 0;
+        const incActual = D.cashflow.income_actual[idx] || 0;
+        const expBudget = D.cashflow.expense_budget[idx] || 0;
+        const expActual = D.cashflow.expense_actual[idx] || 0;
+        const netBudget = incBudget + expBudget;
+        const netActual = incActual + expActual;
+        const balance = D.cashflow.end_balance[idx] || 0;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${month}</td>
+            <td class="num-right">${fmt.currency(incBudget)}</td>
+            <td class="num-right">${fmt.currency(incActual)}</td>
+            <td class="num-right"><span style="color: var(--red);">${fmt.currency(Math.abs(expBudget))}</span></td>
+            <td class="num-right"><span style="color: var(--red);">${fmt.currency(Math.abs(expActual))}</span></td>
+            <td class="num-right">${fmt.currency(netBudget)}</td>
+            <td class="num-right">${fmt.currency(netActual)}</td>
+            <td class="num-right">${fmt.currency(balance)}</td>
+        `;
+        table.appendChild(tr);
+    });
+
+    renderWaterfallChart();
+    renderLiquidityChart();
+}
+
+function renderWaterfallChart() {
+    const D = window.FINANCE_DATA;
+    const items = D.ytd_waterfall?.items || [];
+    const container = document.getElementById('waterfallChart');
+    container.innerHTML = '';
+
+    const maxValue = Math.max(...items.map(i => Math.abs(i.actual || i.budget || 0)));
+    const baseHeight = 230;
+
+    items.forEach((item) => {
+        const val = item.actual || item.budget || 0;
+        const height = Math.abs(val) / maxValue * baseHeight;
+        const isIncome = item.type === 'income';
+
+        const waterfallItem = document.createElement('div');
+        waterfallItem.className = 'waterfall-item';
+        waterfallItem.innerHTML = `
+            <div class="waterfall-bar" style="height: ${height}px; background: ${isIncome ? 'var(--green)' : 'var(--red)'}; opacity: 0.8;" title="${item.label}: ${fmt.currency(val)}"></div>
+            <div class="waterfall-label">${item.label}</div>
+        `;
+        container.appendChild(waterfallItem);
+    });
+}
+
+function renderLiquidityChart() {
+    const D = window.FINANCE_DATA;
+    const liquidity = D.cashflow.liquidity || {};
+    const container = document.getElementById('liquidityChart');
+    container.innerHTML = '';
+
+    const maxVal = Math.max(...Object.values(liquidity).map(v => typeof v === 'number' ? v : 0));
+
+    Object.entries(liquidity).forEach(([label, value]) => {
+        if (typeof value !== 'number') return;
+        const width = maxVal ? (value / maxVal * 100) : 0;
+
+        const barItem = document.createElement('div');
+        barItem.className = 'bar-item';
+        barItem.innerHTML = `
+            <div class="bar-label">${label}</div>
+            <div class="bar-wrapper">
+                <div class="bar-fill" style="width: ${width}%;"></div>
+            </div>
+            <div class="bar-value">${fmt.currency(value)}</div>
+        `;
+        container.appendChild(barItem);
+    });
+}
+
+// ============ NET WORTH PAGE ============
+function renderNetWorth() {
+    const D = window.FINANCE_DATA;
+
+    document.getElementById('nwAssets').textContent = fmt.currency(D.net_worth.total_assets);
+    document.getElementById('nwLiabilities').textContent = fmt.currency(sumValues(D.net_worth.liabilities));
+    document.getElementById('nwTotal').textContent = fmt.currency(D.net_worth.net_worth);
+
+    const assetsContainer = document.getElementById('assetsChart');
+    assetsContainer.innerHTML = '';
+    const maxAsset = Math.max(...Object.values(D.net_worth.assets).filter(v => typeof v === 'number'));
+
+    Object.entries(D.net_worth.assets).forEach(([label, value]) => {
+        if (typeof value !== 'number' || value <= 0) return;
+        const width = maxAsset ? (value / maxAsset * 100) : 0;
+
+        const barItem = document.createElement('div');
+        barItem.className = 'bar-item';
+        barItem.innerHTML = `
+            <div class="bar-label">${label}</div>
+            <div class="bar-wrapper">
+                <div class="bar-fill" style="width: ${width}%;"></div>
+            </div>
+            <div class="bar-value">${fmt.currency(value)}</div>
+        `;
+        assetsContainer.appendChild(barItem);
+    });
+
+    renderDonut('reDonut', 'reDonutValue', 'reLegend', D.net_worth.re_breakdown, sumValues(D.net_worth.re_breakdown), 'Total RE');
+
+    const bankTable = document.querySelector('#bankAccountsTable tbody');
+    bankTable.innerHTML = '';
+    (D.net_worth.bank_accounts || []).forEach((bank, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${idx + 1}</td>
+            <td>${bank.bank || '—'}</td>
+            <td>${bank.type || '—'}</td>
+            <td>${bank.currency || '—'}</td>
+            <td>${bank.account || '—'}</td>
+            <td class="num-right">${fmt.currency(bank.balance)}</td>
+        `;
+        bankTable.appendChild(tr);
+    });
+
+    const incomeContainer = document.getElementById('incomeBreakdownChart');
+    incomeContainer.innerHTML = '';
+    const maxInc = Math.max(...Object.values(D.net_worth.ytd_income).filter(v => typeof v === 'number'));
+    Object.entries(D.net_worth.ytd_income).forEach(([label, value]) => {
+        if (label === 'Total' || typeof value !== 'number') return;
+        const width = maxInc ? (value / maxInc * 100) : 0;
+
+        const barItem = document.createElement('div');
+        barItem.className = 'bar-item';
+        barItem.innerHTML = `
+            <div class="bar-label">${label}</div>
+            <div class="bar-wrapper">
+                <div class="bar-fill" style="width: ${width}%; background: var(--green);"></div>
+            </div>
+            <div class="bar-value">${fmt.currency(value)}</div>
+        `;
+        incomeContainer.appendChild(barItem);
+    });
+
+    const expenseContainer = document.getElementById('expensesBreakdownChart');
+    expenseContainer.innerHTML = '';
+    const maxExp = Math.max(...Object.values(D.net_worth.ytd_expenses).filter(v => typeof v === 'number'));
+    Object.entries(D.net_worth.ytd_expenses).forEach(([label, value]) => {
+        if (label === 'Total' || typeof value !== 'number') return;
+        const width = maxExp ? (value / maxExp * 100) : 0;
+
+        const barItem = document.createElement('div');
+        barItem.className = 'bar-item';
+        barItem.innerHTML = `
+            <div class="bar-label">${label}</div>
+            <div class="bar-wrapper">
+                <div class="bar-fill" style="width: ${width}%; background: var(--amber);"></div>
+            </div>
+            <div class="bar-value">${fmt.currency(value)}</div>
+        `;
+        expenseContainer.appendChild(barItem);
+    });
+}
+
+// ============ PROPERTIES PAGE ============
+function renderProperties() {
+    const D = window.FINANCE_DATA;
+    const props = D.re_portfolio?.properties || [];
+    const activeProps = props.filter(p => p.status !== 'Sold');
+
+    document.getElementById('propCount').textContent = fmt.number(activeProps.length);
+    document.getElementById('propValue').textContent = fmt.currency(sumValues(activeProps.reduce((acc, p) => ({...acc, [p.name]: p.current_value}), {})));
+    document.getElementById('propMonthlyRent').textContent = fmt.currency(sumValues(activeProps.reduce((acc, p) => ({...acc, [p.name]: p.monthly_rent}), {})));
+
+    const avgYield = activeProps.length > 0
+        ? activeProps.reduce((sum, p) => sum + (p.yield_pct || 0), 0) / activeProps.length
+        : 0;
+    document.getElementById('propAvgYield').textContent = (avgYield.toFixed(2)) + '%';
+
+    const grid = document.getElementById('propertiesGrid');
+    grid.innerHTML = '';
+    props.forEach(prop => {
+        const isSold = prop.status === 'Sold';
+        const card = document.createElement('div');
+        card.className = 'property-card' + (isSold ? ' sold' : '');
+        const statusClass = isSold ? 'status-sold' : 'status-active';
+        const statusText = prop.status || 'Active';
+
+        card.innerHTML = `
+            <div class="property-status">
+                <span class="status-badge ${statusClass}">${statusText}</span>
+            </div>
+            <div class="property-name">${prop.name}</div>
+            <div class="property-meta">${prop.location} · ${prop.type}</div>
+            <div class="property-stat">
+                <span class="property-stat-label">Value</span>
+                <span class="property-stat-value">${fmt.currency(prop.current_value)}</span>
+            </div>
+            <div class="property-stat">
+                <span class="property-stat-label">Monthly Rent</span>
+                <span class="property-stat-value">${fmt.currency(prop.monthly_rent)}</span>
+            </div>
+            <div class="property-stat">
+                <span class="property-stat-label">Yield</span>
+                <span class="property-stat-value">${(prop.yield_pct || 0).toFixed(2)}%</span>
+            </div>
+            <div class="property-stat">
+                <span class="property-stat-label">Tenant</span>
+                <span class="property-stat-value">${prop.tenant_name || '—'}</span>
+            </div>
+            <div class="property-stat">
+                <span class="property-stat-label">Contract End</span>
+                <span class="property-stat-value">${prop.contract_end || '—'}</span>
+            </div>
+            <div class="property-stat">
+                <span class="property-stat-label">Deposit</span>
+                <span class="property-stat-value">${fmt.currency(prop.deposit)}</span>
+            </div>
+            <div class="property-stat">
+                <span class="property-stat-label">Terms</span>
+                <span class="property-stat-value">${prop.payment_terms || '—'}</span>
+            </div>
+            <div class="property-stat">
+                <span class="property-stat-label">Capital Gain</span>
+                <span class="property-stat-value gain">${fmt.currency(prop.capital_gain)} <span style="font-size: 11px; opacity: 0.8;">(${(prop.capital_gain_pct || 0).toFixed(2)}%)</span></span>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    const collectionTable = document.querySelector('#collectionTable tbody');
+    collectionTable.innerHTML = '';
+    (D.re_budget?.collection || []).forEach(item => {
+        const tr = document.createElement('tr');
+        const variance = (item.ytd_actual || 0) - (item.ytd_budget || 0);
+        const percentCollected = (item.pct_collected || 0);
+        const progressColor = percentCollected >= 100 ? 'green' : percentCollected >= 80 ? 'amber' : 'red';
+
+        tr.innerHTML = `
+            <td>${item.property || '—'}</td>
+            <td class="num-right">${fmt.currency(item.ytd_budget)}</td>
+            <td class="num-right">${fmt.currency(item.ytd_actual)}</td>
+            <td class="num-right">${fmt.currency(variance)}</td>
+            <td>
+                <div class="progress-bar">
+                    <div class="progress-fill ${progressColor}" style="width: ${Math.min(percentCollected, 100)}%;"></div>
+                </div>
+            </td>
+        `;
+        collectionTable.appendChild(tr);
+    });
+}
+
+// ============ INVESTMENTS PAGE ============
+function renderInvestments() {
+    const D = window.FINANCE_DATA;
+
+    renderPortfolioChart();
+
+    const kpiRow = document.getElementById('investmentKpiRow');
+    kpiRow.innerHTML = '';
+
+    const portfolioData = D.portfolio_value || {};
+    const latestValues = {
+        'Oman RE': portfolioData.oman_re?.Subtotal?.[portfolioData.oman_re.Subtotal.length - 1] || 0,
+        'International RE': portfolioData.international_re?.Subtotal?.[portfolioData.international_re.Subtotal.length - 1] || 0,
+        'Private Homes': portfolioData.private_homes?.Subtotal?.[portfolioData.private_homes.Subtotal.length - 1] || 0,
+        'Financial': portfolioData.financial?.Subtotal?.[portfolioData.financial.Subtotal.length - 1] || 0
+    };
+
+    Object.entries(latestValues).forEach(([label, value]) => {
+        const card = document.createElement('div');
+        card.className = 'kpi-card gold';
+        card.innerHTML = `
+            <div class="kpi-label">${label}</div>
+            <div class="kpi-value" style="font-size: 20px;">${fmt.currency(value)}</div>
+        `;
+        kpiRow.appendChild(card);
+    });
+
+    const timelineTable = document.querySelector('#investmentTimelineTable tbody');
+    timelineTable.innerHTML = '';
+    (D.investment_timeline || []).forEach(item => {
+        const tr = document.createElement('tr');
+        const typeClass = item.type === 'Purchase' ? 'status-active' : 'status-pending';
+        tr.innerHTML = `
+            <td>${item.year}</td>
+            <td>${item.asset || '—'}</td>
+            <td>${item.category || '—'}</td>
+            <td><span class="status-badge ${typeClass}">${item.type || '—'}</span></td>
+            <td class="num-right">${fmt.currency(item.amount)}</td>
+            <td>${item.notes || '—'}</td>
+        `;
+        timelineTable.appendChild(tr);
+    });
+}
+
+function renderPortfolioChart() {
+    const D = window.FINANCE_DATA;
+    const portfolio = D.portfolio_value || {};
+    const years = portfolio.years || [];
+    const netWorth = portfolio.total_net_worth || [];
+
+    const svg = document.getElementById('portfolioChart');
+    const width = svg.clientWidth || 600;
+    const height = svg.clientHeight || 300;
+    const padding = 60;
+
+    svg.innerHTML = '';
+
+    if (!netWorth.length) return;
+
+    const maxNw = Math.max(...netWorth);
+    const minNw = Math.min(...netWorth);
+    const range = maxNw - minNw || 1;
+
+    const graphWidth = width - padding * 2;
+    const graphHeight = height - padding * 2;
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'portfolioGradient');
+    gradient.setAttribute('x1', '0%');
+    gradient.setAttribute('y1', '0%');
+    gradient.setAttribute('x2', '0%');
+    gradient.setAttribute('y2', '100%');
+    gradient.innerHTML = `
+        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
+        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
+    `;
+    defs.appendChild(gradient);
+    svg.appendChild(defs);
+
+    const points = netWorth.map((val, idx) => {
+        const x = padding + (idx / (netWorth.length - 1)) * graphWidth;
+        const y = height - padding - ((val - minNw) / range) * graphHeight;
+        return [x, y];
+    });
+
+    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
+    const area = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    area.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
+    area.setAttribute('fill', 'url(#portfolioGradient)');
+    svg.appendChild(area);
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    line.setAttribute('points', pointsStr);
+    line.setAttribute('fill', 'none');
+    line.setAttribute('stroke', 'var(--gold)');
+    line.setAttribute('stroke-width', '2');
+    svg.appendChild(line);
+
+    points.forEach((p, idx) => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', p[0]);
+        circle.setAttribute('cy', p[1]);
+        circle.setAttribute('r', '4');
+        circle.setAttribute('fill', 'var(--gold)');
+        circle.setAttribute('opacity', '0.7');
+        svg.appendChild(circle);
+
+        if (idx % 2 === 0 || idx === netWorth.length - 1) {
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', p[0]);
+            text.setAttribute('y', height - padding + 20);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('font-size', '11');
+            text.setAttribute('fill', 'var(--text2)');
+            text.textContent = years[idx];
+            svg.appendChild(text);
+        }
+    });
+}
+
+// ============ TRAVEL PAGE ============
+function renderTravel() {
+    const D = window.FINANCE_DATA;
+    const travel = D.travel || {};
+
+    document.getElementById('travelPersonalBudget').textContent = fmt.currency(travel.personal_budget);
+    document.getElementById('travelFamilyBudget').textContent = fmt.currency(travel.family_budget);
+
+    const personalTotal = (travel.trips || []).reduce((sum, t) => sum + (t.actual || 0), 0);
+    const familyTotal = (travel.family_trips || []).reduce((sum, t) => sum + (t.actual || 0), 0);
+    const totalActual = personalTotal + familyTotal;
+
+    document.getElementById('travelTotal').textContent = fmt.currency(totalActual);
+
+    const totalBudget = travel.personal_budget + travel.family_budget;
+    const remaining = totalBudget - totalActual;
+    document.getElementById('travelRemaining').textContent = fmt.currency(remaining);
+
+    const remainingCard = document.getElementById('travelRemainingCard');
+    remainingCard.className = 'kpi-card ' + (remaining >= 0 ? 'green' : 'red');
+
+    const personalContainer = document.getElementById('personalTripsContainer');
+    personalContainer.innerHTML = '';
+    (travel.trips || []).forEach(trip => {
+        const progressPercent = trip.budget ? (trip.actual / trip.budget * 100) : 0;
+        const isOverBudget = trip.actual > trip.budget;
+
+        const card = document.createElement('div');
+        card.className = 'trip-card';
+        card.innerHTML = `
+            <div class="trip-header">
+                <div class="trip-name">${trip.name}</div>
+            </div>
+            <div class="trip-meta">${trip.destination}</div>
+            <div class="trip-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill ${isOverBudget ? 'danger' : 'warning'}" style="width: ${Math.min(progressPercent, 100)}%;"></div>
+                </div>
+                <div class="progress-text">${fmt.currency(trip.actual)} / ${fmt.currency(trip.budget)}</div>
+            </div>
+        `;
+        personalContainer.appendChild(card);
+    });
+
+    const familyContainer = document.getElementById('familyTripsContainer');
+    familyContainer.innerHTML = '';
+    (travel.family_trips || []).forEach(trip => {
+        const progressPercent = trip.budget ? (trip.actual / trip.budget * 100) : 0;
+        const isOverBudget = trip.actual > trip.budget;
+
+        const card = document.createElement('div');
+        card.className = 'trip-card';
+        card.innerHTML = `
+            <div class="trip-header">
+                <div class="trip-name">${trip.name}</div>
+            </div>
+            <div class="trip-meta">${trip.destination}</div>
+            <div class="trip-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill ${isOverBudget ? 'danger' : 'warning'}" style="width: ${Math.min(progressPercent, 100)}%;"></div>
+                </div>
+                <div class="progress-text">${fmt.currency(trip.actual)} / ${fmt.currency(trip.budget)}</div>
+            </div>
+        `;
+        familyContainer.appendChild(card);
+    });
+}
+
+// ============ CREDIT CARD PAGE ============
+let allTransactions = [];
+
+function renderCreditCard() {
+    const D = window.FINANCE_DATA;
+    const cc = D.cc || {};
+
+    document.getElementById('ccBalance').textContent = fmt.currency(cc.current_balance);
+
+    const summaryTable = document.querySelector('#ccSummaryTable tbody');
+    summaryTable.innerHTML = '';
+    (cc.monthly_summary || []).forEach(month => {
+        const netSpend = (month.purchases || 0) - (month.payments || 0);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${month.month}</td>
+            <td class="num-right">${fmt.currency(month.opening)}</td>
+            <td class="num-right">${fmt.currency(month.purchases)}</td>
+            <td class="num-right">${fmt.currency(month.payments)}</td>
+            <td class="num-right">${fmt.currency(month.closing)}</td>
+            <td class="num-right">${fmt.currency(netSpend)}</td>
+        `;
+        summaryTable.appendChild(tr);
+    });
+
+    allTransactions = cc.transactions || [];
+    renderTransactions(allTransactions);
+
+    document.getElementById('transactionSearch').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = allTransactions.filter(t =>
+            (t.desc || '').toLowerCase().includes(query) ||
+            (t.cat || '').toLowerCase().includes(query) ||
+            (t.subcat || '').toLowerCase().includes(query)
+        );
+        renderTransactions(filtered);
+    });
+}
+
+function renderTransactions(transactions) {
+    const table = document.querySelector('#transactionsTable tbody');
+    table.innerHTML = '';
+    const limit = 100;
+    transactions.slice(0, limit).forEach(trans => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${trans.date || '—'}</td>
+            <td>${trans.desc || '—'}</td>
+            <td>${trans.cat || '—'}</td>
+            <td class="num-right">${fmt.currency(trans.omr)}</td>
+        `;
+        table.appendChild(tr);
+    });
+}
+
+// ============ FORECAST PAGE ============
+function renderForecast() {
+    const D = window.FINANCE_DATA;
+    const forecast = D.forecast || {};
+
+    const years = forecast.years || [];
+    const nwProjection = forecast.net_worth_projection?.Total || [];
+
+    if (nwProjection.length > 0) {
+        document.getElementById('fc2030Nw').textContent = fmt.currency(nwProjection[nwProjection.length - 1]);
+    }
+
+    const incomeAll = Object.values(forecast.income || {}).flat().filter(v => typeof v === 'number');
+    const expenseAll = Object.values(forecast.expenses || {}).flat().filter(v => typeof v === 'number');
+    const avgIncome = incomeAll.length > 0 ? incomeAll.reduce((a, b) => a + b) / incomeAll.length : 0;
+    const avgExpense = expenseAll.length > 0 ? expenseAll.reduce((a, b) => a + b) / expenseAll.length : 0;
+
+    document.getElementById('fcAvgIncome').textContent = fmt.currency(avgIncome);
+    document.getElementById('fcAvgExpenses').textContent = fmt.currency(Math.abs(avgExpense));
+    document.getElementById('fcAvgSavings').textContent = fmt.currency(avgIncome + avgExpense);
+
+    renderNwProjectionChart();
+
+    const forecastTable = document.querySelector('#forecastTable tbody');
+    forecastTable.innerHTML = '';
+
+    const allCategories = new Set();
+    Object.keys(forecast.income || {}).forEach(k => allCategories.add(k));
+    Object.keys(forecast.expenses || {}).forEach(k => allCategories.add(k));
+
+    Array.from(allCategories).forEach(category => {
+        const incValues = forecast.income?.[category] || [];
+        const expValues = forecast.expenses?.[category] || [];
+        const tr = document.createElement('tr');
+        const rowData = [];
+        rowData.push(category);
+        years.forEach((year, idx) => {
+            const incVal = incValues[idx] || 0;
+            const expVal = expValues[idx] || 0;
+            const val = incVal + expVal;
+            rowData.push(fmt.currency(val));
+        });
+        tr.innerHTML = rowData.map((v, i) => i === 0 ? `<td>${v}</td>` : `<td class="num-right">${v}</td>`).join('');
+        forecastTable.appendChild(tr);
+    });
+
+    const totalTr = document.createElement('tr');
+    totalTr.style.fontWeight = 'bold';
+    totalTr.style.borderTop = '2px solid var(--border)';
+    const totalData = ['Total'];
+    years.forEach((year, idx) => {
+        const totalIncome = Object.values(forecast.income || {}).reduce((sum, vals) => sum + (vals[idx] || 0), 0);
+        const totalExpense = Object.values(forecast.expenses || {}).reduce((sum, vals) => sum + (vals[idx] || 0), 0);
+        totalData.push(fmt.currency(totalIncome + totalExpense));
+    });
+    totalTr.innerHTML = totalData.map((v, i) => i === 0 ? `<td>${v}</td>` : `<td class="num-right">${v}</td>`).join('');
+    forecastTable.appendChild(totalTr);
+
+    const metricsTable = document.querySelector('#metricsTable tbody');
+    metricsTable.innerHTML = '';
+    const metrics = forecast.metrics || {};
+    Object.entries(metrics).forEach(([metricName, values]) => {
+        if (!Array.isArray(values)) return;
+        const tr = document.createElement('tr');
+        const data = [metricName];
+        values.forEach(val => {
+            if (typeof val === 'number' && val < 10) {
+                data.push(fmt.percent(val));
+            } else {
+                data.push(fmt.number(val));
+            }
+        });
+        tr.innerHTML = data.map((v, i) => i === 0 ? `<td>${v}</td>` : `<td class="num-right">${v}</td>`).join('');
+        metricsTable.appendChild(tr);
+    });
+}
+
+function renderNwProjectionChart() {
+    const D = window.FINANCE_DATA;
+    const forecast = D.forecast || {};
+    const years = forecast.years || [];
+    const nwValues = forecast.net_worth_projection?.Total || [];
+
+    const svg = document.getElementById('nwProjectionChart');
+    const width = svg.clientWidth || 600;
+    const height = svg.clientHeight || 300;
+    const padding = 50;
+
+    svg.innerHTML = '';
+
+    if (!nwValues.length) return;
+
+    const maxNw = Math.max(...nwValues);
+    const minNw = Math.min(...nwValues);
+    const range = maxNw - minNw || 1;
+
+    const graphWidth = width - padding * 2;
+    const graphHeight = height - padding * 2;
+
+    const points = nwValues.map((val, idx) => {
+        const x = padding + (idx / (nwValues.length - 1)) * graphWidth;
+        const y = height - padding - ((val - minNw) / range) * graphHeight;
+        return [x, y];
+    });
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'fcGradient');
+    gradient.setAttribute('x1', '0%');
+    gradient.setAttribute('y1', '0%');
+    gradient.setAttribute('x2', '0%');
+    gradient.setAttribute('y2', '100%');
+    gradient.innerHTML = `
+        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
+        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
+    `;
+    defs.appendChild(gradient);
+    svg.appendChild(defs);
+
+    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
+    const area = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    area.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
+    area.setAttribute('fill', 'url(#fcGradient)');
+    svg.appendChild(area);
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    line.setAttribute('points', pointsStr);
+    line.setAttribute('fill', 'none');
+    line.setAttribute('stroke', 'var(--gold)');
+    line.setAttribute('stroke-width', '2');
+    svg.appendChild(line);
+
+    points.forEach((p) => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', p[0]);
+        circle.setAttribute('cy', p[1]);
+        circle.setAttribute('r', '4');
+        circle.setAttribute('fill', 'var(--gold)');
+        circle.setAttribute('opacity', '0.7');
+        svg.appendChild(circle);
+    });
+
+    years.forEach((year, idx) => {
+        const x = padding + (idx / (years.length - 1)) * graphWidth;
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', x);
+        text.setAttribute('y', height - padding + 20);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('font-size', '11');
+        text.setAttribute('fill', 'var(--text2)');
+        text.textContent = year;
+        svg.appendChild(text);
+    });
+}
+
+// ============ HISTORY PAGE ============
+function renderHistory() {
+    const D = window.FINANCE_DATA;
+
+    renderPortfolioGrowthChart();
+
+    const table = document.querySelector('#historicalTable tbody');
+    table.innerHTML = '';
+    const historical = D.historical || {};
+    const years = historical.years || [];
+    const income = historical.total_income || [];
+    const expenses = historical.total_expenses || [];
+    const cashflow = historical.net_cashflow || [];
+    const cash = historical.closing_cash || [];
+
+    years.forEach((year, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${year}</td>
+            <td class="num-right">${fmt.currency(income[idx])}</td>
+            <td class="num-right">${fmt.currency(expenses[idx])}</td>
+            <td class="num-right">${fmt.currency(cashflow[idx])}</td>
+            <td class="num-right">${fmt.currency(cash[idx])}</td>
+        `;
+        table.appendChild(tr);
+    });
+}
+
+function renderPortfolioGrowthChart() {
+    const D = window.FINANCE_DATA;
+    const portfolio = D.portfolio_value || {};
+    const years = portfolio.years || [];
+    const netWorth = portfolio.total_net_worth || [];
+
+    const svg = document.getElementById('historyChart');
+    const width = svg.clientWidth || 600;
+    const height = svg.clientHeight || 300;
+    const padding = 60;
+
+    svg.innerHTML = '';
+
+    if (!netWorth.length) return;
+
+    const maxNw = Math.max(...netWorth);
+    const minNw = 0;
+    const range = maxNw - minNw || 1;
+
+    const graphWidth = width - padding * 2;
+    const graphHeight = height - padding * 2;
+
+    const points = netWorth.map((val, idx) => {
+        const x = padding + (idx / (netWorth.length - 1)) * graphWidth;
+        const y = height - padding - ((val - minNw) / range) * graphHeight;
+        return [x, y];
+    });
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'historyGradient');
+    gradient.setAttribute('x1', '0%');
+    gradient.setAttribute('y1', '0%');
+    gradient.setAttribute('x2', '0%');
+    gradient.setAttribute('y2', '100%');
+    gradient.innerHTML = `
+        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
+        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
+    `;
+    defs.appendChild(gradient);
+    svg.appendChild(defs);
+
+    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
+    const area = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    area.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
+    area.setAttribute('fill', 'url(#historyGradient)');
+    svg.appendChild(area);
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    line.setAttribute('points', pointsStr);
+    line.setAttribute('fill', 'none');
+    line.setAttribute('stroke', 'var(--gold)');
+    line.setAttribute('stroke-width', '2');
+    svg.appendChild(line);
+
+    points.forEach((p) => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', p[0]);
+        circle.setAttribute('cy', p[1]);
+        circle.setAttribute('r', '3');
+        circle.setAttribute('fill', 'var(--gold)');
+        circle.setAttribute('opacity', '0.6');
+        svg.appendChild(circle);
+    });
+
+    years.forEach((year, idx) => {
+        const x = padding + (idx / (years.length - 1)) * graphWidth;
+        if (idx % 2 === 0 || idx === years.length - 1) {
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', x);
+            text.setAttribute('y', height - padding + 20);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('font-size', '11');
+            text.setAttribute('fill', 'var(--text2)');
+            text.textContent = year;
+            svg.appendChild(text);
+        }
+    });
+}
+
+// ============ DONUT CHART HELPER ============
+function renderDonut(svgId, centerId, legendId, data, total, centerLabel) {
+    const svg = document.getElementById(svgId);
+    const legend = document.getElementById(legendId);
+
+    svg.innerHTML = '';
+    legend.innerHTML = '';
+
+    if (!data || Object.keys(data).length === 0) return;
+
+    const colors = [
+        '#d4a853', '#e8c46a', '#4ade80', '#60a5fa', '#fbbf24',
+        '#f87171', '#818cf8', '#a78bfa', '#14b8a6', '#ec4899'
+    ];
+
+    const cx = 140, cy = 140, r = 100, ir = 60;
+    let currentAngle = -90;
+    const entries = Object.entries(data).filter(([_, v]) => v > 0);
+
+    entries.forEach((item, idx) => {
+        const [label, value] = item;
+        const percent = total > 0 ? value / total : 0;
+        const angle = percent * 360;
+
+        const startRad = (currentAngle * Math.PI) / 180;
+        const endRad = ((currentAngle + angle) * Math.PI) / 180;
+
+        const x1 = cx + r * Math.cos(startRad);
+        const y1 = cy + r * Math.sin(startRad);
+        const x2 = cx + r * Math.cos(endRad);
+        const y2 = cy + r * Math.sin(endRad);
+
+        const ix1 = cx + ir * Math.cos(startRad);
+        const iy1 = cy + ir * Math.sin(startRad);
+        const ix2 = cx + ir * Math.cos(endRad);
+        const iy2 = cy + ir * Math.sin(endRad);
+
+        const largeArc = angle > 180 ? 1 : 0;
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const d = `
+            M ${x1} ${y1}
+            A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2}
+            L ${ix2} ${iy2}
+            A ${ir} ${ir} 0 ${largeArc} 0 ${ix1} ${iy1}
+            Z
+        `;
+        path.setAttribute('d', d);
+        path.setAttribute('fill', colors[idx % colors.length]);
+        path.setAttribute('opacity', '0.85');
+        svg.appendChild(path);
+
+        const item_el = document.createElement('div');
+        item_el.className = 'legend-item';
+        item_el.innerHTML = `
+            <div class="legend-dot" style="background: ${colors[idx % colors.length]};"></div>
+            <div class="legend-label">${label}</div>
+            <div class="legend-value">${fmt.currency(value)}</div>
+        `;
+        legend.appendChild(item_el);
+
+        currentAngle += angle;
+    });
+
+    const center = document.getElementById(centerId);
+    if (center) {
+        center.innerHTML = `
+            <div class="donut-center-value">${fmt.currency(total)}</div>
+            <div class="donut-center-label">${centerLabel}</div>
+        `;
+    }
+}
+
+// ============ EXPORT CSV ============
+function exportCSV() {
+    const D = window.FINANCE_DATA;
+    let csv = '';
+
+    csv += 'NET WORTH SUMMARY\n';
+    csv += `Net Worth,${D.net_worth.net_worth}\n`;
+    csv += `Total Assets,${D.net_worth.total_assets}\n`;
+    csv += `As At,${D.net_worth.as_at}\n\n`;
+
+    csv += 'YTD INCOME\n';
+    Object.entries(D.net_worth.ytd_income).forEach(([k, v]) => {
+        csv += `${k},${v}\n`;
+    });
+    csv += '\n';
+
+    csv += 'YTD EXPENSES\n';
+    Object.entries(D.net_worth.ytd_expenses).forEach(([k, v]) => {
+        csv += `${k},${v}\n`;
+    });
+    csv += '\n';
+
+    csv += 'PROPERTIES\n';
+    csv += 'Name,Location,Type,Value,Monthly Rent,Yield %,Status\n';
+    (D.re_portfolio?.properties || []).forEach(prop => {
+        csv += `${prop.name},${prop.location},${prop.type},${prop.current_value},${prop.monthly_rent},${prop.yield_pct},${prop.status}\n`;
+    });
+    csv += '\n';
+
+    csv += 'CC TRANSACTIONS (Last 100)\n';
+    csv += 'Date,Description,Category,Amount OMR\n';
+    (D.cc.transactions || []).slice(0, 100).forEach(t => {
+        csv += `${t.date},${t.desc},${t.cat},${t.omr}\n`;
+    });
+
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Finance-Export-${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// ============ INITIALIZE APP ============
+function initApp() {
+    setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+        renderDashboard();
+    }, 500);
+
+    initNavigation();
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const pageName = item.dataset.page;
+            const renderFunctions = {
+                'dashboard': renderDashboard,
+                'cashflow': renderCashflow,
+                'net-worth': renderNetWorth,
+                'properties': renderProperties,
+                'investments': renderInvestments,
+                'travel': renderTravel,
+                'credit-card': renderCreditCard,
+                'forecast': renderForecast,
+                'history': renderHistory
+            };
+
+            if (renderFunctions[pageName]) {
+                renderFunctions[pageName]();
+            }
+        });
+    });
+
+    document.getElementById('exportBtn').addEventListener('click', exportCSV);
+}
+
+// ============ STARTUP ============
+window.addEventListener('load', () => {
+    initAuth();
+});
+
+</script>
 </body>
 </html>
