@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 05 Apr 2026 21:26
+// Generated: 05 Apr 2026 21:30
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "05 Apr 2026",
@@ -19,20 +19,20 @@ window.FINANCE_DATA = {
     "total_assets": 3033779.84,
     "net_worth": 3033779.84,
     "ytd_income": {
-      "RE Rahba Hill": 11226.0,
+      "RE Rahba Hill": 14136.0,
       "RE Other": 3053.0,
       "WeMeet": 1400.0,
       "Salary": 24000.0,
-      "Total": 39679.0
+      "Total": 42589.0
     },
     "ytd_expenses": {
-      "Household": 7500.0,
+      "Household": 10000.0,
       "Kids Education": 13352.0,
       "Personal & Charity": 4799.0,
       "Charity": 6336.0,
-      "Total": 31987.0
+      "Total": 34487.0
     },
-    "ytd_pnl": 7692.0,
+    "ytd_pnl": 8102.0,
     "bank_accounts": [
       {
         "bank": "Bank Muscat",
@@ -102,25 +102,25 @@ window.FINANCE_DATA = {
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
-        "budget": 11990.0,
-        "actual": 11226.0,
+        "budget": 17840.0,
+        "actual": 14136.0,
         "type": "re"
       },
       {
         "label": "Other RE",
-        "budget": 3425.0,
+        "budget": 20740.0,
         "actual": 3053.0,
         "type": "re"
       },
       {
         "label": "WeMeet",
-        "budget": 2100,
+        "budget": 2800,
         "actual": 1400.0,
         "type": "other"
       },
       {
         "label": "Salary",
-        "budget": 24000,
+        "budget": 32000,
         "actual": 24000.0,
         "type": "other"
       }
@@ -2693,32 +2693,32 @@ window.FINANCE_DATA = {
     },
     "end_balance": {
       "budget": 0,
-      "actual": 7692.0
+      "actual": 8102.0
     },
     "items": [
       {
         "label": "RE Cashflow",
         "type": "income",
-        "budget": 15415.0,
-        "actual": 14279.0
+        "budget": 38580.0,
+        "actual": 17189.0
       },
       {
         "label": "Salary",
         "type": "income",
-        "budget": 24000,
+        "budget": 32000,
         "actual": 24000.0
       },
       {
         "label": "WeMeet",
         "type": "income",
-        "budget": 2100,
+        "budget": 2800,
         "actual": 1400.0
       },
       {
         "label": "Household",
         "type": "expense",
-        "budget": 7500.0,
-        "actual": 7500.0
+        "budget": 10000.0,
+        "actual": 10000.0
       },
       {
         "label": "Education",
@@ -2729,62 +2729,62 @@ window.FINANCE_DATA = {
       {
         "label": "Personal & Travel",
         "type": "expense",
-        "budget": 8000.0,
+        "budget": 11334.0,
         "actual": 0
       },
       {
         "label": "Charity & Other",
         "type": "expense",
-        "budget": 9000.0,
+        "budget": 12000.0,
         "actual": 11135.0
       }
     ]
   },
   "dashboard_kpis": {
-    "current_month": "Mar",
-    "n_months": 3,
-    "this_month_income": 10960.0,
+    "current_month": "Apr",
+    "n_months": 4,
+    "this_month_income": 2910.0,
     "this_month_expenses": 2500.0,
-    "this_month_net": 8460.0,
-    "re_collection_pct": 92.6,
+    "this_month_net": 410.0,
+    "re_collection_pct": 44.6,
     "cash_balance": 157178.84,
     "net_worth_display": 3033779.84,
     "this_month_table": [
       {
         "label": "RE Cashflow",
-        "budget": 3239.0,
-        "actual": 2960.0,
-        "variance": -279.0,
-        "pct": 91.4
+        "budget": 23165.0,
+        "actual": 2910.0,
+        "variance": -20255.0,
+        "pct": 12.6
       },
       {
         "label": "Salary & Other Income",
         "budget": 8700.0,
-        "actual": 8000.0,
-        "variance": -700.0,
-        "pct": 92.0
+        "actual": 0,
+        "variance": -8700.0,
+        "pct": 0.0
       },
       {
         "label": "Total Income",
-        "budget": 11939.0,
-        "actual": 10960.0,
+        "budget": 31865.0,
+        "actual": 2910.0,
         "is_total": true,
-        "variance": -979.0,
-        "pct": 91.8
+        "variance": -28955.0,
+        "pct": 9.1
       },
       {
         "label": "Total Expenses",
-        "budget": -6500.0,
+        "budget": -8834.0,
         "actual": -2500.0,
         "is_total": true,
-        "variance": 4000.0,
-        "pct": 38.5
+        "variance": 6334.0,
+        "pct": 28.3
       },
       {
         "label": "Capital Movements",
         "budget": 0.0,
-        "actual": 42521.0,
-        "variance": 42521.0,
+        "actual": 0,
+        "variance": 0.0,
         "pct": 0
       },
       {
@@ -2796,115 +2796,115 @@ window.FINANCE_DATA = {
       },
       {
         "label": "Net Cashflow",
-        "budget": 5439.0,
-        "actual": 50981.0,
+        "budget": 23031.0,
+        "actual": 410.0,
         "is_total": true,
-        "variance": 45542.0,
-        "pct": 937.3
+        "variance": -22621.0,
+        "pct": 1.8
       }
     ],
-    "this_month_income_budget": 11939.0,
-    "ytd_income": 39679.0,
-    "ytd_expenses": 31987.0,
-    "ytd_net_cf": 7692.0,
-    "savings_rate": 19.4,
-    "vs_fy_budget": 20.2,
+    "this_month_income_budget": 31865.0,
+    "ytd_income": 42589.0,
+    "ytd_expenses": 34487.0,
+    "ytd_net_cf": 8102.0,
+    "savings_rate": 19.0,
+    "vs_fy_budget": 21.7,
     "ytd_income_table": [
       {
         "label": "RE Cashflow",
         "fy_budget": 91872.4,
-        "ytd_budget": 15415.0,
-        "ytd_actual": 14279.0,
-        "forecast": 57116.0,
-        "variance": -1136.0,
-        "pct_spent": 15.5
+        "ytd_budget": 38580.0,
+        "ytd_actual": 17189.0,
+        "forecast": 51567.0,
+        "variance": -21391.0,
+        "pct_spent": 18.7
       },
       {
         "label": "Salary",
         "fy_budget": 96000.0,
-        "ytd_budget": 24000.0,
+        "ytd_budget": 32000.0,
         "ytd_actual": 24000.0,
-        "forecast": 96000.0,
-        "variance": 0.0,
+        "forecast": 72000.0,
+        "variance": -8000.0,
         "pct_spent": 25.0
       },
       {
         "label": "WeMeet / Business",
         "fy_budget": 8400.0,
-        "ytd_budget": 2100.0,
+        "ytd_budget": 2800.0,
         "ytd_actual": 1400.0,
-        "forecast": 5600.0,
-        "variance": -700.0,
+        "forecast": 4200.0,
+        "variance": -1400.0,
         "pct_spent": 16.7
       },
       {
         "label": "Total Income",
         "fy_budget": 196272.4,
-        "ytd_budget": 41515.0,
-        "ytd_actual": 39679.0,
-        "forecast": 158716.0,
+        "ytd_budget": 73380.0,
+        "ytd_actual": 42589.0,
+        "forecast": 127767.0,
         "is_total": true,
-        "variance": -1836.0,
-        "pct_spent": 20.2
+        "variance": -30791.0,
+        "pct_spent": 21.7
       }
     ],
     "ytd_expense_table": [
       {
         "label": "Household",
         "fy_budget": -30000.0,
-        "ytd_budget": 7500.0,
-        "ytd_actual": 7500.0,
+        "ytd_budget": 10000.0,
+        "ytd_actual": 10000.0,
         "forecast": 30000.0,
         "variance": 0.0,
-        "pct_spent": -25.0
+        "pct_spent": -33.3
       },
       {
         "label": "Education",
         "fy_budget": -23217.0,
         "ytd_budget": 13352.0,
         "ytd_actual": 13352.0,
-        "forecast": 53408.0,
+        "forecast": 40056.0,
         "variance": 0.0,
         "pct_spent": -57.5
       },
       {
         "label": "Personal & Travel",
         "fy_budget": -24000.0,
-        "ytd_budget": 8000.0,
+        "ytd_budget": 11334.0,
         "ytd_actual": 0,
         "forecast": 0.0,
-        "variance": -8000.0,
+        "variance": -11334.0,
         "pct_spent": -0.0
       },
       {
         "label": "Charity & Other",
         "fy_budget": -36000.0,
-        "ytd_budget": 9000.0,
+        "ytd_budget": 12000.0,
         "ytd_actual": 11135.0,
-        "forecast": 44540.0,
-        "variance": 2135.0,
+        "forecast": 33405.0,
+        "variance": -865.0,
         "pct_spent": -30.9
       },
       {
         "label": "Total Expenses",
         "fy_budget": -113217.0,
-        "ytd_budget": 37852.0,
-        "ytd_actual": 31987.0,
-        "forecast": 127948.0,
+        "ytd_budget": 46686.0,
+        "ytd_actual": 34487.0,
+        "forecast": 103461.0,
         "is_total": true,
-        "variance": -5865.0,
-        "pct_spent": -28.3
+        "variance": -12199.0,
+        "pct_spent": -30.5
       }
     ],
     "ytd_net_row": {
       "label": "Net Cashflow",
       "fy_budget": 83055.4,
-      "ytd_budget": 79367.0,
-      "ytd_actual": 7692.0,
-      "forecast": 30768.0,
+      "ytd_budget": 120066.0,
+      "ytd_actual": 8102.0,
+      "forecast": 24306.0,
       "is_total": true,
-      "variance": -71675.0,
-      "pct_spent": 9.3
+      "variance": -111964.0,
+      "pct_spent": 9.8
     },
     "nw_table": [
       {
@@ -3046,14 +3046,14 @@ window.FINANCE_DATA = {
         22882.0,
         54635.0,
         105800.0,
-        158716.0
+        127767.0
       ],
       "expenses": [
         126626.0,
         146969.0,
         132200.0,
         124453.0,
-        127948.0
+        103461.0
       ]
     }
   },
@@ -3461,11 +3461,11 @@ window.FINANCE_DATA = {
     ],
     "income": {
       "RE Cashflow": [
-        61660.0,
-        63509.8,
-        65415.09,
-        67377.54,
-        69398.87
+        115740.0,
+        119212.2,
+        122788.57,
+        126472.23,
+        130266.4
       ],
       "Salary": [
         96000,
@@ -3489,11 +3489,11 @@ window.FINANCE_DATA = {
         0
       ],
       "Total": [
-        166060.0,
-        72749.8,
-        75579.09,
-        78557.94,
-        81697.31
+        220140.0,
+        128452.2,
+        132952.57,
+        137652.63,
+        142564.84
       ]
     },
     "expenses": {
@@ -3541,33 +3541,33 @@ window.FINANCE_DATA = {
       ]
     },
     "net_cashflow": [
-      57843.0,
-      -35695.5,
-      -32358.41,
-      -31196.8,
-      -31687.53
+      111923.0,
+      20006.9,
+      25015.07,
+      27897.89,
+      29180.0
     ],
     "free_cashflow": [
-      57843.0,
-      -35695.5,
-      -32358.41,
-      -31196.8,
-      -31687.53
+      111923.0,
+      20006.9,
+      25015.07,
+      27897.89,
+      29180.0
     ],
     "cash_balance": {
       "opening": [
         157812.59,
-        215655.59,
-        179960.09,
-        147601.68,
-        116404.88
+        269735.59,
+        289742.49,
+        314757.56,
+        342655.45
       ],
       "closing": [
-        215655.59,
-        179960.09,
-        147601.68,
-        116404.88,
-        84717.35
+        269735.59,
+        289742.49,
+        314757.56,
+        342655.45,
+        371835.45
       ]
     },
     "net_worth_projection": {
@@ -3607,11 +3607,11 @@ window.FINANCE_DATA = {
         0
       ],
       "Cash in Bank": [
-        215655.59,
-        179960.09,
-        147601.68,
-        116404.88,
-        84717.35
+        269735.59,
+        289742.49,
+        314757.56,
+        342655.45,
+        371835.45
       ],
       "Debt": [
         0,
@@ -3621,41 +3621,41 @@ window.FINANCE_DATA = {
         0
       ],
       "Total": [
-        3092256.59,
-        3109410.65,
-        3130958.79,
-        3154746.67,
-        3179143.51
+        3146336.59,
+        3219193.05,
+        3298114.67,
+        3380997.24,
+        3466261.61
       ],
       "YoY Growth": [
         0,
-        0.0055,
-        0.0069,
-        0.0076,
-        0.0077
+        0.0232,
+        0.0245,
+        0.0251,
+        0.0252
       ]
     },
     "metrics": {
       "Savings Rate": [
-        0.3483,
-        -0.4907,
-        -0.4281,
-        -0.3971,
-        -0.3879
+        0.5084,
+        0.1558,
+        0.1882,
+        0.2027,
+        0.2047
       ],
       "Income/Expense Ratio": [
-        1.53,
-        0.67,
-        0.7,
-        0.72,
-        0.72
+        2.03,
+        1.18,
+        1.23,
+        1.25,
+        1.26
       ],
       "RE Income %": [
-        0.3713,
-        0.873,
-        0.8655,
-        0.8577,
-        0.8495
+        0.5258,
+        0.9281,
+        0.9236,
+        0.9188,
+        0.9137
       ]
     }
   },
@@ -4900,17 +4900,17 @@ window.FINANCE_DATA = {
     "collection": [
       {
         "property": "Rahba Hills",
-        "ytd_budget": 11990.0,
-        "ytd_actual": 11226.0,
-        "variance": -764.0,
-        "pct_collected": 93.63
+        "ytd_budget": 17840.0,
+        "ytd_actual": 14136.0,
+        "variance": -3704.0,
+        "pct_collected": 79.24
       },
       {
         "property": "Other RE",
-        "ytd_budget": 3425.0,
+        "ytd_budget": 20740.0,
         "ytd_actual": 3053.0,
-        "variance": -372.0,
-        "pct_collected": 89.14
+        "variance": -17687.0,
+        "pct_collected": 14.72
       }
     ]
   }
