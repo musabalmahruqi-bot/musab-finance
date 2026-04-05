@@ -1,12 +1,12 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 05 Apr 2026 21:39
+// Generated: 05 Apr 2026 21:48
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "05 Apr 2026",
     "assets": {
       "Real Estate": 2642478.0,
       "Financial Investments": 234123.0,
-      "Cash in Bank": 157178.84
+      "Cash in Bank": 166338.45
     },
     "liabilities": {
       "Outstanding Debt": 0.0
@@ -16,89 +16,91 @@ window.FINANCE_DATA = {
       "RE International": 580000.0,
       "Private Homes": 1072478.0
     },
-    "total_assets": 3033779.84,
-    "net_worth": 3033779.84,
+    "total_assets": 3042939.45,
+    "net_worth": 3042939.45,
     "ytd_income": {
       "RE Rahba Hill": 14136.0,
-      "RE Other": 3053.0,
+      "RE Other": 4154.58,
       "WeMeet": 1400.0,
       "Salary": 24000.0,
-      "Total": 42589.0
+      "Total": 43690.58
     },
     "ytd_expenses": {
       "Household": 10000.0,
       "Kids Education": 13352.0,
-      "Personal & Charity": 4799.0,
-      "Charity": 6336.0,
-      "Total": 34487.0
+      "Family Travel": 4786.81,
+      "Personal & Charity": 9148.99,
+      "Personal Travel": 6562.91,
+      "Charity": 9026.0,
+      "Total": 52876.71
     },
-    "ytd_pnl": 8102.0,
+    "ytd_pnl": -9186.13,
     "bank_accounts": [
       {
         "bank": "Bank Muscat",
         "type": "Saving",
         "currency": "OMR",
         "account": "XX25",
-        "balance": 0
+        "balance": 110434.93
       },
       {
         "bank": "Bank Muscat",
         "type": "Saving",
         "currency": "USD",
         "account": "XX0136",
-        "balance": 0
+        "balance": 50836.6
       },
       {
         "bank": "Bank Muscat",
         "type": "Saving",
         "currency": "OMR",
         "account": "XX41",
-        "balance": 0
+        "balance": 0.28
       },
       {
         "bank": "Bank Muscat",
         "type": "Saving",
         "currency": "Euro",
         "account": "XX76",
-        "balance": 0
+        "balance": 4.41
       },
       {
         "bank": "Bank Muscat",
         "type": "Saving",
         "currency": "GBP",
         "account": "XX84",
-        "balance": 0
+        "balance": 0.38
       },
       {
         "bank": "Bank Muscat",
         "type": "Saving",
         "currency": "AED",
         "account": "XX0144",
-        "balance": 0
+        "balance": 0.01
       },
       {
         "bank": "Bank Muscat",
         "type": "Current",
         "currency": "OMR",
         "account": "XX0128",
-        "balance": 0
+        "balance": -0.07
       },
       {
         "bank": "Bank Muscat",
         "type": "Kids Edu",
         "currency": "OMR",
         "account": "XX17",
-        "balance": 0
+        "balance": 150736.22
       },
       {
         "bank": "Emirates NBD",
         "type": "Saving",
         "currency": "AED",
         "account": "",
-        "balance": 0
+        "balance": 7945.37
       }
     ],
-    "total_cash": 157178.84,
+    "total_cash": 166338.45,
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
@@ -109,7 +111,7 @@ window.FINANCE_DATA = {
       {
         "label": "Other RE",
         "budget": 20740.0,
-        "actual": 3053.0,
+        "actual": 4154.58,
         "type": "re"
       },
       {
@@ -141,62 +143,62 @@ window.FINANCE_DATA = {
       "Nov",
       "Dec"
     ],
-    "starting_balance": 111877.59,
+    "starting_balance": 126339.0,
     "budget": [
-      -12056.0,
-      -12387.0,
-      5439.0,
-      23031.0,
-      3437.0,
-      18681.6,
-      7100.3,
-      6305.0,
-      6413.8,
-      1587.3,
-      6362.6,
-      6473.8
+      -11136.0,
+      -4737.0,
+      8859.0,
+      -95919.0,
+      7007.0,
+      23993.2,
+      -135052.9,
+      -7805.0,
+      10808.6,
+      -141267.9,
+      12310.2,
+      10928.6
     ],
     "actual": [
-      12509.0,
-      -17965.0,
-      50981.0,
-      410.0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      5472.01,
+      -14452.64,
+      47994.99,
+      3895.09,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -3287.84
     ],
     "income_budget": [
-      12796.0,
-      16780.0,
-      11939.0,
-      31865.0,
-      12270.0,
-      27514.6,
-      18532.8,
-      12805.0,
-      12913.8,
-      13019.8,
-      12862.6,
-      12973.8
+      13716.0,
+      24430.0,
+      15359.0,
+      37715.0,
+      15840.0,
+      32826.2,
+      21979.6,
+      18695.0,
+      17308.6,
+      15764.6,
+      18810.2,
+      17428.6
     ],
     "income_actual": [
-      12780.0,
-      15939.0,
-      10960.0,
-      2910.0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      13596.0,
+      23389.0,
+      13920.0,
+      6921.58,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ],
     "expense_budget": [
       -24852.0,
@@ -213,58 +215,58 @@ window.FINANCE_DATA = {
       -6500.0
     ],
     "expense_actual": [
-      -22651.0,
-      -6836.0,
-      -2500.0,
-      -2500.0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      -30503.99,
+      -10773.64,
+      -8446.01,
+      -3026.49,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -3287.84
     ],
     "net_operating_budget": [
-      -12056.0,
-      10280.0,
-      5439.0,
-      23031.0,
-      3437.0,
-      18681.6,
-      7100.3,
-      6305.0,
-      6413.8,
-      1587.3,
-      6362.6,
-      6473.8
+      -11136.0,
+      17930.0,
+      8859.0,
+      28881.0,
+      7007.0,
+      23993.2,
+      10547.1,
+      12195.0,
+      10808.6,
+      4332.1,
+      12310.2,
+      10928.6
     ],
     "net_operating_actual": [
-      -9871.0,
-      9103.0,
-      8460.0,
-      410.0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      -16907.99,
+      12615.36,
+      5473.99,
+      3895.09,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -3287.84
     ],
     "capital_budget": [
       0.0,
       -22667.0,
       0.0,
+      -124800.0,
       0.0,
       0.0,
+      -145600.0,
+      -20000.0,
       0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
+      -145600.0,
       0.0,
       0.0
     ],
@@ -283,26 +285,26 @@ window.FINANCE_DATA = {
       0
     ],
     "end_balance": [
-      124386.59,
-      106421.59,
-      157402.59,
-      157812.59,
-      157812.59,
-      157812.59,
-      157812.59,
-      157812.59,
-      157812.59,
-      157812.59,
-      157812.59,
-      157812.59
+      131811.01,
+      117358.37,
+      165353.36,
+      169248.45,
+      169248.45,
+      169248.45,
+      169248.45,
+      169248.45,
+      169248.45,
+      169248.45,
+      169248.45,
+      165960.61
     ],
     "monthly_breakdown": [
       {
         "month": "Jan",
         "income": {
           "RE Cashflow": {
-            "budget": 4096.0,
-            "actual": 4080.0
+            "budget": 5016.0,
+            "actual": 4896.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -324,7 +326,7 @@ window.FINANCE_DATA = {
           },
           "Family Travel": {
             "budget": -5000.0,
-            "actual": 0
+            "actual": -4786.81
           },
           "Personal & Charity": {
             "budget": -3000.0,
@@ -332,7 +334,7 @@ window.FINANCE_DATA = {
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": -3066.18
           },
           "Charity": {
             "budget": 0.0,
@@ -354,8 +356,8 @@ window.FINANCE_DATA = {
         "month": "Feb",
         "income": {
           "RE Cashflow": {
-            "budget": 8080.0,
-            "actual": 7239.0
+            "budget": 15730.0,
+            "actual": 14689.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -373,11 +375,11 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": -2149.47
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": -1788.17
           },
           "Charity": {
             "budget": 0.0,
@@ -399,8 +401,8 @@ window.FINANCE_DATA = {
         "month": "Mar",
         "income": {
           "RE Cashflow": {
-            "budget": 3239.0,
-            "actual": 2960.0
+            "budget": 6659.0,
+            "actual": 5920.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -418,11 +420,15 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": -1610.74
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": -1645.27
+          },
+          "Charity": {
+            "budget": 0.0,
+            "actual": -2690.0
           }
         },
         "capital": {
@@ -436,8 +442,8 @@ window.FINANCE_DATA = {
         "month": "Apr",
         "income": {
           "RE Cashflow": {
-            "budget": 23165.0,
-            "actual": 2910.0
+            "budget": 29015.0,
+            "actual": 6921.58
           },
           "WeMeet": {
             "budget": 700.0,
@@ -455,25 +461,30 @@ window.FINANCE_DATA = {
           },
           "Family Travel": {
             "budget": -2334.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": -589.78
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 63.29
           }
         },
-        "capital": {}
+        "capital": {
+          "Investments": {
+            "budget": -124800.0,
+            "actual": 0
+          }
+        }
       },
       {
         "month": "May",
         "income": {
           "RE Cashflow": {
-            "budget": 3570.0,
-            "actual": 0
+            "budget": 7140.0,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -491,15 +502,15 @@ window.FINANCE_DATA = {
           },
           "Family Travel": {
             "budget": -2333.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 0.0
           }
         },
         "capital": {}
@@ -508,8 +519,8 @@ window.FINANCE_DATA = {
         "month": "Jun",
         "income": {
           "RE Cashflow": {
-            "budget": 18814.6,
-            "actual": 0
+            "budget": 24126.2,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -527,15 +538,15 @@ window.FINANCE_DATA = {
           },
           "Family Travel": {
             "budget": -2333.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 0.0
           }
         },
         "capital": {}
@@ -544,8 +555,8 @@ window.FINANCE_DATA = {
         "month": "Jul",
         "income": {
           "RE Cashflow": {
-            "budget": 9832.8,
-            "actual": 0
+            "budget": 13279.6,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -567,21 +578,26 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 0.0
           }
         },
-        "capital": {}
+        "capital": {
+          "Investments": {
+            "budget": -145600.0,
+            "actual": 0
+          }
+        }
       },
       {
         "month": "Aug",
         "income": {
           "RE Cashflow": {
-            "budget": 4105.0,
-            "actual": 0
+            "budget": 9995.0,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -599,21 +615,26 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 0.0
           }
         },
-        "capital": {}
+        "capital": {
+          "Child Distributions": {
+            "budget": -20000.0,
+            "actual": 0
+          }
+        }
       },
       {
         "month": "Sep",
         "income": {
           "RE Cashflow": {
-            "budget": 4213.8,
-            "actual": 0
+            "budget": 8608.6,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -631,11 +652,11 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 0.0
           }
         },
         "capital": {}
@@ -644,8 +665,8 @@ window.FINANCE_DATA = {
         "month": "Oct",
         "income": {
           "RE Cashflow": {
-            "budget": 4319.8,
-            "actual": 0
+            "budget": 7064.6,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -667,21 +688,26 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 0.0
           }
         },
-        "capital": {}
+        "capital": {
+          "Investments": {
+            "budget": -145600.0,
+            "actual": 0
+          }
+        }
       },
       {
         "month": "Nov",
         "income": {
           "RE Cashflow": {
-            "budget": 4162.6,
-            "actual": 0
+            "budget": 10110.2,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -699,11 +725,11 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": 0.0
           }
         },
         "capital": {}
@@ -712,8 +738,8 @@ window.FINANCE_DATA = {
         "month": "Dec",
         "income": {
           "RE Cashflow": {
-            "budget": 4273.8,
-            "actual": 0
+            "budget": 8728.6,
+            "actual": 0.0
           },
           "WeMeet": {
             "budget": 700.0,
@@ -731,29 +757,75 @@ window.FINANCE_DATA = {
           },
           "Personal & Charity": {
             "budget": -3000.0,
-            "actual": 0
+            "actual": 0.0
           },
           "Personal Travel": {
             "budget": -1000.0,
-            "actual": 0
+            "actual": -3287.84
           }
         },
         "capital": {}
       }
     ],
-    "liquidity": {}
+    "liquidity": {
+      "Current Cash Balance": 165353.35,
+      "Remaining Income (rest of year)": 154757.4,
+      "Remaining Expenses (rest of year)": -75365.0,
+      "REMAINING INVESTMENTS": -266000.0,
+      "WeMeet+ Capital Calls": -416000.0,
+      "Less: Nashwa Fund Contribution": 150000.0,
+      "Net Remaining Investments": -266000.0,
+      "Remaining Family Fund": -20000.0,
+      "Projected Year-End Cash": -41254.25
+    }
   },
   "cc": {
-    "current_balance": 46113.0,
+    "current_balance": 107.63,
     "monthly_summary": [
       {
         "month": "Dec 2025",
         "opening": 1989.0,
-        "purchases": 0,
-        "refunds": 0,
-        "payments": 0,
-        "closing": 0,
-        "net_spend": 0
+        "purchases": 659.43,
+        "refunds": 0.0,
+        "payments": 1988.58,
+        "closing": 659.86,
+        "net_spend": -1329.14
+      },
+      {
+        "month": "Jan 2026",
+        "opening": 659.86,
+        "purchases": 4459.39,
+        "refunds": 0.0,
+        "payments": 1045.93,
+        "closing": 4073.31,
+        "net_spend": 3413.46
+      },
+      {
+        "month": "Feb 2026",
+        "opening": 4073.31,
+        "purchases": 2047.66,
+        "refunds": 91.09,
+        "payments": 3981.8,
+        "closing": 2048.08,
+        "net_spend": -2025.23
+      },
+      {
+        "month": "Mar 2026",
+        "opening": 2048.08,
+        "purchases": 3941.36,
+        "refunds": 343.6,
+        "payments": 1704.06,
+        "closing": 3941.78,
+        "net_spend": 1893.7
+      },
+      {
+        "month": "Apr 2026",
+        "opening": 3941.78,
+        "purchases": 485.6,
+        "refunds": 89.0,
+        "payments": 0.0,
+        "closing": 4338.39,
+        "net_spend": 396.6
       },
       {
         "month": "Category",
@@ -763,6 +835,51 @@ window.FINANCE_DATA = {
         "payments": 0,
         "closing": 46113.0,
         "net_spend": 0
+      },
+      {
+        "month": "Personal Expenses",
+        "opening": 72.68,
+        "purchases": 206.4,
+        "refunds": 168.4,
+        "payments": 1952.49,
+        "closing": 352.26,
+        "net_spend": 2752.22
+      },
+      {
+        "month": "Personal Travel",
+        "opening": 586.75,
+        "purchases": 1816.18,
+        "refunds": 1788.17,
+        "payments": 1645.27,
+        "closing": -63.29,
+        "net_spend": 5773.08
+      },
+      {
+        "month": "Family Travel",
+        "opening": 0.0,
+        "purchases": 2436.81,
+        "refunds": 0.0,
+        "payments": 0.0,
+        "closing": 0.0,
+        "net_spend": 2436.81
+      },
+      {
+        "month": "Household",
+        "opening": 0.0,
+        "purchases": 0.0,
+        "refunds": 0.0,
+        "payments": 0.0,
+        "closing": 0.0,
+        "net_spend": 0.0
+      },
+      {
+        "month": "Manchester CitySuites",
+        "opening": 0.0,
+        "purchases": 0.0,
+        "refunds": 0.0,
+        "payments": 0.0,
+        "closing": 107.63,
+        "net_spend": 107.63
       }
     ],
     "category_breakdown": [
@@ -780,79 +897,79 @@ window.FINANCE_DATA = {
       {
         "name": "Personal Expenses",
         "values": [
-          0,
-          0,
-          0,
-          0,
-          0
+          72.68,
+          206.4,
+          168.4,
+          1952.49,
+          352.26
         ],
-        "total": 0
+        "total": 2752.22
       },
       {
         "name": "Personal Travel",
         "values": [
-          0,
-          0,
-          0,
-          0,
-          0
+          586.75,
+          1816.18,
+          1788.17,
+          1645.27,
+          -63.29
         ],
-        "total": 0
+        "total": 5773.08
       },
       {
         "name": "Family Travel",
         "values": [
-          0,
-          0,
-          0,
-          0,
-          0
+          0.0,
+          2436.81,
+          0.0,
+          0.0,
+          0.0
         ],
-        "total": 0
+        "total": 2436.81
       },
       {
         "name": "Household",
         "values": [
-          0,
-          0,
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
         ],
-        "total": 0
+        "total": 0.0
       },
       {
         "name": "Manchester CitySuites",
         "values": [
-          0,
-          0,
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          107.63
         ],
-        "total": 0
+        "total": 107.63
       },
       {
         "name": "Payment",
         "values": [
-          0,
-          0,
-          0,
-          0,
-          0
+          1988.58,
+          1045.93,
+          3981.8,
+          1704.06,
+          0.0
         ],
-        "total": 0
+        "total": 8720.36
       },
       {
         "name": "Refunds (net in categories)",
         "values": [
-          0,
-          0,
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          91.09,
+          343.6,
+          89.0
         ],
-        "total": 0
+        "total": 523.69
       }
     ],
     "transactions": [
@@ -871,7 +988,7 @@ window.FINANCE_DATA = {
         "subcat": "Tax Filing (UK)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "",
+        "dr_cr": "44.02176",
         "month": "DR"
       },
       {
@@ -880,7 +997,7 @@ window.FINANCE_DATA = {
         "subcat": "Shopping & Retail",
         "cat": "",
         "omr": 0,
-        "dr_cr": "",
+        "dr_cr": "352.25789473684205",
         "month": "DR"
       },
       {
@@ -889,7 +1006,7 @@ window.FINANCE_DATA = {
         "subcat": "Accommodation",
         "cat": "",
         "omr": 0,
-        "dr_cr": "",
+        "dr_cr": "89",
         "month": "CR"
       },
       {
@@ -907,7 +1024,7 @@ window.FINANCE_DATA = {
         "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "",
+        "dr_cr": "8.5",
         "month": "DR"
       },
       {
@@ -916,7 +1033,7 @@ window.FINANCE_DATA = {
         "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "",
+        "dr_cr": "11.099",
         "month": "DR"
       },
       {
@@ -925,7 +1042,7 @@ window.FINANCE_DATA = {
         "subcat": "Uncategorized (Review)",
         "cat": "",
         "omr": 0,
-        "dr_cr": "",
+        "dr_cr": "6.1114999999999995",
         "month": "DR"
       },
       {
@@ -2693,14 +2810,14 @@ window.FINANCE_DATA = {
     },
     "end_balance": {
       "budget": 0,
-      "actual": 8102.0
+      "actual": -9186.13
     },
     "items": [
       {
         "label": "RE Cashflow",
         "type": "income",
         "budget": 38580.0,
-        "actual": 17189.0
+        "actual": 18290.58
       },
       {
         "label": "Salary",
@@ -2730,32 +2847,32 @@ window.FINANCE_DATA = {
         "label": "Personal & Travel",
         "type": "expense",
         "budget": 11334.0,
-        "actual": 0
+        "actual": 11349.72
       },
       {
         "label": "Charity & Other",
         "type": "expense",
         "budget": 12000.0,
-        "actual": 11135.0
+        "actual": 18174.99
       }
     ]
   },
   "dashboard_kpis": {
     "current_month": "Apr",
     "n_months": 4,
-    "this_month_income": 2910.0,
-    "this_month_expenses": 2500.0,
-    "this_month_net": 410.0,
-    "re_collection_pct": 12.6,
-    "cash_balance": 157178.84,
-    "net_worth_display": 3033779.84,
+    "this_month_income": 6921.58,
+    "this_month_expenses": 3153.07,
+    "this_month_net": 3768.51,
+    "re_collection_pct": 23.9,
+    "cash_balance": 166338.45,
+    "net_worth_display": 3042939.45,
     "this_month_table": [
       {
         "label": "RE Cashflow",
-        "budget": 23165.0,
-        "actual": 2910.0,
-        "variance": -20255.0,
-        "pct": 12.6
+        "budget": 29015.0,
+        "actual": 6921.58,
+        "variance": -22093.42,
+        "pct": 23.9
       },
       {
         "label": "Salary & Other Income",
@@ -2766,26 +2883,26 @@ window.FINANCE_DATA = {
       },
       {
         "label": "Total Income",
-        "budget": 31865.0,
-        "actual": 2910.0,
+        "budget": 37715.0,
+        "actual": 6921.58,
         "is_total": true,
-        "variance": -28955.0,
-        "pct": 9.1
+        "variance": -30793.42,
+        "pct": 18.4
       },
       {
         "label": "Total Expenses",
         "budget": -8834.0,
-        "actual": -2500.0,
+        "actual": -3153.07,
         "is_total": true,
-        "variance": 6334.0,
-        "pct": 28.3
+        "variance": 5680.93,
+        "pct": 35.7
       },
       {
         "label": "Capital Movements",
-        "budget": 0.0,
+        "budget": -124800.0,
         "actual": 0,
-        "variance": 0.0,
-        "pct": 0
+        "variance": 124800.0,
+        "pct": -0.0
       },
       {
         "label": "Debt Payments",
@@ -2796,28 +2913,28 @@ window.FINANCE_DATA = {
       },
       {
         "label": "Net Cashflow",
-        "budget": 23031.0,
-        "actual": 410.0,
+        "budget": -95919.0,
+        "actual": 3768.51,
         "is_total": true,
-        "variance": -22621.0,
-        "pct": 1.8
+        "variance": 99687.51,
+        "pct": -3.9
       }
     ],
-    "this_month_income_budget": 31865.0,
-    "ytd_income": 42589.0,
-    "ytd_expenses": 34487.0,
-    "ytd_net_cf": 8102.0,
-    "savings_rate": 19.0,
-    "vs_fy_budget": 21.7,
+    "this_month_income_budget": 37715.0,
+    "ytd_income": 43690.58,
+    "ytd_expenses": 52876.71,
+    "ytd_net_cf": -9186.13,
+    "savings_rate": -21.0,
+    "vs_fy_budget": 17.5,
     "ytd_income_table": [
       {
         "label": "RE Cashflow",
-        "fy_budget": 91872.4,
+        "fy_budget": 145472.8,
         "ytd_budget": 38580.0,
-        "ytd_actual": 17189.0,
-        "forecast": 51567.0,
-        "variance": -21391.0,
-        "pct_spent": 18.7
+        "ytd_actual": 18290.58,
+        "forecast": 54871.74,
+        "variance": -20289.42,
+        "pct_spent": 12.6
       },
       {
         "label": "Salary",
@@ -2839,13 +2956,13 @@ window.FINANCE_DATA = {
       },
       {
         "label": "Total Income",
-        "fy_budget": 196272.4,
+        "fy_budget": 249872.8,
         "ytd_budget": 73380.0,
-        "ytd_actual": 42589.0,
-        "forecast": 127767.0,
+        "ytd_actual": 43690.58,
+        "forecast": 131071.74,
         "is_total": true,
-        "variance": -30791.0,
-        "pct_spent": 21.7
+        "variance": -29689.42,
+        "pct_spent": 17.5
       }
     ],
     "ytd_expense_table": [
@@ -2871,40 +2988,40 @@ window.FINANCE_DATA = {
         "label": "Personal & Travel",
         "fy_budget": -24000.0,
         "ytd_budget": 11334.0,
-        "ytd_actual": 0,
-        "forecast": 0.0,
-        "variance": -11334.0,
-        "pct_spent": -0.0
+        "ytd_actual": 11349.72,
+        "forecast": 34049.16,
+        "variance": 15.72,
+        "pct_spent": -47.3
       },
       {
         "label": "Charity & Other",
         "fy_budget": -36000.0,
         "ytd_budget": 12000.0,
-        "ytd_actual": 11135.0,
-        "forecast": 33405.0,
-        "variance": -865.0,
-        "pct_spent": -30.9
+        "ytd_actual": 18174.99,
+        "forecast": 54524.97,
+        "variance": 6174.99,
+        "pct_spent": -50.5
       },
       {
         "label": "Total Expenses",
         "fy_budget": -113217.0,
         "ytd_budget": 46686.0,
-        "ytd_actual": 34487.0,
-        "forecast": 103461.0,
+        "ytd_actual": 52876.71,
+        "forecast": 158630.13,
         "is_total": true,
-        "variance": -12199.0,
-        "pct_spent": -30.5
+        "variance": 6190.71,
+        "pct_spent": -46.7
       }
     ],
     "ytd_net_row": {
       "label": "Net Cashflow",
-      "fy_budget": 83055.4,
+      "fy_budget": 136655.8,
       "ytd_budget": 120066.0,
-      "ytd_actual": 8102.0,
-      "forecast": 24306.0,
+      "ytd_actual": -9186.13,
+      "forecast": -27558.39,
       "is_total": true,
-      "variance": -111964.0,
-      "pct_spent": 9.8
+      "variance": -129252.13,
+      "pct_spent": -6.7
     },
     "nw_table": [
       {
@@ -2925,14 +3042,14 @@ window.FINANCE_DATA = {
       },
       {
         "label": "Cash in Bank",
-        "value": 157178.84
+        "value": 166338.45
       },
       {
         "label": "Less: Debt",
         "value": 0
       }
     ],
-    "nw_total": 3033779.84,
+    "nw_total": 3042939.45,
     "yoy_change": 0.4,
     "re_portfolio_value": 1570000.0,
     "lease_timeline": [
@@ -2986,9 +3103,15 @@ window.FINANCE_DATA = {
       },
       {
         "property": "Rahba Hill Rooftop",
-        "contract_end": "",
+        "contract_end": "2031-01-31 00:00:00",
         "status": "Active",
         "monthly_rent": 172.5
+      },
+      {
+        "property": "Rahba Hills Subtotal",
+        "contract_end": "",
+        "status": "",
+        "monthly_rent": 4832.5
       },
       {
         "property": "Tilal Flat",
@@ -3042,101 +3165,101 @@ window.FINANCE_DATA = {
         "2026"
       ],
       "income": [
-        27503.0,
-        22882.0,
-        54635.0,
-        105800.0,
-        127767.0
+        106018.17,
+        101385.35,
+        117497.31,
+        181301.92,
+        131071.74
       ],
       "expenses": [
         126626.0,
         146969.0,
         132200.0,
         124453.0,
-        103461.0
+        158630.13
       ]
     }
   },
   "travel": {
     "personal_budget": 0,
     "family_budget": 0,
-    "personal_total_budget": 0,
-    "personal_total_actual": 0,
+    "personal_total_budget": 6934.0,
+    "personal_total_actual": 6936.33,
     "trips": [
       {
         "name": "Dec 2025 - Baku Business",
         "destination": "Baku, AZ",
         "from": "02/12/2025",
         "to": "04/12/2025",
-        "nights": 0,
+        "nights": 2.0,
         "type": "Personal",
         "budget": 500.0,
-        "flights": 0,
-        "transport": 0,
-        "hotel": 0,
-        "daily_spend": 0,
-        "actual": 0,
-        "vs_budget": 0
+        "flights": 44.0,
+        "transport": 0.0,
+        "hotel": 0.0,
+        "daily_spend": 25.68,
+        "actual": 69.68,
+        "vs_budget": 430.32
       },
       {
         "name": "Jan 2026 - Dubai",
         "destination": "Dubai, AE",
         "from": "05/01/2026",
         "to": "10/01/2026",
-        "nights": 0,
+        "nights": 5.0,
         "type": "Personal",
         "budget": 3000.0,
-        "flights": 0,
-        "transport": 0,
-        "hotel": 0,
-        "daily_spend": 0,
-        "actual": 0,
-        "vs_budget": 0
+        "flights": 504.5,
+        "transport": 12.63,
+        "hotel": 1375.52,
+        "daily_spend": 619.08,
+        "actual": 2511.73,
+        "vs_budget": 488.27
       },
       {
         "name": "Feb 2026 - Italy",
         "destination": "Italy",
         "from": "08/02/2026",
         "to": "17/02/2026",
-        "nights": 0,
+        "nights": 9.0,
         "type": "Personal",
         "budget": 2000.0,
-        "flights": 0,
-        "transport": 0,
-        "hotel": 0,
-        "daily_spend": 0,
-        "actual": 0,
-        "vs_budget": 0
+        "flights": 1066.93,
+        "transport": 43.88,
+        "hotel": 565.15,
+        "daily_spend": 820.04,
+        "actual": 2496.0,
+        "vs_budget": -496.0
       },
       {
         "name": "March 2026 - Manchester & Barcelona",
         "destination": "UK / Spain",
         "from": "24/03/2026",
         "to": "01/04/2026",
-        "nights": 0,
+        "nights": 8.0,
         "type": "Personal",
         "budget": 1034.0,
-        "flights": 0,
-        "transport": 0,
-        "hotel": 0,
-        "daily_spend": 0,
-        "actual": 0,
-        "vs_budget": 0
+        "flights": 0.0,
+        "transport": 484.41,
+        "hotel": 483.32,
+        "daily_spend": 379.8,
+        "actual": 1347.53,
+        "vs_budget": -313.53
       },
       {
         "name": "May 2026 - Barcelona & New York",
         "destination": "Spain / USA",
         "from": "07/05/2026",
         "to": "19/05/2026",
-        "nights": 0,
+        "nights": 12.0,
         "type": "Personal",
         "budget": 400.0,
-        "flights": 0,
-        "transport": 0,
-        "hotel": 0,
-        "daily_spend": 0,
-        "actual": 0,
-        "vs_budget": 0
+        "flights": 500.0,
+        "transport": 0.0,
+        "hotel": 0.0,
+        "daily_spend": 11.39,
+        "actual": 511.39,
+        "vs_budget": -111.39
       }
     ],
     "family_trips": [
@@ -3147,7 +3270,7 @@ window.FINANCE_DATA = {
         "to": "30/06/2026",
         "type": "Family",
         "budget": 0.0,
-        "actual": 0
+        "actual": 4786.81
       }
     ]
   },
@@ -3306,7 +3429,7 @@ window.FINANCE_DATA = {
         "monthly_rent": 172.5,
         "annual_rent": 2070.0,
         "yield_pct": 0,
-        "contract_end": "",
+        "contract_end": "2031-01-31 00:00:00",
         "deposit": 0.0,
         "payment_terms": "Annual prepaid",
         "status": "Active",
@@ -3556,18 +3679,18 @@ window.FINANCE_DATA = {
     ],
     "cash_balance": {
       "opening": [
-        157812.59,
-        269735.59,
-        289742.49,
-        314757.56,
-        342655.45
+        165960.61,
+        277883.61,
+        297890.51,
+        322905.58,
+        350803.47
       ],
       "closing": [
-        269735.59,
-        289742.49,
-        314757.56,
-        342655.45,
-        371835.45
+        277883.61,
+        297890.51,
+        322905.58,
+        350803.47,
+        379983.47
       ]
     },
     "net_worth_projection": {
@@ -3607,11 +3730,11 @@ window.FINANCE_DATA = {
         0
       ],
       "Cash in Bank": [
-        269735.59,
-        289742.49,
-        314757.56,
-        342655.45,
-        371835.45
+        277883.61,
+        297890.51,
+        322905.58,
+        350803.47,
+        379983.47
       ],
       "Debt": [
         0,
@@ -3621,15 +3744,15 @@ window.FINANCE_DATA = {
         0
       ],
       "Total": [
-        3146336.59,
-        3219193.05,
-        3298114.67,
-        3380997.24,
-        3466261.61
+        3154484.61,
+        3227341.07,
+        3306262.69,
+        3389145.26,
+        3474409.63
       ],
       "YoY Growth": [
         0,
-        0.0232,
+        0.0231,
         0.0245,
         0.0251,
         0.0252
@@ -3835,7 +3958,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2010",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 98659.0,
       "notes": "",
       "status": ""
     },
@@ -3889,7 +4012,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2011",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 302638.0,
       "notes": "",
       "status": ""
     },
@@ -3934,7 +4057,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2012",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 487370.0,
       "notes": "",
       "status": ""
     },
@@ -3970,7 +4093,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2013",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 702870.0,
       "notes": "",
       "status": ""
     },
@@ -3997,7 +4120,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2014",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 803859.0,
       "notes": "",
       "status": ""
     },
@@ -4060,7 +4183,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2015",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 1289171.0,
       "notes": "",
       "status": ""
     },
@@ -4123,7 +4246,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2016",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 1664733.0,
       "notes": "",
       "status": ""
     },
@@ -4222,7 +4345,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2017",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 1677428.0,
       "notes": "",
       "status": ""
     },
@@ -4276,7 +4399,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2018",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 2209381.0,
       "notes": "",
       "status": ""
     },
@@ -4339,7 +4462,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2019",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 2440762.0,
       "notes": "",
       "status": ""
     },
@@ -4393,7 +4516,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2020",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 2839570.0,
       "notes": "",
       "status": ""
     },
@@ -4447,7 +4570,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2021",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 3248351.0,
       "notes": "",
       "status": ""
     },
@@ -4474,7 +4597,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2022",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 3212100.0,
       "notes": "",
       "status": ""
     },
@@ -4510,7 +4633,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2023",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 3207200.0,
       "notes": "",
       "status": ""
     },
@@ -4564,7 +4687,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2024",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 3165152.0,
       "notes": "",
       "status": ""
     },
@@ -4618,7 +4741,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2025",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 2936653.0,
       "notes": "",
       "status": ""
     },
@@ -4654,7 +4777,7 @@ window.FINANCE_DATA = {
       "asset": "Net Worth 2026",
       "category": "",
       "type": "",
-      "amount": 0,
+      "amount": 3049653.0,
       "notes": "",
       "status": ""
     }
@@ -4690,11 +4813,11 @@ window.FINANCE_DATA = {
       81007.0,
       80000.0,
       104520.0,
-      0,
-      0,
-      0,
-      0,
-      0
+      73763.71,
+      78515.17,
+      78503.35,
+      62862.31,
+      75501.92
     ],
     "salary": [
       161350.0,
@@ -4726,11 +4849,11 @@ window.FINANCE_DATA = {
       120293.0,
       332533.0,
       560789.0,
-      368978.0,
-      27503.0,
-      22882.0,
-      54635.0,
-      105800.0
+      442741.71,
+      106018.17,
+      101385.35,
+      117497.31,
+      181301.92
     ],
     "total_expenses": [
       35389.0,
@@ -4762,11 +4885,11 @@ window.FINANCE_DATA = {
       39286.0,
       231568.0,
       427648.0,
-      256937.0,
-      -99123.0,
-      -124087.0,
-      -77565.0,
-      -18653.0
+      330700.71,
+      -20607.83,
+      -45583.65,
+      -14702.69,
+      56848.92
     ],
     "closing_cash": [
       0.0,
@@ -4791,7 +4914,7 @@ window.FINANCE_DATA = {
     "children": [
       {
         "name": "Inflation Rate",
-        "age_2026": 0,
+        "age_2026": 0.03,
         "fund_2026": 0,
         "distributions": [
           0,
@@ -4862,39 +4985,39 @@ window.FINANCE_DATA = {
       {
         "name": "Sarah",
         "age_2026": 22.0,
-        "fund_2026": 0,
+        "fund_2026": 100000.0,
         "distributions": [
-          0,
+          -20000.0,
           0.0,
           0.0,
           0.0,
           0.0
         ],
-        "five_yr_total": 0,
-        "remaining": 0
+        "five_yr_total": -20000.0,
+        "remaining": 80000.0
       },
       {
         "name": "Reema",
         "age_2026": 20.0,
-        "fund_2026": 0,
+        "fund_2026": 100000.0,
         "distributions": [
           0.0,
           0.0,
-          0,
+          -21218.0,
           0.0,
           0.0
         ],
-        "five_yr_total": 0,
-        "remaining": 0
+        "five_yr_total": -21218.0,
+        "remaining": 78782.0
       }
     ]
   },
   "xom": {
-    "shares_pct": 8.4
+    "shares_pct": 1200000.0
   },
   "wemeet": {
     "total_capex": 1300000.0,
-    "ownership_pct": 20
+    "ownership_pct": 1300000.0
   },
   "re_budget": {
     "collection": [
@@ -4908,9 +5031,9 @@ window.FINANCE_DATA = {
       {
         "property": "Other RE",
         "ytd_budget": 20740.0,
-        "ytd_actual": 3053.0,
-        "variance": -17687.0,
-        "pct_collected": 14.72
+        "ytd_actual": 4154.58,
+        "variance": -16585.42,
+        "pct_collected": 20.03
       }
     ]
   }
