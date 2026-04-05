@@ -1862,19 +1862,37 @@ function renderYtdBridgeChart() {
     const maxValue = Math.max(...items.map(i => Math.abs(i.actual || i.budget || 0))) || 1;
     const baseHeight = 230;
 
+    // Create a flex wrapper so bars sit side by side
+    const wrapper = document.createElement('div');
+    wrapper.className = 'waterfall-bars';
+    wrapper.style.height = baseHeight + 'px';
+
     items.forEach(item => {
         const val = item.actual || item.budget || 0;
-        const height = Math.abs(val) / maxValue * baseHeight;
+        const height = Math.abs(val) / maxValue * (baseHeight - 40);
         const isIncome = item.type === 'income';
 
         const waterfallItem = document.createElement('div');
         waterfallItem.className = 'waterfall-item';
         waterfallItem.innerHTML = `
-            <div class="waterfall-bar" style="height: ${height}px; background: ${isIncome ? 'var(--green)' : 'var(--red)'}; opacity: 0.8;" title="${item.label}: ${fmt.currency(val)}"></div>
+            <div style="flex:1; display:flex; align-items:flex-end; width:100%;">
+                <div class="waterfall-bar" style="height: ${height}px; background: ${isIncome ? 'var(--green)' : 'var(--red)'}; opacity: 0.8;" title="${item.label}: ${fmt.currency(val)}"></div>
+            </div>
             <div class="waterfall-label">${item.label}</div>
         `;
-        container.appendChild(waterfallItem);
+        wrapper.appendChild(waterfallItem);
     });
+
+    container.appendChild(wrapper);
+
+    // Legend
+    const legend = document.createElement('div');
+    legend.style.cssText = 'display: flex; gap: 16px; font-size: 11px; margin-top: 8px;';
+    legend.innerHTML = `
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:10px;height:10px;background:var(--green);opacity:0.8;border-radius:2px;"></div>Income</div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:10px;height:10px;background:var(--red);opacity:0.8;border-radius:2px;"></div>Expenses</div>
+    `;
+    container.appendChild(legend);
 }
 
 function renderNwBuildupChart() {
