@@ -347,8 +347,8 @@
         /* CARDS & LAYOUTS */
         .kpi-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
             margin-bottom: 24px;
         }
 
@@ -633,6 +633,19 @@
         .num-right {
             text-align: right;
             font-family: 'Courier New', monospace;
+        }
+
+        .data-table {
+            font-size: 12px;
+        }
+
+        .data-table th {
+            font-size: 10px;
+            padding: 8px 10px;
+        }
+
+        .data-table td {
+            padding: 6px 10px;
         }
 
         .status-badge {
@@ -1033,54 +1046,97 @@
             <div class="content-area" id="contentArea">
                 <!-- DASHBOARD PAGE -->
                 <div class="page active" id="dashboard-page">
+
+                    <!-- ═══ SECTION 1: THIS MONTH ═══ -->
+                    <div class="section-header" style="margin-bottom: 16px;">
+                        <h2 style="font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--gold); margin: 0;">This Month <span id="dashCurrentMonth" style="font-weight: 300; opacity: 0.7;"></span></h2>
+                    </div>
+
                     <div class="kpi-row">
-                        <div class="kpi-card gold">
-                            <div class="kpi-label">Net Worth</div>
-                            <div class="kpi-value" id="nwNetWorth">—</div>
-                            <div class="kpi-subtitle" id="nwAsAt">—</div>
+                        <div class="kpi-card gold"><div class="kpi-label">Income</div><div class="kpi-value" id="tmIncome">—</div></div>
+                        <div class="kpi-card red"><div class="kpi-label">Expenses</div><div class="kpi-value" id="tmExpenses">—</div></div>
+                        <div class="kpi-card" id="tmNetCard"><div class="kpi-label">Net Cashflow</div><div class="kpi-value" id="tmNet">—</div></div>
+                        <div class="kpi-card"><div class="kpi-label">RE Collection %</div><div class="kpi-value" id="tmREPct">—</div></div>
+                        <div class="kpi-card"><div class="kpi-label">Cash Balance</div><div class="kpi-value" id="tmCash">—</div></div>
+                        <div class="kpi-card gold"><div class="kpi-label">Net Worth</div><div class="kpi-value" id="tmNetWorth">—</div></div>
+                    </div>
+
+                    <div class="grid-2" style="margin-top: 16px;">
+                        <div class="card">
+                            <div class="card-title">Budget vs Actual</div>
+                            <table class="data-table" id="thisMonthTable">
+                                <thead><tr><th>Category</th><th class="num-right">Budget</th><th class="num-right">Actual</th><th class="num-right">Variance</th><th class="num-right">%</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
                         </div>
-                        <div class="kpi-card green">
-                            <div class="kpi-label">YTD Income</div>
-                            <div class="kpi-value green" id="nwYtdIncome">—</div>
-                            <div class="kpi-subtitle" id="nwYtdIncomeDetail">—</div>
-                        </div>
-                        <div class="kpi-card amber">
-                            <div class="kpi-label">YTD Expenses</div>
-                            <div class="kpi-value" id="nwYtdExpenses">—</div>
-                            <div class="kpi-subtitle" id="nwYtdExpensesDetail">—</div>
-                        </div>
-                        <div class="kpi-card" id="nwPnlCard">
-                            <div class="kpi-label">YTD P&L</div>
-                            <div class="kpi-value" id="nwYtdPnl">—</div>
-                            <div class="kpi-subtitle" id="nwYtdPnlDetail">—</div>
+                        <div class="card">
+                            <div class="card-title">This Month: Budget vs Actual</div>
+                            <div class="chart-container"><div id="thisMonthChart" style="height: 260px;"></div></div>
                         </div>
                     </div>
 
-                    <div class="grid-2">
-                        <div class="card">
-                            <div class="card-title">Monthly Cashflow</div>
-                            <div class="chart-container">
-                                <div class="monthly-bars" id="monthlyCashflowChart"></div>
-                            </div>
-                            <div style="display: flex; gap: 20px; font-size: 12px;">
-                                <div style="flex: 1;">
-                                    <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
-                                        <div style="width: 12px; height: 12px; background: var(--gold); opacity: 0.4; border-radius: 2px;"></div>
-                                        <span>Budget</span>
-                                    </div>
-                                </div>
-                                <div style="flex: 1;">
-                                    <div style="display: flex; gap: 8px; align-items: center;">
-                                        <div style="width: 12px; height: 12px; background: var(--gold); opacity: 0.9; border-radius: 2px;"></div>
-                                        <span>Actual</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- ═══ SECTION 2: YEAR TO DATE ═══ -->
+                    <div class="section-header" style="margin: 32px 0 16px;">
+                        <h2 style="font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--gold); margin: 0;">Year to Date</h2>
+                    </div>
 
+                    <div class="kpi-row">
+                        <div class="kpi-card green"><div class="kpi-label">YTD Income</div><div class="kpi-value" id="ytdIncome">—</div></div>
+                        <div class="kpi-card red"><div class="kpi-label">YTD Expenses</div><div class="kpi-value" id="ytdExpenses">—</div></div>
+                        <div class="kpi-card" id="ytdNetCard"><div class="kpi-label">YTD Net CF</div><div class="kpi-value" id="ytdNetCF">—</div></div>
+                        <div class="kpi-card"><div class="kpi-label">Savings Rate</div><div class="kpi-value" id="ytdSavingsRate">—</div></div>
+                        <div class="kpi-card"><div class="kpi-label">vs Full-Year Budget</div><div class="kpi-value" id="ytdVsFY">—</div></div>
+                    </div>
+
+                    <div class="grid-2" style="margin-top: 16px;">
                         <div class="card">
-                            <div class="card-title">Asset Allocation</div>
-                            <div class="chart-container">
+                            <div class="card-title">YTD Income & Expense Breakdown</div>
+                            <table class="data-table" id="ytdTable">
+                                <thead><tr><th>Category</th><th class="num-right">FY Budget</th><th class="num-right">YTD Budget</th><th class="num-right">YTD Actual</th><th class="num-right">Variance</th><th class="num-right">% Spent</th><th class="num-right">FY Forecast</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">YTD Cashflow Bridge</div>
+                            <div class="chart-container"><div id="ytdBridgeChart" style="height: 280px;"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- ═══ SECTION 3: LEASE EXPIRY TIMELINE ═══ -->
+                    <div class="section-header" style="margin: 32px 0 16px;">
+                        <h2 style="font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--gold); margin: 0;">Lease Expiry Timeline</h2>
+                    </div>
+
+                    <div class="card">
+                        <table class="data-table" id="leaseTable">
+                            <thead><tr><th>Property</th><th>Contract End</th><th>Status</th><th class="num-right">Monthly Rent</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                    <!-- ═══ SECTION 4: NET WORTH & PORTFOLIO ═══ -->
+                    <div class="section-header" style="margin: 32px 0 16px;">
+                        <h2 style="font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--gold); margin: 0;">Net Worth & Portfolio</h2>
+                    </div>
+
+                    <div class="kpi-row">
+                        <div class="kpi-card gold"><div class="kpi-label">Total Net Worth</div><div class="kpi-value" id="nwTotal">—</div></div>
+                        <div class="kpi-card"><div class="kpi-label">YoY Change</div><div class="kpi-value" id="nwYoY">—</div></div>
+                        <div class="kpi-card"><div class="kpi-label">RE Portfolio Value</div><div class="kpi-value" id="nwREValue">—</div></div>
+                        <div class="kpi-card"><div class="kpi-label">Cash Position</div><div class="kpi-value" id="nwCashPos">—</div></div>
+                    </div>
+
+                    <div class="grid-2" style="margin-top: 16px;">
+                        <div class="card">
+                            <div class="card-title">Asset Breakdown</div>
+                            <table class="data-table" id="nwBreakdownTable">
+                                <thead><tr><th>Asset Class</th><th class="num-right">Value (OMR)</th><th class="num-right">% of Total</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">Portfolio Allocation</div>
+                            <div class="chart-container" style="position: relative;">
                                 <svg id="assetDonut" style="width: 100%; height: 280px; max-width: 280px; margin: 0 auto;"></svg>
                                 <div class="donut-center" id="donutCenter">
                                     <div class="donut-center-value" id="donutValue">—</div>
@@ -1091,15 +1147,19 @@
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-title">Income vs Budget</div>
-                        <div class="bar-chart-horizontal" id="incomeVsBudgetChart"></div>
+                    <!-- ═══ SECTION 5: HISTORICAL CHARTS ═══ -->
+                    <div class="section-header" style="margin: 32px 0 16px;">
+                        <h2 style="font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--gold); margin: 0;">Historical Performance</h2>
                     </div>
 
-                    <div class="card" style="margin-top: 24px;">
-                        <div class="card-title">Cash Balance Trend</div>
-                        <div class="chart-container">
-                            <svg id="cashTrendChart" style="width: 100%; height: 200px;"></svg>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-title">Net Worth Build-up (2010–2026)</div>
+                            <div class="chart-container"><div id="nwBuildupChart" style="height: 280px;"></div></div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">Annual Income & Expenses (2022–2026)</div>
+                            <div class="chart-container"><div id="annualIEChart" style="height: 280px;"></div></div>
                         </div>
                     </div>
                 </div>
@@ -1595,189 +1655,301 @@ function sumValues(obj) {
 // ============ DASHBOARD PAGE ============
 function renderDashboard() {
     const D = window.FINANCE_DATA;
+    const dk = D.dashboard_kpis || {};
 
-    // KPIs
-    document.getElementById('nwNetWorth').textContent = fmt.currency(D.net_worth.net_worth);
-    document.getElementById('nwAsAt').textContent = `as at ${D.net_worth.as_at}`;
-    document.getElementById('nwYtdIncome').textContent = fmt.currency(D.net_worth.ytd_income.Total);
-    document.getElementById('nwYtdIncomeDetail').textContent = `${Object.keys(D.net_worth.ytd_income).length - 1} sources`;
-    document.getElementById('nwYtdExpenses').textContent = fmt.currency(D.net_worth.ytd_expenses.Total);
-    document.getElementById('nwYtdExpensesDetail').textContent = `${Object.keys(D.net_worth.ytd_expenses).length - 1} categories`;
+    // ── SECTION 1: THIS MONTH ──
+    document.getElementById('dashCurrentMonth').textContent = dk.current_month || '';
+    document.getElementById('tmIncome').textContent = fmt.currency(dk.this_month_income);
+    document.getElementById('tmExpenses').textContent = fmt.currency(dk.this_month_expenses);
+    const tmNetEl = document.getElementById('tmNet');
+    tmNetEl.textContent = fmt.currency(dk.this_month_net);
+    tmNetEl.className = 'kpi-value ' + (dk.this_month_net >= 0 ? 'green' : 'red');
+    document.getElementById('tmNetCard').className = 'kpi-card ' + (dk.this_month_net >= 0 ? 'green' : 'red');
+    document.getElementById('tmREPct').textContent = dk.re_collection_pct + '%';
+    document.getElementById('tmCash').textContent = fmt.currency(dk.cash_balance);
+    document.getElementById('tmNetWorth').textContent = fmt.currency(dk.net_worth_display);
 
-    const pnlValue = D.net_worth.ytd_pnl;
-    const pnlCard = document.getElementById('nwPnlCard');
-    const pnlElement = document.getElementById('nwYtdPnl');
-    pnlElement.textContent = fmt.currency(pnlValue);
-    pnlElement.className = 'kpi-value ' + (pnlValue >= 0 ? 'green' : 'red');
-    pnlCard.className = 'kpi-card ' + (pnlValue >= 0 ? 'green' : 'red');
+    // This Month table
+    const tmTbody = document.querySelector('#thisMonthTable tbody');
+    tmTbody.innerHTML = '';
+    (dk.this_month_table || []).forEach(row => {
+        const tr = document.createElement('tr');
+        if (row.is_total) tr.style.fontWeight = '600';
+        const varClass = row.variance >= 0 ? 'green' : 'red';
+        tr.innerHTML = `
+            <td>${row.label}</td>
+            <td class="num-right">${fmt.currency(row.budget)}</td>
+            <td class="num-right">${fmt.currency(row.actual)}</td>
+            <td class="num-right"><span class="${varClass}">${fmt.currency(row.variance)}</span></td>
+            <td class="num-right">${row.pct}%</td>
+        `;
+        tmTbody.appendChild(tr);
+    });
 
-    renderMonthlyCashflowChart();
+    // This Month chart
+    renderThisMonthChart(dk.this_month_table || []);
+
+    // ── SECTION 2: YEAR TO DATE ──
+    document.getElementById('ytdIncome').textContent = fmt.currency(dk.ytd_income);
+    document.getElementById('ytdExpenses').textContent = fmt.currency(dk.ytd_expenses);
+    const ytdNetEl = document.getElementById('ytdNetCF');
+    ytdNetEl.textContent = fmt.currency(dk.ytd_net_cf);
+    ytdNetEl.className = 'kpi-value ' + (dk.ytd_net_cf >= 0 ? 'green' : 'red');
+    document.getElementById('ytdNetCard').className = 'kpi-card ' + (dk.ytd_net_cf >= 0 ? 'green' : 'red');
+    document.getElementById('ytdSavingsRate').textContent = dk.savings_rate + '%';
+    document.getElementById('ytdVsFY').textContent = dk.vs_fy_budget + '%';
+
+    // YTD table
+    const ytdTbody = document.querySelector('#ytdTable tbody');
+    ytdTbody.innerHTML = '';
+    const ytdSections = [
+        { title: 'INCOME', rows: dk.ytd_income_table || [] },
+        { title: 'EXPENSES', rows: dk.ytd_expense_table || [] },
+    ];
+    ytdSections.forEach(section => {
+        const headerTr = document.createElement('tr');
+        headerTr.innerHTML = `<td colspan="7" style="font-weight: 700; color: var(--gold); padding-top: 12px; font-size: 11px; letter-spacing: 1px;">${section.title}</td>`;
+        ytdTbody.appendChild(headerTr);
+        section.rows.forEach(row => {
+            const tr = document.createElement('tr');
+            if (row.is_total) tr.style.fontWeight = '600';
+            const varClass = row.variance >= 0 ? 'green' : 'red';
+            tr.innerHTML = `
+                <td>${row.label}</td>
+                <td class="num-right">${fmt.currency(Math.abs(row.fy_budget))}</td>
+                <td class="num-right">${fmt.currency(Math.abs(row.ytd_budget))}</td>
+                <td class="num-right">${fmt.currency(Math.abs(row.ytd_actual))}</td>
+                <td class="num-right"><span class="${varClass}">${fmt.currency(row.variance)}</span></td>
+                <td class="num-right">${Math.abs(row.pct_spent).toFixed(1)}%</td>
+                <td class="num-right">${fmt.currency(Math.abs(row.forecast))}</td>
+            `;
+            ytdTbody.appendChild(tr);
+        });
+    });
+    // Net row
+    if (dk.ytd_net_row) {
+        const nr = dk.ytd_net_row;
+        const tr = document.createElement('tr');
+        tr.style.fontWeight = '700';
+        tr.style.borderTop = '2px solid var(--gold)';
+        const varClass = nr.variance >= 0 ? 'green' : 'red';
+        tr.innerHTML = `
+            <td>${nr.label}</td>
+            <td class="num-right">${fmt.currency(nr.fy_budget)}</td>
+            <td class="num-right">${fmt.currency(nr.ytd_budget)}</td>
+            <td class="num-right">${fmt.currency(nr.ytd_actual)}</td>
+            <td class="num-right"><span class="${varClass}">${fmt.currency(nr.variance)}</span></td>
+            <td class="num-right">${Math.abs(nr.pct_spent).toFixed(1)}%</td>
+            <td class="num-right">${fmt.currency(nr.forecast)}</td>
+        `;
+        ytdTbody.appendChild(tr);
+    }
+
+    // YTD Bridge chart
+    renderYtdBridgeChart();
+
+    // ── SECTION 3: LEASE EXPIRY ──
+    const leaseTbody = document.querySelector('#leaseTable tbody');
+    leaseTbody.innerHTML = '';
+    (dk.lease_timeline || []).forEach(prop => {
+        const tr = document.createElement('tr');
+        const statusColor = prop.status === 'Active' ? 'var(--green)' : 'var(--text2)';
+        tr.innerHTML = `
+            <td>${prop.property}</td>
+            <td>${prop.contract_end || '—'}</td>
+            <td><span style="color: ${statusColor};">${prop.status || '—'}</span></td>
+            <td class="num-right">${fmt.currency(prop.monthly_rent)}</td>
+        `;
+        leaseTbody.appendChild(tr);
+    });
+
+    // ── SECTION 4: NET WORTH & PORTFOLIO ──
+    document.getElementById('nwTotal').textContent = fmt.currency(dk.net_worth_display);
+    document.getElementById('nwYoY').textContent = (dk.yoy_change >= 0 ? '+' : '') + dk.yoy_change + '%';
+    document.getElementById('nwYoY').style.color = dk.yoy_change >= 0 ? 'var(--green)' : 'var(--red)';
+    document.getElementById('nwREValue').textContent = fmt.currency(dk.re_portfolio_value);
+    document.getElementById('nwCashPos').textContent = fmt.currency(dk.cash_balance);
+
+    // Net Worth breakdown table
+    const nwTbody = document.querySelector('#nwBreakdownTable tbody');
+    nwTbody.innerHTML = '';
+    const nwTotal = dk.nw_total || 1;
+    (dk.nw_table || []).forEach(row => {
+        const tr = document.createElement('tr');
+        const pct = (row.value / nwTotal * 100).toFixed(1);
+        const isDebt = row.label.includes('Debt');
+        tr.innerHTML = `
+            <td>${row.label}</td>
+            <td class="num-right" style="${isDebt ? 'color: var(--red);' : ''}">${fmt.currency(row.value)}</td>
+            <td class="num-right">${pct}%</td>
+        `;
+        nwTbody.appendChild(tr);
+    });
+    // Total row
+    const totalTr = document.createElement('tr');
+    totalTr.style.fontWeight = '700';
+    totalTr.style.borderTop = '2px solid var(--gold)';
+    totalTr.innerHTML = `
+        <td>Total Net Worth</td>
+        <td class="num-right" style="color: var(--gold);">${fmt.currency(nwTotal)}</td>
+        <td class="num-right">100%</td>
+    `;
+    nwTbody.appendChild(totalTr);
+
+    // Asset Donut
     renderAssetDonut();
-    renderIncomeVsBudgetChart();
-    renderCashTrendChart();
+
+    // ── SECTION 5: HISTORICAL CHARTS ──
+    renderNwBuildupChart();
+    renderAnnualIEChart();
 }
 
-function renderMonthlyCashflowChart() {
-    const D = window.FINANCE_DATA;
-    const container = document.getElementById('monthlyCashflowChart');
+function renderThisMonthChart(tableData) {
+    const container = document.getElementById('thisMonthChart');
     container.innerHTML = '';
+    const items = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow');
 
-    const months = D.cashflow.months;
-    const budget = D.cashflow.net_operating_budget || D.cashflow.budget || [];
-    const actual = D.cashflow.net_operating_actual || D.cashflow.actual || [];
+    const maxVal = Math.max(...items.map(r => Math.max(Math.abs(r.budget), Math.abs(r.actual)))) || 1;
+    const barHeight = 28;
 
-    const maxValue = Math.max(
-        ...budget.map(v => Math.abs(v || 0)),
-        ...actual.map(v => Math.abs(v || 0))
-    );
-    const baseHeight = 180;
+    items.forEach(item => {
+        const budgetW = Math.abs(item.budget) / maxVal * 100;
+        const actualW = Math.abs(item.actual) / maxVal * 100;
+        const isPositive = item.actual >= 0;
 
-    months.forEach((month, idx) => {
-        const budgetVal = budget[idx] || 0;
-        const actualVal = actual[idx] || 0;
-
-        const budgetHeight = Math.abs(budgetVal) / maxValue * baseHeight;
-        const actualHeight = Math.abs(actualVal) / maxValue * baseHeight;
-
-        const monthGroup = document.createElement('div');
-        monthGroup.className = 'month-group';
-        monthGroup.innerHTML = `
-            <div class="bar-group">
-                <div class="single-bar dim" style="height: ${budgetHeight}px;" title="Budget: ${fmt.currency(budgetVal)}"></div>
-                <div class="single-bar actual" style="height: ${actualHeight}px;" title="Actual: ${fmt.currency(actualVal)}"></div>
+        const row = document.createElement('div');
+        row.style.cssText = 'margin-bottom: 8px;';
+        row.innerHTML = `
+            <div style="font-size: 11px; color: var(--text2); margin-bottom: 4px;">${item.label}</div>
+            <div style="position: relative; height: ${barHeight}px;">
+                <div style="position: absolute; top: 0; left: 0; width: ${budgetW}%; height: 12px; background: var(--gold); opacity: 0.25; border-radius: 3px;"></div>
+                <div style="position: absolute; top: 14px; left: 0; width: ${actualW}%; height: 12px; background: ${isPositive ? 'var(--green)' : 'var(--red)'}; opacity: 0.8; border-radius: 3px;"></div>
             </div>
-            <div class="month-label">${month}</div>
         `;
-        container.appendChild(monthGroup);
+        container.appendChild(row);
     });
+
+    // Legend
+    const legend = document.createElement('div');
+    legend.style.cssText = 'display: flex; gap: 16px; font-size: 11px; margin-top: 8px;';
+    legend.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--gold); opacity: 0.25; border-radius: 2px;"></div>Budget</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--green); opacity: 0.8; border-radius: 2px;"></div>Actual</div>
+    `;
+    container.appendChild(legend);
 }
 
 function renderAssetDonut() {
     const D = window.FINANCE_DATA;
-    const assets = D.net_worth.assets;
-    const reBreakdown = D.net_worth.re_breakdown || {};
-    const totalNw = D.net_worth.net_worth;
+    const dk = D.dashboard_kpis || {};
+    const nwTable = dk.nw_table || [];
+    const totalNw = dk.nw_total || D.net_worth.net_worth;
 
     const chartData = {};
-    const reTotal = sumValues(reBreakdown);
-    if (reTotal > 0) chartData['Real Estate'] = reTotal;
-
-    Object.entries(assets).forEach(([key, val]) => {
-        if (key !== 'Real Estate' && typeof val === 'number' && val > 0) {
-            chartData[key] = val;
-        }
+    nwTable.forEach(row => {
+        if (row.value > 0) chartData[row.label] = row.value;
     });
 
     renderDonut('assetDonut', 'donutValue', 'assetLegend', chartData, totalNw, 'Total Assets');
 }
 
-function renderIncomeVsBudgetChart() {
+function renderYtdBridgeChart() {
     const D = window.FINANCE_DATA;
-    const data = D.net_worth.ytd_income_vs_budget || [];
-    const container = document.getElementById('incomeVsBudgetChart');
+    const items = D.ytd_waterfall?.items || [];
+    const container = document.getElementById('ytdBridgeChart');
     container.innerHTML = '';
 
-    data.forEach(item => {
-        const maxVal = Math.max(item.budget || 0, item.actual || 0);
-        const actualWidth = maxVal ? (item.actual / maxVal * 100) : 0;
+    const maxValue = Math.max(...items.map(i => Math.abs(i.actual || i.budget || 0))) || 1;
+    const baseHeight = 230;
 
-        const barItem = document.createElement('div');
-        barItem.className = 'bar-item';
-        barItem.innerHTML = `
-            <div class="bar-label">${item.label}</div>
-            <div class="bar-wrapper">
-                <div class="bar-fill" style="width: ${actualWidth}%; background: var(--gold);" title="Actual: ${fmt.currency(item.actual)}"></div>
-            </div>
-            <div class="bar-value">${fmt.currency(item.actual)} / ${fmt.currency(item.budget)}</div>
+    items.forEach(item => {
+        const val = item.actual || item.budget || 0;
+        const height = Math.abs(val) / maxValue * baseHeight;
+        const isIncome = item.type === 'income';
+
+        const waterfallItem = document.createElement('div');
+        waterfallItem.className = 'waterfall-item';
+        waterfallItem.innerHTML = `
+            <div class="waterfall-bar" style="height: ${height}px; background: ${isIncome ? 'var(--green)' : 'var(--red)'}; opacity: 0.8;" title="${item.label}: ${fmt.currency(val)}"></div>
+            <div class="waterfall-label">${item.label}</div>
         `;
-        container.appendChild(barItem);
+        container.appendChild(waterfallItem);
     });
 }
 
-function renderCashTrendChart() {
+function renderNwBuildupChart() {
     const D = window.FINANCE_DATA;
-    const endBalances = D.cashflow.end_balance || [];
-    const months = D.cashflow.months || [];
+    const pv = D.portfolio_value;
+    if (!pv) return;
 
-    const svg = document.getElementById('cashTrendChart');
-    if (!endBalances.length) return;
+    const container = document.getElementById('nwBuildupChart');
+    container.innerHTML = '';
 
-    const maxBalance = Math.max(...endBalances);
-    const minBalance = Math.min(...endBalances);
-    const range = maxBalance - minBalance || 1;
+    const years = pv.years || [];
+    const values = pv.total_net_worth || [];
+    const maxVal = Math.max(...values.map(v => Math.abs(v || 0))) || 1;
+    const barMaxH = 220;
 
-    const padding = 40;
-    const width = svg.clientWidth || 600;
-    const height = svg.clientHeight || 200;
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = 'display: flex; align-items: flex-end; gap: 3px; height: ' + barMaxH + 'px; padding-bottom: 24px; overflow-x: auto;';
 
-    const graphWidth = width - padding * 2;
-    const graphHeight = height - padding * 2;
+    years.forEach((yr, idx) => {
+        const val = values[idx] || 0;
+        const h = Math.abs(val) / maxVal * (barMaxH - 30);
+        const col = document.createElement('div');
+        col.style.cssText = 'display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 28px;';
+        col.innerHTML = `
+            <div style="font-size: 9px; color: var(--text2); margin-bottom: 2px;">${val > 0 ? (val / 1e6).toFixed(1) + 'M' : ''}</div>
+            <div style="width: 100%; max-width: 32px; height: ${h}px; background: var(--gold); opacity: ${idx === years.length - 1 ? 1 : 0.5}; border-radius: 3px 3px 0 0;" title="${yr}: ${fmt.currency(val)}"></div>
+            <div style="font-size: 9px; color: var(--text2); margin-top: 4px; transform: rotate(-45deg); white-space: nowrap;">${yr}</div>
+        `;
+        wrapper.appendChild(col);
+    });
+    container.appendChild(wrapper);
+}
 
-    svg.innerHTML = '';
+function renderAnnualIEChart() {
+    const D = window.FINANCE_DATA;
+    const aie = D.dashboard_kpis?.annual_ie;
+    if (!aie) return;
 
-    const points = endBalances.map((val, idx) => {
-        const x = padding + (idx / (endBalances.length - 1)) * graphWidth;
-        const y = height - padding - ((val - minBalance) / range) * graphHeight;
-        return [x, y];
+    const container = document.getElementById('annualIEChart');
+    container.innerHTML = '';
+
+    const years = aie.years || [];
+    const income = aie.income || [];
+    const expenses = aie.expenses || [];
+    const maxVal = Math.max(...income, ...expenses.map(v => Math.abs(v))) || 1;
+    const barMaxH = 220;
+
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = 'display: flex; align-items: flex-end; gap: 8px; height: ' + barMaxH + 'px; padding-bottom: 24px;';
+
+    years.forEach((yr, idx) => {
+        const incH = Math.abs(income[idx] || 0) / maxVal * (barMaxH - 30);
+        const expH = Math.abs(expenses[idx] || 0) / maxVal * (barMaxH - 30);
+        const col = document.createElement('div');
+        col.style.cssText = 'display: flex; flex-direction: column; align-items: center; flex: 1;';
+        col.innerHTML = `
+            <div style="display: flex; gap: 3px; align-items: flex-end; height: ${barMaxH - 30}px;">
+                <div style="width: 20px; height: ${incH}px; background: var(--green); opacity: 0.7; border-radius: 3px 3px 0 0;" title="Income: ${fmt.currency(income[idx])}"></div>
+                <div style="width: 20px; height: ${expH}px; background: var(--red); opacity: 0.7; border-radius: 3px 3px 0 0;" title="Expenses: ${fmt.currency(Math.abs(expenses[idx]))}"></div>
+            </div>
+            <div style="font-size: 11px; color: var(--text2); margin-top: 4px;">${yr}</div>
+        `;
+        wrapper.appendChild(col);
     });
 
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-    gradient.setAttribute('id', 'cashGradient');
-    gradient.setAttribute('x1', '0%');
-    gradient.setAttribute('y1', '0%');
-    gradient.setAttribute('x2', '0%');
-    gradient.setAttribute('y2', '100%');
-    gradient.innerHTML = `
-        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
-        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
+    container.appendChild(wrapper);
+
+    // Legend
+    const legend = document.createElement('div');
+    legend.style.cssText = 'display: flex; gap: 16px; font-size: 11px; margin-top: 8px;';
+    legend.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--green); opacity: 0.7; border-radius: 2px;"></div>Income</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--red); opacity: 0.7; border-radius: 2px;"></div>Expenses</div>
     `;
-    defs.appendChild(gradient);
-    svg.appendChild(defs);
-
-    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
-    const areaPath = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    areaPath.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
-    areaPath.setAttribute('fill', 'url(#cashGradient)');
-    svg.appendChild(areaPath);
-
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
-    line.setAttribute('points', pointsStr);
-    line.setAttribute('fill', 'none');
-    line.setAttribute('stroke', 'var(--gold)');
-    line.setAttribute('stroke-width', '2');
-    svg.appendChild(line);
-
-    points.forEach((p) => {
-        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        circle.setAttribute('cx', p[0]);
-        circle.setAttribute('cy', p[1]);
-        circle.setAttribute('r', '4');
-        circle.setAttribute('fill', 'var(--gold)');
-        circle.setAttribute('opacity', '0.6');
-        svg.appendChild(circle);
-    });
-
-    const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    xAxis.setAttribute('x1', padding);
-    xAxis.setAttribute('y1', height - padding);
-    xAxis.setAttribute('x2', width - padding);
-    xAxis.setAttribute('y2', height - padding);
-    xAxis.setAttribute('stroke', 'var(--border)');
-    xAxis.setAttribute('stroke-width', '1');
-    svg.appendChild(xAxis);
-
-    months.forEach((month, idx) => {
-        const x = padding + (idx / (months.length - 1)) * graphWidth;
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', x);
-        text.setAttribute('y', height - padding + 20);
-        text.setAttribute('text-anchor', 'middle');
-        text.setAttribute('font-size', '11');
-        text.setAttribute('fill', 'var(--text2)');
-        text.textContent = month;
-        svg.appendChild(text);
-    });
+    container.appendChild(legend);
 }
 
 // ============ CASHFLOW PAGE ============
