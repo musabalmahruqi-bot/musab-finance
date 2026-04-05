@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 05 Apr 2026 20:26
+// Generated: 05 Apr 2026 20:39
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "05 Apr 2026",
@@ -2653,7 +2653,7 @@ window.FINANCE_DATA = {
     "this_month_expenses": 2500.0,
     "this_month_net": 8460.0,
     "re_collection_pct": 92.6,
-    "cash_balance": 183500.0,
+    "cash_balance": 157178.84,
     "net_worth_display": 3033779.84
   },
   "travel": {
