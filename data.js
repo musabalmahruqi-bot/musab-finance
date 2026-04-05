@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 05 Apr 2026 20:52
+// Generated: 05 Apr 2026 21:26
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "05 Apr 2026",
@@ -2741,12 +2741,321 @@ window.FINANCE_DATA = {
     ]
   },
   "dashboard_kpis": {
+    "current_month": "Mar",
+    "n_months": 3,
     "this_month_income": 10960.0,
     "this_month_expenses": 2500.0,
     "this_month_net": 8460.0,
     "re_collection_pct": 92.6,
     "cash_balance": 157178.84,
-    "net_worth_display": 3033779.84
+    "net_worth_display": 3033779.84,
+    "this_month_table": [
+      {
+        "label": "RE Cashflow",
+        "budget": 3239.0,
+        "actual": 2960.0,
+        "variance": -279.0,
+        "pct": 91.4
+      },
+      {
+        "label": "Salary & Other Income",
+        "budget": 8700.0,
+        "actual": 8000.0,
+        "variance": -700.0,
+        "pct": 92.0
+      },
+      {
+        "label": "Total Income",
+        "budget": 11939.0,
+        "actual": 10960.0,
+        "is_total": true,
+        "variance": -979.0,
+        "pct": 91.8
+      },
+      {
+        "label": "Total Expenses",
+        "budget": -6500.0,
+        "actual": -2500.0,
+        "is_total": true,
+        "variance": 4000.0,
+        "pct": 38.5
+      },
+      {
+        "label": "Capital Movements",
+        "budget": 0.0,
+        "actual": 42521.0,
+        "variance": 42521.0,
+        "pct": 0
+      },
+      {
+        "label": "Debt Payments",
+        "budget": 0,
+        "actual": 0,
+        "variance": 0,
+        "pct": 0
+      },
+      {
+        "label": "Net Cashflow",
+        "budget": 5439.0,
+        "actual": 50981.0,
+        "is_total": true,
+        "variance": 45542.0,
+        "pct": 937.3
+      }
+    ],
+    "this_month_income_budget": 11939.0,
+    "ytd_income": 39679.0,
+    "ytd_expenses": 31987.0,
+    "ytd_net_cf": 7692.0,
+    "savings_rate": 19.4,
+    "vs_fy_budget": 20.2,
+    "ytd_income_table": [
+      {
+        "label": "RE Cashflow",
+        "fy_budget": 91872.4,
+        "ytd_budget": 15415.0,
+        "ytd_actual": 14279.0,
+        "forecast": 57116.0,
+        "variance": -1136.0,
+        "pct_spent": 15.5
+      },
+      {
+        "label": "Salary",
+        "fy_budget": 96000.0,
+        "ytd_budget": 24000.0,
+        "ytd_actual": 24000.0,
+        "forecast": 96000.0,
+        "variance": 0.0,
+        "pct_spent": 25.0
+      },
+      {
+        "label": "WeMeet / Business",
+        "fy_budget": 8400.0,
+        "ytd_budget": 2100.0,
+        "ytd_actual": 1400.0,
+        "forecast": 5600.0,
+        "variance": -700.0,
+        "pct_spent": 16.7
+      },
+      {
+        "label": "Total Income",
+        "fy_budget": 196272.4,
+        "ytd_budget": 41515.0,
+        "ytd_actual": 39679.0,
+        "forecast": 158716.0,
+        "is_total": true,
+        "variance": -1836.0,
+        "pct_spent": 20.2
+      }
+    ],
+    "ytd_expense_table": [
+      {
+        "label": "Household",
+        "fy_budget": -30000.0,
+        "ytd_budget": 7500.0,
+        "ytd_actual": 7500.0,
+        "forecast": 30000.0,
+        "variance": 0.0,
+        "pct_spent": -25.0
+      },
+      {
+        "label": "Education",
+        "fy_budget": -23217.0,
+        "ytd_budget": 13352.0,
+        "ytd_actual": 13352.0,
+        "forecast": 53408.0,
+        "variance": 0.0,
+        "pct_spent": -57.5
+      },
+      {
+        "label": "Personal & Travel",
+        "fy_budget": -24000.0,
+        "ytd_budget": 8000.0,
+        "ytd_actual": 0,
+        "forecast": 0.0,
+        "variance": -8000.0,
+        "pct_spent": -0.0
+      },
+      {
+        "label": "Charity & Other",
+        "fy_budget": -36000.0,
+        "ytd_budget": 9000.0,
+        "ytd_actual": 11135.0,
+        "forecast": 44540.0,
+        "variance": 2135.0,
+        "pct_spent": -30.9
+      },
+      {
+        "label": "Total Expenses",
+        "fy_budget": -113217.0,
+        "ytd_budget": 37852.0,
+        "ytd_actual": 31987.0,
+        "forecast": 127948.0,
+        "is_total": true,
+        "variance": -5865.0,
+        "pct_spent": -28.3
+      }
+    ],
+    "ytd_net_row": {
+      "label": "Net Cashflow",
+      "fy_budget": 83055.4,
+      "ytd_budget": 79367.0,
+      "ytd_actual": 7692.0,
+      "forecast": 30768.0,
+      "is_total": true,
+      "variance": -71675.0,
+      "pct_spent": 9.3
+    },
+    "nw_table": [
+      {
+        "label": "RE \u2014 Oman",
+        "value": 990000.0
+      },
+      {
+        "label": "RE \u2014 International",
+        "value": 580000.0
+      },
+      {
+        "label": "Private Homes",
+        "value": 1072478.0
+      },
+      {
+        "label": "Financial Investments",
+        "value": 234123.0
+      },
+      {
+        "label": "Cash in Bank",
+        "value": 157178.84
+      },
+      {
+        "label": "Less: Debt",
+        "value": 0
+      }
+    ],
+    "nw_total": 3033779.84,
+    "yoy_change": 0.4,
+    "re_portfolio_value": 1570000.0,
+    "lease_timeline": [
+      {
+        "property": "Rahba Hill Villa 2",
+        "contract_end": "2026-05-31",
+        "status": "Active",
+        "monthly_rent": 600.0
+      },
+      {
+        "property": "Rahba Hill Villa 3",
+        "contract_end": "2026-07-15",
+        "status": "Active",
+        "monthly_rent": 600.0
+      },
+      {
+        "property": "Rahba Hill Villa 4",
+        "contract_end": "2026-11-01 00:00:00",
+        "status": "Active",
+        "monthly_rent": 620.0
+      },
+      {
+        "property": "Rahba Hill Villa 6",
+        "contract_end": "2026-11-14",
+        "status": "Active",
+        "monthly_rent": 600.0
+      },
+      {
+        "property": "Rahba Hill Villa 7",
+        "contract_end": "2026-09-15",
+        "status": "Active",
+        "monthly_rent": 570.0
+      },
+      {
+        "property": "Rahba Hill Villa 8",
+        "contract_end": "2026-10-01",
+        "status": "Active",
+        "monthly_rent": 570.0
+      },
+      {
+        "property": "Rahba Hill Villa 9",
+        "contract_end": "2026-12-15 00:00:00",
+        "status": "Active",
+        "monthly_rent": 550.0
+      },
+      {
+        "property": "Rahba Hill Villa 10",
+        "contract_end": "2026-05-31",
+        "status": "Active",
+        "monthly_rent": 550.0
+      },
+      {
+        "property": "Rahba Hill Rooftop",
+        "contract_end": "",
+        "status": "Active",
+        "monthly_rent": 172.5
+      },
+      {
+        "property": "Tilal Flat",
+        "contract_end": "2026-12-31",
+        "status": "SOLD Feb2026",
+        "monthly_rent": 0.0
+      },
+      {
+        "property": "Almouj Luban",
+        "contract_end": "2026-07-10",
+        "status": "Active",
+        "monthly_rent": 525.0
+      },
+      {
+        "property": "Maabila Flat",
+        "contract_end": "",
+        "status": "Sold 2025",
+        "monthly_rent": 110.0
+      },
+      {
+        "property": "Dubai Residence Flat",
+        "contract_end": "2026-04-08",
+        "status": "Active",
+        "monthly_rent": 964.91
+      },
+      {
+        "property": "Dubai Reehan Flat",
+        "contract_end": "2026-07-18",
+        "status": "Active",
+        "monthly_rent": 921.05
+      },
+      {
+        "property": "Dubai Forte",
+        "contract_end": "",
+        "status": "Sold 2024",
+        "monthly_rent": 0.0
+      },
+      {
+        "property": "Manchester CitySuites",
+        "contract_end": "",
+        "status": "Active",
+        "monthly_rent": 400.0
+      }
+    ],
+    "annual_ie": {
+      "years": [
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "income": [
+        27503.0,
+        22882.0,
+        54635.0,
+        105800.0,
+        158716.0
+      ],
+      "expenses": [
+        126626.0,
+        146969.0,
+        132200.0,
+        124453.0,
+        127948.0
+      ]
+    }
   },
   "travel": {
     "personal_budget": 0,
