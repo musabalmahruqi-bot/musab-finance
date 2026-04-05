@@ -1623,8 +1623,8 @@ function renderMonthlyCashflowChart() {
     container.innerHTML = '';
 
     const months = D.cashflow.months;
-    const budget = D.cashflow.budget || [];
-    const actual = D.cashflow.actual || [];
+    const budget = D.cashflow.net_operating_budget || D.cashflow.budget || [];
+    const actual = D.cashflow.net_operating_actual || D.cashflow.actual || [];
 
     const maxValue = Math.max(
         ...budget.map(v => Math.abs(v || 0)),
@@ -1787,17 +1787,19 @@ function renderCashflow() {
     const annualBudget = sumValues(D.cashflow.income_budget) + sumValues(D.cashflow.expense_budget);
     document.getElementById('cfAnnualBudget').textContent = fmt.currency(annualBudget);
 
-    const ytdActual = D.cashflow.actual.reduce((sum, v) => sum + (v || 0), 0);
+    const netOpActual = D.cashflow.net_operating_actual || D.cashflow.actual;
+    const netOpBudget = D.cashflow.net_operating_budget || D.cashflow.budget;
+    const ytdActual = netOpActual.reduce((sum, v) => sum + (v || 0), 0);
     document.getElementById('cfYtdActual').textContent = fmt.currency(ytdActual);
 
-    const variance = ytdActual - (D.cashflow.budget.reduce((sum, v) => sum + (v || 0), 0));
+    const variance = ytdActual - (netOpBudget.reduce((sum, v) => sum + (v || 0), 0));
     const varianceCard = document.getElementById('cfVarianceCard');
     const varianceElement = document.getElementById('cfVariance');
     varianceElement.textContent = fmt.currency(variance);
     varianceElement.className = 'kpi-value ' + (variance >= 0 ? 'green' : 'red');
     varianceCard.className = 'kpi-card ' + (variance >= 0 ? 'green' : 'red');
 
-    const projectedYe = ytdActual + D.cashflow.actual.slice(Object.keys(D.cashflow.months || []).length).reduce((sum, v) => sum + (v || 0), 0);
+    const projectedYe = ytdActual + netOpActual.slice(Object.keys(D.cashflow.months || []).length).reduce((sum, v) => sum + (v || 0), 0);
     document.getElementById('cfProjectedYe').textContent = fmt.currency(projectedYe);
 
     const table = document.querySelector('#monthlyTable tbody');
