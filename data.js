@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 05 Apr 2026 20:39
+// Generated: 05 Apr 2026 20:52
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "05 Apr 2026",
@@ -141,6 +141,7 @@ window.FINANCE_DATA = {
       "Nov",
       "Dec"
     ],
+    "starting_balance": 111877.59,
     "budget": [
       -12056.0,
       -12387.0,
@@ -225,19 +226,75 @@ window.FINANCE_DATA = {
       0,
       0
     ],
+    "net_operating_budget": [
+      -12056.0,
+      10280.0,
+      5439.0,
+      23031.0,
+      3437.0,
+      18681.6,
+      7100.3,
+      6305.0,
+      6413.8,
+      1587.3,
+      6362.6,
+      6473.8
+    ],
+    "net_operating_actual": [
+      -9871.0,
+      9103.0,
+      8460.0,
+      410.0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "capital_budget": [
+      0.0,
+      -22667.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "capital_actual": [
+      22380.0,
+      -27068.0,
+      42521.0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "end_balance": [
-      150074.0,
-      132109.0,
-      183090.0,
-      183500.0,
-      183500.0,
-      183500.0,
-      183500.0,
-      183500.0,
-      183500.0,
-      183500.0,
-      183500.0,
-      183500.0
+      124386.59,
+      106421.59,
+      157402.59,
+      157812.59,
+      157812.59,
+      157812.59,
+      157812.59,
+      157812.59,
+      157812.59,
+      157812.59,
+      157812.59,
+      157812.59
     ],
     "monthly_breakdown": [
       {
@@ -281,6 +338,16 @@ window.FINANCE_DATA = {
             "budget": 0.0,
             "actual": -2000.0
           }
+        },
+        "capital": {
+          "Sale of Assets": {
+            "budget": 0,
+            "actual": 22000.0
+          },
+          "Investments": {
+            "budget": 0,
+            "actual": 380.0
+          }
         }
       },
       {
@@ -316,6 +383,16 @@ window.FINANCE_DATA = {
             "budget": 0.0,
             "actual": -4336.0
           }
+        },
+        "capital": {
+          "Sale of Assets": {
+            "budget": 0,
+            "actual": -4401.0
+          },
+          "Investments": {
+            "budget": -22667.0,
+            "actual": -22667.0
+          }
         }
       },
       {
@@ -346,6 +423,12 @@ window.FINANCE_DATA = {
           "Personal Travel": {
             "budget": -1000.0,
             "actual": 0
+          }
+        },
+        "capital": {
+          "Sale of Assets": {
+            "budget": 0,
+            "actual": 42521.0
           }
         }
       },
@@ -382,7 +465,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "May",
@@ -417,7 +501,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "Jun",
@@ -452,7 +537,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "Jul",
@@ -487,7 +573,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "Aug",
@@ -518,7 +605,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "Sep",
@@ -549,7 +637,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "Oct",
@@ -584,7 +673,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "Nov",
@@ -615,7 +705,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       },
       {
         "month": "Dec",
@@ -646,7 +737,8 @@ window.FINANCE_DATA = {
             "budget": -1000.0,
             "actual": 0
           }
-        }
+        },
+        "capital": {}
       }
     ],
     "liquidity": {}
@@ -3155,18 +3247,18 @@ window.FINANCE_DATA = {
     ],
     "cash_balance": {
       "opening": [
-        183500.0,
-        241343.0,
-        205647.5,
-        173289.09,
-        142092.29
+        157812.59,
+        215655.59,
+        179960.09,
+        147601.68,
+        116404.88
       ],
       "closing": [
-        241343.0,
-        205647.5,
-        173289.09,
-        142092.29,
-        110404.76
+        215655.59,
+        179960.09,
+        147601.68,
+        116404.88,
+        84717.35
       ]
     },
     "net_worth_projection": {
@@ -3206,11 +3298,11 @@ window.FINANCE_DATA = {
         0
       ],
       "Cash in Bank": [
-        241343.0,
-        205647.5,
-        173289.09,
-        142092.29,
-        110404.76
+        215655.59,
+        179960.09,
+        147601.68,
+        116404.88,
+        84717.35
       ],
       "Debt": [
         0,
@@ -3220,17 +3312,17 @@ window.FINANCE_DATA = {
         0
       ],
       "Total": [
-        3117944.0,
-        3135098.06,
-        3156646.2,
-        3180434.08,
-        3204830.92
+        3092256.59,
+        3109410.65,
+        3130958.79,
+        3154746.67,
+        3179143.51
       ],
       "YoY Growth": [
         0,
         0.0055,
         0.0069,
-        0.0075,
+        0.0076,
         0.0077
       ]
     },
