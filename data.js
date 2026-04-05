@@ -1,11 +1,12 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 04 Apr 2026 22:34
+// Generated: 05 Apr 2026 20:26
 window.FINANCE_DATA = {
   "net_worth": {
-    "as_at": "04 Apr 2026",
+    "as_at": "05 Apr 2026",
     "assets": {
       "Real Estate": 2642478.0,
-      "Financial Investments": 234123.0
+      "Financial Investments": 234123.0,
+      "Cash in Bank": 157178.84
     },
     "liabilities": {
       "Outstanding Debt": 0.0
@@ -15,8 +16,8 @@ window.FINANCE_DATA = {
       "RE International": 580000.0,
       "Private Homes": 1072478.0
     },
-    "total_assets": 2876601.0,
-    "net_worth": 2876601.0,
+    "total_assets": 3033779.84,
+    "net_worth": 3033779.84,
     "ytd_income": {
       "RE Rahba Hill": 11226.0,
       "RE Other": 3053.0,
@@ -97,7 +98,7 @@ window.FINANCE_DATA = {
         "balance": 0
       }
     ],
-    "total_cash": 0,
+    "total_cash": 157178.84,
     "ytd_income_vs_budget": [
       {
         "label": "Rahba Hills",
@@ -2653,7 +2654,7 @@ window.FINANCE_DATA = {
     "this_month_net": 8460.0,
     "re_collection_pct": 92.6,
     "cash_balance": 183500.0,
-    "net_worth_display": 2876601.0
+    "net_worth_display": 3033779.84
   },
   "travel": {
     "personal_budget": 0,
