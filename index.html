@@ -1008,6 +1008,7 @@
         .hidden { display: none; }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 </head>
 <body>
     <!-- LOGIN SCREEN -->
@@ -1567,6 +1568,8 @@ Chart.defaults.plugins.tooltip.borderWidth = 1;
 Chart.defaults.plugins.tooltip.padding = 10;
 Chart.defaults.plugins.tooltip.cornerRadius = 8;
 Chart.defaults.animation.duration = 600;
+Chart.register(ChartDataLabels);
+Chart.defaults.plugins.datalabels = { display: false }; // off by default, enable per-chart
 
 const chartInstances = {};
 function getChart(canvasId, config) {
@@ -1693,6 +1696,14 @@ const fmt = {
         }).format(abs);
         return `OMR ${formatted}`;
     },
+    amount: (num) => {
+        if (num === null || num === undefined || isNaN(num)) return '—';
+        const abs = Math.abs(num);
+        const sign = num < 0 ? '-' : '';
+        return sign + new Intl.NumberFormat('en-US', {
+            maximumFractionDigits: abs < 1000 ? 2 : 0
+        }).format(abs);
+    },
     number: (num) => {
         if (num === null || num === undefined || isNaN(num)) return '—';
         return new Intl.NumberFormat('en-US', {
@@ -1763,9 +1774,9 @@ function renderDashboard() {
         const varClass = row.variance >= 0 ? 'green' : 'red';
         tr.innerHTML = `
             <td>${row.label}</td>
-            <td class="num-right">${fmt.currency(row.budget)}</td>
-            <td class="num-right">${fmt.currency(row.actual)}</td>
-            <td class="num-right"><span class="${varClass}">${fmt.currency(row.variance)}</span></td>
+            <td class="num-right">${fmt.amount(row.budget)}</td>
+            <td class="num-right">${fmt.amount(row.actual)}</td>
+            <td class="num-right"><span class="${varClass}">${fmt.amount(row.variance)}</span></td>
             <td class="num-right">${row.pct}%</td>
         `;
         tmTbody.appendChild(tr);
@@ -1798,12 +1809,12 @@ function renderDashboard() {
             const varClass = row.variance >= 0 ? 'green' : 'red';
             tr.innerHTML = `
                 <td>${row.label}</td>
-                <td class="num-right">${fmt.currency(Math.abs(row.fy_budget))}</td>
-                <td class="num-right">${fmt.currency(Math.abs(row.ytd_budget))}</td>
-                <td class="num-right">${fmt.currency(Math.abs(row.ytd_actual))}</td>
-                <td class="num-right"><span class="${varClass}">${fmt.currency(row.variance)}</span></td>
+                <td class="num-right">${fmt.amount(Math.abs(row.fy_budget))}</td>
+                <td class="num-right">${fmt.amount(Math.abs(row.ytd_budget))}</td>
+                <td class="num-right">${fmt.amount(Math.abs(row.ytd_actual))}</td>
+                <td class="num-right"><span class="${varClass}">${fmt.amount(row.variance)}</span></td>
                 <td class="num-right">${Math.abs(row.pct_spent).toFixed(1)}%</td>
-                <td class="num-right">${fmt.currency(Math.abs(row.forecast))}</td>
+                <td class="num-right">${fmt.amount(Math.abs(row.forecast))}</td>
             `;
             ytdTbody.appendChild(tr);
         });
@@ -1817,12 +1828,12 @@ function renderDashboard() {
         const varClass = nr.variance >= 0 ? 'green' : 'red';
         tr.innerHTML = `
             <td>${nr.label}</td>
-            <td class="num-right">${fmt.currency(nr.fy_budget)}</td>
-            <td class="num-right">${fmt.currency(nr.ytd_budget)}</td>
-            <td class="num-right">${fmt.currency(nr.ytd_actual)}</td>
-            <td class="num-right"><span class="${varClass}">${fmt.currency(nr.variance)}</span></td>
+            <td class="num-right">${fmt.amount(nr.fy_budget)}</td>
+            <td class="num-right">${fmt.amount(nr.ytd_budget)}</td>
+            <td class="num-right">${fmt.amount(nr.ytd_actual)}</td>
+            <td class="num-right"><span class="${varClass}">${fmt.amount(nr.variance)}</span></td>
             <td class="num-right">${Math.abs(nr.pct_spent).toFixed(1)}%</td>
-            <td class="num-right">${fmt.currency(nr.forecast)}</td>
+            <td class="num-right">${fmt.amount(nr.forecast)}</td>
         `;
         ytdTbody.appendChild(tr);
     }
@@ -1839,12 +1850,12 @@ function renderDashboard() {
             <td style="white-space: nowrap; font-weight: 500;">${prop.property}</td>
             <td>${prop.location || '—'}</td>
             <td>${prop.type || '—'}</td>
-            <td class="num-right">${fmt.currency(prop.current_value)}</td>
-            <td class="num-right">${fmt.currency(prop.monthly_rent)}</td>
-            <td class="num-right">${fmt.currency(prop.annual_rent)}</td>
+            <td class="num-right">${fmt.amount(prop.current_value)}</td>
+            <td class="num-right">${fmt.amount(prop.monthly_rent)}</td>
+            <td class="num-right">${fmt.amount(prop.annual_rent)}</td>
             <td class="num-right">${prop.yield_pct}%</td>
             <td style="white-space: nowrap;">${prop.contract_end || '—'}</td>
-            <td class="num-right">${prop.deposit ? fmt.currency(prop.deposit) : '—'}</td>
+            <td class="num-right">${prop.deposit ? fmt.amount(prop.deposit) : '—'}</td>
             <td>${prop.payment_terms || '—'}</td>
             <td><span style="color: ${statusColor}; font-weight: 500;">${prop.status || '—'}</span></td>
             <td>${prop.tenant_name || '—'}</td>
@@ -1864,12 +1875,12 @@ function renderDashboard() {
     totTr.innerHTML = `
         <td style="color: var(--gold);">TOTAL</td>
         <td></td><td></td>
-        <td class="num-right">${fmt.currency(totalCurrentVal)}</td>
-        <td class="num-right">${fmt.currency(totalMonthly)}</td>
-        <td class="num-right">${fmt.currency(totalAnnual)}</td>
+        <td class="num-right">${fmt.amount(totalCurrentVal)}</td>
+        <td class="num-right">${fmt.amount(totalMonthly)}</td>
+        <td class="num-right">${fmt.amount(totalAnnual)}</td>
         <td class="num-right">${avgYield}%</td>
         <td></td>
-        <td class="num-right">${fmt.currency(totalDeposit)}</td>
+        <td class="num-right">${fmt.amount(totalDeposit)}</td>
         <td></td><td></td><td></td><td></td>
     `;
     leaseTbody.appendChild(totTr);
@@ -1891,7 +1902,7 @@ function renderDashboard() {
         const isDebt = row.label.includes('Debt');
         tr.innerHTML = `
             <td>${row.label}</td>
-            <td class="num-right" style="${isDebt ? 'color: var(--red);' : ''}">${fmt.currency(row.value)}</td>
+            <td class="num-right" style="${isDebt ? 'color: var(--red);' : ''}">${fmt.amount(row.value)}</td>
             <td class="num-right">${pct}%</td>
         `;
         nwTbody.appendChild(tr);
@@ -1902,7 +1913,7 @@ function renderDashboard() {
     totalTr.style.borderTop = '2px solid var(--gold)';
     totalTr.innerHTML = `
         <td>Total Net Worth</td>
-        <td class="num-right" style="color: var(--gold);">${fmt.currency(nwTotal)}</td>
+        <td class="num-right" style="color: var(--gold);">${fmt.amount(nwTotal)}</td>
         <td class="num-right">100%</td>
     `;
     nwTbody.appendChild(totalTr);
@@ -1918,25 +1929,21 @@ function renderDashboard() {
 function renderAssetDonut() {
     const dk = window.FINANCE_DATA.dashboard_kpis || {};
     const nwt = dk?.nw_table || [];
-    // Include all items — show debt as a red slice with absolute value
-    const items = nwt.filter(r => r.label && r.value !== 0);
-    const donutColors = items.map(r => r.value < 0 ? '#f87171' : (['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'])[items.filter(x => x.value > 0).indexOf(r)] || '#a78bfa');
-    // Net worth (assets minus debt)
-    const netWorth = dk.nw_total || window.FINANCE_DATA.net_worth?.net_worth || 0;
+    // Only show positive asset classes (exclude debt) — display allocation of gross assets
+    const items = nwt.filter(r => r.label && r.value > 0);
+    const totalAssets = items.reduce((sum, r) => sum + r.value, 0);
 
-    // Simpler color assignment
     const positiveColors = ['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'];
-    let posIdx = 0;
-    const colors = items.map(r => {
-        if (r.value < 0) return '#f87171';
-        return positiveColors[posIdx++ % positiveColors.length];
-    });
+    const colors = items.map((r, i) => positiveColors[i % positiveColors.length]);
+
+    // Net worth for center text (assets minus debt)
+    const netWorth = dk.nw_total || window.FINANCE_DATA.net_worth?.net_worth || 0;
 
     getChart('assetDonut', {
         type: 'doughnut',
         data: {
             labels: items.map(r => r.label),
-            datasets: [{ data: items.map(r => Math.abs(r.value)), backgroundColor: colors, borderWidth: 0 }]
+            datasets: [{ data: items.map(r => r.value), backgroundColor: colors, borderWidth: 0 }]
         },
         options: {
             cutout: '65%',
@@ -1945,7 +1952,19 @@ function renderAssetDonut() {
             plugins: {
                 donutCenter: { text: fmt.currency(netWorth), subText: 'Net Worth' },
                 legend: { display: true, position: 'bottom', labels: { boxWidth: 10, padding: 8, font: { size: 10 } } },
-                tooltip: { callbacks: { label: ctx => ctx.label + ': ' + fmt.currency(ctx.raw) } }
+                tooltip: { callbacks: { label: ctx => {
+                    const pct = totalAssets > 0 ? (ctx.raw / totalAssets * 100).toFixed(1) : 0;
+                    return ctx.label + ': ' + fmt.currency(ctx.raw) + ' (' + pct + '%)';
+                } } },
+                datalabels: {
+                    display: true,
+                    color: '#fff',
+                    font: { size: 10, weight: '600' },
+                    formatter: (value) => {
+                        const pct = totalAssets > 0 ? (value / totalAssets * 100).toFixed(0) : 0;
+                        return pct >= 5 ? pct + '%' : '';
+                    }
+                }
             }
         }
     });
@@ -1997,7 +2016,15 @@ function renderNwBuildupChart() {
             maintainAspectRatio: true,
             plugins: {
                 legend: { display: false },
-                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } },
+                datalabels: {
+                    display: true,
+                    anchor: 'end',
+                    align: 'end',
+                    color: '#e8e6e3',
+                    font: { size: 10, weight: '600' },
+                    formatter: v => v >= 1e6 ? (v/1e6).toFixed(1) + 'M' : (v/1e3).toFixed(0) + 'K'
+                }
             },
             scales: {
                 y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1e6).toFixed(1) + 'M' } },
@@ -2026,7 +2053,15 @@ function renderAnnualIEChart() {
             maintainAspectRatio: true,
             plugins: {
                 legend: { display: true, position: 'top', labels: { boxWidth: 12, padding: 12 } },
-                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt.currency(ctx.raw) } }
+                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt.currency(ctx.raw) } },
+                datalabels: {
+                    display: true,
+                    anchor: 'end',
+                    align: 'end',
+                    color: '#e8e6e3',
+                    font: { size: 9, weight: '600' },
+                    formatter: v => v >= 1e6 ? (v/1e6).toFixed(1) + 'M' : (v/1e3).toFixed(0) + 'K'
+                }
             },
             scales: {
                 y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
@@ -2073,13 +2108,13 @@ function renderCashflow() {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${month}</td>
-            <td class="num-right">${fmt.currency(incBudget)}</td>
-            <td class="num-right">${fmt.currency(incActual)}</td>
-            <td class="num-right"><span style="color: var(--red);">${fmt.currency(Math.abs(expBudget))}</span></td>
-            <td class="num-right"><span style="color: var(--red);">${fmt.currency(Math.abs(expActual))}</span></td>
-            <td class="num-right">${fmt.currency(netBudget)}</td>
-            <td class="num-right">${fmt.currency(netActual)}</td>
-            <td class="num-right">${fmt.currency(balance)}</td>
+            <td class="num-right">${fmt.amount(incBudget)}</td>
+            <td class="num-right">${fmt.amount(incActual)}</td>
+            <td class="num-right"><span style="color: var(--red);">${fmt.amount(Math.abs(expBudget))}</span></td>
+            <td class="num-right"><span style="color: var(--red);">${fmt.amount(Math.abs(expActual))}</span></td>
+            <td class="num-right">${fmt.amount(netBudget)}</td>
+            <td class="num-right">${fmt.amount(netActual)}</td>
+            <td class="num-right">${fmt.amount(balance)}</td>
         `;
         table.appendChild(tr);
     });
@@ -2188,7 +2223,7 @@ function renderNetWorth() {
             <td>${bank.type || '—'}</td>
             <td>${bank.currency || '—'}</td>
             <td>${bank.account || '—'}</td>
-            <td class="num-right">${fmt.currency(bank.balance)}</td>
+            <td class="num-right">${fmt.amount(bank.balance)}</td>
         `;
         bankTable.appendChild(tr);
     });
@@ -2318,9 +2353,9 @@ function renderProperties() {
 
         tr.innerHTML = `
             <td>${item.property || '—'}</td>
-            <td class="num-right">${fmt.currency(item.ytd_budget)}</td>
-            <td class="num-right">${fmt.currency(item.ytd_actual)}</td>
-            <td class="num-right">${fmt.currency(variance)}</td>
+            <td class="num-right">${fmt.amount(item.ytd_budget)}</td>
+            <td class="num-right">${fmt.amount(item.ytd_actual)}</td>
+            <td class="num-right">${fmt.amount(variance)}</td>
             <td>
                 <div class="progress-bar">
                     <div class="progress-fill ${progressColor}" style="width: ${Math.min(percentCollected, 100)}%;"></div>
@@ -2368,7 +2403,7 @@ function renderInvestments() {
             <td>${item.asset || '—'}</td>
             <td>${item.category || '—'}</td>
             <td><span class="status-badge ${typeClass}">${item.type || '—'}</span></td>
-            <td class="num-right">${fmt.currency(item.amount)}</td>
+            <td class="num-right">${fmt.amount(item.amount)}</td>
             <td>${item.notes || '—'}</td>
         `;
         timelineTable.appendChild(tr);
@@ -2500,11 +2535,11 @@ function renderCreditCard() {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${month.month}</td>
-            <td class="num-right">${fmt.currency(month.opening)}</td>
-            <td class="num-right">${fmt.currency(month.purchases)}</td>
-            <td class="num-right">${fmt.currency(month.payments)}</td>
-            <td class="num-right">${fmt.currency(month.closing)}</td>
-            <td class="num-right">${fmt.currency(netSpend)}</td>
+            <td class="num-right">${fmt.amount(month.opening)}</td>
+            <td class="num-right">${fmt.amount(month.purchases)}</td>
+            <td class="num-right">${fmt.amount(month.payments)}</td>
+            <td class="num-right">${fmt.amount(month.closing)}</td>
+            <td class="num-right">${fmt.amount(netSpend)}</td>
         `;
         summaryTable.appendChild(tr);
     });
@@ -2533,7 +2568,7 @@ function renderTransactions(transactions) {
             <td>${trans.date || '—'}</td>
             <td>${trans.desc || '—'}</td>
             <td>${trans.cat || '—'}</td>
-            <td class="num-right">${fmt.currency(trans.omr)}</td>
+            <td class="num-right">${fmt.amount(trans.omr)}</td>
         `;
         table.appendChild(tr);
     });
@@ -2579,7 +2614,7 @@ function renderForecast() {
             const incVal = incValues[idx] || 0;
             const expVal = expValues[idx] || 0;
             const val = incVal + expVal;
-            rowData.push(fmt.currency(val));
+            rowData.push(fmt.amount(val));
         });
         tr.innerHTML = rowData.map((v, i) => i === 0 ? `<td>${v}</td>` : `<td class="num-right">${v}</td>`).join('');
         forecastTable.appendChild(tr);
@@ -2592,7 +2627,7 @@ function renderForecast() {
     years.forEach((year, idx) => {
         const totalIncome = Object.values(forecast.income || {}).reduce((sum, vals) => sum + (vals[idx] || 0), 0);
         const totalExpense = Object.values(forecast.expenses || {}).reduce((sum, vals) => sum + (vals[idx] || 0), 0);
-        totalData.push(fmt.currency(totalIncome + totalExpense));
+        totalData.push(fmt.amount(totalIncome + totalExpense));
     });
     totalTr.innerHTML = totalData.map((v, i) => i === 0 ? `<td>${v}</td>` : `<td class="num-right">${v}</td>`).join('');
     forecastTable.appendChild(totalTr);
@@ -2676,10 +2711,10 @@ function renderHistory() {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${year}</td>
-            <td class="num-right">${fmt.currency(income[idx])}</td>
-            <td class="num-right">${fmt.currency(expenses[idx])}</td>
-            <td class="num-right">${fmt.currency(cashflow[idx])}</td>
-            <td class="num-right">${fmt.currency(cash[idx])}</td>
+            <td class="num-right">${fmt.amount(income[idx])}</td>
+            <td class="num-right">${fmt.amount(expenses[idx])}</td>
+            <td class="num-right">${fmt.amount(cashflow[idx])}</td>
+            <td class="num-right">${fmt.amount(cash[idx])}</td>
         `;
         table.appendChild(tr);
     });
