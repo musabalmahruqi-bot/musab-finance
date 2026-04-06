@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 06 Apr 2026 06:45
+// Generated: 06 Apr 2026 06:55
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "06 Apr 2026",
@@ -3077,15 +3077,10 @@ window.FINANCE_DATA = {
         "label": "Less: Debt",
         "value": 0.0,
         "pct": 0.0
-      },
-      {
-        "label": "Total Net Worth",
-        "value": 3042939.44,
-        "pct": 100.0
       }
     ],
-    "nw_total": 6085878.88,
-    "yoy_change": 0.4,
+    "nw_total": 3042939.44,
+    "yoy_change": -0.5,
     "re_portfolio_value": 2642478.0,
     "lease_timeline": [
       {
@@ -3335,21 +3330,21 @@ window.FINANCE_DATA = {
         "2023",
         "2024",
         "2025",
-        "2026"
+        "2026 (F)"
       ],
       "income": [
         106018.17,
         101385.35,
         117497.31,
         181301.92,
-        131071.74
+        166582.98
       ],
       "expenses": [
         126626.0,
         146969.0,
         132200.0,
         124453.0,
-        168113.94
+        119281.14
       ]
     }
   },
@@ -4087,15 +4082,15 @@ window.FINANCE_DATA = {
       1439959.0,
       1728752.0,
       1700898.0,
-      2104600.0,
+      2154600.0,
       2335981.0,
       2680932.0,
       3053857.0,
       3022195.0,
       2987293.0,
       2943245.0,
-      2866098.0,
-      2876601.0
+      3059285.0,
+      3042939.45
     ]
   },
   "investment_timeline": [
