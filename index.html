@@ -398,6 +398,17 @@
         .kpi-value.green { color: var(--green); }
         .kpi-value.red { color: var(--red); }
 
+        .kpi-budget {
+            font-size: 12px;
+            color: var(--text3, #6b6b7b);
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+        .kpi-budget .budget-label { opacity: 0.7; }
+        .kpi-budget .budget-var { font-weight: 600; }
+        .kpi-budget .budget-var.pos { color: var(--green); }
+        .kpi-budget .budget-var.neg { color: var(--red); }
+
         .kpi-subtitle {
             font-size: 12px;
             color: var(--text2);
@@ -1059,9 +1070,9 @@
                     </div>
 
                     <div class="kpi-row">
-                        <div class="kpi-card gold"><div class="kpi-label">Income</div><div class="kpi-value" id="tmIncome">—</div></div>
-                        <div class="kpi-card red"><div class="kpi-label">Expenses</div><div class="kpi-value" id="tmExpenses">—</div></div>
-                        <div class="kpi-card" id="tmNetCard"><div class="kpi-label">Net Cashflow</div><div class="kpi-value" id="tmNet">—</div></div>
+                        <div class="kpi-card gold"><div class="kpi-label">Income</div><div class="kpi-value" id="tmIncome">—</div><div class="kpi-budget" id="tmIncomeBudget"></div></div>
+                        <div class="kpi-card red"><div class="kpi-label">Expenses</div><div class="kpi-value" id="tmExpenses">—</div><div class="kpi-budget" id="tmExpensesBudget"></div></div>
+                        <div class="kpi-card" id="tmNetCard"><div class="kpi-label">Net Cashflow</div><div class="kpi-value" id="tmNet">—</div><div class="kpi-budget" id="tmNetBudget"></div></div>
                         <div class="kpi-card"><div class="kpi-label">RE Collection %</div><div class="kpi-value" id="tmREPct">—</div></div>
                         <div class="kpi-card"><div class="kpi-label">Cash Balance</div><div class="kpi-value" id="tmCash">—</div></div>
                         <div class="kpi-card gold"><div class="kpi-label">Net Worth</div><div class="kpi-value" id="tmNetWorth">—</div></div>
@@ -1710,6 +1721,32 @@ function renderDashboard() {
     document.getElementById('tmREPct').textContent = dk.re_collection_pct + '%';
     document.getElementById('tmCash').textContent = fmt.currency(dk.cash_balance);
     document.getElementById('tmNetWorth').textContent = fmt.currency(dk.net_worth_display);
+
+    // vs. Budget sub-text for Income, Expenses, Net Cashflow
+    function setBudgetSub(elId, actual, budget, isExpense) {
+        const el = document.getElementById(elId);
+        if (!el || budget == null) return;
+        let dispBudget, variance;
+        if (isExpense) {
+            // Expenses are negative in data; display as positive. Under budget = good (green).
+            dispBudget = Math.abs(budget);
+            variance = Math.abs(budget) - Math.abs(actual);
+        } else {
+            dispBudget = budget;
+            variance = actual - budget;
+        }
+        const varCls = variance >= 0 ? 'pos' : 'neg';
+        const sign = variance >= 0 ? '+' : '';
+        el.innerHTML = `<span class="budget-label">Budget: ${fmt.currency(dispBudget)}</span><br><span class="budget-var ${varCls}">${sign}${fmt.currency(variance)}</span>`;
+    }
+    // Pull budget totals from this_month_table
+    const tmTable = dk.this_month_table || [];
+    const incRow = tmTable.find(r => r.label === 'Total Income' && r.is_total);
+    const expRow = tmTable.find(r => r.label === 'Total Expenses' && r.is_total);
+    const netRow = tmTable.find(r => r.label === 'Net Cashflow' && r.is_total);
+    setBudgetSub('tmIncomeBudget', incRow ? incRow.actual : dk.this_month_income, incRow ? incRow.budget : dk.this_month_income_budget, false);
+    setBudgetSub('tmExpensesBudget', expRow ? expRow.actual : (dk.this_month_expenses * -1), expRow ? expRow.budget : dk.this_month_expenses_budget, true);
+    setBudgetSub('tmNetBudget', netRow ? netRow.actual : dk.this_month_net, netRow ? netRow.budget : dk.this_month_net_budget, false);
 
     // This Month table
     const tmTbody = document.querySelector('#thisMonthTable tbody');
