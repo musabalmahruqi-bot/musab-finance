@@ -1879,22 +1879,32 @@ function renderThisMonthChart(tableData) {
 function renderAssetDonut() {
     const dk = window.FINANCE_DATA.dashboard_kpis || {};
     const nwt = dk?.nw_table || [];
-    const items = nwt.filter(r => r.value > 0);
-    const donutColors = ['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'];
-    const totalNw = dk.nw_total || window.FINANCE_DATA.net_worth.net_worth;
+    // Include all items — show debt as a red slice with absolute value
+    const items = nwt.filter(r => r.label && r.value !== 0);
+    const donutColors = items.map(r => r.value < 0 ? '#f87171' : (['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'])[items.filter(x => x.value > 0).indexOf(r)] || '#a78bfa');
+    // Net worth (assets minus debt)
+    const netWorth = dk.nw_total || window.FINANCE_DATA.net_worth?.net_worth || 0;
+
+    // Simpler color assignment
+    const positiveColors = ['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'];
+    let posIdx = 0;
+    const colors = items.map(r => {
+        if (r.value < 0) return '#f87171';
+        return positiveColors[posIdx++ % positiveColors.length];
+    });
 
     getChart('assetDonut', {
         type: 'doughnut',
         data: {
             labels: items.map(r => r.label),
-            datasets: [{ data: items.map(r => r.value), backgroundColor: donutColors.slice(0, items.length), borderWidth: 0 }]
+            datasets: [{ data: items.map(r => Math.abs(r.value)), backgroundColor: colors, borderWidth: 0 }]
         },
         options: {
             cutout: '65%',
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-                donutCenter: { text: fmt.currency(totalNw), subText: 'Total' },
+                donutCenter: { text: fmt.currency(netWorth), subText: 'Net Worth' },
                 legend: { display: true, position: 'bottom', labels: { boxWidth: 10, padding: 8, font: { size: 10 } } },
                 tooltip: { callbacks: { label: ctx => ctx.label + ': ' + fmt.currency(ctx.raw) } }
             }
