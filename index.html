@@ -1078,17 +1078,13 @@
                         <div class="kpi-card gold"><div class="kpi-label">Net Worth</div><div class="kpi-value" id="tmNetWorth">—</div></div>
                     </div>
 
-                    <div class="grid-2" style="margin-top: 16px;">
+                    <div style="margin-top: 16px;">
                         <div class="card">
                             <div class="card-title">Budget vs Actual</div>
                             <table class="data-table" id="thisMonthTable">
                                 <thead><tr><th>Category</th><th class="num-right">Budget</th><th class="num-right">Actual</th><th class="num-right">Variance</th><th class="num-right">%</th></tr></thead>
                                 <tbody></tbody>
                             </table>
-                        </div>
-                        <div class="card">
-                            <div class="card-title">This Month: Budget vs Actual</div>
-                            <div class="chart-container"><canvas id="thisMonthChart"></canvas></div>
                         </div>
                     </div>
 
@@ -1105,17 +1101,13 @@
                         <div class="kpi-card"><div class="kpi-label">vs Full-Year Budget</div><div class="kpi-value" id="ytdVsFY">—</div></div>
                     </div>
 
-                    <div class="grid-2" style="margin-top: 16px;">
+                    <div style="margin-top: 16px;">
                         <div class="card">
                             <div class="card-title">YTD Income & Expense Breakdown</div>
                             <table class="data-table" id="ytdTable">
                                 <thead><tr><th>Category</th><th class="num-right">FY Budget</th><th class="num-right">YTD Budget</th><th class="num-right">YTD Actual</th><th class="num-right">Variance</th><th class="num-right">% Spent</th><th class="num-right">FY Forecast</th></tr></thead>
                                 <tbody></tbody>
                             </table>
-                        </div>
-                        <div class="card">
-                            <div class="card-title">YTD Cashflow Bridge</div>
-                            <div class="chart-container"><canvas id="ytdBridgeChart"></canvas></div>
                         </div>
                     </div>
 
@@ -1124,9 +1116,23 @@
                         <h2 style="font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--gold); margin: 0;">Lease Expiry Timeline</h2>
                     </div>
 
-                    <div class="card">
-                        <table class="data-table" id="leaseTable">
-                            <thead><tr><th>Property</th><th>Contract End</th><th>Status</th><th class="num-right">Monthly Rent</th></tr></thead>
+                    <div class="card" style="overflow-x: auto;">
+                        <table class="data-table" id="leaseTable" style="min-width: 1000px;">
+                            <thead><tr>
+                                <th>Property</th>
+                                <th>Location</th>
+                                <th>Type</th>
+                                <th class="num-right">Current Value</th>
+                                <th class="num-right">Monthly Rent</th>
+                                <th class="num-right">Annual Rent</th>
+                                <th class="num-right">Yield %</th>
+                                <th>Contract End</th>
+                                <th class="num-right">Deposit</th>
+                                <th>Payment Terms</th>
+                                <th>Status</th>
+                                <th>Tenant</th>
+                                <th>Phone</th>
+                            </tr></thead>
                             <tbody></tbody>
                         </table>
                     </div>
@@ -1765,9 +1771,6 @@ function renderDashboard() {
         tmTbody.appendChild(tr);
     });
 
-    // This Month chart
-    renderThisMonthChart(dk.this_month_table || []);
-
     // ── SECTION 2: YEAR TO DATE ──
     document.getElementById('ytdIncome').textContent = fmt.currency(dk.ytd_income);
     document.getElementById('ytdExpenses').textContent = fmt.currency(dk.ytd_expenses);
@@ -1824,23 +1827,52 @@ function renderDashboard() {
         ytdTbody.appendChild(tr);
     }
 
-    // YTD Bridge chart
-    renderYtdBridgeChart();
-
     // ── SECTION 3: LEASE EXPIRY ──
     const leaseTbody = document.querySelector('#leaseTable tbody');
     leaseTbody.innerHTML = '';
+    let totalCurrentVal = 0, totalMonthly = 0, totalAnnual = 0, totalDeposit = 0;
     (dk.lease_timeline || []).forEach(prop => {
         const tr = document.createElement('tr');
-        const statusColor = prop.status === 'Active' ? 'var(--green)' : 'var(--text2)';
+        const statusColor = prop.status === 'Active' ? 'var(--green)' :
+                            prop.status === 'Vacant' ? 'var(--red)' : 'var(--text2)';
         tr.innerHTML = `
-            <td>${prop.property}</td>
-            <td>${prop.contract_end || '—'}</td>
-            <td><span style="color: ${statusColor};">${prop.status || '—'}</span></td>
+            <td style="white-space: nowrap; font-weight: 500;">${prop.property}</td>
+            <td>${prop.location || '—'}</td>
+            <td>${prop.type || '—'}</td>
+            <td class="num-right">${fmt.currency(prop.current_value)}</td>
             <td class="num-right">${fmt.currency(prop.monthly_rent)}</td>
+            <td class="num-right">${fmt.currency(prop.annual_rent)}</td>
+            <td class="num-right">${prop.yield_pct}%</td>
+            <td style="white-space: nowrap;">${prop.contract_end || '—'}</td>
+            <td class="num-right">${prop.deposit ? fmt.currency(prop.deposit) : '—'}</td>
+            <td>${prop.payment_terms || '—'}</td>
+            <td><span style="color: ${statusColor}; font-weight: 500;">${prop.status || '—'}</span></td>
+            <td>${prop.tenant_name || '—'}</td>
+            <td>${prop.phone || '—'}</td>
         `;
         leaseTbody.appendChild(tr);
+        totalCurrentVal += prop.current_value || 0;
+        totalMonthly += prop.monthly_rent || 0;
+        totalAnnual += prop.annual_rent || 0;
+        totalDeposit += prop.deposit || 0;
     });
+    // Totals row
+    const totTr = document.createElement('tr');
+    totTr.style.fontWeight = '700';
+    totTr.style.borderTop = '2px solid var(--gold)';
+    const avgYield = totalCurrentVal > 0 ? (totalAnnual / totalCurrentVal * 100).toFixed(1) : 0;
+    totTr.innerHTML = `
+        <td style="color: var(--gold);">TOTAL</td>
+        <td></td><td></td>
+        <td class="num-right">${fmt.currency(totalCurrentVal)}</td>
+        <td class="num-right">${fmt.currency(totalMonthly)}</td>
+        <td class="num-right">${fmt.currency(totalAnnual)}</td>
+        <td class="num-right">${avgYield}%</td>
+        <td></td>
+        <td class="num-right">${fmt.currency(totalDeposit)}</td>
+        <td></td><td></td><td></td><td></td>
+    `;
+    leaseTbody.appendChild(totTr);
 
     // ── SECTION 4: NET WORTH & PORTFOLIO ──
     document.getElementById('nwTotal').textContent = fmt.currency(dk.net_worth_display);
@@ -1881,36 +1913,6 @@ function renderDashboard() {
     // ── SECTION 5: HISTORICAL CHARTS ──
     renderNwBuildupChart();
     renderAnnualIEChart();
-}
-
-function renderThisMonthChart(tableData) {
-    const labels = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow').map(r => r.label);
-    const budgets = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow').map(r => Math.abs(r.budget));
-    const actuals = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow').map(r => Math.abs(r.actual));
-
-    getChart('thisMonthChart', {
-        type: 'bar',
-        data: {
-            labels,
-            datasets: [
-                { label: 'Budget', data: budgets, backgroundColor: 'rgba(212,168,83,0.3)', borderColor: '#d4a853', borderWidth: 1, borderRadius: 4 },
-                { label: 'Actual', data: actuals, backgroundColor: '#d4a853', borderRadius: 4 }
-            ]
-        },
-        options: {
-            indexAxis: 'y',
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: { display: true, position: 'top', labels: { boxWidth: 12, padding: 12 } },
-                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt.currency(ctx.raw) } }
-            },
-            scales: {
-                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
-                y: { grid: { display: false } }
-            }
-        }
-    });
 }
 
 function renderAssetDonut() {
@@ -1970,34 +1972,6 @@ function renderReDonut() {
                 donutCenter: { text: fmt.currency(totalRe), subText: 'Total' },
                 legend: { display: true, position: 'bottom', labels: { boxWidth: 10, padding: 8, font: { size: 10 } } },
                 tooltip: { callbacks: { label: ctx => ctx.label + ': ' + fmt.currency(ctx.raw) } }
-            }
-        }
-    });
-}
-
-function renderYtdBridgeChart() {
-    const D = window.FINANCE_DATA;
-    const items = D.ytd_waterfall?.items || [];
-    const labels = items.map(i => i.label);
-    const values = items.map(i => Math.abs(i.actual || i.budget || 0));
-    const colors = items.map(i => i.type === 'income' ? '#4ade80' : '#f87171');
-
-    getChart('ytdBridgeChart', {
-        type: 'bar',
-        data: {
-            labels,
-            datasets: [{ data: values, backgroundColor: colors, borderRadius: 4 }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: { display: false },
-                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
-            },
-            scales: {
-                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
-                x: { grid: { display: false } }
             }
         }
     });
