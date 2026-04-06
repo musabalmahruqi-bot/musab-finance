@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 06 Apr 2026 06:24
+// Generated: 06 Apr 2026 06:29
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "06 Apr 2026",
@@ -2921,6 +2921,8 @@ window.FINANCE_DATA = {
       }
     ],
     "this_month_income_budget": 37715.0,
+    "this_month_expenses_budget": -8834.0,
+    "this_month_net_budget": -95919.0,
     "ytd_income": 43690.58,
     "ytd_expenses": 56037.98,
     "ytd_net_cf": -12347.4,
