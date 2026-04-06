@@ -37,6 +37,10 @@
             --radius-sm: 8px;
         }
 
+        canvas {
+            max-height: 300px;
+        }
+
         body {
             background: var(--bg);
             color: var(--text);
@@ -425,6 +429,7 @@
         .chart-container {
             position: relative;
             width: 100%;
+            height: 300px;
             margin-bottom: 20px;
         }
 
@@ -991,6 +996,7 @@
 
         .hidden { display: none; }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
     <!-- LOGIN SCREEN -->
@@ -1071,7 +1077,7 @@
                         </div>
                         <div class="card">
                             <div class="card-title">This Month: Budget vs Actual</div>
-                            <div class="chart-container"><div id="thisMonthChart" style="height: 260px;"></div></div>
+                            <div class="chart-container"><canvas id="thisMonthChart"></canvas></div>
                         </div>
                     </div>
 
@@ -1098,7 +1104,7 @@
                         </div>
                         <div class="card">
                             <div class="card-title">YTD Cashflow Bridge</div>
-                            <div class="chart-container"><div id="ytdBridgeChart" style="height: 280px;"></div></div>
+                            <div class="chart-container"><canvas id="ytdBridgeChart"></canvas></div>
                         </div>
                     </div>
 
@@ -1136,14 +1142,11 @@
                         </div>
                         <div class="card">
                             <div class="card-title">Portfolio Allocation</div>
-                            <div class="chart-container" style="position: relative;">
-                                <svg id="assetDonut" style="width: 100%; height: 280px; max-width: 280px; margin: 0 auto;"></svg>
-                                <div class="donut-center" id="donutCenter">
-                                    <div class="donut-center-value" id="donutValue">—</div>
-                                    <div class="donut-center-label">Total</div>
+                            <div class="chart-container" style="display: flex; flex-direction: column; align-items: center;">
+                                <div style="width: 100%; max-width: 300px; height: 280px;">
+                                    <canvas id="assetDonut"></canvas>
                                 </div>
                             </div>
-                            <div class="legend" id="assetLegend"></div>
                         </div>
                     </div>
 
@@ -1155,11 +1158,11 @@
                     <div class="grid-2">
                         <div class="card">
                             <div class="card-title">Net Worth Build-up (2010–2026)</div>
-                            <div class="chart-container"><div id="nwBuildupChart" style="height: 280px;"></div></div>
+                            <div class="chart-container"><canvas id="nwBuildupChart"></canvas></div>
                         </div>
                         <div class="card">
                             <div class="card-title">Annual Income & Expenses (2022–2026)</div>
-                            <div class="chart-container"><div id="annualIEChart" style="height: 280px;"></div></div>
+                            <div class="chart-container"><canvas id="annualIEChart"></canvas></div>
                         </div>
                     </div>
                 </div>
@@ -1208,14 +1211,12 @@
 
                     <div class="card">
                         <div class="card-title">YTD Waterfall</div>
-                        <div class="chart-container">
-                            <div class="waterfall-bars" id="waterfallChart"></div>
-                        </div>
+                        <div class="chart-container"><canvas id="waterfallChart"></canvas></div>
                     </div>
 
                     <div class="card">
                         <div class="card-title">Liquidity Position</div>
-                        <div class="bar-chart-horizontal" id="liquidityChart"></div>
+                        <div class="chart-container"><canvas id="liquidityChart"></canvas></div>
                     </div>
                 </div>
 
@@ -1238,20 +1239,17 @@
                             </div>
                         </div>
                         <div class="card-title" style="margin: 0 0 16px 0; font-size: 14px;">Assets Breakdown</div>
-                        <div class="bar-chart-horizontal" id="assetsChart"></div>
+                        <div class="chart-container"><canvas id="assetsChart"></canvas></div>
                     </div>
 
                     <div class="grid-2">
                         <div class="card">
                             <div class="card-title">Real Estate Breakdown</div>
-                            <div class="chart-container">
-                                <svg id="reDonut" style="width: 100%; height: 280px; max-width: 280px; margin: 0 auto;"></svg>
-                                <div class="donut-center" id="reDonutCenter">
-                                    <div class="donut-center-value" id="reDonutValue">—</div>
-                                    <div class="donut-center-label">RE Total</div>
+                            <div class="chart-container" style="display: flex; flex-direction: column; align-items: center;">
+                                <div style="width: 100%; max-width: 300px; height: 280px;">
+                                    <canvas id="reDonut"></canvas>
                                 </div>
                             </div>
-                            <div class="legend" id="reLegend"></div>
                         </div>
 
                         <div class="card">
@@ -1277,12 +1275,12 @@
                     <div class="grid-2">
                         <div class="card">
                             <div class="card-title">YTD Income</div>
-                            <div class="bar-chart-horizontal" id="incomeBreakdownChart"></div>
+                            <div class="chart-container"><canvas id="incomeBreakdownChart"></canvas></div>
                         </div>
 
                         <div class="card">
                             <div class="card-title">YTD Expenses</div>
-                            <div class="bar-chart-horizontal" id="expensesBreakdownChart"></div>
+                            <div class="chart-container"><canvas id="expensesBreakdownChart"></canvas></div>
                         </div>
                     </div>
                 </div>
@@ -1336,9 +1334,7 @@
                 <div class="page" id="investments-page">
                     <div class="card" style="margin-bottom: 24px;">
                         <div class="card-title">Portfolio Value Timeline (2010-2026)</div>
-                        <div class="chart-container">
-                            <svg id="portfolioChart" style="width: 100%; height: 300px;"></svg>
-                        </div>
+                        <div class="chart-container"><canvas id="portfolioChart"></canvas></div>
                     </div>
 
                     <div class="grid-2" id="investmentKpiRow"></div>
@@ -1465,9 +1461,7 @@
 
                     <div class="card" style="margin-bottom: 24px;">
                         <div class="card-title">Net Worth Projection (2026-2030)</div>
-                        <div class="chart-container">
-                            <svg id="nwProjectionChart" style="width: 100%; height: 300px;"></svg>
-                        </div>
+                        <div class="chart-container"><canvas id="nwProjectionChart"></canvas></div>
                     </div>
 
                     <div class="card" style="margin-bottom: 24px;">
@@ -1513,9 +1507,7 @@
                 <div class="page" id="history-page">
                     <div class="card" style="margin-bottom: 24px;">
                         <div class="card-title">Net Worth Growth (2010-2026)</div>
-                        <div class="chart-container">
-                            <svg id="historyChart" style="width: 100%; height: 300px;"></svg>
-                        </div>
+                        <div class="chart-container"><canvas id="historyChart"></canvas></div>
                     </div>
 
                     <div class="card">
@@ -1544,6 +1536,56 @@
     <script src="data.js"></script>
 
     <script>
+// ============ CHART.JS SETUP ============
+Chart.defaults.color = '#8b8b9e';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+Chart.defaults.font.family = 'Inter, sans-serif';
+Chart.defaults.font.size = 11;
+Chart.defaults.plugins.legend.display = false;
+Chart.defaults.plugins.tooltip.backgroundColor = '#1a1a2e';
+Chart.defaults.plugins.tooltip.titleColor = '#e8e6e3';
+Chart.defaults.plugins.tooltip.bodyColor = '#e8e6e3';
+Chart.defaults.plugins.tooltip.borderColor = 'rgba(255,255,255,0.1)';
+Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.padding = 10;
+Chart.defaults.plugins.tooltip.cornerRadius = 8;
+Chart.defaults.animation.duration = 600;
+
+const chartInstances = {};
+function getChart(canvasId, config) {
+    if (chartInstances[canvasId]) {
+        chartInstances[canvasId].destroy();
+    }
+    const ctx = document.getElementById(canvasId);
+    if (!ctx) return null;
+    chartInstances[canvasId] = new Chart(ctx, config);
+    return chartInstances[canvasId];
+}
+
+const donutCenterPlugin = {
+    id: 'donutCenter',
+    afterDraw(chart) {
+        if (chart.config.type !== 'doughnut') return;
+        const { ctx, chartArea: {width, height, top, left} } = chart;
+        const centerText = chart.options.plugins.donutCenter?.text;
+        const subText = chart.options.plugins.donutCenter?.subText;
+        if (!centerText) return;
+        ctx.save();
+        ctx.fillStyle = '#e8e6e3';
+        ctx.font = 'bold 16px Inter';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(centerText, left + width/2, top + height/2 - 8);
+        if (subText) {
+            ctx.fillStyle = '#8b8b9e';
+            ctx.font = '11px Inter';
+            ctx.fillText(subText, left + width/2, top + height/2 + 12);
+        }
+        ctx.restore();
+    }
+};
+Chart.register(donutCenterPlugin);
+
 // ============ AUTHENTICATION ============
 const validCredentials = [
     { email: 'mmahruqi', password: 'Mnsrmo@2002' }
@@ -1805,94 +1847,113 @@ function renderDashboard() {
 }
 
 function renderThisMonthChart(tableData) {
-    const container = document.getElementById('thisMonthChart');
-    container.innerHTML = '';
-    const items = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow');
+    const labels = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow').map(r => r.label);
+    const budgets = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow').map(r => Math.abs(r.budget));
+    const actuals = tableData.filter(r => !r.is_total || r.label === 'Net Cashflow').map(r => Math.abs(r.actual));
 
-    const maxVal = Math.max(...items.map(r => Math.max(Math.abs(r.budget), Math.abs(r.actual)))) || 1;
-    const barHeight = 28;
-
-    items.forEach(item => {
-        const budgetW = Math.abs(item.budget) / maxVal * 100;
-        const actualW = Math.abs(item.actual) / maxVal * 100;
-        const isPositive = item.actual >= 0;
-
-        const row = document.createElement('div');
-        row.style.cssText = 'margin-bottom: 8px;';
-        row.innerHTML = `
-            <div style="font-size: 11px; color: var(--text2); margin-bottom: 4px;">${item.label}</div>
-            <div style="position: relative; height: ${barHeight}px;">
-                <div style="position: absolute; top: 0; left: 0; width: ${budgetW}%; height: 12px; background: var(--gold); opacity: 0.25; border-radius: 3px;"></div>
-                <div style="position: absolute; top: 14px; left: 0; width: ${actualW}%; height: 12px; background: ${isPositive ? 'var(--green)' : 'var(--red)'}; opacity: 0.8; border-radius: 3px;"></div>
-            </div>
-        `;
-        container.appendChild(row);
+    getChart('thisMonthChart', {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [
+                { label: 'Budget', data: budgets, backgroundColor: 'rgba(212,168,83,0.3)', borderColor: '#d4a853', borderWidth: 1, borderRadius: 4 },
+                { label: 'Actual', data: actuals, backgroundColor: '#d4a853', borderRadius: 4 }
+            ]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: true, position: 'top', labels: { boxWidth: 12, padding: 12 } },
+                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                y: { grid: { display: false } }
+            }
+        }
     });
-
-    // Legend
-    const legend = document.createElement('div');
-    legend.style.cssText = 'display: flex; gap: 16px; font-size: 11px; margin-top: 8px;';
-    legend.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--gold); opacity: 0.25; border-radius: 2px;"></div>Budget</div>
-        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--green); opacity: 0.8; border-radius: 2px;"></div>Actual</div>
-    `;
-    container.appendChild(legend);
 }
 
 function renderAssetDonut() {
-    const D = window.FINANCE_DATA;
-    const dk = D.dashboard_kpis || {};
-    const nwTable = dk.nw_table || [];
-    const totalNw = dk.nw_total || D.net_worth.net_worth;
+    const dk = window.FINANCE_DATA.dashboard_kpis || {};
+    const nwt = dk?.nw_table || [];
+    const items = nwt.filter(r => r.value > 0);
+    const donutColors = ['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'];
+    const totalNw = dk.nw_total || window.FINANCE_DATA.net_worth.net_worth;
 
-    const chartData = {};
-    nwTable.forEach(row => {
-        if (row.value > 0) chartData[row.label] = row.value;
+    getChart('assetDonut', {
+        type: 'doughnut',
+        data: {
+            labels: items.map(r => r.label),
+            datasets: [{ data: items.map(r => r.value), backgroundColor: donutColors.slice(0, items.length), borderWidth: 0 }]
+        },
+        options: {
+            cutout: '65%',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                donutCenter: { text: fmt.currency(totalNw), subText: 'Total' },
+                legend: { display: true, position: 'bottom', labels: { boxWidth: 10, padding: 8, font: { size: 10 } } },
+                tooltip: { callbacks: { label: ctx => ctx.label + ': ' + fmt.currency(ctx.raw) } }
+            }
+        }
     });
+}
 
-    renderDonut('assetDonut', 'donutValue', 'assetLegend', chartData, totalNw, 'Total Assets');
+function renderReDonut() {
+    const D = window.FINANCE_DATA;
+    const reData = D.net_worth.re_breakdown || {};
+    const items = Object.entries(reData).filter(([k, v]) => typeof v === 'number' && v > 0);
+    const donutColors = ['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'];
+    const totalRe = sumValues(reData);
+
+    getChart('reDonut', {
+        type: 'doughnut',
+        data: {
+            labels: items.map(r => r[0]),
+            datasets: [{ data: items.map(r => r[1]), backgroundColor: donutColors.slice(0, items.length), borderWidth: 0 }]
+        },
+        options: {
+            cutout: '65%',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                donutCenter: { text: fmt.currency(totalRe), subText: 'Total' },
+                legend: { display: true, position: 'bottom', labels: { boxWidth: 10, padding: 8, font: { size: 10 } } },
+                tooltip: { callbacks: { label: ctx => ctx.label + ': ' + fmt.currency(ctx.raw) } }
+            }
+        }
+    });
 }
 
 function renderYtdBridgeChart() {
     const D = window.FINANCE_DATA;
     const items = D.ytd_waterfall?.items || [];
-    const container = document.getElementById('ytdBridgeChart');
-    container.innerHTML = '';
+    const labels = items.map(i => i.label);
+    const values = items.map(i => Math.abs(i.actual || i.budget || 0));
+    const colors = items.map(i => i.type === 'income' ? '#4ade80' : '#f87171');
 
-    const maxValue = Math.max(...items.map(i => Math.abs(i.actual || i.budget || 0))) || 1;
-    const baseHeight = 230;
-
-    // Create a flex wrapper so bars sit side by side
-    const wrapper = document.createElement('div');
-    wrapper.className = 'waterfall-bars';
-    wrapper.style.height = baseHeight + 'px';
-
-    items.forEach(item => {
-        const val = item.actual || item.budget || 0;
-        const height = Math.abs(val) / maxValue * (baseHeight - 40);
-        const isIncome = item.type === 'income';
-
-        const waterfallItem = document.createElement('div');
-        waterfallItem.className = 'waterfall-item';
-        waterfallItem.innerHTML = `
-            <div style="flex:1; display:flex; align-items:flex-end; width:100%;">
-                <div class="waterfall-bar" style="height: ${height}px; background: ${isIncome ? 'var(--green)' : 'var(--red)'}; opacity: 0.8;" title="${item.label}: ${fmt.currency(val)}"></div>
-            </div>
-            <div class="waterfall-label">${item.label}</div>
-        `;
-        wrapper.appendChild(waterfallItem);
+    getChart('ytdBridgeChart', {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [{ data: values, backgroundColor: colors, borderRadius: 4 }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                x: { grid: { display: false } }
+            }
+        }
     });
-
-    container.appendChild(wrapper);
-
-    // Legend
-    const legend = document.createElement('div');
-    legend.style.cssText = 'display: flex; gap: 16px; font-size: 11px; margin-top: 8px;';
-    legend.innerHTML = `
-        <div style="display:flex;align-items:center;gap:4px;"><div style="width:10px;height:10px;background:var(--green);opacity:0.8;border-radius:2px;"></div>Income</div>
-        <div style="display:flex;align-items:center;gap:4px;"><div style="width:10px;height:10px;background:var(--red);opacity:0.8;border-radius:2px;"></div>Expenses</div>
-    `;
-    container.appendChild(legend);
 }
 
 function renderNwBuildupChart() {
@@ -1900,30 +1961,29 @@ function renderNwBuildupChart() {
     const pv = D.portfolio_value;
     if (!pv) return;
 
-    const container = document.getElementById('nwBuildupChart');
-    container.innerHTML = '';
-
     const years = pv.years || [];
     const values = pv.total_net_worth || [];
-    const maxVal = Math.max(...values.map(v => Math.abs(v || 0))) || 1;
-    const barMaxH = 220;
+    const colors = years.map((y, i) => i === years.length - 1 ? '#d4a853' : 'rgba(212,168,83,0.4)');
 
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = 'display: flex; align-items: flex-end; gap: 3px; height: ' + barMaxH + 'px; padding-bottom: 24px; overflow-x: auto;';
-
-    years.forEach((yr, idx) => {
-        const val = values[idx] || 0;
-        const h = Math.abs(val) / maxVal * (barMaxH - 30);
-        const col = document.createElement('div');
-        col.style.cssText = 'display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 28px;';
-        col.innerHTML = `
-            <div style="font-size: 9px; color: var(--text2); margin-bottom: 2px;">${val > 0 ? (val / 1e6).toFixed(1) + 'M' : ''}</div>
-            <div style="width: 100%; max-width: 32px; height: ${h}px; background: var(--gold); opacity: ${idx === years.length - 1 ? 1 : 0.5}; border-radius: 3px 3px 0 0;" title="${yr}: ${fmt.currency(val)}"></div>
-            <div style="font-size: 9px; color: var(--text2); margin-top: 4px; transform: rotate(-45deg); white-space: nowrap;">${yr}</div>
-        `;
-        wrapper.appendChild(col);
+    getChart('nwBuildupChart', {
+        type: 'bar',
+        data: {
+            labels: years,
+            datasets: [{ data: values, backgroundColor: colors, borderRadius: 4 }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1e6).toFixed(1) + 'M' } },
+                x: { grid: { display: false }, ticks: { maxRotation: 45, minRotation: 45 } }
+            }
+        }
     });
-    container.appendChild(wrapper);
 }
 
 function renderAnnualIEChart() {
@@ -1931,43 +1991,28 @@ function renderAnnualIEChart() {
     const aie = D.dashboard_kpis?.annual_ie;
     if (!aie) return;
 
-    const container = document.getElementById('annualIEChart');
-    container.innerHTML = '';
-
-    const years = aie.years || [];
-    const income = aie.income || [];
-    const expenses = aie.expenses || [];
-    const maxVal = Math.max(...income, ...expenses.map(v => Math.abs(v))) || 1;
-    const barMaxH = 220;
-
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = 'display: flex; align-items: flex-end; gap: 8px; height: ' + barMaxH + 'px; padding-bottom: 24px;';
-
-    years.forEach((yr, idx) => {
-        const incH = Math.abs(income[idx] || 0) / maxVal * (barMaxH - 30);
-        const expH = Math.abs(expenses[idx] || 0) / maxVal * (barMaxH - 30);
-        const col = document.createElement('div');
-        col.style.cssText = 'display: flex; flex-direction: column; align-items: center; flex: 1;';
-        col.innerHTML = `
-            <div style="display: flex; gap: 3px; align-items: flex-end; height: ${barMaxH - 30}px;">
-                <div style="width: 20px; height: ${incH}px; background: var(--green); opacity: 0.7; border-radius: 3px 3px 0 0;" title="Income: ${fmt.currency(income[idx])}"></div>
-                <div style="width: 20px; height: ${expH}px; background: var(--red); opacity: 0.7; border-radius: 3px 3px 0 0;" title="Expenses: ${fmt.currency(Math.abs(expenses[idx]))}"></div>
-            </div>
-            <div style="font-size: 11px; color: var(--text2); margin-top: 4px;">${yr}</div>
-        `;
-        wrapper.appendChild(col);
+    getChart('annualIEChart', {
+        type: 'bar',
+        data: {
+            labels: aie.years,
+            datasets: [
+                { label: 'Income', data: aie.income, backgroundColor: 'rgba(74,222,128,0.7)', borderRadius: 4 },
+                { label: 'Expenses', data: aie.expenses.map(v => Math.abs(v)), backgroundColor: 'rgba(248,113,113,0.7)', borderRadius: 4 }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: true, position: 'top', labels: { boxWidth: 12, padding: 12 } },
+                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                x: { grid: { display: false } }
+            }
+        }
     });
-
-    container.appendChild(wrapper);
-
-    // Legend
-    const legend = document.createElement('div');
-    legend.style.cssText = 'display: flex; gap: 16px; font-size: 11px; margin-top: 8px;';
-    legend.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--green); opacity: 0.7; border-radius: 2px;"></div>Income</div>
-        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; background: var(--red); opacity: 0.7; border-radius: 2px;"></div>Expenses</div>
-    `;
-    container.appendChild(legend);
 }
 
 // ============ CASHFLOW PAGE ============
@@ -2025,49 +2070,56 @@ function renderCashflow() {
 function renderWaterfallChart() {
     const D = window.FINANCE_DATA;
     const items = D.ytd_waterfall?.items || [];
-    const container = document.getElementById('waterfallChart');
-    container.innerHTML = '';
+    const labels = items.map(i => i.label);
+    const values = items.map(i => Math.abs(i.actual || i.budget || 0));
+    const colors = items.map(i => i.type === 'income' ? '#4ade80' : '#f87171');
 
-    const maxValue = Math.max(...items.map(i => Math.abs(i.actual || i.budget || 0)));
-    const baseHeight = 230;
-
-    items.forEach((item) => {
-        const val = item.actual || item.budget || 0;
-        const height = Math.abs(val) / maxValue * baseHeight;
-        const isIncome = item.type === 'income';
-
-        const waterfallItem = document.createElement('div');
-        waterfallItem.className = 'waterfall-item';
-        waterfallItem.innerHTML = `
-            <div class="waterfall-bar" style="height: ${height}px; background: ${isIncome ? 'var(--green)' : 'var(--red)'}; opacity: 0.8;" title="${item.label}: ${fmt.currency(val)}"></div>
-            <div class="waterfall-label">${item.label}</div>
-        `;
-        container.appendChild(waterfallItem);
+    getChart('waterfallChart', {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [{ data: values, backgroundColor: colors, borderRadius: 4 }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                x: { grid: { display: false } }
+            }
+        }
     });
 }
 
 function renderLiquidityChart() {
     const D = window.FINANCE_DATA;
     const liquidity = D.cashflow.liquidity || {};
-    const container = document.getElementById('liquidityChart');
-    container.innerHTML = '';
+    const labels = Object.keys(liquidity).filter(k => typeof liquidity[k] === 'number');
+    const values = labels.map(k => liquidity[k]);
 
-    const maxVal = Math.max(...Object.values(liquidity).map(v => typeof v === 'number' ? v : 0));
-
-    Object.entries(liquidity).forEach(([label, value]) => {
-        if (typeof value !== 'number') return;
-        const width = maxVal ? (value / maxVal * 100) : 0;
-
-        const barItem = document.createElement('div');
-        barItem.className = 'bar-item';
-        barItem.innerHTML = `
-            <div class="bar-label">${label}</div>
-            <div class="bar-wrapper">
-                <div class="bar-fill" style="width: ${width}%;"></div>
-            </div>
-            <div class="bar-value">${fmt.currency(value)}</div>
-        `;
-        container.appendChild(barItem);
+    getChart('liquidityChart', {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [{ label: 'Amount', data: values, backgroundColor: '#d4a853', borderRadius: 4 }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                y: { grid: { display: false } }
+            }
+        }
     });
 }
 
@@ -2079,27 +2131,31 @@ function renderNetWorth() {
     document.getElementById('nwLiabilities').textContent = fmt.currency(sumValues(D.net_worth.liabilities));
     document.getElementById('nwTotal').textContent = fmt.currency(D.net_worth.net_worth);
 
-    const assetsContainer = document.getElementById('assetsChart');
-    assetsContainer.innerHTML = '';
-    const maxAsset = Math.max(...Object.values(D.net_worth.assets).filter(v => typeof v === 'number'));
+    const assetLabels = Object.keys(D.net_worth.assets).filter(k => typeof D.net_worth.assets[k] === 'number' && D.net_worth.assets[k] > 0);
+    const assetValues = assetLabels.map(k => D.net_worth.assets[k]);
 
-    Object.entries(D.net_worth.assets).forEach(([label, value]) => {
-        if (typeof value !== 'number' || value <= 0) return;
-        const width = maxAsset ? (value / maxAsset * 100) : 0;
-
-        const barItem = document.createElement('div');
-        barItem.className = 'bar-item';
-        barItem.innerHTML = `
-            <div class="bar-label">${label}</div>
-            <div class="bar-wrapper">
-                <div class="bar-fill" style="width: ${width}%;"></div>
-            </div>
-            <div class="bar-value">${fmt.currency(value)}</div>
-        `;
-        assetsContainer.appendChild(barItem);
+    getChart('assetsChart', {
+        type: 'bar',
+        data: {
+            labels: assetLabels,
+            datasets: [{ label: 'Value', data: assetValues, backgroundColor: '#d4a853', borderRadius: 4 }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                y: { grid: { display: false } }
+            }
+        }
     });
 
-    renderDonut('reDonut', 'reDonutValue', 'reLegend', D.net_worth.re_breakdown, sumValues(D.net_worth.re_breakdown), 'Total RE');
+    renderReDonut();
 
     const bankTable = document.querySelector('#bankAccountsTable tbody');
     bankTable.innerHTML = '';
@@ -2116,42 +2172,52 @@ function renderNetWorth() {
         bankTable.appendChild(tr);
     });
 
-    const incomeContainer = document.getElementById('incomeBreakdownChart');
-    incomeContainer.innerHTML = '';
-    const maxInc = Math.max(...Object.values(D.net_worth.ytd_income).filter(v => typeof v === 'number'));
-    Object.entries(D.net_worth.ytd_income).forEach(([label, value]) => {
-        if (label === 'Total' || typeof value !== 'number') return;
-        const width = maxInc ? (value / maxInc * 100) : 0;
+    const incomeLabels = Object.keys(D.net_worth.ytd_income).filter(k => k !== 'Total' && typeof D.net_worth.ytd_income[k] === 'number');
+    const incomeValues = incomeLabels.map(k => D.net_worth.ytd_income[k]);
 
-        const barItem = document.createElement('div');
-        barItem.className = 'bar-item';
-        barItem.innerHTML = `
-            <div class="bar-label">${label}</div>
-            <div class="bar-wrapper">
-                <div class="bar-fill" style="width: ${width}%; background: var(--green);"></div>
-            </div>
-            <div class="bar-value">${fmt.currency(value)}</div>
-        `;
-        incomeContainer.appendChild(barItem);
+    getChart('incomeBreakdownChart', {
+        type: 'bar',
+        data: {
+            labels: incomeLabels,
+            datasets: [{ label: 'Income', data: incomeValues, backgroundColor: '#4ade80', borderRadius: 4 }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                y: { grid: { display: false } }
+            }
+        }
     });
 
-    const expenseContainer = document.getElementById('expensesBreakdownChart');
-    expenseContainer.innerHTML = '';
-    const maxExp = Math.max(...Object.values(D.net_worth.ytd_expenses).filter(v => typeof v === 'number'));
-    Object.entries(D.net_worth.ytd_expenses).forEach(([label, value]) => {
-        if (label === 'Total' || typeof value !== 'number') return;
-        const width = maxExp ? (value / maxExp * 100) : 0;
+    const expenseLabels = Object.keys(D.net_worth.ytd_expenses).filter(k => k !== 'Total' && typeof D.net_worth.ytd_expenses[k] === 'number');
+    const expenseValues = expenseLabels.map(k => Math.abs(D.net_worth.ytd_expenses[k]));
 
-        const barItem = document.createElement('div');
-        barItem.className = 'bar-item';
-        barItem.innerHTML = `
-            <div class="bar-label">${label}</div>
-            <div class="bar-wrapper">
-                <div class="bar-fill" style="width: ${width}%; background: var(--amber);"></div>
-            </div>
-            <div class="bar-value">${fmt.currency(value)}</div>
-        `;
-        expenseContainer.appendChild(barItem);
+    getChart('expensesBreakdownChart', {
+        type: 'bar',
+        data: {
+            labels: expenseLabels,
+            datasets: [{ label: 'Expenses', data: expenseValues, backgroundColor: '#fbbf24', borderRadius: 4 }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+                y: { grid: { display: false } }
+            }
+        }
     });
 }
 
@@ -2294,73 +2360,37 @@ function renderPortfolioChart() {
     const years = portfolio.years || [];
     const netWorth = portfolio.total_net_worth || [];
 
-    const svg = document.getElementById('portfolioChart');
-    const width = svg.clientWidth || 600;
-    const height = svg.clientHeight || 300;
-    const padding = 60;
-
-    svg.innerHTML = '';
-
     if (!netWorth.length) return;
 
-    const maxNw = Math.max(...netWorth);
-    const minNw = Math.min(...netWorth);
-    const range = maxNw - minNw || 1;
-
-    const graphWidth = width - padding * 2;
-    const graphHeight = height - padding * 2;
-
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-    gradient.setAttribute('id', 'portfolioGradient');
-    gradient.setAttribute('x1', '0%');
-    gradient.setAttribute('y1', '0%');
-    gradient.setAttribute('x2', '0%');
-    gradient.setAttribute('y2', '100%');
-    gradient.innerHTML = `
-        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
-        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
-    `;
-    defs.appendChild(gradient);
-    svg.appendChild(defs);
-
-    const points = netWorth.map((val, idx) => {
-        const x = padding + (idx / (netWorth.length - 1)) * graphWidth;
-        const y = height - padding - ((val - minNw) / range) * graphHeight;
-        return [x, y];
-    });
-
-    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
-    const area = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    area.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
-    area.setAttribute('fill', 'url(#portfolioGradient)');
-    svg.appendChild(area);
-
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
-    line.setAttribute('points', pointsStr);
-    line.setAttribute('fill', 'none');
-    line.setAttribute('stroke', 'var(--gold)');
-    line.setAttribute('stroke-width', '2');
-    svg.appendChild(line);
-
-    points.forEach((p, idx) => {
-        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        circle.setAttribute('cx', p[0]);
-        circle.setAttribute('cy', p[1]);
-        circle.setAttribute('r', '4');
-        circle.setAttribute('fill', 'var(--gold)');
-        circle.setAttribute('opacity', '0.7');
-        svg.appendChild(circle);
-
-        if (idx % 2 === 0 || idx === netWorth.length - 1) {
-            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            text.setAttribute('x', p[0]);
-            text.setAttribute('y', height - padding + 20);
-            text.setAttribute('text-anchor', 'middle');
-            text.setAttribute('font-size', '11');
-            text.setAttribute('fill', 'var(--text2)');
-            text.textContent = years[idx];
-            svg.appendChild(text);
+    getChart('portfolioChart', {
+        type: 'line',
+        data: {
+            labels: years,
+            datasets: [{
+                label: 'Net Worth',
+                data: netWorth,
+                borderColor: '#d4a853',
+                backgroundColor: 'rgba(212,168,83,0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3,
+                pointRadius: 4,
+                pointBackgroundColor: '#d4a853',
+                pointBorderColor: '#d4a853',
+                pointHoverRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: true, position: 'top', labels: { boxWidth: 12, padding: 12 } },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1e6).toFixed(1) + 'M' } },
+                x: { grid: { display: false } }
+            }
         }
     });
 }
@@ -2571,75 +2601,38 @@ function renderNwProjectionChart() {
     const years = forecast.years || [];
     const nwValues = forecast.net_worth_projection?.Total || [];
 
-    const svg = document.getElementById('nwProjectionChart');
-    const width = svg.clientWidth || 600;
-    const height = svg.clientHeight || 300;
-    const padding = 50;
-
-    svg.innerHTML = '';
-
     if (!nwValues.length) return;
 
-    const maxNw = Math.max(...nwValues);
-    const minNw = Math.min(...nwValues);
-    const range = maxNw - minNw || 1;
-
-    const graphWidth = width - padding * 2;
-    const graphHeight = height - padding * 2;
-
-    const points = nwValues.map((val, idx) => {
-        const x = padding + (idx / (nwValues.length - 1)) * graphWidth;
-        const y = height - padding - ((val - minNw) / range) * graphHeight;
-        return [x, y];
-    });
-
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-    gradient.setAttribute('id', 'fcGradient');
-    gradient.setAttribute('x1', '0%');
-    gradient.setAttribute('y1', '0%');
-    gradient.setAttribute('x2', '0%');
-    gradient.setAttribute('y2', '100%');
-    gradient.innerHTML = `
-        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
-        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
-    `;
-    defs.appendChild(gradient);
-    svg.appendChild(defs);
-
-    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
-    const area = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    area.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
-    area.setAttribute('fill', 'url(#fcGradient)');
-    svg.appendChild(area);
-
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
-    line.setAttribute('points', pointsStr);
-    line.setAttribute('fill', 'none');
-    line.setAttribute('stroke', 'var(--gold)');
-    line.setAttribute('stroke-width', '2');
-    svg.appendChild(line);
-
-    points.forEach((p) => {
-        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        circle.setAttribute('cx', p[0]);
-        circle.setAttribute('cy', p[1]);
-        circle.setAttribute('r', '4');
-        circle.setAttribute('fill', 'var(--gold)');
-        circle.setAttribute('opacity', '0.7');
-        svg.appendChild(circle);
-    });
-
-    years.forEach((year, idx) => {
-        const x = padding + (idx / (years.length - 1)) * graphWidth;
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', x);
-        text.setAttribute('y', height - padding + 20);
-        text.setAttribute('text-anchor', 'middle');
-        text.setAttribute('font-size', '11');
-        text.setAttribute('fill', 'var(--text2)');
-        text.textContent = year;
-        svg.appendChild(text);
+    getChart('nwProjectionChart', {
+        type: 'line',
+        data: {
+            labels: years,
+            datasets: [{
+                label: 'Projected Net Worth',
+                data: nwValues,
+                borderColor: '#d4a853',
+                backgroundColor: 'rgba(212,168,83,0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3,
+                pointRadius: 4,
+                pointBackgroundColor: '#d4a853',
+                pointBorderColor: '#d4a853',
+                pointHoverRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: true, position: 'top', labels: { boxWidth: 12, padding: 12 } },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1e6).toFixed(1) + 'M' } },
+                x: { grid: { display: false } }
+            }
+        }
     });
 }
 
@@ -2677,152 +2670,41 @@ function renderPortfolioGrowthChart() {
     const years = portfolio.years || [];
     const netWorth = portfolio.total_net_worth || [];
 
-    const svg = document.getElementById('historyChart');
-    const width = svg.clientWidth || 600;
-    const height = svg.clientHeight || 300;
-    const padding = 60;
-
-    svg.innerHTML = '';
-
     if (!netWorth.length) return;
 
-    const maxNw = Math.max(...netWorth);
-    const minNw = 0;
-    const range = maxNw - minNw || 1;
-
-    const graphWidth = width - padding * 2;
-    const graphHeight = height - padding * 2;
-
-    const points = netWorth.map((val, idx) => {
-        const x = padding + (idx / (netWorth.length - 1)) * graphWidth;
-        const y = height - padding - ((val - minNw) / range) * graphHeight;
-        return [x, y];
-    });
-
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-    gradient.setAttribute('id', 'historyGradient');
-    gradient.setAttribute('x1', '0%');
-    gradient.setAttribute('y1', '0%');
-    gradient.setAttribute('x2', '0%');
-    gradient.setAttribute('y2', '100%');
-    gradient.innerHTML = `
-        <stop offset="0%" style="stop-color:var(--gold);stop-opacity:0.3" />
-        <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.05" />
-    `;
-    defs.appendChild(gradient);
-    svg.appendChild(defs);
-
-    const pointsStr = points.map(p => `${p[0]},${p[1]}`).join(' ');
-    const area = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    area.setAttribute('points', `${padding},${height - padding} ${pointsStr} ${width - padding},${height - padding}`);
-    area.setAttribute('fill', 'url(#historyGradient)');
-    svg.appendChild(area);
-
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
-    line.setAttribute('points', pointsStr);
-    line.setAttribute('fill', 'none');
-    line.setAttribute('stroke', 'var(--gold)');
-    line.setAttribute('stroke-width', '2');
-    svg.appendChild(line);
-
-    points.forEach((p) => {
-        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        circle.setAttribute('cx', p[0]);
-        circle.setAttribute('cy', p[1]);
-        circle.setAttribute('r', '3');
-        circle.setAttribute('fill', 'var(--gold)');
-        circle.setAttribute('opacity', '0.6');
-        svg.appendChild(circle);
-    });
-
-    years.forEach((year, idx) => {
-        const x = padding + (idx / (years.length - 1)) * graphWidth;
-        if (idx % 2 === 0 || idx === years.length - 1) {
-            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            text.setAttribute('x', x);
-            text.setAttribute('y', height - padding + 20);
-            text.setAttribute('text-anchor', 'middle');
-            text.setAttribute('font-size', '11');
-            text.setAttribute('fill', 'var(--text2)');
-            text.textContent = year;
-            svg.appendChild(text);
+    getChart('historyChart', {
+        type: 'line',
+        data: {
+            labels: years,
+            datasets: [{
+                label: 'Net Worth',
+                data: netWorth,
+                borderColor: '#d4a853',
+                backgroundColor: 'rgba(212,168,83,0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3,
+                pointRadius: 3,
+                pointBackgroundColor: '#d4a853',
+                pointBorderColor: '#d4a853',
+                pointHoverRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: true, position: 'top', labels: { boxWidth: 12, padding: 12 } },
+                tooltip: { callbacks: { label: ctx => fmt.currency(ctx.raw) } }
+            },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { callback: v => (v/1e6).toFixed(1) + 'M' } },
+                x: { grid: { display: false } }
+            }
         }
     });
 }
 
-// ============ DONUT CHART HELPER ============
-function renderDonut(svgId, centerId, legendId, data, total, centerLabel) {
-    const svg = document.getElementById(svgId);
-    const legend = document.getElementById(legendId);
-
-    svg.innerHTML = '';
-    legend.innerHTML = '';
-
-    if (!data || Object.keys(data).length === 0) return;
-
-    const colors = [
-        '#d4a853', '#e8c46a', '#4ade80', '#60a5fa', '#fbbf24',
-        '#f87171', '#818cf8', '#a78bfa', '#14b8a6', '#ec4899'
-    ];
-
-    const cx = 140, cy = 140, r = 100, ir = 60;
-    let currentAngle = -90;
-    const entries = Object.entries(data).filter(([_, v]) => v > 0);
-
-    entries.forEach((item, idx) => {
-        const [label, value] = item;
-        const percent = total > 0 ? value / total : 0;
-        const angle = percent * 360;
-
-        const startRad = (currentAngle * Math.PI) / 180;
-        const endRad = ((currentAngle + angle) * Math.PI) / 180;
-
-        const x1 = cx + r * Math.cos(startRad);
-        const y1 = cy + r * Math.sin(startRad);
-        const x2 = cx + r * Math.cos(endRad);
-        const y2 = cy + r * Math.sin(endRad);
-
-        const ix1 = cx + ir * Math.cos(startRad);
-        const iy1 = cy + ir * Math.sin(startRad);
-        const ix2 = cx + ir * Math.cos(endRad);
-        const iy2 = cy + ir * Math.sin(endRad);
-
-        const largeArc = angle > 180 ? 1 : 0;
-
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        const d = `
-            M ${x1} ${y1}
-            A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2}
-            L ${ix2} ${iy2}
-            A ${ir} ${ir} 0 ${largeArc} 0 ${ix1} ${iy1}
-            Z
-        `;
-        path.setAttribute('d', d);
-        path.setAttribute('fill', colors[idx % colors.length]);
-        path.setAttribute('opacity', '0.85');
-        svg.appendChild(path);
-
-        const item_el = document.createElement('div');
-        item_el.className = 'legend-item';
-        item_el.innerHTML = `
-            <div class="legend-dot" style="background: ${colors[idx % colors.length]};"></div>
-            <div class="legend-label">${label}</div>
-            <div class="legend-value">${fmt.currency(value)}</div>
-        `;
-        legend.appendChild(item_el);
-
-        currentAngle += angle;
-    });
-
-    const center = document.getElementById(centerId);
-    if (center) {
-        center.innerHTML = `
-            <div class="donut-center-value">${fmt.currency(total)}</div>
-            <div class="donut-center-label">${centerLabel}</div>
-        `;
-    }
-}
 
 // ============ EXPORT CSV ============
 function exportCSV() {
