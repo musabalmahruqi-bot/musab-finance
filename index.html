@@ -1896,10 +1896,10 @@ function renderDashboard() {
     const nwTbody = document.querySelector('#nwBreakdownTable tbody');
     nwTbody.innerHTML = '';
     const nwTotal = dk.nw_total || 1;
-    (dk.nw_table || []).forEach(row => {
+    (dk.nw_table || []).filter(row => row.label && !row.label.toLowerCase().includes('total') && !row.label.toLowerCase().includes('net worth')).forEach(row => {
         const tr = document.createElement('tr');
         const pct = (row.value / nwTotal * 100).toFixed(1);
-        const isDebt = row.label.includes('Debt');
+        const isDebt = row.label.toLowerCase().includes('debt');
         tr.innerHTML = `
             <td>${row.label}</td>
             <td class="num-right" style="${isDebt ? 'color: var(--red);' : ''}">${fmt.amount(row.value)}</td>
@@ -1929,8 +1929,10 @@ function renderDashboard() {
 function renderAssetDonut() {
     const dk = window.FINANCE_DATA.dashboard_kpis || {};
     const nwt = dk?.nw_table || [];
-    // Only show positive asset classes (exclude debt) — display allocation of gross assets
-    const items = nwt.filter(r => r.label && r.value > 0);
+    // Only show individual asset classes — exclude totals, debt, and net worth rows
+    const excludeLabels = ['total', 'net worth', 'less:'];
+    const items = nwt.filter(r => r.label && r.value > 0 &&
+        !excludeLabels.some(ex => r.label.toLowerCase().includes(ex)));
     const totalAssets = items.reduce((sum, r) => sum + r.value, 0);
 
     const positiveColors = ['#d4a853', '#e8c46a', '#60a5fa', '#4ade80', '#fbbf24', '#a78bfa'];
