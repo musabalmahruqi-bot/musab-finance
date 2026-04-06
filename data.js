@@ -1,5 +1,5 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 06 Apr 2026 06:29
+// Generated: 06 Apr 2026 06:34
 window.FINANCE_DATA = {
   "net_worth": {
     "as_at": "06 Apr 2026",
@@ -3090,105 +3090,243 @@ window.FINANCE_DATA = {
     "lease_timeline": [
       {
         "property": "Rahba Hill Villa 2",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 600.0,
+        "annual_rent": 7200.0,
+        "yield_pct": 6.5,
         "contract_end": "2026-05-31",
+        "deposit": 525.0,
+        "payment_terms": "12 checks",
         "status": "Active",
-        "monthly_rent": 600.0
+        "tenant_name": "\u0627\u0644\u0639\u0646\u0627\u0635\u0631 \u0627\u0644\u062e\u0645\u0633\u0629 \u0644\u062e\u062f\u0645\u0627\u062a \u0627\u0644\u0628\u064a\u0626\u0629 \u0634.\u0645.\u0645",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Villa 3",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 600.0,
+        "annual_rent": 7200.0,
+        "yield_pct": 6.5,
         "contract_end": "2026-07-15",
+        "deposit": 600.0,
+        "payment_terms": "4 checks",
         "status": "Active",
-        "monthly_rent": 600.0
+        "tenant_name": "\u0645\u062d\u0645\u062f \u0623\u0628\u0648 \u0627\u0644\u064a\u0632\u064a\u062f \u0639\u0642\u064a\u0644 \u0645\u062d\u0645\u062f",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Villa 4",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 620.0,
+        "annual_rent": 7440.0,
+        "yield_pct": 6.8,
         "contract_end": "2026-11-01 00:00:00",
+        "deposit": 650.0,
+        "payment_terms": "Monthly transfer",
         "status": "Active",
-        "monthly_rent": 620.0
+        "tenant_name": "\u0627\u0646\u062a\u0648\u0646\u064a \u0639\u0644\u0645",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Villa 6",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 600.0,
+        "annual_rent": 7200.0,
+        "yield_pct": 6.5,
         "contract_end": "2026-11-14",
+        "deposit": 500.0,
+        "payment_terms": "4 checks",
         "status": "Active",
-        "monthly_rent": 600.0
+        "tenant_name": "\u0623\u062d\u0645\u062f \u0635\u0627\u0644\u062d \u0645\u0641\u062a\u0627\u062d",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Villa 7",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 570.0,
+        "annual_rent": 6840.0,
+        "yield_pct": 6.2,
         "contract_end": "2026-09-15",
+        "deposit": 550.0,
+        "payment_terms": "6 checks",
         "status": "Active",
-        "monthly_rent": 570.0
+        "tenant_name": "\u0628\u0647\u0631\u0648\u0632 \u0643\u0631\u064a\u0645 \u0643\u0627\u0646\u064a",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Villa 8",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 570.0,
+        "annual_rent": 6840.0,
+        "yield_pct": 6.2,
         "contract_end": "2026-10-01",
+        "deposit": 550.0,
+        "payment_terms": "6 checks",
         "status": "Active",
-        "monthly_rent": 570.0
+        "tenant_name": "\u0627\u062d\u0645\u062f\u0631\u0632\u0627 \u0645\u062d\u0645\u062f \u0639\u0644\u064a",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Villa 9",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 550.0,
+        "annual_rent": 6600.0,
+        "yield_pct": 6.0,
         "contract_end": "2026-12-15 00:00:00",
+        "deposit": 525.0,
+        "payment_terms": "4 transfers",
         "status": "Active",
-        "monthly_rent": 550.0
+        "tenant_name": "\u0633\u0627\u0631\u0639 \u0627\u0644\u064a\u0632\u0628\u064a\u062a \u0634\u0627\u0628\u0644\u064a\u0646",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Villa 10",
+        "location": "Muscat",
+        "type": "Villa",
+        "current_value": 110000.0,
+        "monthly_rent": 550.0,
+        "annual_rent": 6600.0,
+        "yield_pct": 6.0,
         "contract_end": "2026-05-31",
+        "deposit": 0.0,
+        "payment_terms": "12 checks",
         "status": "Active",
-        "monthly_rent": 550.0
+        "tenant_name": "\u062d\u0633\u0627\u0646 \u0627\u0644 \u0627\u0634\u0642\u0631",
+        "phone": ""
       },
       {
         "property": "Rahba Hill Rooftop",
+        "location": "Muscat",
+        "type": "Rooftop",
+        "current_value": 0.0,
+        "monthly_rent": 172.5,
+        "annual_rent": 2070.0,
+        "yield_pct": 0,
         "contract_end": "2031-01-31 00:00:00",
+        "deposit": 0.0,
+        "payment_terms": "Annual prepaid",
         "status": "Active",
-        "monthly_rent": 172.5
-      },
-      {
-        "property": "Rahba Hills Subtotal",
-        "contract_end": "",
-        "status": "",
-        "monthly_rent": 4832.5
+        "tenant_name": "Oman Towers Company LLC",
+        "phone": "72595400"
       },
       {
         "property": "Tilal Flat",
+        "location": "Muscat",
+        "type": "Apartment",
+        "current_value": 0.0,
+        "monthly_rent": 0.0,
+        "annual_rent": 0.0,
+        "yield_pct": 0,
         "contract_end": "2026-12-31",
+        "deposit": 0.0,
+        "payment_terms": "12 checks",
         "status": "SOLD Feb2026",
-        "monthly_rent": 0.0
+        "tenant_name": "N/A \u2014 Sold",
+        "phone": "N/A"
       },
       {
         "property": "Almouj Luban",
+        "location": "Muscat",
+        "type": "Apartment",
+        "current_value": 110000.0,
+        "monthly_rent": 525.0,
+        "annual_rent": 6300.0,
+        "yield_pct": 5.7,
         "contract_end": "2026-07-10",
+        "deposit": 525.0,
+        "payment_terms": "",
         "status": "Active",
-        "monthly_rent": 525.0
+        "tenant_name": "\u062c\u0627\u0631\u064a\u0645\u0627 \u0633\u064a\u0647\u0631\u0627",
+        "phone": ""
       },
       {
         "property": "Maabila Flat",
+        "location": "Muscat",
+        "type": "Apartment",
+        "current_value": 0.0,
+        "monthly_rent": 110.0,
+        "annual_rent": 1320.0,
+        "yield_pct": 0,
         "contract_end": "",
+        "deposit": 0.0,
+        "payment_terms": "No deposit",
         "status": "Sold 2025",
-        "monthly_rent": 110.0
+        "tenant_name": "N/A \u2014 Sold",
+        "phone": "N/A"
       },
       {
         "property": "Dubai Residence Flat",
+        "location": "Dubai",
+        "type": "Apartment",
+        "current_value": 245000.0,
+        "monthly_rent": 964.91,
+        "annual_rent": 11578.92,
+        "yield_pct": 4.7,
         "contract_end": "2026-04-08",
+        "deposit": 1315.79,
+        "payment_terms": "3 checks",
         "status": "Active",
-        "monthly_rent": 964.91
+        "tenant_name": "",
+        "phone": ""
       },
       {
         "property": "Dubai Reehan Flat",
+        "location": "Dubai",
+        "type": "Apartment",
+        "current_value": 210000.0,
+        "monthly_rent": 921.05,
+        "annual_rent": 11052.6,
+        "yield_pct": 5.3,
         "contract_end": "2026-07-18",
+        "deposit": 1263.16,
+        "payment_terms": "1 check",
         "status": "Active",
-        "monthly_rent": 921.05
+        "tenant_name": "ARMANDO DOS SANTOS RIBEIRO FERREIRA",
+        "phone": ""
       },
       {
         "property": "Dubai Forte",
+        "location": "Dubai",
+        "type": "Apartment",
+        "current_value": 0.0,
+        "monthly_rent": 0.0,
+        "annual_rent": 0.0,
+        "yield_pct": 0,
         "contract_end": "",
+        "deposit": 0.0,
+        "payment_terms": "",
         "status": "Sold 2024",
-        "monthly_rent": 0.0
+        "tenant_name": "N/A \u2014 Sold",
+        "phone": "N/A"
       },
       {
         "property": "Manchester CitySuites",
+        "location": "Manchester, UK",
+        "type": "Apartment",
+        "current_value": 125000.0,
+        "monthly_rent": 400.0,
+        "annual_rent": 4800.0,
+        "yield_pct": 3.8,
         "contract_end": "",
+        "deposit": 0.0,
+        "payment_terms": "",
         "status": "Active",
-        "monthly_rent": 400.0
+        "tenant_name": "",
+        "phone": ""
       }
     ],
     "annual_ie": {
