@@ -1,8 +1,8 @@
 // Auto-generated from Musab_Personal_Finance.xlsx
-// Generated: 05 Apr 2026 22:04
+// Generated: 06 Apr 2026 06:08
 window.FINANCE_DATA = {
   "net_worth": {
-    "as_at": "05 Apr 2026",
+    "as_at": "06 Apr 2026",
     "assets": {
       "Real Estate": 2642478.0,
       "Financial Investments": 234123.0,
